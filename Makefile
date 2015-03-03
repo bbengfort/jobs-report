@@ -2,17 +2,17 @@
 SHELL := /bin/sh
 
 # Set important Paths
-PROJECT := web
+PROJECT := elmr
 LOCALPATH := $(CURDIR)/$(PROJECT)
 PYTHONPATH := $(LOCALPATH)/
 PYTHON_BIN := $(VIRTUAL_ENV)/bin
 
 # Export targets not associated with files
-.PHONY: test showenv coverage bootstrap pip virtualenv clean virtual_env_set
+.PHONY: test showenv coverage bootstrap pip virtualenv clean
 
 # Run the development server
 runserver:
-	@echo "Not implemented"
+	$(PYTHON_BIN)/python elmr/app.py
 
 # Clean build files
 clean:
@@ -23,6 +23,6 @@ clean:
 	-rm -rf dist
 	-rm -rf $(PROJECT)/*.egg-info
 
-# Targets for Django testing
+# Targets for testing the app
 test:
 	$(PYTHON_BIN)/nosetests -v
