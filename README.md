@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/mclumd/jobs-report.png?label=ready&title=Ready)](https://waffle.io/mclumd/jobs-report)
 # Jobs Report
 
 **Visualization of the monthly jobs report by the BLS**
