@@ -1,5 +1,6 @@
-[![Stories in Ready](https://badge.waffle.io/mclumd/jobs-report.png?label=ready&title=Ready)](https://waffle.io/mclumd/jobs-report)
 # Jobs Report
+
+[![Stories in Ready](https://badge.waffle.io/mclumd/jobs-report.png?label=ready&title=Ready)](https://waffle.io/mclumd/jobs-report) [![Build Status](https://travis-ci.org/mclumd/jobs-report.svg)](https://travis-ci.org/mclumd/jobs-report)
 
 **Visualization of the monthly jobs report by the BLS**
 
