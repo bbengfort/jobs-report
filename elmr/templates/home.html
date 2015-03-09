@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block stylesheets %}
+  {{ super() }}
+  <link rel="stylesheet" type="text/css" href="/static/css/d3.geomap.css">
+{% endblock %}
+
 {% block body %}
   <div class="container">
     <div class="row">
@@ -7,6 +12,20 @@
         <h1>Welcome to ELMR</h1>
       </div>
     </div>
-  </div>
 
+    <div class="row">
+      <div class="col-md-12">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+  {{ super() }}
+  <script type="text/javascript">
+    $(function() {
+
+    });
+  </script>
 {% endblock %}
