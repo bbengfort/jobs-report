@@ -1,6 +1,6 @@
 # Jobs Report (ELMR)
 
-[![Stories in Ready](https://badge.waffle.io/mclumd/jobs-report.png?label=ready&title=Ready)](https://waffle.io/mclumd/jobs-report) [![Build Status](https://travis-ci.org/mclumd/jobs-report.svg)](https://travis-ci.org/mclumd/jobs-report)
+[![Stories in Ready](https://badge.waffle.io/bbengfort/jobs-report.png?label=ready&title=Ready)](https://waffle.io/bbengfort/jobs-report) [![Build Status](https://travis-ci.org/bbengfort/jobs-report.svg)](https://travis-ci.org/bbengfort/jobs-report)
 
 **Visualization of the monthly jobs report by the BLS**
 
@@ -21,7 +21,7 @@ Here's the quick steps to get the server running so you can start developing on 
 
 1. Clone the repository
 
-        $ git clone git@github.com:mclumd/jobs-report.git
+        $ git clone git@github.com:bbengfort/jobs-report.git
         $ cd jobs-report
 
 2. If you haven't already, it's a good idea to install virtualenv
