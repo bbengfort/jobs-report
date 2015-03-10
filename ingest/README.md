@@ -103,3 +103,46 @@ for s in result['Results']['series']:
 ```
 
 Hope this helps you get started using the BLS API data!
+
+## Important CPS TimeSeries
+
+- Civilian Labor Force Level - `LNS11000000`
+- Civilian Labor Force Participation Rate - `LNS11300000`
+- Employment Level - `LNS12000000`
+- Employment-Population Ratio - `LNS12300000`
+- Employed, Usually Work Full Time - `LNS12500000`
+- Employed, Usually Work Part Time - `LNS12600000`
+- Unemployment Level - `LNS13000000`
+- Unemployment Rate - `LNS14000000`
+- Unemployment Rate - 16-19 Years - `LNS14000012`
+- Unemployment Rate - 20 Years & Over Men - `LNS14000025`
+- Unemployment Rate - 20 Years & Over Women - `LNS14000026`
+- Unemployment Rate - White - `LNS14000003`
+- Unemployment Rate - Black or African American - `LNS14000006`
+- Unemployment Rate - Asian - `LNS14032183`
+- Unemployment Rate - Hispanic or Latino - `LNS14000009`
+- Unemployment Rate - 25 Years & Over, Less than a High School Diploma - `LNS14027659`
+- Unemployment Rate - 25 Years & Over, High School Graduates No College - `LNS14027660`
+- Unemployment Rate - 25 Years & Over, Some College or Associate Degree - `LNS14027689`
+- Unemployment Rate - 25 Years & Over, Bachelor's Degree and Higher - `LNS14027662`
+- Number Unemployed For Less Than 5 weeks - `LNS13008396`
+- Number Unemployed For 5-14 Weeks - `LNS13008756`
+- Number Unemployed For 15 Weeks & Over - `LNS13008516`
+- Number Unemployed For 27 Weeks & Over - `LNS13008636`
+- Average Weeks Unemployed - `LNS13008275`
+- Median Weeks Unemployed - `LNS13008276`
+- Unemployment Level Job Losers - `LNS13023621`
+- Unemployment Level Job Losers On Layoff - `LNS13023653`
+- Unemployment Level Job Losers Not on Layoff - `LNS13025699`
+- Unemployment Level Job Leavers - `LNS13023705`
+- Unemployment Level Reentrants To Labor Force - `LNS13023557`
+- Unemployment Level New Entrants - `LNS13023569`
+- Persons At Work Part Time for Economic Reasons - `LNS12032194`
+- Not in Labor Force - `LNS15000000`
+- Marginally Attached to Labor Force - `LNU05026642`
+- Discouraged Workers - `LNU05026645`
+- Alternative measure of labor underutilization U-6 - `LNS13327709`
+- Multiple Jobholders Level - `LNS12026619`
+- Multiple Jobholders as a Percent of Total Employed - `LNS12026620`
+- Employment Level, Nonag. Industries, With a Job not at Work, Bad Weather - `LNU02036012`
+- Employment Level, Nonag. Industries, At Work 1-34 Hrs, Usually Work Full time, Bad Weather - `LNU02033224`
