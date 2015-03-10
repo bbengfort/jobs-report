@@ -58,3 +58,7 @@ venv
 
 # Mac Stuff
 .DS_Store
+
+# Fixtures
+fixtures/*
+!fixtures/*.tgz
