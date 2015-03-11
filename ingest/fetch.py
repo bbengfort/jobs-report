@@ -11,6 +11,9 @@
 
 """
 Fetches the important data sets and saves them as a table by year.
+
+Basically this simple script fetches API data from the BLS website and
+stores it in a Fixtures directory for wrangling.
 """
 
 ##########################################################################
