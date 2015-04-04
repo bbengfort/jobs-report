@@ -1,1 +1,49 @@
 /* Styles for our D3 app */
+
+/* Headlines */
+
+.headline-wrapper {
+    display: block;
+    margin: 0 auto;
+    width: 588px;
+}
+
+.headline, .headline > div {
+    display: inline-block;
+}
+
+.headline-number {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.headline-detail {
+    padding: 0px 16px;
+    font-size: 1.3em;
+}
+
+.headline-detail p {
+    padding: 0;
+    margin: -2px 0;
+    font-variant: small-caps;
+}
+
+.headline-delta {
+    font-weight: bold;
+}
+
+/* Controls */
+
+#main-controls {
+    margin: 20px;
+}
+
+#main-controls .form-group {
+    width: 25%;
+}
+
+.form-slider {
+    display: inline-block;
+    width: 48%;
+    padding: 0 10px;
+}

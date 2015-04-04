@@ -2,29 +2,160 @@
 
 {% block stylesheets %}
   {{ super() }}
-  <link rel="stylesheet" type="text/css" href="/static/css/d3.geomap.css">
 {% endblock %}
 
 {% block body %}
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Welcome to ELMR</h1>
-      </div>
-    </div>
 
+    <!-- Page Title -->
     <div class="row">
-      <div class="col-md-12">
-        <div id="map"></div>
+      <div class="col-md-12 text-center">
+        <h1>U.S. Employment Explorer</h1>
       </div>
-    </div>
-  </div>
+    </div><!-- end page title -->
+
+    <!-- Headlines -->
+    <div id="headlines" class="row">
+      <div class="col-md-12">
+        <div class="headline-wrapper">
+          <!-- Left Headline -->
+          <div id="left-headline" class="headline">
+              <div class="headline-number">5.5%</div>
+              <div class="headline-detail">
+                <p class="headline-label">
+                  unemployment rate
+                </p>
+                <p class="headline-delta text-success">
+                  <i class="fa fa-long-arrow-down"></i>
+                  1.7%
+                </p>
+              </div>
+          </div><!-- end left headline -->
+
+          <!-- Right Headline -->
+          <div id="right-headline" class="headline">
+            <div class="headline-number">1.7M</div>
+            <div class="headline-detail">
+              <p class="headline-label">
+                nonfarm jobs
+              </p>
+              <p class="headline-delta text-success">
+                <i class="fa fa-long-arrow-up"></i>
+                295,000
+              </p>
+            </div>
+          </div><!-- end right headline -->
+        </div><!-- end headline wrapper -->
+      </div>
+    </div><!-- end headlines -->
+
+    <!-- Controls -->
+    <div id="main-controls" class="row">
+      <div class="col-md-12">
+        <div class="controls">
+          <form class="form-inline">
+            <div class="form-group">
+              <label for="startDate">Start Date</label>
+              <div class="input-group">
+                <input type="text" class="form-control input-sm" id="startDate" />
+                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+              </div>
+            </div>
+            <div class="form-slider">
+              <div id="year-range-slider"></div>
+            </div>
+            <div class="form-group">
+              <label for="endDate">End Date</label>
+              <div class="input-group">
+                <input type="text" class="form-control input-sm" id="endDate" />
+                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!-- end controls -->
+
+    <!-- 2 Column Visual Content -->
+    <div class="row">
+
+      <!-- Right Sidebar -->
+      <div class="col-md-3">
+
+      </div><!-- end right sidebar -->
+
+      <!-- Main Visual Content -->
+      <div class="col-md-9">
+
+      </div><!-- end main visual content -->
+
+    </div><!-- end 2 column visual content -->
+
+  </div><!-- end container -->
 {% endblock %}
+
 
 {% block javascripts %}
   {{ super() }}
   <script type="text/javascript">
     $(function() {
+
+      // Important Variables
+      var dateFmt = "MMM YYYY"
+      var minDate = moment("Jan 2000", dateFmt);
+      var maxDate = moment("Feb 2015", dateFmt);
+      var period  = moment.range(minDate, maxDate);
+
+      var startDate = moment(maxDate);  // clone date
+      startDate.subtract(6, "months");  // subtract 6 months
+
+      var endDate = moment(maxDate);    // clone date
+
+      // Initialize the Start and End Date inputs
+      updateDateFields();
+
+      // Initialize Year Range Slider
+      $("#year-range-slider").slider({
+        range: true,
+        min: 0,                     // min is the zeroth value of the period
+        max: period.diff("months"), // max is the number of months in the period
+        values: [getMonthInPeriod(startDate), getMonthInPeriod(endDate)],
+        slide: function(event, ui) {
+          startDate = getMonthFromPeriod(ui.values[0]);
+          endDate = getMonthFromPeriod(ui.values[1]);
+          updateDateFields();
+        }
+      });
+
+      /*
+      * Gets the month number in the period of the app.
+      * If the date isn't within the period, returns null.
+      * Use this function for setting the slider.
+      */
+      function getMonthInPeriod(date) {
+        if (!date.within(period)) {
+          return null;
+        }
+
+        return moment.range(minDate, date).diff("months");
+      }
+
+      /*
+       * Returns a moment object from a month number in the period of the app.
+       * Use this function for getting dates from the slider.
+       */
+      function getMonthFromPeriod(num) {
+        var date = moment(minDate)
+        date.add(num, "months");
+        return date;
+      }
+
+      function updateDateFields() {
+        $("#startDate").val(startDate.format(dateFmt));
+        $("#endDate").val(endDate.format(dateFmt));
+      }
+
+      console.log("ELMR Application Started");
 
     });
   </script>

@@ -23,10 +23,11 @@ import unittest
 ## Initialization Tests
 ##########################################################################
 
+
 class InitializationTests(unittest.TestCase):
 
     def test_sanity(self):
         """
         Check the world is sane and 2+2=4
         """
-        self.assertEqual(2+2,4)
+        self.assertEqual(2 + 2, 4)

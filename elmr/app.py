@@ -21,17 +21,28 @@ import os
 
 from flask import Flask, render_template, send_from_directory
 
+##########################################################################
+## Configure Flask
+##########################################################################
+
 app = Flask(__name__)
 app.debug = True
+
+##########################################################################
+## Configure Routes
+##########################################################################
+
 
 @app.route("/")
 def page():
     return render_template('home.html')
 
+
 @app.route('/favicon.ico')
 def favicon():
     dirname = os.path.join(app.root_path, 'static')
-    return send_from_directory(dirname, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+    return send_from_directory(dirname, 'favicon.ico',
+                               mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
     app.run()
