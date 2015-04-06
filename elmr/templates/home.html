@@ -5,7 +5,19 @@
 {% endblock %}
 
 {% block body %}
-  <div class="container">
+  <!-- Loading Container -->
+  <div id="loading" class="container show">
+    <div class="row">
+      <div class="col-sm-12">
+        <img class="img-responsive"
+             src="{{ url_for('static', filename='img/loader.gif') }}" title="Loading" alt="Loading Visualization ..." />
+      </div>
+    </div>
+
+  </div><!-- end loading container -->
+
+  <!-- Application Container -->
+  <div id="application" class="container hidden">
 
     <!-- Page Title -->
     <div class="row">
@@ -91,7 +103,7 @@
 
     </div><!-- end 2 column visual content -->
 
-  </div><!-- end container -->
+  </div><!-- end application container -->
 {% endblock %}
 
 
@@ -100,14 +112,19 @@
   <script type="text/javascript">
     $(function() {
 
+      /*************************************************************************
+      ** Initialization
+      *************************************************************************/
+
       // Important Variables
       var dateFmt = "MMM YYYY"
       var minDate = moment("Jan 2000", dateFmt);
       var maxDate = moment("Feb 2015", dateFmt);
       var period  = moment.range(minDate, maxDate);
+      var dataUrl = "{{ url_for('static', filename='data/elmr.json') }}";
 
       var startDate = moment(maxDate);  // clone date
-      startDate.subtract(6, "months");  // subtract 6 months
+      startDate.subtract(12, "months");  // subtract 6 months
 
       var endDate = moment(maxDate);    // clone date
 
@@ -126,6 +143,21 @@
           updateDateFields();
         }
       });
+
+      $.get(dataUrl)
+        .success(function(data) {
+          console.log("Fetched data from " + dataUrl);
+
+          // Turn off the loader and indicate application started
+          toggleLoading(false, function() {
+            console.log("ELMR Application Started");
+          });
+
+        });
+
+      /*************************************************************************
+      ** Helper Functions
+      *************************************************************************/
 
       /*
       * Gets the month number in the period of the app.
@@ -155,7 +187,36 @@
         $("#endDate").val(endDate.format(dateFmt));
       }
 
-      console.log("ELMR Application Started");
+      /*
+       * Toggles the loader if data needs to be reloaded for some reason.
+       * Pass isLoading (true or false) to toggle loading on or off, and
+       * a function for when the toggle is complete to be called after.
+       */
+      function toggleLoading(isLoading, complete) {
+        // Set the effects here
+        var appEffect = "fade";
+        var ldrEffect = "drop";
+
+        // Reset Bootstrap Hidden with jQuery Hide
+        $(".hidden").hide().removeClass("hidden");
+        $(".show").show().removeClass("show");
+
+        if (isLoading) {
+
+          // show loader gif and hide content
+          $("#application").hide(appEffect, 1000, function() {
+              $("#loading").show(ldrEffect, 200, complete);
+            });
+
+        } else {
+
+          // hide the loader gif and show content
+          $("#loading").hide(ldrEffect, 1000, function() {
+              $("#application").show(appEffect, 200, complete);
+            });
+
+        }
+      }
 
     });
   </script>

@@ -1,5 +1,9 @@
 /* Styles for our D3 app */
 
+#loading img {
+    margin: 200px auto;
+}
+
 /* Headlines */
 
 .headline-wrapper {

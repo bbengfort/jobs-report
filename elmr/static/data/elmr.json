@@ -1,0 +1,12 @@
+{
+    "version": 1,
+    "created": "2015-04-06T17:58:29.781614Z",
+    "note": "this is just stub data",
+    "data": {
+        "groceries": [
+            "apples",
+            "oranges",
+            "grapes"
+        ]
+    }
+}
