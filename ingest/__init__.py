@@ -16,3 +16,7 @@ Data ingestion from the BLS API
 ##########################################################################
 ## Imports
 ##########################################################################
+
+from version import get_version
+
+__version__ = get_version()

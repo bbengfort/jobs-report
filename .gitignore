@@ -60,5 +60,6 @@ venv
 .DS_Store
 
 # Fixtures
-fixtures/*
+fixtures/ingest-*
+fixtures/*.txt
 !fixtures/*.tgz

@@ -8,11 +8,15 @@ PYTHONPATH := $(LOCALPATH)/
 PYTHON_BIN := $(VIRTUAL_ENV)/bin
 
 # Export targets not associated with files
-.PHONY: test showenv coverage bootstrap pip virtualenv clean
+.PHONY: test showenv coverage bootstrap pip virtualenv clean ingest
 
 # Run the development server
 runserver:
-	$(PYTHON_BIN)/python elmr/app.py
+	$(PYTHON_BIN)/python $(CURDIR)/bin/elmr-admin.py runserver
+
+# Ingest data from BLS
+ingest:
+	$(PYTHON_BIN)/python $(CURDIR)/bin/elmr-admin.py ingest
 
 # Clean build files
 clean:

@@ -20,7 +20,9 @@ stores it in a Fixtures directory for wrangling.
 ## Imports
 ##########################################################################
 
-from os import path
+import os
+import json
+import datetime
 from blsapi import bls_series
 
 ##########################################################################
@@ -30,8 +32,8 @@ from blsapi import bls_series
 STARTYEAR  = "2000"   # Fetch start
 ENDYEAR    = "2015"   # Fetch end
 
-BASE_PATH  = path.join(path.dirname(__file__), "..")
-FIXTURES   = path.join(BASE_PATH, "fixtures")
+BASE_PATH  = os.path.join(os.path.dirname(__file__), "..")
+FIXTURES   = os.path.join(BASE_PATH, "fixtures")
 
 TimeSeries = {
     "LNS11000000": "Civilian Labor Force Level",
@@ -76,25 +78,28 @@ TimeSeries = {
     "LNU02033224": "Employment Level, Nonag. Industries, At Work 1-34 Hrs, Usually Work Full time, Bad Weather",
 }
 
+
+def fetch_all(startyear=STARTYEAR, endyear=ENDYEAR, fixtures=FIXTURES):
+    dname  = "ingest-%s" % datetime.datetime.now().strftime("%Y-%m-%d")
+    folder = os.path.join(fixtures, dname)
+
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
+    for idx in xrange(0, len(TimeSeries), 10):
+        series = TimeSeries.keys()[idx:idx + 10]
+        data   = bls_series(series, startyear=STARTYEAR, endyear=ENDYEAR)
+
+        for dataset in data['Results']['series']:
+            fname = os.path.join(folder, "%s.json" % dataset['seriesID'])
+            with open(fname, 'w') as f:
+                json.dump(dataset, f, indent=2)
+
+    return folder, len(TimeSeries)
+
 ##########################################################################
 ## Main Method
 ##########################################################################
 
 if __name__ == '__main__':
-
-    import os
-    import json
-    import datetime
-
-    folder = path.join(FIXTURES, "ingest-%s" % datetime.datetime.now().strftime("%Y-%m-%d"))
-    if not path.exists(folder):
-        os.makedirs(folder)
-
-    for idx in xrange(0, len(TimeSeries), 10):
-        series = TimeSeries.keys()[idx:idx+10]
-        data   = bls_series(series, startyear=STARTYEAR, endyear=ENDYEAR)
-
-        for dataset in data['Results']['series']:
-            fname = path.join(folder, "%s.json" % dataset['seriesID'])
-            with open(fname, 'w') as f:
-                json.dump(dataset, f, indent=2)
+    fetch_all()
