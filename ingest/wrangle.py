@@ -39,6 +39,13 @@ JSON_FMT = "%Y-%m-%dT%H:%M:%S.%f"
 ##########################################################################
 
 
+def get_date(fmt=DATE_FMT):
+    """
+    Returns the current date formatted correctly
+    """
+    return datetime.now().strftime(fmt)
+
+
 def extract(path):
     """
     Extracts timeseries data from a JSON file and returns a list of tuples
@@ -67,8 +74,7 @@ def wrangle(date=None):
     Returns the data and the data directory as found by the date.
     """
 
-    if date is None:
-        date = datetime.now().strftime("%Y-%m-%d")
+    date = date or get_date()  # Get current date if date is None
 
     dir = os.path.join(FIXTURES, "ingest-%s" % date)
     if not os.path.exists(dir) or not os.path.isdir(dir):
@@ -89,6 +95,8 @@ def wrangle_csv(date=None, out=None):
     Takes an ingest date and then wrangles the data found in that directory to
     a CSV format that can be used to import data into a database system.
     """
+
+    date = date or get_date()  # Get current date if date is None
 
     dir, data = wrangle(date)
 
@@ -116,6 +124,8 @@ def wrangle_json(date=None, out=None, indent=None):
     a JSON format specifically required by the ELMR application.
     """
 
+    date = date or get_date()  # Get current date if date is None
+
     dir, data = wrangle(date)
 
     if out is None:
@@ -123,20 +133,29 @@ def wrangle_json(date=None, out=None, indent=None):
 
     ## Create output dictionary
     output = {
-        "title": "ELMR Ingested BLS Data",
-        "version": get_version(),
-        "ingested": date,
-        "wrangled": datetime.now().strftime(JSON_FMT),
-        "descriptions": TimeSeries,
-        "data": [],
+        "title": "ELMR Ingested BLS Data",   # Title of the dataset
+        "version": get_version(),            # Version of wrangling code
+        "ingested": date,                    # Date ingestion was run from BLS
+        "wrangled": get_date(JSON_FMT),      # Current timestamp of wrangling
+        "descriptions": TimeSeries,          # IDs/Names of time series
+        "period": {                          # Period covered by time series
+            "start": None,                   # Earliest time series date
+            "end": None,                     # Latest time series date
+        },
+        "data": [],                          # Sorted timeseries data
     }
 
     rows = 0
-    for date, values in sorted(data.items(), key=itemgetter(0), reverse=True):
+    for date, values in sorted(data.items(), key=itemgetter(0)):
         values["YEAR"]  = date.year
         values["MONTH"] = date.month
+        values["DATE"]  = date.strftime("%b %Y")
         output["data"].append(values)
         rows += 1
+
+    # Compute period from the dates
+    output["period"]["start"] = output["data"][0]["DATE"]
+    output["period"]["end"] = output["data"][-1]["DATE"]
 
     with open(out, 'w') as f:
         json.dump(output, f, indent=indent)
@@ -144,5 +163,5 @@ def wrangle_json(date=None, out=None, indent=None):
     return out, rows
 
 if __name__ == '__main__':
-    wrangle_json("2015-03-10")
+    wrangle_json("2015-04-06")
     # print extract(os.path.join(FIXTURES, "ingest-2015-03-10", "LNS11000000.json"))
