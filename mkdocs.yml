@@ -2,4 +2,7 @@ site_name: Jobs Report
 pages:
 - [index.md, Home]
 - [ingest.md, Ingestion]
+- [develop.md, Development]
+- [deploy.md, Deployment]
+- [about.md, About]
 theme: readthedocs

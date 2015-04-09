@@ -7,19 +7,18 @@
 
 **Visualization of the monthly jobs report by the BLS**
 
-ELMR = Economic Labor Measurement Report
-
-Just a temporary name for now - but thought it might be cute for a start. You can find ELMR online as well as help documentation at the following links:
+You can find ELMR online as well as help documentation at the following links:
 
 - [ELMR Application](https://elmr.herokuapp.com/)
 - [ELMR Read the Docs](http://jobs-report.readthedocs.org/en/latest/)
 
-Note that pushing to the `master` branch of this repository will automatically redeploy the app to Heroku. Pushes will also update the documentation on ReadTheDocs.org. 
+Note that pushing to the `master` branch of this repository will automatically redeploy the app to Heroku. Pushes will also update the documentation on ReadTheDocs.org.
 
 ## Components
 
 This project consists of the following:
 
+- An ingestion system that fetches data from the Bureau of Labor Statistics
 - A simple Flask application that serves data with a RESTful API
 - A front end visualization created with D3 and Bootstrap
 
@@ -55,17 +54,23 @@ Here's the quick steps to get the server running so you can start developing on 
 
         (venv)$ pip install -r requirements.txt
 
-6. Run the server
-
-        (venv)$ make runserver
-
-    You can also simply run `python elmr/app.py` if you wish.
-
-7. Open a browser to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
-
-8. You can run the tests as follows:
+6. Run the tests to make sure everything is set to go.
 
         (venv)$ make test
+
+7. Run the ingestion tool to fetch the latest data.
+
+        (venv)$ bin/elmr-admin.py ingest
+
+8. Copy the ingested data to the data folder of the app (this step will be deprecated soon).
+
+        (venv)$ cp fixtures/ingest-DATE/elmr.json elmr/static/data/elmr.json
+
+9. Run the server
+
+        (venv)$ bin/elmr-admin.py runserver
+
+10. Open a browser to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 ## Dependencies and Development
 
@@ -101,6 +106,8 @@ Note: the current color matches the "info" text scheme, if you'd like to use it,
 
 ## About
 
-This project was developed as part of a course project at the University of Maryland
+This project was developed as part of a course project at the University of Maryland.
 
-The image in this README, [Census punch card reader](https://flic.kr/p/6525aR) by [Andrew Shieh](https://www.flickr.com/photos/shandrew/) is licensed by [CC BY-NC-2.0](https://creativecommons.org/licenses/by-nc/2.0/).
+ELMR = Economic Labor Measurement Report
+
+The image used in this README, [Census punch card reader](https://flic.kr/p/6525aR) by [Andrew Shieh](https://www.flickr.com/photos/shandrew/), is licensed by [CC BY-NC-2.0](https://creativecommons.org/licenses/by-nc/2.0/).
