@@ -35,7 +35,7 @@ sys.path.append(BASE_DIR)
 import elmr
 
 from elmr.config import get_settings_object
-from ingest import fetch, wrangle
+from elmr.ingest import fetch, wrangle
 
 ##########################################################################
 ## Script Definition
@@ -73,8 +73,8 @@ def ingest_data(args):
 
     folder, num_series = fetch.fetch_all(**fetchopts)
 
-    fcsv, num_rows = wrangle.wrangle_csv()
-    fjson, _ = wrangle.wrangle_json()
+    fcsv, num_rows = wrangle.wrangle_csv(fixtures=FIXTURES)
+    fjson, _ = wrangle.wrangle_json(fixtures=FIXTURES)
 
     return (
         "Ingested %i rows in %i time series to %s\n"

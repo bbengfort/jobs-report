@@ -1,4 +1,4 @@
-# ingest.wrangle
+# elmr.ingest.wrangle
 # Converts the ingested data into a single CSV file
 #
 # Author:   Benjamin Bengfort <bengfort@cs.umd.edu>
@@ -24,14 +24,15 @@ import csv
 import glob
 import json
 
-from fetch import FIXTURES
-from fetch import TimeSeries
 from datetime import datetime
 from operator import itemgetter
-from version import get_version
 from collections import defaultdict
+from elmr.version import get_version
+from elmr.ingest.fetch import FIXTURES
+from elmr.ingest.fetch import TimeSeries
 
 DATE_FMT = "%B %Y"
+JSON_DTE = "%Y-%m-%d"
 JSON_FMT = "%Y-%m-%dT%H:%M:%S.%f"
 
 ##########################################################################
@@ -68,15 +69,15 @@ def extract(path):
     return series_id, series
 
 
-def wrangle(date=None):
+def wrangle(date=None, fixtures=FIXTURES):
     """
     Takes an ingestion data and loads the data found in that directory.
     Returns the data and the data directory as found by the date.
     """
 
-    date = date or get_date()  # Get current date if date is None
+    date = date or get_date(JSON_DTE)  # Get current date if date is None
 
-    dir = os.path.join(FIXTURES, "ingest-%s" % date)
+    dir = os.path.join(fixtures, "ingest-%s" % date)
     if not os.path.exists(dir) or not os.path.isdir(dir):
         raise Exception("Could not find directory named '%s'" % dir)
 
@@ -90,15 +91,14 @@ def wrangle(date=None):
     return dir, data
 
 
-def wrangle_csv(date=None, out=None):
+def wrangle_csv(date=None, out=None, fixtures=FIXTURES):
     """
     Takes an ingest date and then wrangles the data found in that directory to
     a CSV format that can be used to import data into a database system.
     """
 
-    date = date or get_date()  # Get current date if date is None
-
-    dir, data = wrangle(date)
+    dir, data = wrangle(date, fixtures)
+    date = date or get_date(JSON_FMT)  # Get current date if date is None
 
     if out is None:
         out  = os.path.join(dir, "dataset.csv")
@@ -118,15 +118,14 @@ def wrangle_csv(date=None, out=None):
     return out, rows
 
 
-def wrangle_json(date=None, out=None, indent=None):
+def wrangle_json(date=None, out=None, indent=None, fixtures=FIXTURES):
     """
     Takes an ingest date and then wrangles the data found in that directory to
     a JSON format specifically required by the ELMR application.
     """
 
-    date = date or get_date()  # Get current date if date is None
-
-    dir, data = wrangle(date)
+    dir, data = wrangle(date, fixtures)
+    date = date or get_date(JSON_FMT)  # Get current date if date is None
 
     if out is None:
         out  = os.path.join(dir, "elmr.json")

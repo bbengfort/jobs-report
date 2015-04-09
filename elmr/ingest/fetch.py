@@ -1,4 +1,4 @@
-# ingest.fetch
+# elmr.ingest.fetch
 # Fetches the important data sets and saves them as a table by year
 #
 # Author:   Benjamin Bengfort <bengfort@cs.umd.edu>
@@ -23,7 +23,8 @@ stores it in a Fixtures directory for wrangling.
 import os
 import json
 import datetime
-from blsapi import bls_series
+
+from elmr.ingest.blsapi import bls_series
 
 ##########################################################################
 ## Module Constants

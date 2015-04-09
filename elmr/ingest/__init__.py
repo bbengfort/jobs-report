@@ -1,4 +1,4 @@
-# ingest
+# elmr.ingest
 # Data ingestion from the BLS API
 #
 # Author:   Benjamin Bengfort <bengfort@cs.umd.edu>
@@ -16,7 +16,3 @@ Data ingestion from the BLS API
 ##########################################################################
 ## Imports
 ##########################################################################
-
-from version import get_version
-
-__version__ = get_version()

@@ -1,4 +1,4 @@
-# ingest.blsapi
+# elmr.ingest.blsapi
 # Tools for interacting with the BLS API.
 #
 # Author:   Benjamin Bengfort <bengfort@cs.umd.edu>
@@ -16,7 +16,6 @@ Tools for interacting with the BLS API.
 ##########################################################################
 ## Imports
 ##########################################################################
-
 
 import os
 import json
@@ -36,6 +35,7 @@ BLS_API_KEY  = os.environ.get('BLS_API_KEY')
 ## BLS API Endpoint
 BLS_ENDPOINT = "http://api.bls.gov/publicAPI/v2/timeseries/data/"
 
+
 def single_series(series_id, **kwargs):
     """
     Used to fetch data for a single timeseries ID for the past three years.
@@ -45,11 +45,11 @@ def single_series(series_id, **kwargs):
     headers  = kwargs.get("headers", {})
     response = requests.get(endpoint, headers=headers)
 
-
     if response.status_code != requests.codes.ok:
         response.raise_for_status()
 
     return response.json()
+
 
 def multiple_series(series_id, **kwargs):
     """
@@ -83,6 +83,7 @@ def multiple_series(series_id, **kwargs):
 
     return result
 
+
 def bls_series(series_id, **kwargs):
     """
     Authenticated request to the BLS API to fetch timeseries data in JSON
@@ -100,7 +101,7 @@ def bls_series(series_id, **kwargs):
 
     # Convert strings to a list for authentication
     if isinstance(series_id, basestring):
-        series_id = [series_id,]
+        series_id = [series_id, ]
 
     headers  = kwargs.pop('headers', {})
     payload  = {'registrationKey': BLS_API_KEY}
@@ -115,6 +116,6 @@ def bls_series(series_id, **kwargs):
 if __name__ == '__main__':
 
     ## Demo Series
-    series = ['LNS12000000','LNS13000000', 'LNS10000000']
+    series = ['LNS12000000', 'LNS13000000', 'LNS10000000']
     result = bls_series(series, startyear='2010', endyear='2015')
     print json.dumps(result, indent=2)

@@ -1,4 +1,4 @@
-# ingest.demo
+# elmr.ingest.demo
 # Code snippet showing how to download TimeSeries data using the BLS API.
 #
 # Author:   Benjamin Bengfort <bengfort@cs.umd.edu>
@@ -19,7 +19,7 @@ Code snippet showing how to download TimeSeries data using the BLS API.
 
 import prettytable
 
-from blsapi import *
+from elmr.ingest.blsapi import *
 
 ##########################################################################
 ## Main Statement with Demo code
@@ -28,12 +28,12 @@ from blsapi import *
 if __name__ == '__main__':
 
     ## Demo Series
-    series = ['LNS12000000','LNS13000000', 'LNS10000000']
+    series = ['LNS12000000', 'LNS13000000', 'LNS10000000']
     result = bls_series(series, startyear='2010', endyear='2015')
 
     ## Pretty print a table of the results
     for s in result['Results']['series']:
-        table = prettytable.PrettyTable(["series id","year","period","value","footnotes"])
+        table = prettytable.PrettyTable(["series id", "year", "period", "value", "footnotes"])
         for item in s['data']:
             row   = [
                 s['seriesID'],                  # Series ID
