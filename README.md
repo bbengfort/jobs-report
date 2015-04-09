@@ -2,6 +2,8 @@
 
 [![Stories in Ready](https://badge.waffle.io/bbengfort/jobs-report.png?label=ready&title=Ready)](https://waffle.io/bbengfort/jobs-report) [![Build Status](https://travis-ci.org/bbengfort/jobs-report.svg)](https://travis-ci.org/bbengfort/jobs-report)
 
+[![Census punch card reader](docs/images/punch_card_reader.jpg)](https://flic.kr/p/6525aR)
+
 **Visualization of the monthly jobs report by the BLS**
 
 ELMR = Economic Labor Measurement Report
@@ -89,3 +91,10 @@ Note: the current color matches the "info" text scheme, if you'd like to use it,
     Where "icon class" is the name of the icon from the list of icons at the link provided. Icons can be colored and sized using CSS font-size and color attributes.
 
 - [Bootstrap](http://getbootstrap.com/css/) handles the grid layout and most of the non-javascript components on the page. If you don't know Bootstrap, then you'll have trouble dealing with the HTML.
+
+
+## About
+
+This project was developed as part of a course project at the University of Maryland
+
+The image in this README, [Census punch card reader](https://flic.kr/p/6525aR) by [Andrew Shieh](https://www.flickr.com/photos/shandrew/) is licensed by [CC BY-NC-2.0](https://creativecommons.org/licenses/by-nc/2.0/).
