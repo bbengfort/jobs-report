@@ -24,6 +24,7 @@ from flask import Flask
 from flask.ext import restful
 from elmr.version import get_version
 from elmr.config import get_settings_object
+from flask.ext.sqlalchemy import SQLAlchemy
 
 ##########################################################################
 ## Module Definition
@@ -41,6 +42,17 @@ api = restful.Api(app)
 
 # Configure the App
 app.config.from_object(get_settings_object("development"))
+
+# Create the Database Object/Session
+db = SQLAlchemy(app)
+
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    """
+    Teardown the DB when the session is shutdown
+    """
+    db.session.remove()
 
 ##########################################################################
 ## Import Resources

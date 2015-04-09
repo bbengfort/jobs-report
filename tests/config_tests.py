@@ -41,6 +41,7 @@ class ConfigurationTests(unittest.TestCase):
         self.assertFalse(Config.TESTING)
         self.assertTrue(hasattr(Config, "SECRET_KEY"))
         self.assertTrue(hasattr(Config, "CSRF_ENABLED"))
+        self.assertTrue(hasattr(Config, "DATABASE_URI"))
         self.assertEqual(Config.STARTYEAR, "2000")
         self.assertEqual(Config.ENDYEAR, "2015")
         self.assertTrue(Config.FIXTURES.endswith("fixtures"))

@@ -96,6 +96,7 @@ class Config(object):
     TESTING      = settings("testing", False)
     CSRF_ENABLED = settings("csrf_enabled", True)
     SECRET_KEY   = settings("secret_key", required=True)
+    DATABASE_URI = settings("database_uri")
 
     ## Ingestion Settings
     STARTYEAR    = settings("startyear", "2000")
@@ -125,3 +126,4 @@ class TestingConfig(DevelopmentConfig):
 
     TESTING      = True
     SECRET_KEY   = "supersecret"  # secret not needed in testing
+    DATABASE_URI = "postgresql+psycopg2://travis:secret@localhost/elmrtest"
