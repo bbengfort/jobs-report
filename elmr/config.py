@@ -27,6 +27,8 @@ from elmr.exceptions import ImproperlyConfigured
 
 
 ENVIRON_PREFIX = "ELMR"
+BASE_PATH      = os.path.join(os.path.dirname(__file__), "..")
+FIXTURES       = os.path.join(BASE_PATH, "fixtures")
 
 
 def settings(name, default=None, prefix=ENVIRON_PREFIX):
@@ -81,8 +83,15 @@ class Config(object):
     Default configuration for ELMR application
     """
 
-    DEBUG     = settings("debug", False)
-    TESTING   = settings("testing", False)
+    ## Flask Settings
+
+    DEBUG      = settings("debug", False)
+    TESTING    = settings("testing", False)
+
+    ## Ingestion Settings
+    STARTYEAR  = settings("startyear", "2000")
+    ENDYEAR    = settings("endyear", "2015")
+    FIXTURES   = settings("fixtures", FIXTURES)
 
 
 class ProductionConfig(Config):

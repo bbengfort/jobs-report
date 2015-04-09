@@ -24,17 +24,16 @@ import os
 import json
 import datetime
 
+from elmr.config import Config
 from elmr.ingest.blsapi import bls_series
 
 ##########################################################################
 ## Module Constants
 ##########################################################################
 
-STARTYEAR  = "2000"   # Fetch start
-ENDYEAR    = "2015"   # Fetch end
-
-BASE_PATH  = os.path.join(os.path.dirname(__file__), "..")
-FIXTURES   = os.path.join(BASE_PATH, "fixtures")
+STARTYEAR  = Config.STARTYEAR   # Fetch start
+ENDYEAR    = Config.ENDYEAR     # Fetch end
+FIXTURES   = Config.FIXTURES    # Fixtures directory
 
 TimeSeries = {
     "LNS11000000": "Civilian Labor Force Level",
