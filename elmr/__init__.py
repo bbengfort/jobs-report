@@ -18,3 +18,5 @@ Simple Flask Web Application to develop the Jobs Report
 ##########################################################################
 
 __version__ = "1.0"
+
+from .app import app
