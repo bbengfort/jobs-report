@@ -21,6 +21,7 @@ this module, and run the app.
 ##########################################################################
 
 from flask import Flask
+from flask.ext import restful
 from elmr.version import get_version
 from elmr.config import get_settings_object
 
@@ -36,6 +37,7 @@ __version__ = get_version()
 
 # Create Flask App
 app = Flask(__name__)
+api = restful.Api(app)
 
 # Configure the App
 app.config.from_object(get_settings_object("development"))
