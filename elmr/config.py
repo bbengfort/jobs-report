@@ -31,14 +31,21 @@ BASE_PATH      = os.path.join(os.path.dirname(__file__), "..")
 FIXTURES       = os.path.join(BASE_PATH, "fixtures")
 
 
-def settings(name, default=None, prefix=ENVIRON_PREFIX):
+def settings(name, default=None, required=False, prefix=ENVIRON_PREFIX):
     """
     Fetches the setting from the an environment variable by prepending
-    the prefix, if not found, sets the default value.
+    the prefix, if not found, sets the default value. If required, and the
+    setting remains None, this function will raise an ImproperlyConfigured
+    exception.
     """
     envvar = "%s_%s" % (prefix.upper(), name.upper())
     if envvar in os.environ:
         return os.environ[envvar]
+
+    if required and default is None:
+        raise ImproperlyConfigured("Missing required setting '%s' "
+                                   "from environment" % envvar)
+
     return default
 
 
@@ -85,13 +92,15 @@ class Config(object):
 
     ## Flask Settings
 
-    DEBUG      = settings("debug", False)
-    TESTING    = settings("testing", False)
+    DEBUG        = settings("debug", False)
+    TESTING      = settings("testing", False)
+    CSRF_ENABLED = settings("csrf_enabled", True)
+    SECRET_KEY   = settings("secret_key", required=True)
 
     ## Ingestion Settings
-    STARTYEAR  = settings("startyear", "2000")
-    ENDYEAR    = settings("endyear", "2015")
-    FIXTURES   = settings("fixtures", FIXTURES)
+    STARTYEAR    = settings("startyear", "2000")
+    ENDYEAR      = settings("endyear", "2015")
+    FIXTURES     = settings("fixtures", FIXTURES)
 
 
 class ProductionConfig(Config):
@@ -106,7 +115,7 @@ class DevelopmentConfig(Config):
     Development specific settings for ELMR application
     """
 
-    DEBUG     = True
+    DEBUG        = True
 
 
 class TestingConfig(DevelopmentConfig):
@@ -114,4 +123,5 @@ class TestingConfig(DevelopmentConfig):
     Testing settings for travis-ci and other tests
     """
 
-    TESTING   = True
+    TESTING      = True
+    SECRET_KEY   = "supersecret"  # secret not needed in testing

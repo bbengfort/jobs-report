@@ -29,4 +29,4 @@ clean:
 
 # Targets for testing the app
 test:
-	$(PYTHON_BIN)/nosetests -v
+	ELMR_SETTINGS=testing $(PYTHON_BIN)/nosetests -v
