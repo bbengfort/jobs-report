@@ -32,8 +32,9 @@ FIXTURES = os.path.join(BASE_DIR, "fixtures")
 sys.path.append(BASE_DIR)
 
 ## Import ELMR Libraries
-from elmr import __version__
-from elmr.app import app as elmrapp
+import elmr
+
+from elmr.config import get_settings_object
 from ingest import fetch, wrangle
 
 ##########################################################################
@@ -42,7 +43,7 @@ from ingest import fetch, wrangle
 
 DESCRIPTION = "An administrative utility for the ELMR Project"
 EPILOG      = "If there are any bugs or concerns, submit an issue on Github"
-VERSION     = __version__
+VERSION     = elmr.get_version()
 
 ##########################################################################
 ## Commands
@@ -53,7 +54,10 @@ def runserver(args):
     """
     Run the local development server
     """
-    elmrapp.run()
+    mode = get_settings_object("development")
+    print "running ELMR with %s configuration" % mode
+
+    elmr.app.run()
     return ""
 
 

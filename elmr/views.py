@@ -1,16 +1,16 @@
-# elmr.app
-# A small Flask web app to serve static files
+# views
+# Routes for the ELMR web application
 #
 # Author:   Benjamin Bengfort <benjamin@bengfort.com>
-# Created:  Tue Mar 03 09:21:32 2015 -0500
+# Created:  Thu Apr 09 09:13:29 2015 -0400
 #
-# Copyright (C) 2014 Bengfort.com
+# Copyright (C) 2015 University of Maryland
 # For license information, see LICENSE.txt
 #
-# ID: app.py [] benjamin@bengfort.com $
+# ID: views.py [] benjamin@bengfort.com $
 
 """
-A small Flask web app to serve static files
+Routes for the ELMR web application
 """
 
 ##########################################################################
@@ -19,14 +19,8 @@ A small Flask web app to serve static files
 
 import os
 
-from flask import Flask, render_template, send_from_directory
-
-##########################################################################
-## Configure Flask
-##########################################################################
-
-app = Flask(__name__)
-app.debug = True
+from elmr import app
+from flask import render_template, send_from_directory
 
 ##########################################################################
 ## Configure Routes
@@ -43,6 +37,3 @@ def favicon():
     dirname = os.path.join(app.root_path, 'static')
     return send_from_directory(dirname, 'favicon.ico',
                                mimetype='image/vnd.microsoft.icon')
-
-if __name__ == '__main__':
-    app.run()

@@ -11,12 +11,38 @@
 
 """
 Simple Flask Web Application to develop the Jobs Report
+
+This file contains Flask-specific details. All that's required is to import
+this module, and run the app.
 """
+
+##########################################################################
+## Primary Imports
+##########################################################################
+
+from flask import Flask
+from elmr.version import get_version
+from elmr.config import get_settings_object
 
 ##########################################################################
 ## Module Definition
 ##########################################################################
 
-__version__ = "1.0"
+__version__ = get_version()
 
-from .app import app
+##########################################################################
+## Configure Flask
+##########################################################################
+
+# Create Flask App
+app = Flask(__name__)
+
+# Configure the App
+app.config.from_object(get_settings_object("development"))
+
+##########################################################################
+## Import Resources
+##########################################################################
+
+# Import views: must be after app config
+import elmr.views
