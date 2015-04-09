@@ -1,6 +1,7 @@
 # Jobs Report (ELMR)
 
-[![Stories in Ready](https://badge.waffle.io/bbengfort/jobs-report.png?label=ready&title=Ready)](https://waffle.io/bbengfort/jobs-report) [![Build Status](https://travis-ci.org/bbengfort/jobs-report.svg)](https://travis-ci.org/bbengfort/jobs-report)
+[![Stories in Ready](https://badge.waffle.io/bbengfort/jobs-report.png?label=ready&title=Ready)](https://waffle.io/bbengfort/jobs-report) [![Build Status](https://travis-ci.org/bbengfort/jobs-report.svg)](https://travis-ci.org/bbengfort/jobs-report) [![Documentation Status](https://readthedocs.org/projects/jobs-report/badge/?version=latest)](https://readthedocs.org/projects/jobs-report/?badge=latest)
+
 
 [![Census punch card reader](docs/images/punch_card_reader.jpg)](https://flic.kr/p/6525aR)
 
@@ -8,7 +9,12 @@
 
 ELMR = Economic Labor Measurement Report
 
-Just a temporary name for now - but thought it might be cute for a start.
+Just a temporary name for now - but thought it might be cute for a start. You can find ELMR online as well as help documentation at the following links:
+
+- [ELMR Application](https://elmr.herokuapp.com/)
+- [ELMR Read the Docs](http://jobs-report.readthedocs.org/en/latest/)
+
+Note that pushing to the `master` branch of this repository will automatically redeploy the app to Heroku. Pushes will also update the documentation on ReadTheDocs.org. 
 
 ## Components
 
