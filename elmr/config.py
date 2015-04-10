@@ -136,4 +136,4 @@ class TestingConfig(DevelopmentConfig):
 
     TESTING      = True
     SECRET_KEY   = "supersecret"  # secret not needed in testing
-    DATABASE_URI = "postgresql+psycopg2://travis:secret@localhost/elmrtest"
+    DATABASE_URI = "postgresql+psycopg2://tester:secret@localhost/elmrtest"
