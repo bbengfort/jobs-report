@@ -41,8 +41,10 @@ class IngestionRecord(db.Model):
     num_series  = db.Column(db.Integer, default=0)
     num_added   = db.Column(db.Integer, default=0)
     num_fetched = db.Column(db.Integer, default=0)
-    timestamp   = db.Column(db.DateTime(timezone=True), nullable=False,
+    started     = db.Column(db.DateTime(timezone=True), nullable=False,
                             default=datetime.now)
+    finished    = db.Column(db.DateTime(timezone=True), nullable=False,
+                            default=datetime.now, onupdate=datetime.now)
 
 ##########################################################################
 ## Time Series Information

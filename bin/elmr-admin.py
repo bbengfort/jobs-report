@@ -39,8 +39,8 @@ sys.path.append(BASE_DIR)
 ## Import ELMR Libraries
 import elmr
 
+from elmr.ingest import ingest
 from elmr.config import get_settings_object
-from elmr.ingest import fetch, wrangle
 
 ##########################################################################
 ## Script Definition
@@ -84,22 +84,19 @@ def ingest_data(args):
     """
     Ingest and wrangle data from BLS
     """
-    fetchopts = {
-        "fixtures": FIXTURES,
-        "startyear": args.start_year or fetch.STARTYEAR,
-        "endyear": args.end_year or fetch.ENDYEAR
-    }
 
-    folder, num_series = fetch.fetch_all(**fetchopts)
+    conf = get_config()
+    opts = dict(vars(args))
+    del opts['func']
 
-    fcsv, num_rows = wrangle.wrangle_csv(fixtures=FIXTURES)
-    fjson, _ = wrangle.wrangle_json(fixtures=FIXTURES)
+    opts['startyear'] = opts.pop('start_year') or conf.STARTYEAR
+    opts['endyear']   = opts.pop('end_year') or conf.ENDYEAR
+
+    record = ingest(**opts)
 
     return (
-        "Ingested %i rows in %i time series to %s\n"
-        "Wrote JSON data to %s\n"
-        "Wrote CSV data to %s"
-    ) % (num_rows, num_series, folder, fcsv, fjson)
+        "Ingested %i rows in %i time series in %0.3f seconds"
+    ) % (record.num_added, record.num_series, record.duration)
 
 
 def createdb(args):
@@ -203,8 +200,13 @@ if __name__ == '__main__':
 
     # Ingest Command
     ingest_parser = subparsers.add_parser('ingest', help='Ingest and wrangle data from BLS')
+    ingest_parser.add_argument('--fixtures', default=FIXTURES, metavar='PATH', help="root dir to store downloads")
     ingest_parser.add_argument('--start-year', metavar="YEAR", default=None, help="starting year of timeseries to ingest")
     ingest_parser.add_argument('--end-year', metavar="YEAR", default=None, help="ending year of timeseries to ingest")
+    ingest_parser.add_argument('--cleanup', action="store_true", help="remove temporary disk storage when done")
+    ingest_parser.add_argument('--per-page', dest='blocksize', type=int, default=10, help="number of series to fetch from the api at at time")
+    ingest_parser.add_argument('--wait', dest='ratelimit', metavar='SEC', default=1, type=int, help="seconds to wait between API calls")
+    ingest_parser.add_argument('--title', metavar='TEXT', default="ELMR Command Line Ingestion", help="specify a title for the ingestion record")
     ingest_parser.set_defaults(func=ingest_data)
 
     # CreateDB Command
@@ -225,8 +227,8 @@ if __name__ == '__main__':
 
     # Handle input from the command line
     args = parser.parse_args()            # Parse the arguments
-    try:
-        msg = args.func(args)             # Call the default function
-        parser.exit(0, msg + "\n")        # Exit cleanly with message
-    except Exception as e:
-        parser.error(str(e))              # Exit with error
+    # try:
+    msg = args.func(args)             # Call the default function
+    parser.exit(0, msg + "\n")        # Exit cleanly with message
+    # except Exception as e:
+    #     parser.error(str(e))              # Exit with error

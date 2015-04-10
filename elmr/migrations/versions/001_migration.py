@@ -16,8 +16,11 @@ ingestions = Table('ingestions', post_meta,
     Column('num_series', Integer, default=ColumnDefault(0)),
     Column('num_added', Integer, default=ColumnDefault(0)),
     Column('num_fetched', Integer, default=ColumnDefault(0)),
-    Column('timestamp', DateTime(timezone=True), nullable=False,
+    Column('started', DateTime(timezone=True), nullable=False,
            default=ColumnDefault(datetime.now)),
+    Column('finished', DateTime(timezone=True), nullable=False,
+           default=ColumnDefault(datetime.now),
+           onupdate=ColumnDefault(datetime.now)),
 )
 
 records = Table('records', post_meta,
