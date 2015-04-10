@@ -46,6 +46,11 @@ class IngestionRecord(db.Model):
     finished    = db.Column(db.DateTime(timezone=True), nullable=False,
                             default=datetime.now, onupdate=datetime.now)
 
+    def __repr__(self):
+        ts = self.finished.strftime("%Y-%m-%d")
+        return ("<Ingestion on %s with %i records added from %i series>"
+                % (ts, self.num_added, self.num_series))
+
 ##########################################################################
 ## Time Series Information
 ##########################################################################
@@ -66,6 +71,9 @@ class Series(db.Model):
     records     = db.relationship('SeriesRecord', backref='series',
                                   lazy='dynamic')
 
+    def __repr__(self):
+        return "<Series %s>" % self.blsid
+
 
 class SeriesRecord(db.Model):
     """
@@ -79,3 +87,8 @@ class SeriesRecord(db.Model):
     period      = db.Column(db.Date, nullable=False, index=True)
     value       = db.Column(db.Float, nullable=False)
     footnote    = db.Column(db.Unicode(255), nullable=True)
+
+    def __repr__(self):
+        my = self.period.strftime("%B %Y")
+        return ("<Record for %s - %0.2f on %s>" %
+                (self.series.blsid, self.value, my))
