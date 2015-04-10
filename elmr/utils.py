@@ -17,10 +17,61 @@ Utility functions and classes for ELMR
 ## Imports
 ##########################################################################
 
+from datetime import datetime
+from datetime import timedelta
+from dateutil.tz import tzutc
+from calendar import monthrange
+
+##########################################################################
+## Sane Constants
+##########################################################################
+
+JSON_FMT = "%Y-%m-%dT%H:%M:%S.%f%z"
+
+##########################################################################
+## Time helpers
+##########################################################################
+
+
+def utcnow():
+    """
+    Returns timezone aware utcnow datetime
+    """
+    return datetime.now(tzutc())
+
+
+def months_since(dt):
+    """
+    Computes the number of months since a datetime (compared with UTC now)
+
+    TODO: Handle both timezone aware and unaaware datetimes
+    """
+    return months_between(dt, utcnow())
+
+
+def months_between(dta, dtb):
+    """
+    Computes the number of months between two datetimes. Note that dtb must
+    be bigger than dta in order for this function to work. Timezones also
+    matter!
+    """
+
+    delta = 0
+    while True:
+        mdays = monthrange(dta.year, dta.month)[1]
+        dta += timedelta(days=mdays)
+
+        if dta <= dtb:
+            delta += 1
+        else:
+            break
+
+    return delta
 
 ##########################################################################
 ## Decorators and Descriptors
 ##########################################################################
+
 
 class ClassPropertyDescriptor(object):
 

@@ -20,11 +20,15 @@ Routes for the ELMR web application
 import os
 import json  # TODO: remove
 
-from elmr import app, api
 from elmr import get_version
+from elmr import app, api, db
+from elmr.models import IngestionRecord
+from elmr.utils import JSON_FMT, utcnow, months_since
 
 from flask.ext.restful import Resource
 from flask import render_template, send_from_directory
+
+from sqlalchemy import desc
 
 ##########################################################################
 ## Configure Application Routes
@@ -69,10 +73,30 @@ class Heartbeat(Resource):
     """
 
     def get(self):
+
         context = {
-            'success': True,
+            'status': "white",
             'version': get_version(),
+            'timestamps': {
+                'current': utcnow().strftime(JSON_FMT),
+            }
         }
+
+        latest = IngestionRecord.query.order_by(desc('finished')).first()
+
+        if latest is not None:
+            months = months_since(latest.finished)
+
+            if months < 2:
+                context["status"] = "green"
+            elif months < 7:
+                context["status"] = "yellow"
+            else:
+                context["status"] = "red"
+
+            tsfields = context['timestamps']
+            tsfields['ingestion']  = latest.finished.strftime(JSON_FMT)
+            tsfields['monthdelta'] = months
 
         return context
 
