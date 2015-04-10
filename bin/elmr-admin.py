@@ -115,7 +115,7 @@ def createdb(args):
 
     # Store version controll and migrations
     if not os.path.exists(config.MIGRATIONS):
-        api.create(config.MIGRATIONS, 'database repository')
+        api.create(config.MIGRATIONS, 'elmr_db_repo')
         api.version_control(config.DATABASE_URI, config.MIGRATIONS)
     else:
         api.version_control(
@@ -129,7 +129,7 @@ def createdb(args):
 
 def migrate(args):
     """
-    Runs the migrate command for the latest version of the database
+    Create DB migrations for current version
     """
 
     # Get the configruation

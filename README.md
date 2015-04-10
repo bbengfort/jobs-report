@@ -54,23 +54,32 @@ Here's the quick steps to get the server running so you can start developing on 
 
         (venv)$ pip install -r requirements.txt
 
-6. Run the tests to make sure everything is set to go.
+6. Create a database for the ELMR app (ensure PostgreSQL is installed)
+
+        (venv)$ psql -c "CREATE DATABASE elmr;"
+        (venv)$ bin/elmr-admin.py createdb
+
+7. Migrate the to the latest version of the database
+
+        (venv)$ bin/elmr-admin.py upgrade
+
+8. Run the tests to make sure everything is set to go.
 
         (venv)$ make test
 
-7. Run the ingestion tool to fetch the latest data.
+9. Run the ingestion tool to fetch the latest data.
 
         (venv)$ bin/elmr-admin.py ingest
 
-8. Copy the ingested data to the data folder of the app (this step will be deprecated soon).
+10. Copy the ingested data to the data folder of the app (this step will be deprecated soon).
 
         (venv)$ cp fixtures/ingest-DATE/elmr.json elmr/static/data/elmr.json
 
-9. Run the server
+11. Run the server
 
         (venv)$ bin/elmr-admin.py runserver
 
-10. Open a browser to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+12. Open a browser to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 ## Dependencies and Development
 

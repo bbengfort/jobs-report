@@ -44,17 +44,32 @@ Here's the quick steps to get the server running so you can start developing on 
 
         (venv)$ pip install -r requirements.txt
 
-6. Run the server
+6. Create a database for the ELMR app (ensure PostgreSQL is installed)
 
-        (venv)$ make runserver
+        (venv)$ psql -c "CREATE DATABASE elmr;"
+        (venv)$ bin/elmr-admin.py createdb
 
-    You can also simply run `python elmr/app.py` if you wish.
+7. Migrate the to the latest version of the database
 
-7. Open a browser to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+        (venv)$ bin/elmr-admin.py upgrade
 
-8. You can run the tests as follows:
+8. Run the tests to make sure everything is set to go.
 
         (venv)$ make test
+
+9. Run the ingestion tool to fetch the latest data.
+
+        (venv)$ bin/elmr-admin.py ingest
+
+10. Copy the ingested data to the data folder of the app (this step will be deprecated soon).
+
+        (venv)$ cp fixtures/ingest-DATE/elmr.json elmr/static/data/elmr.json
+
+11. Run the server
+
+        (venv)$ bin/elmr-admin.py runserver
+
+12. Open a browser to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 ## Contributing
 
@@ -80,6 +95,27 @@ If you are a member of the CMSC 734 visualization group, you have direct access 
         ~$ git push origin develop
 
 4. Repeat. Releases will be routinely pushed into master via release branches, then deployed to the server.
+
+## Databases
+
+We're using a PostgreSQL database to power the application, allowing for analytics inside of the web application as well as making ingestion and querying easier. Using PostgreSQL adds a bit of overhead, but it's well worth it.
+
+Models are defined in `models.py` using the SQLAlchemy model code. If you make changes to `models.py` you need to update those changes for the database by using _migrations_. Migrations are managed by Flask-Migrate, and a few commands well help you get started.
+
+To create the database:
+
+    $ psql -c "CREATE DATABASE elmr;"
+    $ bin/elmr-admin.py createdb
+
+This command will cause PSQL to create a database with the owner as the currently logged in user. The `createdb` command will create the versioning table in the database as well as create the migrations folder if it doesn't already exist. Once you make changes:
+
+    $ bin/elmr-admin.py migrate
+
+This will create a migration file in the `elmr.migrations.versions` module. This Python script will be used to perform the migration on demand. Upgrade (or downgrade) the database as follows:
+
+    $ bin/elmr-admin.py upgrade
+
+Note that you'll have to run this as many times as it takes to get the DB version to spec. 
 
 ## Dependencies
 
