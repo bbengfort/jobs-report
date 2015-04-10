@@ -13,7 +13,15 @@
 Fetches the important data sets and saves them as a table by year.
 
 Basically this simple script fetches API data from the BLS website and
-stores it in a Fixtures directory for wrangling.
+stores it in a fixtures directory for wrangling.
+
+Method:
+
+    1. Fetch data from BLS API and save to disk
+    2. Wrangle data into database
+    3. Clean up data fetched onto disk
+
+The wrangle module is still there for other helper functions.
 """
 
 ##########################################################################
@@ -22,9 +30,14 @@ stores it in a Fixtures directory for wrangling.
 
 import os
 import json
+import time
+import shutil
 import datetime
 
 from elmr.config import Config
+from elmr.models import Series
+from elmr.models import SeriesRecord
+from elmr.models import IngestionRecord
 from elmr.ingest.blsapi import bls_series
 
 ##########################################################################
@@ -35,67 +48,87 @@ STARTYEAR  = Config.STARTYEAR   # Fetch start
 ENDYEAR    = Config.ENDYEAR     # Fetch end
 FIXTURES   = Config.FIXTURES    # Fixtures directory
 
-TimeSeries = {
-    "LNS11000000": "Civilian Labor Force Level",
-    "LNS11300000": "Civilian Labor Force Participation Rate",
-    "LNS12000000": "Employment Level",
-    "LNS12300000": "Employment-Population Ratio",
-    "LNS12500000": "Employed, Usually Work Full Time",
-    "LNS12600000": "Employed, Usually Work Part Time",
-    "LNS13000000": "Unemployment Level",
-    "LNS14000000": "Unemployment Rate",
-    "LNS14000012": "Unemployment Rate - 16-19 Years",
-    "LNS14000025": "Unemployment Rate - 20 Years & Over Men",
-    "LNS14000026": "Unemployment Rate - 20 Years & Over Women",
-    "LNS14000003": "Unemployment Rate - White",
-    "LNS14000006": "Unemployment Rate - Black or African American",
-    "LNS14032183": "Unemployment Rate - Asian",
-    "LNS14000009": "Unemployment Rate - Hispanic or Latino",
-    "LNS14027659": "Unemployment Rate - 25 Years & Over, Less than a High School Diploma",
-    "LNS14027660": "Unemployment Rate - 25 Years & Over, High School Graduates No College",
-    "LNS14027689": "Unemployment Rate - 25 Years & Over, Some College or Associate Degree",
-    "LNS14027662": "Unemployment Rate - 25 Years & Over, Bachelor's Degree and Higher",
-    "LNS13008396": "Number Unemployed For Less Than 5 weeks",
-    "LNS13008756": "Number Unemployed For 5-14 Weeks",
-    "LNS13008516": "Number Unemployed For 15 Weeks & Over",
-    "LNS13008636": "Number Unemployed For 27 Weeks & Over",
-    "LNS13008275": "Average Weeks Unemployed",
-    "LNS13008276": "Median Weeks Unemployed",
-    "LNS13023621": "Unemployment Level Job Losers",
-    "LNS13023653": "Unemployment Level Job Losers On Layoff",
-    "LNS13025699": "Unemployment Level Job Losers Not on Layoff",
-    "LNS13023705": "Unemployment Level Job Leavers",
-    "LNS13023557": "Unemployment Level Reentrants To Labor Force",
-    "LNS13023569": "Unemployment Level New Entrants",
-    "LNS12032194": "Persons At Work Part Time for Economic Reasons",
-    "LNS15000000": "Not in Labor Force",
-    "LNU05026642": "Marginally Attached to Labor Force",
-    "LNU05026645": "Discouraged Workers",
-    "LNS13327709": "Alternative measure of labor underutilization U-6",
-    "LNS12026619": "Multiple Jobholders Level",
-    "LNS12026620": "Multiple Jobholders as a Percent of Total Employed",
-    "LNU02036012": "Employment Level, Nonag. Industries, With a Job not at Work, Bad Weather",
-    "LNU02033224": "Employment Level, Nonag. Industries, At Work 1-34 Hrs, Usually Work Full time, Bad Weather",
-}
 
+##########################################################################
+## Fetch Methods
+##########################################################################
 
-def fetch_all(startyear=STARTYEAR, endyear=ENDYEAR, fixtures=FIXTURES):
+def ingest_path(root):
+    """
+    Returns a directory to temporarily hold intermediary data files. Creates
+    the directory if it does not exist to make things easier.
+
+    Considered using a temp directory - but thought we should allow the user
+    the option to keep the ingested JSON files on disk if they so desired.
+    """
+
     dname  = "ingest-%s" % datetime.datetime.now().strftime("%Y-%m-%d")
-    folder = os.path.join(fixtures, dname)
+    folder = os.path.join(root, dname)
 
     if not os.path.exists(folder):
         os.makedirs(folder)
 
-    for idx in xrange(0, len(TimeSeries), 10):
-        series = TimeSeries.keys()[idx:idx + 10]
-        data   = bls_series(series, startyear=STARTYEAR, endyear=ENDYEAR)
+    return folder
 
-        for dataset in data['Results']['series']:
-            fname = os.path.join(folder, "%s.json" % dataset['seriesID'])
-            with open(fname, 'w') as f:
-                json.dump(dataset, f, indent=2)
 
-    return folder, len(TimeSeries)
+def fetch_series(sids, path, startyear=STARTYEAR, endyear=ENDYEAR):
+    """
+    Fetches a set of series and writes their temporary JSON files to disk at
+    the path specified. This method should be used to fetch about 10 or so
+    series at a time from the BLS API, and store to disk.
+    """
+
+    # Make API call for series id set
+    data   = bls_series(sids, startyear=STARTYEAR, endyear=ENDYEAR)
+
+    # Upon response, write results to disk
+    for dataset in data['Results']['series']:
+        fname = os.path.join(path, "%s.json" % dataset['seriesID'])
+        with open(fname, 'w') as f:
+            json.dump(dataset, f)
+
+
+def fetch_all(startyear=STARTYEAR, endyear=ENDYEAR, fixtures=FIXTURES,
+              blocksize=10, cleanup=True, ratelimit=1, callback=None):
+    """
+    Fetches the data for all series ids that are in the database by ingesting
+    them in blocks of 10 time series at a time for the given start and end
+    years. The method is implemented as follows:
+
+        1. Determine disk directory to write to via fixtures
+        2. Look up series ids from the database
+        3. Fetch blocksize number of series at a time with start and end year
+        4. Rate limit the fetch by the number of seconds passed
+        5. Call the callback function, passing the directory of data
+        6. If cleanup, delete the directory and its contents
+
+    The callback methodology allows you to create a fetch-wrangle chain.
+
+    This method returns the duration and the number of timeseries fetched,
+    as well as any results from the callback.
+    """
+
+    start = time.time()
+    store = ingest_path(fixtures)
+    count = Series.query.count()
+    pages = count / blocksize
+
+    for pagenum in xrange(1, pages + 2):
+        page = Series.query.paginate(pagenum, blocksize, False)
+        sids = [s.blsid for s in page.items]
+
+        fetch_series(sids, store, startyear, endyear)
+        time.sleep(ratelimit)
+
+    cbres = None
+    if callback is not None and callable(callback):
+        cbres = callback(store)
+
+    if cleanup:
+        shutil.rmtree(store)
+
+    delta = time.time() - start
+    return delta, count, cbres
 
 ##########################################################################
 ## Main Method

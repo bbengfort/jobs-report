@@ -1,5 +1,5 @@
 # elmr.ingest.wrangle
-# Converts the ingested data into a single CSV file
+# Wrangles data into the ELMR database
 #
 # Author:   Benjamin Bengfort <bengfort@cs.umd.edu>
 # Created:  Wed Mar 11 11:54:17 2015 -0400
@@ -10,9 +10,7 @@
 # ID: wrangle.py [] bengfort@cs.umd.edu $
 
 """
-Converts the ingested data into a single CSV file.
-
-This code should be added to the ingest methodology.
+Wrangles data into the ELMR database
 """
 
 ##########################################################################
@@ -20,31 +18,26 @@ This code should be added to the ingest methodology.
 ##########################################################################
 
 import os
-import csv
 import glob
 import json
+import elmr
 
 from datetime import datetime
 from operator import itemgetter
-from collections import defaultdict
-from elmr.version import get_version
-from elmr.ingest.fetch import FIXTURES
-from elmr.ingest.fetch import TimeSeries
+
+from elmr.models import SeriesRecord, Series
+
+##########################################################################
+## Module Constants
+##########################################################################
 
 DATE_FMT = "%B %Y"
 JSON_DTE = "%Y-%m-%d"
 JSON_FMT = "%Y-%m-%dT%H:%M:%S.%f"
 
 ##########################################################################
-## Helper Functions
+## Wrangling Functions
 ##########################################################################
-
-
-def get_date(fmt=DATE_FMT):
-    """
-    Returns the current date formatted correctly
-    """
-    return datetime.now().strftime(fmt)
 
 
 def extract(path):
@@ -63,104 +56,51 @@ def extract(path):
         data = json.load(f)
         series_id = data['seriesID']
         for row in data['data']:
-            date = datetime.strptime("%(periodName)s %(year)s" % row, DATE_FMT).date()
+            dtstr = "%(periodName)s %(year)s" % row
+            date  = datetime.strptime(dtstr, DATE_FMT).date()
+
             series[date] = row['value']
 
     return series_id, series
 
 
-def wrangle(date=None, fixtures=FIXTURES):
+def wrangle(path):
     """
-    Takes an ingestion data and loads the data found in that directory.
-    Returns the data and the data directory as found by the date.
+    Takes a path to ingested data then loads the data found in that directory.
+    Adds all of the data to the database returning the  number of rows found,
+    and the number of unique rows added.
     """
 
-    date = date or get_date(JSON_DTE)  # Get current date if date is None
+    rows_fetched = 0
+    rows_added   = 0
 
-    dir = os.path.join(fixtures, "ingest-%s" % date)
-    if not os.path.exists(dir) or not os.path.isdir(dir):
-        raise Exception("Could not find directory named '%s'" % dir)
-
-    # Key is the date, value is a dict of series_id:value
-    data = defaultdict(dict)
-    for path in glob.glob(os.path.join(dir, "*.json")):
+    for path in glob.glob(os.path.join(path, "*.json")):
+        # For each JSON file in the path, extract the data
         series_id, values = extract(path)
-        for date, value in values.items():
-            data[date][series_id] = value
 
-    return dir, data
+        # Fetch the series from the database
+        series = Series.query.filter_by(blsid=series_id).first()
 
+        # Insert data into the database in order
+        for date, value in sorted(values.items(), key=itemgetter(0)):
+            rows_fetched += 1
 
-def wrangle_csv(date=None, out=None, fixtures=FIXTURES):
-    """
-    Takes an ingest date and then wrangles the data found in that directory to
-    a CSV format that can be used to import data into a database system.
-    """
+            # Search for a row that contains this combination
+            q = SeriesRecord.query.filter_by(
+                series_id=series.id, period=date, value=value
+            )
 
-    dir, data = wrangle(date, fixtures)
-    date = date or get_date(JSON_FMT)  # Get current date if date is None
+            if not elmr.db.session.query(q.exists()).scalar():
+                r = SeriesRecord(
+                    series_id=series.id,
+                    period=date,
+                    value=float(value),
+                )
+                elmr.db.session.add(r)
 
-    if out is None:
-        out  = os.path.join(dir, "dataset.csv")
+                rows_added += 1
 
-    fields = ("YEAR", "MONTH", ) + tuple(TimeSeries.keys())
-    rows   = 0
-    with open(out, 'w') as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
-        writer.writeheader()
+        # Commit each series individually
+        elmr.db.session.commit()
 
-        for date, values in sorted(data.items(), key=itemgetter(0), reverse=True):
-            values["YEAR"]  = date.year
-            values["MONTH"] = date.month
-            writer.writerow(values)
-            rows += 1
-
-    return out, rows
-
-
-def wrangle_json(date=None, out=None, indent=None, fixtures=FIXTURES):
-    """
-    Takes an ingest date and then wrangles the data found in that directory to
-    a JSON format specifically required by the ELMR application.
-    """
-
-    dir, data = wrangle(date, fixtures)
-    date = date or get_date(JSON_FMT)  # Get current date if date is None
-
-    if out is None:
-        out  = os.path.join(dir, "elmr.json")
-
-    ## Create output dictionary
-    output = {
-        "title": "ELMR Ingested BLS Data",   # Title of the dataset
-        "version": get_version(),            # Version of wrangling code
-        "ingested": date,                    # Date ingestion was run from BLS
-        "wrangled": get_date(JSON_FMT),      # Current timestamp of wrangling
-        "descriptions": TimeSeries,          # IDs/Names of time series
-        "period": {                          # Period covered by time series
-            "start": None,                   # Earliest time series date
-            "end": None,                     # Latest time series date
-        },
-        "data": [],                          # Sorted timeseries data
-    }
-
-    rows = 0
-    for date, values in sorted(data.items(), key=itemgetter(0)):
-        values["YEAR"]  = date.year
-        values["MONTH"] = date.month
-        values["DATE"]  = date.strftime("%b %Y")
-        output["data"].append(values)
-        rows += 1
-
-    # Compute period from the dates
-    output["period"]["start"] = output["data"][0]["DATE"]
-    output["period"]["end"] = output["data"][-1]["DATE"]
-
-    with open(out, 'w') as f:
-        json.dump(output, f, indent=indent)
-
-    return out, rows
-
-if __name__ == '__main__':
-    wrangle_json("2015-04-06")
-    # print extract(os.path.join(FIXTURES, "ingest-2015-03-10", "LNS11000000.json"))
+    return rows_added, rows_fetched
