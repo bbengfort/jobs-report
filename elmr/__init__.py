@@ -60,3 +60,6 @@ def shutdown_session(exception=None):
 
 # Import views: must be after app config
 import elmr.views
+
+# Import models: must be after db config
+import elmr.models

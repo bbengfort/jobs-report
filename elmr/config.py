@@ -19,6 +19,7 @@ The ELMR configuration file.
 
 import os
 
+from elmr.utils import classproperty
 from elmr.exceptions import ImproperlyConfigured
 
 ##########################################################################
@@ -29,6 +30,7 @@ from elmr.exceptions import ImproperlyConfigured
 ENVIRON_PREFIX = "ELMR"
 BASE_PATH      = os.path.join(os.path.dirname(__file__), "..")
 FIXTURES       = os.path.join(BASE_PATH, "fixtures")
+MIGRATIONS     = os.path.join(os.path.dirname(__file__), "migrations")
 
 
 def settings(name, default=None, required=False, prefix=ENVIRON_PREFIX):
@@ -97,11 +99,19 @@ class Config(object):
     CSRF_ENABLED = settings("csrf_enabled", True)
     SECRET_KEY   = settings("secret_key", required=True)
     DATABASE_URI = settings("database_uri")
+    MIGRATIONS   = settings("migrate_repo", MIGRATIONS)
 
     ## Ingestion Settings
     STARTYEAR    = settings("startyear", "2000")
     ENDYEAR      = settings("endyear", "2015")
     FIXTURES     = settings("fixtures", FIXTURES)
+
+    @classproperty
+    def SQLALCHEMY_DATABASE_URI(klass):
+        """
+        Alias for DATABASE_URI property
+        """
+        return klass.DATABASE_URI
 
 
 class ProductionConfig(Config):

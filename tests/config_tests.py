@@ -42,12 +42,20 @@ class ConfigurationTests(unittest.TestCase):
         self.assertTrue(hasattr(Config, "SECRET_KEY"))
         self.assertTrue(hasattr(Config, "CSRF_ENABLED"))
         self.assertTrue(hasattr(Config, "DATABASE_URI"))
+        self.assertTrue(hasattr(Config, "SQLALCHEMY_DATABASE_URI"))
+        self.assertTrue(hasattr(Config, "MIGRATIONS"))
         self.assertEqual(Config.STARTYEAR, "2000")
         self.assertEqual(Config.ENDYEAR, "2015")
         self.assertTrue(Config.FIXTURES.endswith("fixtures"))
 
         self.assertTrue(TestingConfig.DEBUG)
         self.assertTrue(TestingConfig.TESTING)
+
+    def test_db_uri_alias(self):
+        """
+        Assert that the DATABASE_URI is correcly aliased
+        """
+        self.assertEqual(Config.DATABASE_URI, Config.SQLALCHEMY_DATABASE_URI)
 
     def test_get_settings_object(self):
         """
