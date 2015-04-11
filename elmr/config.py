@@ -19,6 +19,7 @@ The ELMR configuration file.
 
 import os
 
+from elmr.utils import classproperty
 from elmr.exceptions import ImproperlyConfigured
 
 ##########################################################################
@@ -29,16 +30,24 @@ from elmr.exceptions import ImproperlyConfigured
 ENVIRON_PREFIX = "ELMR"
 BASE_PATH      = os.path.join(os.path.dirname(__file__), "..")
 FIXTURES       = os.path.join(BASE_PATH, "fixtures")
+MIGRATIONS     = os.path.join(os.path.dirname(__file__), "migrations")
 
 
-def settings(name, default=None, prefix=ENVIRON_PREFIX):
+def settings(name, default=None, required=False, prefix=ENVIRON_PREFIX):
     """
     Fetches the setting from the an environment variable by prepending
-    the prefix, if not found, sets the default value.
+    the prefix, if not found, sets the default value. If required, and the
+    setting remains None, this function will raise an ImproperlyConfigured
+    exception.
     """
     envvar = "%s_%s" % (prefix.upper(), name.upper())
     if envvar in os.environ:
         return os.environ[envvar]
+
+    if required and default is None:
+        raise ImproperlyConfigured("Missing required setting '%s' "
+                                   "from environment" % envvar)
+
     return default
 
 
@@ -85,13 +94,24 @@ class Config(object):
 
     ## Flask Settings
 
-    DEBUG      = settings("debug", False)
-    TESTING    = settings("testing", False)
+    DEBUG        = settings("debug", False)
+    TESTING      = settings("testing", False)
+    CSRF_ENABLED = settings("csrf_enabled", True)
+    SECRET_KEY   = settings("secret_key", required=True)
+    DATABASE_URI = settings("database_uri")
+    MIGRATIONS   = settings("migrate_repo", MIGRATIONS)
 
     ## Ingestion Settings
-    STARTYEAR  = settings("startyear", "2000")
-    ENDYEAR    = settings("endyear", "2015")
-    FIXTURES   = settings("fixtures", FIXTURES)
+    STARTYEAR    = settings("startyear", "2000")
+    ENDYEAR      = settings("endyear", "2015")
+    FIXTURES     = settings("fixtures", FIXTURES)
+
+    @classproperty
+    def SQLALCHEMY_DATABASE_URI(klass):
+        """
+        Alias for DATABASE_URI property
+        """
+        return klass.DATABASE_URI
 
 
 class ProductionConfig(Config):
@@ -106,7 +126,7 @@ class DevelopmentConfig(Config):
     Development specific settings for ELMR application
     """
 
-    DEBUG     = True
+    DEBUG        = True
 
 
 class TestingConfig(DevelopmentConfig):
@@ -114,4 +134,6 @@ class TestingConfig(DevelopmentConfig):
     Testing settings for travis-ci and other tests
     """
 
-    TESTING   = True
+    TESTING      = True
+    SECRET_KEY   = "supersecret"  # secret not needed in testing
+    DATABASE_URI = "postgresql+psycopg2://tester:secret@localhost/elmrtest"

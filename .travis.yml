@@ -4,7 +4,17 @@ python:
 
 install: pip install -r requirements.txt
 
+before_script:
+  - psql -c "CREATE ROLE tester WITH LOGIN PASSWORD 'secret';" -U postgres
+  - psql -c 'CREATE DATABASE elmrtest WITH OWNER tester;' -U postgres
+
 script: make test
+
+env:
+    global:
+        - ELMR_SETTINGS=testing
+        - ELMR_SECRET_KEY=supersecretsquirrel
+        - ELMR_DATABASE_URI="postgresql+psycopg2://tester:secret@localhost/elmrtest"
 
 notifications:
   email:
