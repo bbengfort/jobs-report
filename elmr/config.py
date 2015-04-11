@@ -98,7 +98,6 @@ class Config(object):
     TESTING      = settings("testing", False)
     CSRF_ENABLED = settings("csrf_enabled", True)
     SECRET_KEY   = settings("secret_key", required=True)
-    DATABASE_URI = settings("database_uri")
     MIGRATIONS   = settings("migrate_repo", MIGRATIONS)
 
     ## Ingestion Settings
@@ -112,6 +111,19 @@ class Config(object):
         Alias for DATABASE_URI property
         """
         return klass.DATABASE_URI
+
+    @classproperty
+    def DATABASE_URI(klass):
+        """
+        Accesses the Heroku `DATABASE_URL` otherwise returns the expected
+        `ELMR_DATABASE_URI` setting as before.
+        """
+
+        envvar = "DATABASE_URL"
+        if envvar in os.environ:
+            return os.environ[envvar]
+
+        return settings("database_uri")
 
 
 class ProductionConfig(Config):
