@@ -18,9 +18,6 @@ Routes for the ELMR web application
 ##########################################################################
 
 import os
-import json  # TODO: remove
-
-from urlparse import urljoin
 
 from elmr import app, api
 from elmr import get_version
@@ -32,6 +29,9 @@ from flask import request
 from flask.ext.restful import Resource, reqparse
 from flask import render_template, send_from_directory
 
+from urlparse import urljoin
+from operator import itemgetter
+from collections import defaultdict
 from sqlalchemy import desc, extract
 
 ##########################################################################
@@ -53,20 +53,6 @@ def favicon():
 ##########################################################################
 ## Configure API Resources
 ##########################################################################
-
-
-class TimeSeries(Resource):
-    """
-    Current implementation of time series data, simply load JSON file and
-    returns it for now (so you can get it in two ways). This will be replaced
-    soon.
-    """
-
-    def get(self):
-        base = os.path.dirname(__file__)
-        data = os.path.join(base, 'static', 'data', 'elmr.json')
-        with open(data, 'r') as f:
-            return json.load(f)
 
 
 class SeriesView(Resource):
@@ -175,6 +161,91 @@ class SeriesListView(Resource):
         return urljoin(base, "/api/series/%s/" % blsid)
 
 
+class SeriesSourceView(Resource):
+    """
+    Another list view which returns all of the timeseries for a given source.
+
+    At the moment, only two sources are accepted: CESN (CES - National) and
+    CPS. LAUS and CESSM (CES - State and Metro) are state based APIs and
+    cannot be returned in aggregate as the national sources can.
+
+    TODO: Move allowed sources to the database.
+    """
+
+    ALLOWED_SOURCES = set(["CESN", "CPS"])
+
+    @property
+    def parser(self):
+        """
+        Returns the default parser for the SeriesView
+        """
+        if not hasattr(self, '_parser'):
+            self._parser = reqparse.RequestParser()
+            self._parser.add_argument('start_year', type=int)
+            self._parser.add_argument('end_year', type=int)
+        return self._parser
+
+    def get(self, source):
+        """
+        For a single source, return a data detail view for all time series.
+        """
+
+        # Ensure that source is allowed
+        source = source.upper()
+        if source not in self.ALLOWED_SOURCES:
+            context = {
+                'success': False,
+                'message': "Source '%s' is not allowed." % source,
+            }
+            return context, 400
+
+        args    = self.parser.parse_args()
+        series  = Series.query.filter_by(source=source)
+
+        start   = args.start_year or int(app.config['STARTYEAR'])
+        finish  = args.end_year or int(app.config['ENDYEAR'])
+
+        context = {
+            "title": "ELMR Ingested %s Data" % source,
+            "version": get_version(),
+            "period": {
+                "start": start,
+                "end": finish,
+            },
+            "descriptions": {},
+            "data": [],
+        }
+
+        data = defaultdict(dict)
+        for s in series.all():
+            context["descriptions"][s.blsid] = s.title
+
+            records = SeriesRecord.query.filter_by(series_id=s.id)
+            ryear   = extract('year', SeriesRecord.period)
+            records = records.filter(ryear >= start)
+            records = records.filter(ryear <= finish)
+
+            for record in records.all():
+                data[record.period][s.blsid] = record.value
+
+        data = sorted(data.items(), key=itemgetter(0))
+        for (date, values) in data:
+            values["YEAR"]  = date.year
+            values["MONTH"] = date.month
+            values["DATE"]  = date.strftime("%b %Y")
+
+            context["data"].append(values)
+
+        context['period']['start'] = data[0][0].strftime("%b %Y")
+        context['period']['end']   = data[-1][0].strftime("%b %Y")
+
+        return context
+
+##########################################################################
+## Heartbeat resource
+##########################################################################
+
+
 class HeartbeatView(Resource):
     """
     Keep alive endpoint, if you get a 200 response, you know ELMR is alive!
@@ -214,7 +285,7 @@ class HeartbeatView(Resource):
 ## Configure API Endpoints
 ##########################################################################
 
-api.add_resource(TimeSeries, '/api/data/', endpoint='data')
+api.add_resource(SeriesSourceView, '/api/source/<source>/', endpoint='source')
 api.add_resource(HeartbeatView, '/api/status/', endpoint="status-detail")
 api.add_resource(SeriesListView, '/api/series/', endpoint='series-list')
 api.add_resource(SeriesView, '/api/series/<blsid>/', endpoint='series-detail')
