@@ -47,6 +47,18 @@ class SourcesGETTests(TestCase):
     def tearDownClass(cls):
         dropdb()
 
+    def test_add_slash_sources_detail(self):
+        """
+        Test that a slash is added to the end of the sources detail.
+
+        Note: if this test fails, ensure the add_resource call includes a
+        trailing slash in the endpoint definition (how this is setup)
+        """
+        response = self.client.get("/api/source/CPS")
+        self.assertEquals(response.status_code, 301)
+        self.assertIsNotNone(response.location)
+        self.assertTrue(response.location.endswith("/"))
+
     def test_cps_source(self):
         """
         Test that the CPS source can be fetched

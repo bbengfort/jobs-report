@@ -74,6 +74,18 @@ class HeartbeatTests(TestCase):
         response = self.client.get("/api/status/")
         self.assertEquals(response.status_code, 200)
 
+    def test_add_slash_hearbeat(self):
+        """
+        Test that a slash is added to the end of the hearbeat endpoint
+
+        Note: if this test fails, ensure the add_resource call includes a
+        trailing slash in the endpoint definition (how this is setup)
+        """
+        response = self.client.get("/api/status")
+        self.assertEquals(response.status_code, 301)
+        self.assertIsNotNone(response.location)
+        self.assertTrue(response.location.endswith("/"))
+
     def test_heartbeat_fields(self):
         """
         Check standard heartbeat fields
