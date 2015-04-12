@@ -19,7 +19,7 @@ Routes for the ELMR web application
 
 import os
 
-from elmr import app, api
+from elmr import app, api,db
 from elmr import get_version
 from elmr.models import IngestionRecord
 from elmr.models import Series, SeriesRecord
@@ -161,7 +161,7 @@ class SeriesListView(Resource):
         return urljoin(base, "/api/series/%s/" % blsid)
 
 
-class SeriesSourceView(Resource):
+class SourceView(Resource):
     """
     Another list view which returns all of the timeseries for a given source.
 
@@ -249,6 +249,35 @@ class SeriesSourceView(Resource):
 
         return context
 
+
+class SourceListView(Resource):
+    """
+    API Resource for returning a list of sources.
+    """
+
+    def get(self):
+        context = {
+            "sources": []
+        }
+
+        # Create sources model in the future
+        sql = "SELECT source, count(id) FROM series GROUP BY source"
+        for s in db.session.execute(sql):
+            context["sources"].append({
+                "url": self.get_detail_url(s[0]),
+                "name": s[0],
+                "records": s[1],
+            })
+
+        return context
+
+    def get_detail_url(self, name):
+        """
+        Returns the blsid from the request object.
+        """
+        base = request.url_root
+        return urljoin(base, "/api/source/%s/" % name)
+
 ##########################################################################
 ## Heartbeat resource
 ##########################################################################
@@ -293,7 +322,12 @@ class HeartbeatView(Resource):
 ## Configure API Endpoints
 ##########################################################################
 
-api.add_resource(SeriesSourceView, '/api/source/<source>/', endpoint='source')
-api.add_resource(HeartbeatView, '/api/status/', endpoint="status-detail")
-api.add_resource(SeriesListView, '/api/series/', endpoint='series-list')
-api.add_resource(SeriesView, '/api/series/<blsid>/', endpoint='series-detail')
+# reduce the amount of typing
+endpoint = api.add_resource
+
+# configure api urls
+endpoint(SourceListView, '/api/source/', endpoint='source-list')
+endpoint(SourceView, '/api/source/<source>/', endpoint='source-detail')
+endpoint(HeartbeatView, '/api/status/', endpoint="status-detail")
+endpoint(SeriesListView, '/api/series/', endpoint='series-list')
+endpoint(SeriesView, '/api/series/<blsid>/', endpoint='series-detail')

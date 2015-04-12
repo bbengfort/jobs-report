@@ -47,6 +47,17 @@ class SourcesGETTests(TestCase):
     def tearDownClass(cls):
         dropdb()
 
+    def test_add_slash_sources_list(self):
+        """
+        Test that a slash is added to the end of the sources list.
+
+        See test_add_sources_detail note.
+        """
+        response = self.client.get("/api/source")
+        self.assertEquals(response.status_code, 301)
+        self.assertIsNotNone(response.location)
+        self.assertTrue(response.location.endswith("/"))
+
     def test_add_slash_sources_detail(self):
         """
         Test that a slash is added to the end of the sources detail.
@@ -58,6 +69,26 @@ class SourcesGETTests(TestCase):
         self.assertEquals(response.status_code, 301)
         self.assertIsNotNone(response.location)
         self.assertTrue(response.location.endswith("/"))
+
+    def test_get_sources_list(self):
+        """
+        Test that the sources list can be fetched
+        """
+        response = self.client.get("/api/source/")
+        self.assertEquals(response.status_code, 200)
+
+        for key in ('sources',):
+            self.assertIn(key, response.json)
+
+        self.assertEqual(len(response.json['sources']), 4)
+
+        for s in response.json['sources']:
+            for key in ('name', 'records', 'url'):
+                self.assertIn(key, s)
+
+        expected = {'CESN', 'LAUS', 'CESSM', 'CPS'}
+        returned = set([s["name"] for s in response.json['sources']])
+        self.assertEqual(expected, returned)
 
     def test_cps_source(self):
         """
