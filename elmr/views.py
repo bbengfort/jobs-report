@@ -319,6 +319,38 @@ class HeartbeatView(Resource):
         return context
 
 ##########################################################################
+## API Endpoints resource
+##########################################################################
+
+
+class APIListView(Resource):
+    """
+    Returns a list of API endpoints and their names. Currently hardcoded,
+    so this needs to be modified every time you add a resource to the API.
+    """
+
+    RESOURCES = {
+        "heartbeat": "status",
+        "sources": "source",
+        "series": "series",
+    }
+
+    def get(self):
+        """
+        Returns an object describing the API.
+        """
+
+        return dict([(k, self.get_detail_url(v))
+                    for (k, v) in self.RESOURCES.items()])
+
+    def get_detail_url(self, name):
+        """
+        Returns the blsid from the request object.
+        """
+        base = request.url_root
+        return urljoin(base, "/api/%s/" % name)
+
+##########################################################################
 ## Configure API Endpoints
 ##########################################################################
 
@@ -326,8 +358,11 @@ class HeartbeatView(Resource):
 endpoint = api.add_resource
 
 # configure api urls
+endpoint(APIListView, '/api/')
 endpoint(SourceListView, '/api/source/', endpoint='source-list')
 endpoint(SourceView, '/api/source/<source>/', endpoint='source-detail')
 endpoint(HeartbeatView, '/api/status/', endpoint="status-detail")
 endpoint(SeriesListView, '/api/series/', endpoint='series-list')
 endpoint(SeriesView, '/api/series/<blsid>/', endpoint='series-detail')
+
+# Did you forget to modify the API list view?
