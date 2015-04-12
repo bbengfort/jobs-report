@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <style type="text/css">
+    #status {
+      margin-top: 38px;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+  <!-- Application Container -->
+  <div id="application" class="container">
+
+    <!-- Page Title -->
+    <div class="row">
+      <div class="col-md-12 page-header">
+        <h1 class="pull-left">
+          ELMR Admin Utility <small>Application Status</small>
+        </h1>
+        <p id="status" class="text-muted pull-right">
+          Current Status &mdash;
+          <i class="fa fa-circle status-icon"></i>
+          <span class='status-text'>unknown</span>
+        </p>
+        <div class="clearfix"></div>
+      </div>
+    </div><!-- end page title -->
+
+    <!-- Ingestion Log -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Ingestion Log</h2>
+
+        <table id="ingestion-log" class="table table-striped table-hover">
+          <thead>
+            <th>#</th>
+            <th>title</th>
+            <th>version</th>
+            <th>period</th>
+            <th>num series</th>
+            <th>rows added</th>
+            <th>rows fetched</th>
+            <th>started</th>
+            <th>finished</th>
+            <th>duration (seconds)</th>
+          </tead>
+          <tbody>
+            {% for ilr in ingestlog %}
+            <tr>
+              <td>{{ ilr.id }}</td>
+              <td>{{ ilr.title }}</td>
+              <td>{{ ilr.version }}</td>
+              <td>
+                {{ ilr.start_year.strftime('%b %Y') }}
+                &mdash;
+                {{ ilr.end_year.strftime('%b %Y') }}</td>
+              <td>{{ ilr.num_series }}</td>
+              <td>{{ ilr.num_added }}</td>
+              <td>{{ ilr.num_fetched }}</td>
+              <td>{{ ilr.started.strftime('%b %d %Y at %H:%S') }}</td>
+              <td>{{ ilr.finished.strftime('%b %d %Y at %H:%S') }}</td>
+              <td>{{ ilr.duration|round(2, 'floor') }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div><!-- end ingestion log -->
+
+  </div><!-- application container ends -->
+{% endblock %}
