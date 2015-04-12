@@ -1,0 +1,1685 @@
+"id","blsid","title","source","is_primary"
+1,"LAUST280000000000006","Mississippi, not seasonally adjusted - unemployment rate","LAUS",t
+2,"LAUST280000000000005","Mississippi, not seasonally adjusted - unemployment","LAUS",t
+3,"LAUST280000000000004","Mississippi, not seasonally adjusted - employment","LAUS",t
+4,"LAUST280000000000003","Mississippi, not seasonally adjusted - labor force","LAUS",t
+5,"LASST280000000000005","Mississippi, seasonally adjusted - unemployment","LAUS",t
+6,"LASST280000000000004","Mississippi, seasonally adjusted - employment","LAUS",t
+7,"LASST280000000000006","Mississippi, seasonally adjusted - unemployment rate","LAUS",t
+8,"LASST280000000000003","Mississippi, seasonally adjusted - labor force","LAUS",t
+9,"LAUST400000000000003","Oklahoma, not seasonally adjusted - labor force","LAUS",t
+10,"LAUST400000000000005","Oklahoma, not seasonally adjusted - unemployment","LAUS",t
+11,"LAUST400000000000004","Oklahoma, not seasonally adjusted - employment","LAUS",t
+12,"LAUST400000000000006","Oklahoma, not seasonally adjusted - unemployment rate","LAUS",t
+13,"LASST400000000000003","Oklahoma, seasonally adjusted - labor force","LAUS",t
+14,"LASST400000000000006","Oklahoma, seasonally adjusted - unemployment rate","LAUS",t
+15,"LASST400000000000005","Oklahoma, seasonally adjusted - unemployment","LAUS",t
+16,"LASST400000000000004","Oklahoma, seasonally adjusted - employment","LAUS",t
+17,"LAUST560000000000003","Wyoming, not seasonally adjusted - labor force","LAUS",t
+18,"LAUST560000000000006","Wyoming, not seasonally adjusted - unemployment rate","LAUS",t
+19,"LAUST560000000000004","Wyoming, not seasonally adjusted - employment","LAUS",t
+20,"LAUST560000000000005","Wyoming, not seasonally adjusted - unemployment","LAUS",t
+21,"LASST560000000000003","Wyoming, seasonally adjusted - labor force","LAUS",t
+22,"LASST560000000000004","Wyoming, seasonally adjusted - employment","LAUS",t
+23,"LASST560000000000005","Wyoming, seasonally adjusted - unemployment","LAUS",t
+24,"LASST560000000000006","Wyoming, seasonally adjusted - unemployment rate","LAUS",t
+25,"LASST270000000000003","Minnesota, seasonally adjusted - labor force","LAUS",t
+26,"LASST270000000000004","Minnesota, seasonally adjusted - employment","LAUS",t
+27,"LASST270000000000005","Minnesota, seasonally adjusted - unemployment","LAUS",t
+28,"LASST270000000000006","Minnesota, seasonally adjusted - unemployment rate","LAUS",t
+29,"LAUST270000000000006","Minnesota, not seasonally adjusted - unemployment rate","LAUS",t
+30,"LAUST270000000000004","Minnesota, not seasonally adjusted - employment","LAUS",t
+31,"LAUST270000000000005","Minnesota, not seasonally adjusted - unemployment","LAUS",t
+32,"LAUST270000000000003","Minnesota, not seasonally adjusted - labor force","LAUS",t
+33,"LAUST170000000000003","Illinois, not seasonally adjusted - labor force","LAUS",t
+34,"LAUST170000000000005","Illinois, not seasonally adjusted - unemployment","LAUS",t
+35,"LAUST170000000000004","Illinois, not seasonally adjusted - employment","LAUS",t
+36,"LAUST170000000000006","Illinois, not seasonally adjusted - unemployment rate","LAUS",t
+37,"LASST170000000000006","Illinois, seasonally adjusted - unemployment rate","LAUS",t
+38,"LASST170000000000005","Illinois, seasonally adjusted - unemployment","LAUS",t
+39,"LASST170000000000004","Illinois, seasonally adjusted - employment","LAUS",t
+40,"LASST170000000000003","Illinois, seasonally adjusted - labor force","LAUS",t
+41,"LASST050000000000003","Arkansas, seasonally adjusted - labor force","LAUS",t
+42,"LASST050000000000004","Arkansas, seasonally adjusted - employment","LAUS",t
+43,"LASST050000000000005","Arkansas, seasonally adjusted - unemployment","LAUS",t
+44,"LASST050000000000006","Arkansas, seasonally adjusted - unemployment rate","LAUS",t
+45,"LAUST050000000000006","Arkansas, not seasonally adjusted - unemployment rate","LAUS",t
+46,"LAUST050000000000004","Arkansas, not seasonally adjusted - employment","LAUS",t
+47,"LAUST050000000000005","Arkansas, not seasonally adjusted - unemployment","LAUS",t
+48,"LAUST050000000000003","Arkansas, not seasonally adjusted - labor force","LAUS",t
+49,"LAUST350000000000005","New Mexico, not seasonally adjusted - unemployment","LAUS",t
+50,"LAUST350000000000004","New Mexico, not seasonally adjusted - employment","LAUS",t
+51,"LAUST350000000000006","New Mexico, not seasonally adjusted - unemployment rate","LAUS",t
+52,"LAUST350000000000003","New Mexico, not seasonally adjusted - labor force","LAUS",t
+53,"LASST350000000000003","New Mexico, seasonally adjusted - labor force","LAUS",t
+54,"LASST350000000000006","New Mexico, seasonally adjusted - unemployment rate","LAUS",t
+55,"LASST350000000000005","New Mexico, seasonally adjusted - unemployment","LAUS",t
+56,"LASST350000000000004","New Mexico, seasonally adjusted - employment","LAUS",t
+57,"LASST390000000000006","Ohio, seasonally adjusted - unemployment rate","LAUS",t
+58,"LASST390000000000005","Ohio, seasonally adjusted - unemployment","LAUS",t
+59,"LASST390000000000004","Ohio, seasonally adjusted - employment","LAUS",t
+60,"LASST390000000000003","Ohio, seasonally adjusted - labor force","LAUS",t
+61,"LAUST390000000000003","Ohio, not seasonally adjusted - labor force","LAUS",t
+62,"LAUST390000000000005","Ohio, not seasonally adjusted - unemployment","LAUS",t
+63,"LAUST390000000000004","Ohio, not seasonally adjusted - employment","LAUS",t
+64,"LAUST390000000000006","Ohio, not seasonally adjusted - unemployment rate","LAUS",t
+65,"LASST180000000000006","Indiana, seasonally adjusted - unemployment rate","LAUS",t
+66,"LASST180000000000004","Indiana, seasonally adjusted - employment","LAUS",t
+67,"LASST180000000000005","Indiana, seasonally adjusted - unemployment","LAUS",t
+68,"LASST180000000000003","Indiana, seasonally adjusted - labor force","LAUS",t
+69,"LAUST180000000000004","Indiana, not seasonally adjusted - employment","LAUS",t
+70,"LAUST180000000000005","Indiana, not seasonally adjusted - unemployment","LAUS",t
+71,"LAUST180000000000006","Indiana, not seasonally adjusted - unemployment rate","LAUS",t
+72,"LAUST180000000000003","Indiana, not seasonally adjusted - labor force","LAUS",t
+73,"LASST240000000000003","Maryland, seasonally adjusted - labor force","LAUS",t
+74,"LASST240000000000005","Maryland, seasonally adjusted - unemployment","LAUS",t
+75,"LASST240000000000004","Maryland, seasonally adjusted - employment","LAUS",t
+76,"LASST240000000000006","Maryland, seasonally adjusted - unemployment rate","LAUS",t
+77,"LAUST240000000000003","Maryland, not seasonally adjusted - labor force","LAUS",t
+78,"LAUST240000000000006","Maryland, not seasonally adjusted - unemployment rate","LAUS",t
+79,"LAUST240000000000005","Maryland, not seasonally adjusted - unemployment","LAUS",t
+80,"LAUST240000000000004","Maryland, not seasonally adjusted - employment","LAUS",t
+81,"LASST220000000000006","Louisiana, seasonally adjusted - unemployment rate","LAUS",t
+82,"LASST220000000000005","Louisiana, seasonally adjusted - unemployment","LAUS",t
+83,"LASST220000000000004","Louisiana, seasonally adjusted - employment","LAUS",t
+84,"LASST220000000000003","Louisiana, seasonally adjusted - labor force","LAUS",t
+85,"LAUST220000000000005","Louisiana, not seasonally adjusted - unemployment","LAUS",t
+86,"LAUST220000000000004","Louisiana, not seasonally adjusted - employment","LAUS",t
+87,"LAUST220000000000006","Louisiana, not seasonally adjusted - unemployment rate","LAUS",t
+88,"LAUST220000000000003","Louisiana, not seasonally adjusted - labor force","LAUS",t
+89,"LASST160000000000004","Idaho, seasonally adjusted - employment","LAUS",t
+90,"LASST160000000000005","Idaho, seasonally adjusted - unemployment","LAUS",t
+91,"LASST160000000000006","Idaho, seasonally adjusted - unemployment rate","LAUS",t
+92,"LASST160000000000003","Idaho, seasonally adjusted - labor force","LAUS",t
+93,"LAUST160000000000006","Idaho, not seasonally adjusted - unemployment rate","LAUS",t
+94,"LAUST160000000000004","Idaho, not seasonally adjusted - employment","LAUS",t
+95,"LAUST160000000000005","Idaho, not seasonally adjusted - unemployment","LAUS",t
+96,"LAUST160000000000003","Idaho, not seasonally adjusted - labor force","LAUS",t
+97,"LAUST040000000000003","Arizona, not seasonally adjusted - labor force","LAUS",t
+98,"LAUST040000000000005","Arizona, not seasonally adjusted - unemployment","LAUS",t
+99,"LAUST040000000000004","Arizona, not seasonally adjusted - employment","LAUS",t
+100,"LAUST040000000000006","Arizona, not seasonally adjusted - unemployment rate","LAUS",t
+101,"LASST040000000000003","Arizona, seasonally adjusted - labor force","LAUS",t
+102,"LASST040000000000006","Arizona, seasonally adjusted - unemployment rate","LAUS",t
+103,"LASST040000000000005","Arizona, seasonally adjusted - unemployment","LAUS",t
+104,"LASST040000000000004","Arizona, seasonally adjusted - employment","LAUS",t
+105,"LAUST190000000000006","Iowa, not seasonally adjusted - unemployment rate","LAUS",t
+106,"LAUST190000000000005","Iowa, not seasonally adjusted - unemployment","LAUS",t
+107,"LAUST190000000000004","Iowa, not seasonally adjusted - employment","LAUS",t
+108,"LAUST190000000000003","Iowa, not seasonally adjusted - labor force","LAUS",t
+109,"LASST190000000000003","Iowa, seasonally adjusted - labor force","LAUS",t
+110,"LASST190000000000005","Iowa, seasonally adjusted - unemployment","LAUS",t
+111,"LASST190000000000004","Iowa, seasonally adjusted - employment","LAUS",t
+112,"LASST190000000000006","Iowa, seasonally adjusted - unemployment rate","LAUS",t
+113,"LAUST360000000000004","New York, not seasonally adjusted - employment","LAUS",t
+114,"LAUST360000000000005","New York, not seasonally adjusted - unemployment","LAUS",t
+115,"LAUST360000000000006","New York, not seasonally adjusted - unemployment rate","LAUS",t
+116,"LAUST360000000000003","New York, not seasonally adjusted - labor force","LAUS",t
+117,"LASST360000000000006","New York, seasonally adjusted - unemployment rate","LAUS",t
+118,"LASST360000000000004","New York, seasonally adjusted - employment","LAUS",t
+119,"LASST360000000000005","New York, seasonally adjusted - unemployment","LAUS",t
+120,"LASST360000000000003","New York, seasonally adjusted - labor force","LAUS",t
+121,"LAUST260000000000003","Michigan, not seasonally adjusted - labor force","LAUS",t
+122,"LAUST260000000000005","Michigan, not seasonally adjusted - unemployment","LAUS",t
+123,"LAUST260000000000004","Michigan, not seasonally adjusted - employment","LAUS",t
+124,"LAUST260000000000006","Michigan, not seasonally adjusted - unemployment rate","LAUS",t
+125,"LASST260000000000003","Michigan, seasonally adjusted - labor force","LAUS",t
+126,"LASST260000000000006","Michigan, seasonally adjusted - unemployment rate","LAUS",t
+127,"LASST260000000000005","Michigan, seasonally adjusted - unemployment","LAUS",t
+128,"LASST260000000000004","Michigan, seasonally adjusted - employment","LAUS",t
+129,"LAUST200000000000006","Kansas, not seasonally adjusted - unemployment rate","LAUS",t
+130,"LAUST200000000000005","Kansas, not seasonally adjusted - unemployment","LAUS",t
+131,"LAUST200000000000004","Kansas, not seasonally adjusted - employment","LAUS",t
+132,"LAUST200000000000003","Kansas, not seasonally adjusted - labor force","LAUS",t
+133,"LASST200000000000005","Kansas, seasonally adjusted - unemployment","LAUS",t
+134,"LASST200000000000004","Kansas, seasonally adjusted - employment","LAUS",t
+135,"LASST200000000000006","Kansas, seasonally adjusted - unemployment rate","LAUS",t
+136,"LASST200000000000003","Kansas, seasonally adjusted - labor force","LAUS",t
+137,"LAUST490000000000006","Utah, not seasonally adjusted - unemployment rate","LAUS",t
+138,"LAUST490000000000004","Utah, not seasonally adjusted - employment","LAUS",t
+139,"LAUST490000000000005","Utah, not seasonally adjusted - unemployment","LAUS",t
+140,"LAUST490000000000003","Utah, not seasonally adjusted - labor force","LAUS",t
+141,"LASST490000000000003","Utah, seasonally adjusted - labor force","LAUS",t
+142,"LASST490000000000004","Utah, seasonally adjusted - employment","LAUS",t
+143,"LASST490000000000005","Utah, seasonally adjusted - unemployment","LAUS",t
+144,"LASST490000000000006","Utah, seasonally adjusted - unemployment rate","LAUS",t
+145,"LASST510000000000005","Virginia, seasonally adjusted - unemployment","LAUS",t
+146,"LASST510000000000004","Virginia, seasonally adjusted - employment","LAUS",t
+147,"LASST510000000000006","Virginia, seasonally adjusted - unemployment rate","LAUS",t
+148,"LASST510000000000003","Virginia, seasonally adjusted - labor force","LAUS",t
+149,"LAUST510000000000003","Virginia, not seasonally adjusted - labor force","LAUS",t
+150,"LAUST510000000000006","Virginia, not seasonally adjusted - unemployment rate","LAUS",t
+151,"LAUST510000000000005","Virginia, not seasonally adjusted - unemployment","LAUS",t
+152,"LAUST510000000000004","Virginia, not seasonally adjusted - employment","LAUS",t
+153,"LAUST410000000000006","Oregon, not seasonally adjusted - unemployment rate","LAUS",t
+154,"LAUST410000000000004","Oregon, not seasonally adjusted - employment","LAUS",t
+155,"LAUST410000000000005","Oregon, not seasonally adjusted - unemployment","LAUS",t
+156,"LAUST410000000000003","Oregon, not seasonally adjusted - labor force","LAUS",t
+157,"LASST410000000000003","Oregon, seasonally adjusted - labor force","LAUS",t
+158,"LASST410000000000004","Oregon, seasonally adjusted - employment","LAUS",t
+159,"LASST410000000000005","Oregon, seasonally adjusted - unemployment","LAUS",t
+160,"LASST410000000000006","Oregon, seasonally adjusted - unemployment rate","LAUS",t
+161,"LASST090000000000004","Connecticut, seasonally adjusted - employment","LAUS",t
+162,"LASST090000000000005","Connecticut, seasonally adjusted - unemployment","LAUS",t
+163,"LASST090000000000006","Connecticut, seasonally adjusted - unemployment rate","LAUS",t
+164,"LASST090000000000003","Connecticut, seasonally adjusted - labor force","LAUS",t
+165,"LAUST090000000000003","Connecticut, not seasonally adjusted - labor force","LAUS",t
+166,"LAUST090000000000006","Connecticut, not seasonally adjusted - unemployment rate","LAUS",t
+167,"LAUST090000000000004","Connecticut, not seasonally adjusted - employment","LAUS",t
+168,"LAUST090000000000005","Connecticut, not seasonally adjusted - unemployment","LAUS",t
+169,"LASST300000000000004","Montana, seasonally adjusted - employment","LAUS",t
+170,"LASST300000000000005","Montana, seasonally adjusted - unemployment","LAUS",t
+171,"LASST300000000000006","Montana, seasonally adjusted - unemployment rate","LAUS",t
+172,"LASST300000000000003","Montana, seasonally adjusted - labor force","LAUS",t
+173,"LAUST300000000000006","Montana, not seasonally adjusted - unemployment rate","LAUS",t
+174,"LAUST300000000000004","Montana, not seasonally adjusted - employment","LAUS",t
+175,"LAUST300000000000005","Montana, not seasonally adjusted - unemployment","LAUS",t
+176,"LAUST300000000000003","Montana, not seasonally adjusted - labor force","LAUS",t
+177,"LAUST060000000000003","California, not seasonally adjusted - labor force","LAUS",t
+178,"LAUST060000000000006","California, not seasonally adjusted - unemployment rate","LAUS",t
+179,"LAUST060000000000005","California, not seasonally adjusted - unemployment","LAUS",t
+180,"LAUST060000000000004","California, not seasonally adjusted - employment","LAUS",t
+181,"LASST060000000000003","California, seasonally adjusted - labor force","LAUS",t
+182,"LASST060000000000005","California, seasonally adjusted - unemployment","LAUS",t
+183,"LASST060000000000004","California, seasonally adjusted - employment","LAUS",t
+184,"LASST060000000000006","California, seasonally adjusted - unemployment rate","LAUS",t
+185,"LAUST250000000000003","Massachusetts, not seasonally adjusted - labor force","LAUS",t
+186,"LAUST250000000000004","Massachusetts, not seasonally adjusted - employment","LAUS",t
+187,"LAUST250000000000005","Massachusetts, not seasonally adjusted - unemployment","LAUS",t
+188,"LAUST250000000000006","Massachusetts, not seasonally adjusted - unemployment rate","LAUS",t
+189,"LASST250000000000006","Massachusetts, seasonally adjusted - unemployment rate","LAUS",t
+190,"LASST250000000000004","Massachusetts, seasonally adjusted - employment","LAUS",t
+191,"LASST250000000000005","Massachusetts, seasonally adjusted - unemployment","LAUS",t
+192,"LASST250000000000003","Massachusetts, seasonally adjusted - labor force","LAUS",t
+193,"LASST720000000000006","Puerto Rico, seasonally adjusted - unemployment rate","LAUS",t
+194,"LASST720000000000004","Puerto Rico, seasonally adjusted - employment","LAUS",t
+195,"LASST720000000000005","Puerto Rico, seasonally adjusted - unemployment","LAUS",t
+196,"LASST720000000000003","Puerto Rico, seasonally adjusted - labor force","LAUS",t
+197,"LAUST720000000000004","Puerto Rico, not seasonally adjusted - employment","LAUS",t
+198,"LAUST720000000000005","Puerto Rico, not seasonally adjusted - unemployment","LAUS",t
+199,"LAUST720000000000006","Puerto Rico, not seasonally adjusted - unemployment rate","LAUS",t
+200,"LAUST720000000000003","Puerto Rico, not seasonally adjusted - labor force","LAUS",t
+201,"LAUST450000000000003","South Carolina, not seasonally adjusted - labor force","LAUS",t
+202,"LAUST450000000000006","South Carolina, not seasonally adjusted - unemployment rate","LAUS",t
+203,"LAUST450000000000004","South Carolina, not seasonally adjusted - employment","LAUS",t
+204,"LAUST450000000000005","South Carolina, not seasonally adjusted - unemployment","LAUS",t
+205,"LASST450000000000004","South Carolina, seasonally adjusted - employment","LAUS",t
+206,"LASST450000000000005","South Carolina, seasonally adjusted - unemployment","LAUS",t
+207,"LASST450000000000006","South Carolina, seasonally adjusted - unemployment rate","LAUS",t
+208,"LASST450000000000003","South Carolina, seasonally adjusted - labor force","LAUS",t
+209,"LAUST330000000000003","New Hampshire, not seasonally adjusted - labor force","LAUS",t
+210,"LAUST330000000000006","New Hampshire, not seasonally adjusted - unemployment rate","LAUS",t
+211,"LAUST330000000000005","New Hampshire, not seasonally adjusted - unemployment","LAUS",t
+212,"LAUST330000000000004","New Hampshire, not seasonally adjusted - employment","LAUS",t
+213,"LASST330000000000005","New Hampshire, seasonally adjusted - unemployment","LAUS",t
+214,"LASST330000000000004","New Hampshire, seasonally adjusted - employment","LAUS",t
+215,"LASST330000000000006","New Hampshire, seasonally adjusted - unemployment rate","LAUS",t
+216,"LASST330000000000003","New Hampshire, seasonally adjusted - labor force","LAUS",t
+217,"LAUST500000000000003","Vermont, not seasonally adjusted - labor force","LAUS",t
+218,"LAUST500000000000004","Vermont, not seasonally adjusted - employment","LAUS",t
+219,"LAUST500000000000005","Vermont, not seasonally adjusted - unemployment","LAUS",t
+220,"LAUST500000000000006","Vermont, not seasonally adjusted - unemployment rate","LAUS",t
+221,"LASST500000000000003","Vermont, seasonally adjusted - labor force","LAUS",t
+222,"LASST500000000000006","Vermont, seasonally adjusted - unemployment rate","LAUS",t
+223,"LASST500000000000004","Vermont, seasonally adjusted - employment","LAUS",t
+224,"LASST500000000000005","Vermont, seasonally adjusted - unemployment","LAUS",t
+225,"LAUST100000000000004","Delaware, not seasonally adjusted - employment","LAUS",t
+226,"LAUST100000000000005","Delaware, not seasonally adjusted - unemployment","LAUS",t
+227,"LAUST100000000000006","Delaware, not seasonally adjusted - unemployment rate","LAUS",t
+228,"LAUST100000000000003","Delaware, not seasonally adjusted - labor force","LAUS",t
+229,"LASST100000000000006","Delaware, seasonally adjusted - unemployment rate","LAUS",t
+230,"LASST100000000000004","Delaware, seasonally adjusted - employment","LAUS",t
+231,"LASST100000000000005","Delaware, seasonally adjusted - unemployment","LAUS",t
+232,"LASST100000000000003","Delaware, seasonally adjusted - labor force","LAUS",t
+233,"LAUST380000000000006","North Dakota, not seasonally adjusted - unemployment rate","LAUS",t
+234,"LAUST380000000000004","North Dakota, not seasonally adjusted - employment","LAUS",t
+235,"LAUST380000000000005","North Dakota, not seasonally adjusted - unemployment","LAUS",t
+236,"LAUST380000000000003","North Dakota, not seasonally adjusted - labor force","LAUS",t
+237,"LASST380000000000004","North Dakota, seasonally adjusted - employment","LAUS",t
+238,"LASST380000000000005","North Dakota, seasonally adjusted - unemployment","LAUS",t
+239,"LASST380000000000006","North Dakota, seasonally adjusted - unemployment rate","LAUS",t
+240,"LASST380000000000003","North Dakota, seasonally adjusted - labor force","LAUS",t
+241,"LASST420000000000003","Pennsylvania, seasonally adjusted - labor force","LAUS",t
+242,"LASST420000000000005","Pennsylvania, seasonally adjusted - unemployment","LAUS",t
+243,"LASST420000000000004","Pennsylvania, seasonally adjusted - employment","LAUS",t
+244,"LASST420000000000006","Pennsylvania, seasonally adjusted - unemployment rate","LAUS",t
+245,"LAUST420000000000003","Pennsylvania, not seasonally adjusted - labor force","LAUS",t
+246,"LAUST420000000000006","Pennsylvania, not seasonally adjusted - unemployment rate","LAUS",t
+247,"LAUST420000000000005","Pennsylvania, not seasonally adjusted - unemployment","LAUS",t
+248,"LAUST420000000000004","Pennsylvania, not seasonally adjusted - employment","LAUS",t
+249,"LAUST540000000000004","West Virginia, not seasonally adjusted - employment","LAUS",t
+250,"LAUST540000000000005","West Virginia, not seasonally adjusted - unemployment","LAUS",t
+251,"LAUST540000000000006","West Virginia, not seasonally adjusted - unemployment rate","LAUS",t
+252,"LASST540000000000005","West Virginia, seasonally adjusted - unemployment","LAUS",t
+253,"LASST540000000000003","West Virginia, seasonally adjusted - labor force","LAUS",t
+254,"LAUST540000000000003","West Virginia, not seasonally adjusted - labor force","LAUS",t
+255,"LASST540000000000004","West Virginia, seasonally adjusted - employment","LAUS",t
+256,"LASST540000000000006","West Virginia, seasonally adjusted - unemployment rate","LAUS",t
+257,"LAUST120000000000003","Florida, not seasonally adjusted - labor force","LAUS",t
+258,"LASST120000000000003","Florida, seasonally adjusted - labor force","LAUS",t
+259,"LAUST120000000000006","Florida, not seasonally adjusted - unemployment rate","LAUS",t
+260,"LASST120000000000005","Florida, seasonally adjusted - unemployment","LAUS",t
+261,"LAUST120000000000004","Florida, not seasonally adjusted - employment","LAUS",t
+262,"LAUST120000000000005","Florida, not seasonally adjusted - unemployment","LAUS",t
+263,"LASST120000000000006","Florida, seasonally adjusted - unemployment rate","LAUS",t
+264,"LASST120000000000004","Florida, seasonally adjusted - employment","LAUS",t
+265,"LASST020000000000005","Alaska, seasonally adjusted - unemployment","LAUS",t
+266,"LASST020000000000004","Alaska, seasonally adjusted - employment","LAUS",t
+267,"LASST020000000000006","Alaska, seasonally adjusted - unemployment rate","LAUS",t
+268,"LASST020000000000003","Alaska, seasonally adjusted - labor force","LAUS",t
+269,"LAUST020000000000006","Alaska, not seasonally adjusted - unemployment rate","LAUS",t
+270,"LAUST020000000000005","Alaska, not seasonally adjusted - unemployment","LAUS",t
+271,"LAUST020000000000004","Alaska, not seasonally adjusted - employment","LAUS",t
+272,"LAUST020000000000003","Alaska, not seasonally adjusted - labor force","LAUS",t
+273,"LAUST210000000000004","Kentucky, not seasonally adjusted - employment","LAUS",t
+274,"LAUST210000000000005","Kentucky, not seasonally adjusted - unemployment","LAUS",t
+275,"LAUST210000000000006","Kentucky, not seasonally adjusted - unemployment rate","LAUS",t
+276,"LASST210000000000006","Kentucky, seasonally adjusted - unemployment rate","LAUS",t
+277,"LASST210000000000004","Kentucky, seasonally adjusted - employment","LAUS",t
+278,"LASST210000000000003","Kentucky, seasonally adjusted - labor force","LAUS",t
+279,"LASST210000000000005","Kentucky, seasonally adjusted - unemployment","LAUS",t
+280,"LAUST210000000000003","Kentucky, not seasonally adjusted - labor force","LAUS",t
+281,"LAUST150000000000003","Hawaii, not seasonally adjusted - labor force","LAUS",t
+282,"LAUST150000000000006","Hawaii, not seasonally adjusted - unemployment rate","LAUS",t
+283,"LAUST150000000000005","Hawaii, not seasonally adjusted - unemployment","LAUS",t
+284,"LAUST150000000000004","Hawaii, not seasonally adjusted - employment","LAUS",t
+285,"LASST150000000000005","Hawaii, seasonally adjusted - unemployment","LAUS",t
+286,"LASST150000000000004","Hawaii, seasonally adjusted - employment","LAUS",t
+287,"LASST150000000000006","Hawaii, seasonally adjusted - unemployment rate","LAUS",t
+288,"LASST150000000000003","Hawaii, seasonally adjusted - labor force","LAUS",t
+289,"LAUST310000000000003","Nebraska, not seasonally adjusted - labor force","LAUS",t
+290,"LAUST310000000000005","Nebraska, not seasonally adjusted - unemployment","LAUS",t
+291,"LAUST310000000000004","Nebraska, not seasonally adjusted - employment","LAUS",t
+292,"LAUST310000000000006","Nebraska, not seasonally adjusted - unemployment rate","LAUS",t
+293,"LASST310000000000006","Nebraska, seasonally adjusted - unemployment rate","LAUS",t
+294,"LASST310000000000005","Nebraska, seasonally adjusted - unemployment","LAUS",t
+295,"LASST310000000000004","Nebraska, seasonally adjusted - employment","LAUS",t
+296,"LASST310000000000003","Nebraska, seasonally adjusted - labor force","LAUS",t
+297,"LAUST290000000000005","Missouri, not seasonally adjusted - unemployment","LAUS",t
+298,"LAUST290000000000004","Missouri, not seasonally adjusted - employment","LAUS",t
+299,"LASST290000000000003","Missouri, seasonally adjusted - labor force","LAUS",t
+300,"LAUST290000000000006","Missouri, not seasonally adjusted - unemployment rate","LAUS",t
+301,"LAUST290000000000003","Missouri, not seasonally adjusted - labor force","LAUS",t
+302,"LASST290000000000006","Missouri, seasonally adjusted - unemployment rate","LAUS",t
+303,"LASST290000000000004","Missouri, seasonally adjusted - employment","LAUS",t
+304,"LASST290000000000005","Missouri, seasonally adjusted - unemployment","LAUS",t
+305,"LAUST550000000000005","Wisconsin, not seasonally adjusted - unemployment","LAUS",t
+306,"LAUST550000000000006","Wisconsin, not seasonally adjusted - unemployment rate","LAUS",t
+307,"LASST550000000000003","Wisconsin, seasonally adjusted - labor force","LAUS",t
+308,"LAUST550000000000004","Wisconsin, not seasonally adjusted - employment","LAUS",t
+309,"LAUST550000000000003","Wisconsin, not seasonally adjusted - labor force","LAUS",t
+310,"LASST550000000000004","Wisconsin, seasonally adjusted - employment","LAUS",t
+311,"LASST550000000000006","Wisconsin, seasonally adjusted - unemployment rate","LAUS",t
+312,"LASST550000000000005","Wisconsin, seasonally adjusted - unemployment","LAUS",t
+313,"LAUST010000000000003","Alabama, not seasonally adjusted - labor force","LAUS",t
+314,"LAUST010000000000006","Alabama, not seasonally adjusted - unemployment rate","LAUS",t
+315,"LAUST010000000000004","Alabama, not seasonally adjusted - employment","LAUS",t
+316,"LAUST010000000000005","Alabama, not seasonally adjusted - unemployment","LAUS",t
+317,"LASST010000000000004","Alabama, seasonally adjusted - employment","LAUS",t
+318,"LASST010000000000005","Alabama, seasonally adjusted - unemployment","LAUS",t
+319,"LASST010000000000006","Alabama, seasonally adjusted - unemployment rate","LAUS",t
+320,"LASST010000000000003","Alabama, seasonally adjusted - labor force","LAUS",t
+321,"LASST440000000000006","Rhode Island, seasonally adjusted - unemployment rate","LAUS",t
+322,"LASST440000000000005","Rhode Island, seasonally adjusted - unemployment","LAUS",t
+323,"LASST440000000000004","Rhode Island, seasonally adjusted - employment","LAUS",t
+324,"LASST440000000000003","Rhode Island, seasonally adjusted - labor force","LAUS",t
+325,"LAUST440000000000005","Rhode Island, not seasonally adjusted - unemployment","LAUS",t
+326,"LAUST440000000000004","Rhode Island, not seasonally adjusted - employment","LAUS",t
+327,"LAUST440000000000006","Rhode Island, not seasonally adjusted - unemployment rate","LAUS",t
+328,"LAUST440000000000003","Rhode Island, not seasonally adjusted - labor force","LAUS",t
+329,"LASST460000000000005","South Dakota, seasonally adjusted - unemployment","LAUS",t
+330,"LASST460000000000004","South Dakota, seasonally adjusted - employment","LAUS",t
+331,"LASST460000000000006","South Dakota, seasonally adjusted - unemployment rate","LAUS",t
+332,"LASST460000000000003","South Dakota, seasonally adjusted - labor force","LAUS",t
+333,"LAUST460000000000006","South Dakota, not seasonally adjusted - unemployment rate","LAUS",t
+334,"LAUST460000000000005","South Dakota, not seasonally adjusted - unemployment","LAUS",t
+335,"LAUST460000000000004","South Dakota, not seasonally adjusted - employment","LAUS",t
+336,"LAUST460000000000003","South Dakota, not seasonally adjusted - labor force","LAUS",t
+337,"LAUST130000000000005","Georgia, not seasonally adjusted - unemployment","LAUS",t
+338,"LAUST130000000000004","Georgia, not seasonally adjusted - employment","LAUS",t
+339,"LAUST130000000000006","Georgia, not seasonally adjusted - unemployment rate","LAUS",t
+340,"LAUST130000000000003","Georgia, not seasonally adjusted - labor force","LAUS",t
+341,"LASST130000000000003","Georgia, seasonally adjusted - labor force","LAUS",t
+342,"LASST130000000000006","Georgia, seasonally adjusted - unemployment rate","LAUS",t
+343,"LASST130000000000005","Georgia, seasonally adjusted - unemployment","LAUS",t
+344,"LASST130000000000004","Georgia, seasonally adjusted - employment","LAUS",t
+345,"LAUST080000000000005","Colorado, not seasonally adjusted - unemployment","LAUS",t
+346,"LAUST080000000000004","Colorado, not seasonally adjusted - employment","LAUS",t
+347,"LAUST080000000000006","Colorado, not seasonally adjusted - unemployment rate","LAUS",t
+348,"LAUST080000000000003","Colorado, not seasonally adjusted - labor force","LAUS",t
+349,"LASST080000000000006","Colorado, seasonally adjusted - unemployment rate","LAUS",t
+350,"LASST080000000000005","Colorado, seasonally adjusted - unemployment","LAUS",t
+351,"LASST080000000000004","Colorado, seasonally adjusted - employment","LAUS",t
+352,"LASST080000000000003","Colorado, seasonally adjusted - labor force","LAUS",t
+353,"LAUST340000000000006","New Jersey, not seasonally adjusted - unemployment rate","LAUS",t
+354,"LAUST340000000000003","New Jersey, not seasonally adjusted - labor force","LAUS",t
+355,"LASST340000000000003","New Jersey, seasonally adjusted - labor force","LAUS",t
+356,"LASST340000000000004","New Jersey, seasonally adjusted - employment","LAUS",t
+357,"LASST340000000000005","New Jersey, seasonally adjusted - unemployment","LAUS",t
+358,"LAUST340000000000004","New Jersey, not seasonally adjusted - employment","LAUS",t
+359,"LAUST340000000000005","New Jersey, not seasonally adjusted - unemployment","LAUS",t
+360,"LASST340000000000006","New Jersey, seasonally adjusted - unemployment rate","LAUS",t
+361,"LASST530000000000006","Washington, seasonally adjusted - unemployment rate","LAUS",t
+362,"LAUST530000000000003","Washington, not seasonally adjusted - labor force","LAUS",t
+363,"LASST530000000000004","Washington, seasonally adjusted - employment","LAUS",t
+364,"LASST530000000000003","Washington, seasonally adjusted - labor force","LAUS",t
+365,"LAUST530000000000004","Washington, not seasonally adjusted - employment","LAUS",t
+366,"LAUST530000000000006","Washington, not seasonally adjusted - unemployment rate","LAUS",t
+367,"LASST530000000000005","Washington, seasonally adjusted - unemployment","LAUS",t
+368,"LAUST530000000000005","Washington, not seasonally adjusted - unemployment","LAUS",t
+369,"LASST370000000000003","North Carolina, seasonally adjusted - labor force","LAUS",t
+370,"LASST370000000000005","North Carolina, seasonally adjusted - unemployment","LAUS",t
+371,"LASST370000000000004","North Carolina, seasonally adjusted - employment","LAUS",t
+372,"LASST370000000000006","North Carolina, seasonally adjusted - unemployment rate","LAUS",t
+373,"LAUST370000000000006","North Carolina, not seasonally adjusted - unemployment rate","LAUS",t
+374,"LAUST370000000000005","North Carolina, not seasonally adjusted - unemployment","LAUS",t
+375,"LAUST370000000000004","North Carolina, not seasonally adjusted - employment","LAUS",t
+376,"LAUST370000000000003","North Carolina, not seasonally adjusted - labor force","LAUS",t
+377,"LAUST470000000000004","Tennessee, not seasonally adjusted - employment","LAUS",t
+378,"LAUST470000000000005","Tennessee, not seasonally adjusted - unemployment","LAUS",t
+379,"LAUST470000000000006","Tennessee, not seasonally adjusted - unemployment rate","LAUS",t
+380,"LAUST470000000000003","Tennessee, not seasonally adjusted - labor force","LAUS",t
+381,"LASST470000000000003","Tennessee, seasonally adjusted - labor force","LAUS",t
+382,"LASST470000000000006","Tennessee, seasonally adjusted - unemployment rate","LAUS",t
+383,"LASST470000000000004","Tennessee, seasonally adjusted - employment","LAUS",t
+384,"LASST470000000000005","Tennessee, seasonally adjusted - unemployment","LAUS",t
+385,"LASST480000000000003","Texas, seasonally adjusted - labor force","LAUS",t
+386,"LASST480000000000006","Texas, seasonally adjusted - unemployment rate","LAUS",t
+387,"LASST480000000000005","Texas, seasonally adjusted - unemployment","LAUS",t
+388,"LASST480000000000004","Texas, seasonally adjusted - employment","LAUS",t
+389,"LAUST480000000000003","Texas, not seasonally adjusted - labor force","LAUS",t
+390,"LAUST480000000000005","Texas, not seasonally adjusted - unemployment","LAUS",t
+391,"LAUST480000000000004","Texas, not seasonally adjusted - employment","LAUS",t
+392,"LAUST480000000000006","Texas, not seasonally adjusted - unemployment rate","LAUS",t
+393,"LASST320000000000003","Nevada, seasonally adjusted - labor force","LAUS",t
+394,"LASST320000000000006","Nevada, seasonally adjusted - unemployment rate","LAUS",t
+395,"LASST320000000000004","Nevada, seasonally adjusted - employment","LAUS",t
+396,"LASST320000000000005","Nevada, seasonally adjusted - unemployment","LAUS",t
+397,"LAUST320000000000003","Nevada, not seasonally adjusted - labor force","LAUS",t
+398,"LAUST320000000000004","Nevada, not seasonally adjusted - employment","LAUS",t
+399,"LAUST320000000000005","Nevada, not seasonally adjusted - unemployment","LAUS",t
+400,"LAUST320000000000006","Nevada, not seasonally adjusted - unemployment rate","LAUS",t
+401,"LASST230000000000004","Maine, seasonally adjusted - employment","LAUS",t
+402,"LAUST230000000000003","Maine, not seasonally adjusted - labor force","LAUS",t
+403,"LASST230000000000006","Maine, seasonally adjusted - unemployment rate","LAUS",t
+404,"LAUST230000000000006","Maine, not seasonally adjusted - unemployment rate","LAUS",t
+405,"LAUST230000000000004","Maine, not seasonally adjusted - employment","LAUS",t
+406,"LASST230000000000003","Maine, seasonally adjusted - labor force","LAUS",t
+407,"LAUST230000000000005","Maine, not seasonally adjusted - unemployment","LAUS",t
+408,"LASST230000000000005","Maine, seasonally adjusted - unemployment","LAUS",t
+409,"SMU28000006000000001","Mississippi, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+410,"SMS28000005500000001","Mississippi, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+411,"SMS28000004000000001","Mississippi, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+412,"SMS28000006000000001","Mississippi, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+413,"SMU28000003000000001","Mississippi, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+414,"SMS28000001000000001","Mississippi, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+415,"SMS28000005000000001","Mississippi, Information, Seasonally adjusted - labor force","CESSM",t
+416,"SMU28000005000000001","Mississippi, Information, Not seasonally adjusted - labor force","CESSM",t
+417,"SMU28000004000000001","Mississippi, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+418,"SMU28000009000000001","Mississippi, Government, Not seasonally adjusted - labor force","CESSM",t
+419,"SMU28000000000000001","Mississippi, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+420,"SMU28000005500000001","Mississippi, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+421,"SMS28000000000000001","Mississippi, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+422,"SMS28000002000000001","Mississippi, Construction, Seasonally adjusted - labor force","CESSM",t
+423,"SMS28000009000000001","Mississippi, Government, Seasonally adjusted - labor force","CESSM",t
+424,"SMU28000001000000001","Mississippi, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+425,"SMU28000007000000001","Mississippi, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+426,"SMU28000006500000001","Mississippi, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+427,"SMS28000007000000001","Mississippi, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+428,"SMU28000008000000001","Mississippi, Other Services, Not seasonally adjusted - labor force","CESSM",t
+429,"SMS28000006500000001","Mississippi, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+430,"SMS28000008000000001","Mississippi, Other Services, Seasonally adjusted - labor force","CESSM",t
+431,"SMU28000002000000001","Mississippi, Construction, Not seasonally adjusted - labor force","CESSM",t
+432,"SMS28000003000000001","Mississippi, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+433,"SMU40000002000000001","Oklahoma, Construction, Not seasonally adjusted - labor force","CESSM",t
+434,"SMS40000004000000001","Oklahoma, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+435,"SMS40000001000000001","Oklahoma, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+436,"SMS40000002000000001","Oklahoma, Construction, Seasonally adjusted - labor force","CESSM",t
+437,"SMU40000003000000001","Oklahoma, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+438,"SMS40000007000000001","Oklahoma, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+439,"SMS40000006000000001","Oklahoma, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+440,"SMS40000000000000001","Oklahoma, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+441,"SMS40000005500000001","Oklahoma, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+442,"SMS40000006500000001","Oklahoma, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+443,"SMU40000005500000001","Oklahoma, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+444,"SMU40000009000000001","Oklahoma, Government, Not seasonally adjusted - labor force","CESSM",t
+445,"SMU40000008000000001","Oklahoma, Other Services, Not seasonally adjusted - labor force","CESSM",t
+446,"SMU40000007000000001","Oklahoma, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+447,"SMU40000005000000001","Oklahoma, Information, Not seasonally adjusted - labor force","CESSM",t
+448,"SMU40000004000000001","Oklahoma, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+449,"SMU40000001000000001","Oklahoma, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+450,"SMU40000006500000001","Oklahoma, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+451,"SMU40000000000000001","Oklahoma, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+452,"SMS40000009000000001","Oklahoma, Government, Seasonally adjusted - labor force","CESSM",t
+453,"SMU40000006000000001","Oklahoma, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+454,"SMS56000002000000001","Wyoming, Construction, Seasonally adjusted - labor force","CESSM",t
+455,"SMU56000006000000001","Wyoming, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+456,"SMS56000006500000001","Wyoming, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+457,"SMU56000009000000001","Wyoming, Government, Not seasonally adjusted - labor force","CESSM",t
+458,"SMS56000007000000001","Wyoming, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+459,"SMU56000002000000001","Wyoming, Construction, Not seasonally adjusted - labor force","CESSM",t
+460,"SMS56000003000000001","Wyoming, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+461,"SMS56000001000000001","Wyoming, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+462,"SMU56000005000000001","Wyoming, Information, Not seasonally adjusted - labor force","CESSM",t
+463,"SMU56000007000000001","Wyoming, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+464,"SMS56000006000000001","Wyoming, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+465,"SMS56000005500000001","Wyoming, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+466,"SMU56000005500000001","Wyoming, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+467,"SMU56000004000000001","Wyoming, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+468,"SMS56000000000000001","Wyoming, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+469,"SMS56000009000000001","Wyoming, Government, Seasonally adjusted - labor force","CESSM",t
+470,"SMU56000000000000001","Wyoming, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+471,"SMS56000005000000001","Wyoming, Information, Seasonally adjusted - labor force","CESSM",t
+472,"SMU56000006500000001","Wyoming, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+473,"SMU56000001000000001","Wyoming, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+474,"SMS56000008000000001","Wyoming, Other Services, Seasonally adjusted - labor force","CESSM",t
+475,"SMU56000003000000001","Wyoming, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+476,"SMU56000008000000001","Wyoming, Other Services, Not seasonally adjusted - labor force","CESSM",t
+477,"SMS56000004000000001","Wyoming, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+478,"SMU27000009000000001","Minnesota, Government, Not seasonally adjusted - labor force","CESSM",t
+479,"SMS27000000000000001","Minnesota, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+480,"SMU27000002000000001","Minnesota, Construction, Not seasonally adjusted - labor force","CESSM",t
+481,"SMS27000005500000001","Minnesota, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+482,"SMU27000006500000001","Minnesota, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+483,"SMS27000004000000001","Minnesota, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+484,"SMU27000007000000001","Minnesota, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+485,"SMS27000003000000001","Minnesota, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+486,"SMS27000008000000001","Minnesota, Other Services, Seasonally adjusted - labor force","CESSM",t
+487,"SMS27000001000000001","Minnesota, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+488,"SMU27000006000000001","Minnesota, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+489,"SMU27000000000000001","Minnesota, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+490,"SMS27000002000000001","Minnesota, Construction, Seasonally adjusted - labor force","CESSM",t
+491,"SMS27000006000000001","Minnesota, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+492,"SMS27000009000000001","Minnesota, Government, Seasonally adjusted - labor force","CESSM",t
+493,"SMU27000005000000001","Minnesota, Information, Not seasonally adjusted - labor force","CESSM",t
+494,"SMU27000001000000001","Minnesota, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+495,"SMU27000003000000001","Minnesota, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+496,"SMU27000008000000001","Minnesota, Other Services, Not seasonally adjusted - labor force","CESSM",t
+497,"SMS27000007000000001","Minnesota, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+498,"SMS27000006500000001","Minnesota, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+499,"SMS27000005000000001","Minnesota, Information, Seasonally adjusted - labor force","CESSM",t
+500,"SMU27000005500000001","Minnesota, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+501,"SMU27000004000000001","Minnesota, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+502,"SMU17000000000000001","Illinois, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+503,"SMU17000002000000001","Illinois, Construction, Not seasonally adjusted - labor force","CESSM",t
+504,"SMS17000005000000001","Illinois, Information, Seasonally adjusted - labor force","CESSM",t
+505,"SMU17000008000000001","Illinois, Other Services, Not seasonally adjusted - labor force","CESSM",t
+506,"SMS17000009000000001","Illinois, Government, Seasonally adjusted - labor force","CESSM",t
+507,"SMS17000000000000001","Illinois, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+508,"SMU17000001000000001","Illinois, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+509,"SMU17000005000000001","Illinois, Information, Not seasonally adjusted - labor force","CESSM",t
+510,"SMS17000005500000001","Illinois, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+511,"SMS17000001000000001","Illinois, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+512,"SMU17000009000000001","Illinois, Government, Not seasonally adjusted - labor force","CESSM",t
+513,"SMS17000007000000001","Illinois, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+514,"SMS17000006500000001","Illinois, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+515,"SMS17000008000000001","Illinois, Other Services, Seasonally adjusted - labor force","CESSM",t
+516,"SMU17000004000000001","Illinois, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+517,"SMU17000005500000001","Illinois, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+518,"SMU17000006000000001","Illinois, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+519,"SMS17000002000000001","Illinois, Construction, Seasonally adjusted - labor force","CESSM",t
+520,"SMS17000006000000001","Illinois, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+521,"SMU17000003000000001","Illinois, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+522,"SMS17000004000000001","Illinois, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+523,"SMU17000006500000001","Illinois, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+524,"SMU17000007000000001","Illinois, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+525,"SMS17000003000000001","Illinois, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+526,"SMU05000008000000001","Arkansas, Other Services, Not seasonally adjusted - labor force","CESSM",t
+527,"SMS05000002000000001","Arkansas, Construction, Seasonally adjusted - labor force","CESSM",t
+528,"SMU05000005000000001","Arkansas, Information, Not seasonally adjusted - labor force","CESSM",t
+529,"SMS05000006000000001","Arkansas, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+530,"SMU05000007000000001","Arkansas, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+531,"SMU05000003000000001","Arkansas, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+532,"SMS05000005500000001","Arkansas, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+533,"SMS05000004000000001","Arkansas, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+534,"SMS05000008000000001","Arkansas, Other Services, Seasonally adjusted - labor force","CESSM",t
+535,"SMU05000009000000001","Arkansas, Government, Not seasonally adjusted - labor force","CESSM",t
+536,"SMU05000005500000001","Arkansas, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+537,"SMU05000004000000001","Arkansas, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+538,"SMU05000000000000001","Arkansas, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+539,"SMS05000007000000001","Arkansas, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+540,"SMS05000006500000001","Arkansas, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+541,"SMU05000002000000001","Arkansas, Construction, Not seasonally adjusted - labor force","CESSM",t
+542,"SMS05000000000000001","Arkansas, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+543,"SMS05000009000000001","Arkansas, Government, Seasonally adjusted - labor force","CESSM",t
+544,"SMU05000006500000001","Arkansas, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+545,"SMU05000001000000001","Arkansas, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+546,"SMU05000006000000001","Arkansas, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+547,"SMS05000003000000001","Arkansas, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+548,"SMS05000001000000001","Arkansas, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+549,"SMU35000008000000001","New Mexico, Other Services, Not seasonally adjusted - labor force","CESSM",t
+550,"SMU35000005000000001","New Mexico, Information, Not seasonally adjusted - labor force","CESSM",t
+551,"SMU35000001000000001","New Mexico, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+552,"SMS35000006000000001","New Mexico, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+553,"SMS35000004000000001","New Mexico, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+554,"SMS35000000000000001","New Mexico, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+555,"SMU35000000000000001","New Mexico, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+556,"SMU35000002000000001","New Mexico, Construction, Not seasonally adjusted - labor force","CESSM",t
+557,"SMS35000006500000001","New Mexico, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+558,"SMS35000007000000001","New Mexico, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+559,"SMS35000008000000001","New Mexico, Other Services, Seasonally adjusted - labor force","CESSM",t
+560,"SMS35000003000000001","New Mexico, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+561,"SMU35000007000000001","New Mexico, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+562,"SMS35000001000000001","New Mexico, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+563,"SMU35000006500000001","New Mexico, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+564,"SMS35000005500000001","New Mexico, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+565,"SMU35000003000000001","New Mexico, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+566,"SMS35000002000000001","New Mexico, Construction, Seasonally adjusted - labor force","CESSM",t
+567,"SMS35000009000000001","New Mexico, Government, Seasonally adjusted - labor force","CESSM",t
+568,"SMU35000005500000001","New Mexico, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+569,"SMU35000009000000001","New Mexico, Government, Not seasonally adjusted - labor force","CESSM",t
+570,"SMU35000004000000001","New Mexico, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+571,"SMU35000006000000001","New Mexico, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+572,"SMU39000003000000001","Ohio, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+573,"SMS39000005000000001","Ohio, Information, Seasonally adjusted - labor force","CESSM",t
+574,"SMU39000006500000001","Ohio, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+575,"SMU39000007000000001","Ohio, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+576,"SMS39000009000000001","Ohio, Government, Seasonally adjusted - labor force","CESSM",t
+577,"SMS39000000000000001","Ohio, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+578,"SMS39000005500000001","Ohio, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+579,"SMU39000000000000001","Ohio, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+580,"SMU39000002000000001","Ohio, Construction, Not seasonally adjusted - labor force","CESSM",t
+581,"SMS39000001000000001","Ohio, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+582,"SMS39000007000000001","Ohio, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+583,"SMS39000006500000001","Ohio, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+584,"SMS39000008000000001","Ohio, Other Services, Seasonally adjusted - labor force","CESSM",t
+585,"SMU39000001000000001","Ohio, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+586,"SMU39000005000000001","Ohio, Information, Not seasonally adjusted - labor force","CESSM",t
+587,"SMU39000008000000001","Ohio, Other Services, Not seasonally adjusted - labor force","CESSM",t
+588,"SMS39000002000000001","Ohio, Construction, Seasonally adjusted - labor force","CESSM",t
+589,"SMS39000006000000001","Ohio, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+590,"SMS39000004000000001","Ohio, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+591,"SMU39000004000000001","Ohio, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+592,"SMU39000005500000001","Ohio, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+593,"SMU39000009000000001","Ohio, Government, Not seasonally adjusted - labor force","CESSM",t
+594,"SMU39000006000000001","Ohio, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+595,"SMS39000003000000001","Ohio, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+596,"SMS18000007000000001","Indiana, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+597,"SMU18000000000000001","Indiana, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+598,"SMU18000003000000001","Indiana, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+599,"SMS18000006000000001","Indiana, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+600,"SMU18000008000000001","Indiana, Other Services, Not seasonally adjusted - labor force","CESSM",t
+601,"SMS18000000000000001","Indiana, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+602,"SMU18000004000000001","Indiana, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+603,"SMU18000005500000001","Indiana, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+604,"SMS18000005000000001","Indiana, Information, Seasonally adjusted - labor force","CESSM",t
+605,"SMS18000001000000001","Indiana, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+606,"SMS18000003000000001","Indiana, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+607,"SMS18000008000000001","Indiana, Other Services, Seasonally adjusted - labor force","CESSM",t
+608,"SMU18000006500000001","Indiana, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+609,"SMU18000007000000001","Indiana, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+610,"SMS18000005500000001","Indiana, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+611,"SMU18000005000000001","Indiana, Information, Not seasonally adjusted - labor force","CESSM",t
+612,"SMS18000004000000001","Indiana, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+613,"SMU18000001000000001","Indiana, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+614,"SMS18000009000000001","Indiana, Government, Seasonally adjusted - labor force","CESSM",t
+615,"SMS18000002000000001","Indiana, Construction, Seasonally adjusted - labor force","CESSM",t
+616,"SMU18000006000000001","Indiana, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+617,"SMU18000009000000001","Indiana, Government, Not seasonally adjusted - labor force","CESSM",t
+618,"SMU18000002000000001","Indiana, Construction, Not seasonally adjusted - labor force","CESSM",t
+619,"SMS18000006500000001","Indiana, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+620,"SMU24000001500000001","Maryland, Mining, Logging, and Construction, Not seasonally adjusted - labor force","CESSM",t
+621,"SMS24000005000000001","Maryland, Information, Seasonally adjusted - labor force","CESSM",t
+622,"SMU24000005000000001","Maryland, Information, Not seasonally adjusted - labor force","CESSM",t
+623,"SMS24000009000000001","Maryland, Government, Seasonally adjusted - labor force","CESSM",t
+624,"SMS24000004000000001","Maryland, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+625,"SMS24000005500000001","Maryland, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+626,"SMS24000006000000001","Maryland, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+627,"SMU24000006000000001","Maryland, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+628,"SMU24000004000000001","Maryland, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+629,"SMU24000000000000001","Maryland, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+630,"SMS24000003000000001","Maryland, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+631,"SMS24000006500000001","Maryland, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+632,"SMU24000006500000001","Maryland, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+633,"SMU24000007000000001","Maryland, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+634,"SMS24000007000000001","Maryland, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+635,"SMU24000008000000001","Maryland, Other Services, Not seasonally adjusted - labor force","CESSM",t
+636,"SMU24000003000000001","Maryland, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+637,"SMS24000001500000001","Maryland, Mining, Logging, and Construction, Seasonally adjusted - labor force","CESSM",t
+638,"SMS24000000000000001","Maryland, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+639,"SMU24000005500000001","Maryland, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+640,"SMS24000008000000001","Maryland, Other Services, Seasonally adjusted - labor force","CESSM",t
+641,"SMU24000009000000001","Maryland, Government, Not seasonally adjusted - labor force","CESSM",t
+642,"SMS22000001000000001","Louisiana, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+643,"SMU22000004000000001","Louisiana, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+644,"SMU22000005500000001","Louisiana, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+645,"SMU22000006000000001","Louisiana, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+646,"SMS22000005500000001","Louisiana, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+647,"SMS22000002000000001","Louisiana, Construction, Seasonally adjusted - labor force","CESSM",t
+648,"SMS22000009000000001","Louisiana, Government, Seasonally adjusted - labor force","CESSM",t
+649,"SMU22000003000000001","Louisiana, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+650,"SMU22000006500000001","Louisiana, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+651,"SMU22000007000000001","Louisiana, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+652,"SMU22000000000000001","Louisiana, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+653,"SMU22000002000000001","Louisiana, Construction, Not seasonally adjusted - labor force","CESSM",t
+654,"SMS22000006000000001","Louisiana, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+655,"SMS22000004000000001","Louisiana, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+656,"SMU22000008000000001","Louisiana, Other Services, Not seasonally adjusted - labor force","CESSM",t
+657,"SMS22000000000000001","Louisiana, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+658,"SMU22000001000000001","Louisiana, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+659,"SMU22000005000000001","Louisiana, Information, Not seasonally adjusted - labor force","CESSM",t
+660,"SMS22000006500000001","Louisiana, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+661,"SMS22000007000000001","Louisiana, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+662,"SMS22000008000000001","Louisiana, Other Services, Seasonally adjusted - labor force","CESSM",t
+663,"SMS22000003000000001","Louisiana, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+664,"SMU22000009000000001","Louisiana, Government, Not seasonally adjusted - labor force","CESSM",t
+665,"SMU16000006000000001","Idaho, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+666,"SMS16000000000000001","Idaho, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+667,"SMS16000009000000001","Idaho, Government, Seasonally adjusted - labor force","CESSM",t
+668,"SMU16000003000000001","Idaho, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+669,"SMU16000006500000001","Idaho, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+670,"SMS16000003000000001","Idaho, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+671,"SMU16000002000000001","Idaho, Construction, Not seasonally adjusted - labor force","CESSM",t
+672,"SMS16000001000000001","Idaho, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+673,"SMU16000004000000001","Idaho, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+674,"SMU16000009000000001","Idaho, Government, Not seasonally adjusted - labor force","CESSM",t
+675,"SMU16000005500000001","Idaho, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+676,"SMS16000002000000001","Idaho, Construction, Seasonally adjusted - labor force","CESSM",t
+677,"SMS16000006000000001","Idaho, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+678,"SMU16000001000000001","Idaho, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+679,"SMS16000005500000001","Idaho, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+680,"SMU16000005000000001","Idaho, Information, Not seasonally adjusted - labor force","CESSM",t
+681,"SMU16000008000000001","Idaho, Other Services, Not seasonally adjusted - labor force","CESSM",t
+682,"SMS16000004000000001","Idaho, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+683,"SMU16000007000000001","Idaho, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+684,"SMS16000008000000001","Idaho, Other Services, Seasonally adjusted - labor force","CESSM",t
+685,"SMS16000007000000001","Idaho, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+686,"SMS16000006500000001","Idaho, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+687,"SMU16000000000000001","Idaho, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+688,"SMS04000007000000001","Arizona, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+689,"SMU04000006000000001","Arizona, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+690,"SMS04000006500000001","Arizona, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+691,"SMS04000008000000001","Arizona, Other Services, Seasonally adjusted - labor force","CESSM",t
+692,"SMU04000007000000001","Arizona, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+693,"SMS04000002000000001","Arizona, Construction, Seasonally adjusted - labor force","CESSM",t
+694,"SMU04000001000000001","Arizona, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+695,"SMS04000006000000001","Arizona, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+696,"SMS04000004000000001","Arizona, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+697,"SMU04000005500000001","Arizona, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+698,"SMS04000003000000001","Arizona, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+699,"SMU04000004000000001","Arizona, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+700,"SMU04000000000000001","Arizona, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+701,"SMU04000002000000001","Arizona, Construction, Not seasonally adjusted - labor force","CESSM",t
+702,"SMU04000009000000001","Arizona, Government, Not seasonally adjusted - labor force","CESSM",t
+703,"SMS04000005000000001","Arizona, Information, Seasonally adjusted - labor force","CESSM",t
+704,"SMU04000005000000001","Arizona, Information, Not seasonally adjusted - labor force","CESSM",t
+705,"SMU04000006500000001","Arizona, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+706,"SMS04000009000000001","Arizona, Government, Seasonally adjusted - labor force","CESSM",t
+707,"SMS04000000000000001","Arizona, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+708,"SMS04000005500000001","Arizona, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+709,"SMU04000003000000001","Arizona, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+710,"SMS04000001000000001","Arizona, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+711,"SMU04000008000000001","Arizona, Other Services, Not seasonally adjusted - labor force","CESSM",t
+712,"SMS19000005500000001","Iowa, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+713,"SMS19000009000000001","Iowa, Government, Seasonally adjusted - labor force","CESSM",t
+714,"SMS19000004000000001","Iowa, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+715,"SMU19000003000000001","Iowa, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+716,"SMS19000006000000001","Iowa, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+717,"SMU19000006000000001","Iowa, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+718,"SMS19000008000000001","Iowa, Other Services, Seasonally adjusted - labor force","CESSM",t
+719,"SMS19000005000000001","Iowa, Information, Seasonally adjusted - labor force","CESSM",t
+720,"SMU19000000000000001","Iowa, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+721,"SMS19000001000000001","Iowa, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+722,"SMU19000006500000001","Iowa, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+723,"SMU19000007000000001","Iowa, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+724,"SMS19000000000000001","Iowa, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+725,"SMS19000003000000001","Iowa, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+726,"SMU19000002000000001","Iowa, Construction, Not seasonally adjusted - labor force","CESSM",t
+727,"SMU19000001000000001","Iowa, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+728,"SMS19000002000000001","Iowa, Construction, Seasonally adjusted - labor force","CESSM",t
+729,"SMU19000005500000001","Iowa, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+730,"SMU19000008000000001","Iowa, Other Services, Not seasonally adjusted - labor force","CESSM",t
+731,"SMS19000007000000001","Iowa, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+732,"SMU19000004000000001","Iowa, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+733,"SMS19000006500000001","Iowa, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+734,"SMU19000009000000001","Iowa, Government, Not seasonally adjusted - labor force","CESSM",t
+735,"SMU19000005000000001","Iowa, Information, Not seasonally adjusted - labor force","CESSM",t
+736,"SMS36000007000000001","New York, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+737,"SMU36000006500000001","New York, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+738,"SMU36000007000000001","New York, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+739,"SMU36000005000000001","New York, Information, Not seasonally adjusted - labor force","CESSM",t
+740,"SMS36000006000000001","New York, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+741,"SMS36000000000000001","New York, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+742,"SMU36000006000000001","New York, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+743,"SMU36000002000000001","New York, Construction, Not seasonally adjusted - labor force","CESSM",t
+744,"SMS36000005000000001","New York, Information, Seasonally adjusted - labor force","CESSM",t
+745,"SMU36000009000000001","New York, Government, Not seasonally adjusted - labor force","CESSM",t
+746,"SMS36000001000000001","New York, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+747,"SMS36000003000000001","New York, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+748,"SMS36000008000000001","New York, Other Services, Seasonally adjusted - labor force","CESSM",t
+749,"SMU36000003000000001","New York, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+750,"SMU36000001000000001","New York, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+751,"SMS36000005500000001","New York, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+752,"SMS36000004000000001","New York, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+753,"SMU36000008000000001","New York, Other Services, Not seasonally adjusted - labor force","CESSM",t
+754,"SMS36000009000000001","New York, Government, Seasonally adjusted - labor force","CESSM",t
+755,"SMU36000004000000001","New York, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+756,"SMS36000002000000001","New York, Construction, Seasonally adjusted - labor force","CESSM",t
+757,"SMU36000005500000001","New York, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+758,"SMS36000006500000001","New York, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+759,"SMU36000000000000001","New York, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+760,"SMU26000007000000001","Michigan, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+761,"SMS26000005000000001","Michigan, Information, Seasonally adjusted - labor force","CESSM",t
+762,"SMU26000006500000001","Michigan, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+763,"SMS26000009000000001","Michigan, Government, Seasonally adjusted - labor force","CESSM",t
+764,"SMU26000003000000001","Michigan, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+765,"SMS26000006000000001","Michigan, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+766,"SMU26000005500000001","Michigan, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+767,"SMU26000009000000001","Michigan, Government, Not seasonally adjusted - labor force","CESSM",t
+768,"SMS26000005500000001","Michigan, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+769,"SMU26000004000000001","Michigan, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+770,"SMU26000006000000001","Michigan, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+771,"SMS26000001000000001","Michigan, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+772,"SMS26000008000000001","Michigan, Other Services, Seasonally adjusted - labor force","CESSM",t
+773,"SMU26000008000000001","Michigan, Other Services, Not seasonally adjusted - labor force","CESSM",t
+774,"SMU26000005000000001","Michigan, Information, Not seasonally adjusted - labor force","CESSM",t
+775,"SMU26000001000000001","Michigan, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+776,"SMS26000002000000001","Michigan, Construction, Seasonally adjusted - labor force","CESSM",t
+777,"SMS26000000000000001","Michigan, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+778,"SMS26000004000000001","Michigan, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+779,"SMU26000000000000001","Michigan, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+780,"SMU26000002000000001","Michigan, Construction, Not seasonally adjusted - labor force","CESSM",t
+781,"SMS26000003000000001","Michigan, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+782,"SMS26000007000000001","Michigan, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+783,"SMS26000006500000001","Michigan, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+784,"SMS20000005500000001","Kansas, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+785,"SMU20000005500000001","Kansas, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+786,"SMS20000000000000001","Kansas, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+787,"SMS20000002000000001","Kansas, Construction, Seasonally adjusted - labor force","CESSM",t
+788,"SMU20000001000000001","Kansas, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+789,"SMU20000008000000001","Kansas, Other Services, Not seasonally adjusted - labor force","CESSM",t
+790,"SMS20000007000000001","Kansas, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+791,"SMS20000006500000001","Kansas, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+792,"SMU20000002000000001","Kansas, Construction, Not seasonally adjusted - labor force","CESSM",t
+793,"SMS20000003000000001","Kansas, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+794,"SMU20000000000000001","Kansas, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+795,"SMU20000004000000001","Kansas, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+796,"SMS20000009000000001","Kansas, Government, Seasonally adjusted - labor force","CESSM",t
+797,"SMS20000004000000001","Kansas, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+798,"SMS20000006000000001","Kansas, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+799,"SMU20000003000000001","Kansas, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+800,"SMU20000007000000001","Kansas, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+801,"SMU20000006500000001","Kansas, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+802,"SMS20000008000000001","Kansas, Other Services, Seasonally adjusted - labor force","CESSM",t
+803,"SMS20000005000000001","Kansas, Information, Seasonally adjusted - labor force","CESSM",t
+804,"SMU20000005000000001","Kansas, Information, Not seasonally adjusted - labor force","CESSM",t
+805,"SMS20000001000000001","Kansas, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+806,"SMU20000009000000001","Kansas, Government, Not seasonally adjusted - labor force","CESSM",t
+807,"SMU20000006000000001","Kansas, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+808,"SMS49000000000000001","Utah, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+809,"SMS49000009000000001","Utah, Government, Seasonally adjusted - labor force","CESSM",t
+810,"SMU49000008000000001","Utah, Other Services, Not seasonally adjusted - labor force","CESSM",t
+811,"SMS49000005500000001","Utah, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+812,"SMU49000005000000001","Utah, Information, Not seasonally adjusted - labor force","CESSM",t
+813,"SMS49000004000000001","Utah, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+814,"SMS49000008000000001","Utah, Other Services, Seasonally adjusted - labor force","CESSM",t
+815,"SMU49000007000000001","Utah, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+816,"SMU49000003000000001","Utah, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+817,"SMS49000003000000001","Utah, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+818,"SMS49000001000000001","Utah, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+819,"SMU49000009000000001","Utah, Government, Not seasonally adjusted - labor force","CESSM",t
+820,"SMU49000005500000001","Utah, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+821,"SMU49000004000000001","Utah, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+822,"SMU49000000000000001","Utah, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+823,"SMS49000002000000001","Utah, Construction, Seasonally adjusted - labor force","CESSM",t
+824,"SMU49000002000000001","Utah, Construction, Not seasonally adjusted - labor force","CESSM",t
+825,"SMS49000006000000001","Utah, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+826,"SMU49000006500000001","Utah, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+827,"SMU49000001000000001","Utah, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+828,"SMS49000007000000001","Utah, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+829,"SMS49000006500000001","Utah, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+830,"SMS49000005000000001","Utah, Information, Seasonally adjusted - labor force","CESSM",t
+831,"SMU49000006000000001","Utah, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+832,"SMU51000002000000001","Virginia, Construction, Not seasonally adjusted - labor force","CESSM",t
+833,"SMU51000000000000001","Virginia, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+834,"SMS51000009000000001","Virginia, Government, Seasonally adjusted - labor force","CESSM",t
+835,"SMU51000005500000001","Virginia, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+836,"SMS51000000000000001","Virginia, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+837,"SMS51000002000000001","Virginia, Construction, Seasonally adjusted - labor force","CESSM",t
+838,"SMS51000006000000001","Virginia, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+839,"SMU51000003000000001","Virginia, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+840,"SMU51000007000000001","Virginia, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+841,"SMU51000006500000001","Virginia, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+842,"SMS51000005000000001","Virginia, Information, Seasonally adjusted - labor force","CESSM",t
+843,"SMS51000006500000001","Virginia, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+844,"SMS51000007000000001","Virginia, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+845,"SMU51000006000000001","Virginia, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+846,"SMU51000004000000001","Virginia, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+847,"SMS51000004000000001","Virginia, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+848,"SMS51000005500000001","Virginia, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+849,"SMU51000001000000001","Virginia, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+850,"SMU51000008000000001","Virginia, Other Services, Not seasonally adjusted - labor force","CESSM",t
+851,"SMS51000008000000001","Virginia, Other Services, Seasonally adjusted - labor force","CESSM",t
+852,"SMS51000003000000001","Virginia, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+853,"SMU51000005000000001","Virginia, Information, Not seasonally adjusted - labor force","CESSM",t
+854,"SMU51000009000000001","Virginia, Government, Not seasonally adjusted - labor force","CESSM",t
+855,"SMS41000006000000001","Oregon, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+856,"SMU41000005500000001","Oregon, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+857,"SMS41000009000000001","Oregon, Government, Seasonally adjusted - labor force","CESSM",t
+858,"SMU41000004000000001","Oregon, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+859,"SMU41000000000000001","Oregon, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+860,"SMS41000003000000001","Oregon, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+861,"SMS41000007000000001","Oregon, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+862,"SMS41000006500000001","Oregon, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+863,"SMU41000006500000001","Oregon, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+864,"SMU41000001000000001","Oregon, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+865,"SMU41000003000000001","Oregon, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+866,"SMU41000008000000001","Oregon, Other Services, Not seasonally adjusted - labor force","CESSM",t
+867,"SMS41000002000000001","Oregon, Construction, Seasonally adjusted - labor force","CESSM",t
+868,"SMU41000006000000001","Oregon, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+869,"SMS41000005500000001","Oregon, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+870,"SMS41000004000000001","Oregon, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+871,"SMU41000009000000001","Oregon, Government, Not seasonally adjusted - labor force","CESSM",t
+872,"SMU41000002000000001","Oregon, Construction, Not seasonally adjusted - labor force","CESSM",t
+873,"SMS41000008000000001","Oregon, Other Services, Seasonally adjusted - labor force","CESSM",t
+874,"SMS41000001000000001","Oregon, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+875,"SMU41000005000000001","Oregon, Information, Not seasonally adjusted - labor force","CESSM",t
+876,"SMU41000007000000001","Oregon, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+877,"SMS41000000000000001","Oregon, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+878,"SMU09000002000000001","Connecticut, Construction, Not seasonally adjusted - labor force","CESSM",t
+879,"SMS09000006000000001","Connecticut, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+880,"SMS09000002000000001","Connecticut, Construction, Seasonally adjusted - labor force","CESSM",t
+881,"SMU09000006000000001","Connecticut, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+882,"SMS09000009000000001","Connecticut, Government, Seasonally adjusted - labor force","CESSM",t
+883,"SMU09000001000000001","Connecticut, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+884,"SMS09000003000000001","Connecticut, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+885,"SMU09000003000000001","Connecticut, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+886,"SMS09000001000000001","Connecticut, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+887,"SMU09000006500000001","Connecticut, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+888,"SMS09000008000000001","Connecticut, Other Services, Seasonally adjusted - labor force","CESSM",t
+889,"SMS09000004000000001","Connecticut, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+890,"SMU09000000000000001","Connecticut, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+891,"SMU09000004000000001","Connecticut, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+892,"SMU09000009000000001","Connecticut, Government, Not seasonally adjusted - labor force","CESSM",t
+893,"SMU09000005500000001","Connecticut, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+894,"SMS09000000000000001","Connecticut, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+895,"SMS09000005500000001","Connecticut, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+896,"SMS09000006500000001","Connecticut, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+897,"SMS09000007000000001","Connecticut, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+898,"SMU09000005000000001","Connecticut, Information, Not seasonally adjusted - labor force","CESSM",t
+899,"SMS09000005000000001","Connecticut, Information, Seasonally adjusted - labor force","CESSM",t
+900,"SMU09000008000000001","Connecticut, Other Services, Not seasonally adjusted - labor force","CESSM",t
+901,"SMU09000007000000001","Connecticut, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+902,"SMS30000002000000001","Montana, Construction, Seasonally adjusted - labor force","CESSM",t
+903,"SMU30000006000000001","Montana, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+904,"SMS30000006000000001","Montana, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+905,"SMS30000009000000001","Montana, Government, Seasonally adjusted - labor force","CESSM",t
+906,"SMU30000003000000001","Montana, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+907,"SMU30000006500000001","Montana, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+908,"SMS30000007000000001","Montana, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+909,"SMS30000006500000001","Montana, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+910,"SMU30000002000000001","Montana, Construction, Not seasonally adjusted - labor force","CESSM",t
+911,"SMU30000004000000001","Montana, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+912,"SMU30000009000000001","Montana, Government, Not seasonally adjusted - labor force","CESSM",t
+913,"SMU30000005500000001","Montana, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+914,"SMS30000000000000001","Montana, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+915,"SMS30000005500000001","Montana, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+916,"SMU30000001000000001","Montana, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+917,"SMS30000004000000001","Montana, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+918,"SMU30000005000000001","Montana, Information, Not seasonally adjusted - labor force","CESSM",t
+919,"SMU30000008000000001","Montana, Other Services, Not seasonally adjusted - labor force","CESSM",t
+920,"SMU30000007000000001","Montana, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+921,"SMS30000003000000001","Montana, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+922,"SMS30000008000000001","Montana, Other Services, Seasonally adjusted - labor force","CESSM",t
+923,"SMS30000001000000001","Montana, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+924,"SMU30000000000000001","Montana, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+925,"SMU06000006500000001","California, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+926,"SMU06000007000000001","California, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+927,"SMS06000000000000001","California, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+928,"SMU06000003000000001","California, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+929,"SMS06000002000000001","California, Construction, Seasonally adjusted - labor force","CESSM",t
+930,"SMU06000008000000001","California, Other Services, Not seasonally adjusted - labor force","CESSM",t
+931,"SMS06000001000000001","California, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+932,"SMU06000005500000001","California, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+933,"SMS06000005000000001","California, Information, Seasonally adjusted - labor force","CESSM",t
+934,"SMU06000002000000001","California, Construction, Not seasonally adjusted - labor force","CESSM",t
+935,"SMS06000008000000001","California, Other Services, Seasonally adjusted - labor force","CESSM",t
+936,"SMU06000000000000001","California, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+937,"SMU06000009000000001","California, Government, Not seasonally adjusted - labor force","CESSM",t
+938,"SMU06000005000000001","California, Information, Not seasonally adjusted - labor force","CESSM",t
+939,"SMS06000004000000001","California, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+940,"SMS06000005500000001","California, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+941,"SMS06000009000000001","California, Government, Seasonally adjusted - labor force","CESSM",t
+942,"SMS06000006000000001","California, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+943,"SMU06000001000000001","California, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+944,"SMS06000003000000001","California, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+945,"SMU06000006000000001","California, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+946,"SMU06000004000000001","California, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+947,"SMS06000006500000001","California, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+948,"SMS06000007000000001","California, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+949,"SMU25000009000000001","Massachusetts, Government, Not seasonally adjusted - labor force","CESSM",t
+950,"SMS25000003000000001","Massachusetts, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+951,"SMS25000006500000001","Massachusetts, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+952,"SMU25000003000000001","Massachusetts, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+953,"SMU25000001000000001","Massachusetts, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+954,"SMS25000002000000001","Massachusetts, Construction, Seasonally adjusted - labor force","CESSM",t
+955,"SMS25000004000000001","Massachusetts, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+956,"SMS25000009000000001","Massachusetts, Government, Seasonally adjusted - labor force","CESSM",t
+957,"SMS25000005500000001","Massachusetts, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+958,"SMU25000004000000001","Massachusetts, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+959,"SMS25000007000000001","Massachusetts, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+960,"SMU25000005500000001","Massachusetts, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+961,"SMS25000001000000001","Massachusetts, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+962,"SMU25000000000000001","Massachusetts, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+963,"SMS25000005000000001","Massachusetts, Information, Seasonally adjusted - labor force","CESSM",t
+964,"SMS25000008000000001","Massachusetts, Other Services, Seasonally adjusted - labor force","CESSM",t
+965,"SMU25000006500000001","Massachusetts, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+966,"SMU25000007000000001","Massachusetts, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+967,"SMU25000005000000001","Massachusetts, Information, Not seasonally adjusted - labor force","CESSM",t
+968,"SMS25000000000000001","Massachusetts, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+969,"SMU25000008000000001","Massachusetts, Other Services, Not seasonally adjusted - labor force","CESSM",t
+970,"SMU25000006000000001","Massachusetts, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+971,"SMS25000006000000001","Massachusetts, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+972,"SMU25000002000000001","Massachusetts, Construction, Not seasonally adjusted - labor force","CESSM",t
+973,"SMU72000006000000001","Puerto Rico, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+974,"SMU72000009000000001","Puerto Rico, Government, Not seasonally adjusted - labor force","CESSM",t
+975,"SMS72000005500000001","Puerto Rico, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+976,"SMS72000004000000001","Puerto Rico, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+977,"SMS72000000000000001","Puerto Rico, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+978,"SMS72000001500000001","Puerto Rico, Mining, Logging, and Construction, Seasonally adjusted - labor force","CESSM",t
+979,"SMU72000003000000001","Puerto Rico, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+980,"SMS72000004100000001","Puerto Rico, Wholesale Trade, Seasonally adjusted - labor force","CESSM",t
+981,"SMS72000006500000001","Puerto Rico, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+982,"SMU72000008000000001","Puerto Rico, Other Services, Not seasonally adjusted - labor force","CESSM",t
+983,"SMS72000003000000001","Puerto Rico, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+984,"SMS72000008000000001","Puerto Rico, Other Services, Seasonally adjusted - labor force","CESSM",t
+985,"SMS72000003200000001","Puerto Rico, Non-Durable Goods, Seasonally adjusted - labor force","CESSM",t
+986,"SMU72000004000000001","Puerto Rico, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+987,"SMU72000005500000001","Puerto Rico, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+988,"SMS72000006000000001","Puerto Rico, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+989,"SMU72000001500000001","Puerto Rico, Mining, Logging, and Construction, Not seasonally adjusted - labor force","CESSM",t
+990,"SMU72000000000000001","Puerto Rico, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+991,"SMS72000003100000001","Puerto Rico, Durable Goods, Seasonally adjusted - labor force","CESSM",t
+992,"SMS72000009000000001","Puerto Rico, Government, Seasonally adjusted - labor force","CESSM",t
+993,"SMU72000006500000001","Puerto Rico, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+994,"SMU72000007000000001","Puerto Rico, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+995,"SMU72000005000000001","Puerto Rico, Information, Not seasonally adjusted - labor force","CESSM",t
+996,"SMS72000007000000001","Puerto Rico, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+997,"SMS45000005500000001","South Carolina, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+998,"SMS45000003000000001","South Carolina, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+999,"SMS45000002000000001","South Carolina, Construction, Seasonally adjusted - labor force","CESSM",t
+1000,"SMU45000002000000001","South Carolina, Construction, Not seasonally adjusted - labor force","CESSM",t
+1001,"SMU45000000000000001","South Carolina, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1002,"SMU45000001000000001","South Carolina, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1003,"SMS45000000000000001","South Carolina, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1004,"SMS45000009000000001","South Carolina, Government, Seasonally adjusted - labor force","CESSM",t
+1005,"SMU45000004000000001","South Carolina, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1006,"SMU45000005000000001","South Carolina, Information, Not seasonally adjusted - labor force","CESSM",t
+1007,"SMU45000003000000001","South Carolina, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1008,"SMU45000008000000001","South Carolina, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1009,"SMU45000009000000001","South Carolina, Government, Not seasonally adjusted - labor force","CESSM",t
+1010,"SMU45000005500000001","South Carolina, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1011,"SMU45000007000000001","South Carolina, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1012,"SMS45000006500000001","South Carolina, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1013,"SMU45000006500000001","South Carolina, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1014,"SMS45000004000000001","South Carolina, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1015,"SMS45000006000000001","South Carolina, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1016,"SMS45000007000000001","South Carolina, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1017,"SMU45000006000000001","South Carolina, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1018,"SMU33000004000000001","New Hampshire, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1019,"SMS33000003000000001","New Hampshire, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1020,"SMS33000006500000001","New Hampshire, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1021,"SMS33000007000000001","New Hampshire, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1022,"SMU33000007000000001","New Hampshire, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1023,"SMU33000006500000001","New Hampshire, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1024,"SMS33000000000000001","New Hampshire, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1025,"SMU33000005000000001","New Hampshire, Information, Not seasonally adjusted - labor force","CESSM",t
+1026,"SMU33000009000000001","New Hampshire, Government, Not seasonally adjusted - labor force","CESSM",t
+1027,"SMS33000002000000001","New Hampshire, Construction, Seasonally adjusted - labor force","CESSM",t
+1028,"SMU33000006000000001","New Hampshire, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1029,"SMS33000008000000001","New Hampshire, Other Services, Seasonally adjusted - labor force","CESSM",t
+1030,"SMU33000005500000001","New Hampshire, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1031,"SMS33000001000000001","New Hampshire, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1032,"SMS33000005000000001","New Hampshire, Information, Seasonally adjusted - labor force","CESSM",t
+1033,"SMU33000001000000001","New Hampshire, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1034,"SMU33000008000000001","New Hampshire, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1035,"SMS33000009000000001","New Hampshire, Government, Seasonally adjusted - labor force","CESSM",t
+1036,"SMS33000004000000001","New Hampshire, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1037,"SMS33000005500000001","New Hampshire, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1038,"SMS33000006000000001","New Hampshire, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1039,"SMU33000002000000001","New Hampshire, Construction, Not seasonally adjusted - labor force","CESSM",t
+1040,"SMU33000000000000001","New Hampshire, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1041,"SMU33000003000000001","New Hampshire, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1042,"SMU50000006000000001","Vermont, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1043,"SMS50000002000000001","Vermont, Construction, Seasonally adjusted - labor force","CESSM",t
+1044,"SMU50000009000000001","Vermont, Government, Not seasonally adjusted - labor force","CESSM",t
+1045,"SMU50000003000000001","Vermont, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1046,"SMS50000006000000001","Vermont, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1047,"SMU50000007000000001","Vermont, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1048,"SMU50000006500000001","Vermont, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1049,"SMU50000005000000001","Vermont, Information, Not seasonally adjusted - labor force","CESSM",t
+1050,"SMS50000001000000001","Vermont, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1051,"SMS50000003000000001","Vermont, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1052,"SMS50000006500000001","Vermont, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1053,"SMU50000002000000001","Vermont, Construction, Not seasonally adjusted - labor force","CESSM",t
+1054,"SMU50000005500000001","Vermont, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1055,"SMS50000000000000001","Vermont, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1056,"SMS50000004000000001","Vermont, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1057,"SMS50000009000000001","Vermont, Government, Seasonally adjusted - labor force","CESSM",t
+1058,"SMS50000005500000001","Vermont, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1059,"SMU50000004000000001","Vermont, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1060,"SMU50000008000000001","Vermont, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1061,"SMU50000001000000001","Vermont, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1062,"SMS50000008000000001","Vermont, Other Services, Seasonally adjusted - labor force","CESSM",t
+1063,"SMS50000007000000001","Vermont, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1064,"SMU50000000000000001","Vermont, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1065,"SMU10000009000000001","Delaware, Government, Not seasonally adjusted - labor force","CESSM",t
+1066,"SMS10000008000000001","Delaware, Other Services, Seasonally adjusted - labor force","CESSM",t
+1067,"SMS10000009000000001","Delaware, Government, Seasonally adjusted - labor force","CESSM",t
+1068,"SMS10000005500000001","Delaware, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1069,"SMS10000004000000001","Delaware, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1070,"SMS10000006500000001","Delaware, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1071,"SMU10000008000000001","Delaware, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1072,"SMU10000006500000001","Delaware, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1073,"SMS10000000000000001","Delaware, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1074,"SMU10000004000000001","Delaware, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1075,"SMS10000007000000001","Delaware, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1076,"SMU10000006000000001","Delaware, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1077,"SMU10000007000000001","Delaware, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1078,"SMS10000001500000001","Delaware, Mining, Logging, and Construction, Seasonally adjusted - labor force","CESSM",t
+1079,"SMS10000003000000001","Delaware, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1080,"SMU10000005500000001","Delaware, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1081,"SMU10000003000000001","Delaware, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1082,"SMS10000006000000001","Delaware, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1083,"SMU10000005000000001","Delaware, Information, Not seasonally adjusted - labor force","CESSM",t
+1084,"SMU10000001500000001","Delaware, Mining, Logging, and Construction, Not seasonally adjusted - labor force","CESSM",t
+1085,"SMU10000000000000001","Delaware, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1086,"SMU38000000000000001","North Dakota, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1087,"SMU38000004000000001","North Dakota, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1088,"SMU38000005500000001","North Dakota, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1089,"SMS38000000000000001","North Dakota, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1090,"SMS38000009000000001","North Dakota, Government, Seasonally adjusted - labor force","CESSM",t
+1091,"SMU38000008000000001","North Dakota, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1092,"SMU38000005000000001","North Dakota, Information, Not seasonally adjusted - labor force","CESSM",t
+1093,"SMU38000007000000001","North Dakota, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1094,"SMS38000003000000001","North Dakota, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1095,"SMS38000001000000001","North Dakota, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1096,"SMS38000005000000001","North Dakota, Information, Seasonally adjusted - labor force","CESSM",t
+1097,"SMU38000002000000001","North Dakota, Construction, Not seasonally adjusted - labor force","CESSM",t
+1098,"SMS38000002000000001","North Dakota, Construction, Seasonally adjusted - labor force","CESSM",t
+1099,"SMU38000006000000001","North Dakota, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1100,"SMS38000006000000001","North Dakota, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1101,"SMS38000005500000001","North Dakota, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1102,"SMU38000001000000001","North Dakota, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1103,"SMS38000004000000001","North Dakota, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1104,"SMS38000008000000001","North Dakota, Other Services, Seasonally adjusted - labor force","CESSM",t
+1105,"SMU38000003000000001","North Dakota, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1106,"SMU38000006500000001","North Dakota, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1107,"SMS38000007000000001","North Dakota, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1108,"SMS38000006500000001","North Dakota, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1109,"SMU38000009000000001","North Dakota, Government, Not seasonally adjusted - labor force","CESSM",t
+1110,"SMS42000006500000001","Pennsylvania, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1111,"SMU42000005500000001","Pennsylvania, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1112,"SMS42000007000000001","Pennsylvania, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1113,"SMU42000002000000001","Pennsylvania, Construction, Not seasonally adjusted - labor force","CESSM",t
+1114,"SMU42000009000000001","Pennsylvania, Government, Not seasonally adjusted - labor force","CESSM",t
+1115,"SMU42000000000000001","Pennsylvania, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1116,"SMS42000004000000001","Pennsylvania, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1117,"SMS42000005500000001","Pennsylvania, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1118,"SMU42000005000000001","Pennsylvania, Information, Not seasonally adjusted - labor force","CESSM",t
+1119,"SMS42000008000000001","Pennsylvania, Other Services, Seasonally adjusted - labor force","CESSM",t
+1120,"SMS42000003000000001","Pennsylvania, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1121,"SMU42000001000000001","Pennsylvania, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1122,"SMU42000006000000001","Pennsylvania, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1123,"SMU42000004000000001","Pennsylvania, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1124,"SMS42000009000000001","Pennsylvania, Government, Seasonally adjusted - labor force","CESSM",t
+1125,"SMS42000000000000001","Pennsylvania, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1126,"SMS42000002000000001","Pennsylvania, Construction, Seasonally adjusted - labor force","CESSM",t
+1127,"SMS42000006000000001","Pennsylvania, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1128,"SMU42000006500000001","Pennsylvania, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1129,"SMU42000007000000001","Pennsylvania, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1130,"SMU42000008000000001","Pennsylvania, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1131,"SMU42000003000000001","Pennsylvania, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1132,"SMS42000001000000001","Pennsylvania, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1133,"SMS42000005000000001","Pennsylvania, Information, Seasonally adjusted - labor force","CESSM",t
+1134,"SMU54000005500000001","West Virginia, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1135,"SMS54000005500000001","West Virginia, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1136,"SMS54000004000000001","West Virginia, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1137,"SMU54000000000000001","West Virginia, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1138,"SMU54000009000000001","West Virginia, Government, Not seasonally adjusted - labor force","CESSM",t
+1139,"SMS54000000000000001","West Virginia, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1140,"SMU54000005000000001","West Virginia, Information, Not seasonally adjusted - labor force","CESSM",t
+1141,"SMS54000006500000001","West Virginia, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1142,"SMS54000001000000001","West Virginia, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1143,"SMU54000008000000001","West Virginia, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1144,"SMS54000003000000001","West Virginia, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1145,"SMU54000004000000001","West Virginia, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1146,"SMU54000002000000001","West Virginia, Construction, Not seasonally adjusted - labor force","CESSM",t
+1147,"SMS54000006000000001","West Virginia, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1148,"SMU54000006500000001","West Virginia, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1149,"SMS54000009000000001","West Virginia, Government, Seasonally adjusted - labor force","CESSM",t
+1150,"SMU54000007000000001","West Virginia, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1151,"SMS54000002000000001","West Virginia, Construction, Seasonally adjusted - labor force","CESSM",t
+1152,"SMU54000003000000001","West Virginia, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1153,"SMU54000001000000001","West Virginia, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1154,"SMS54000005000000001","West Virginia, Information, Seasonally adjusted - labor force","CESSM",t
+1155,"SMS54000007000000001","West Virginia, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1156,"SMU54000006000000001","West Virginia, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1157,"SMU12000000000000001","Florida, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1158,"SMS12000006000000001","Florida, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1159,"SMS12000009000000001","Florida, Government, Seasonally adjusted - labor force","CESSM",t
+1160,"SMS12000002000000001","Florida, Construction, Seasonally adjusted - labor force","CESSM",t
+1161,"SMU12000005000000001","Florida, Information, Not seasonally adjusted - labor force","CESSM",t
+1162,"SMU12000001000000001","Florida, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1163,"SMS12000000000000001","Florida, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1164,"SMU12000003000000001","Florida, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1165,"SMU12000008000000001","Florida, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1166,"SMS12000003000000001","Florida, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1167,"SMU12000005500000001","Florida, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1168,"SMU12000004000000001","Florida, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1169,"SMS12000008000000001","Florida, Other Services, Seasonally adjusted - labor force","CESSM",t
+1170,"SMU12000009000000001","Florida, Government, Not seasonally adjusted - labor force","CESSM",t
+1171,"SMU12000002000000001","Florida, Construction, Not seasonally adjusted - labor force","CESSM",t
+1172,"SMS12000004000000001","Florida, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1173,"SMS12000005500000001","Florida, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1174,"SMU12000006500000001","Florida, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1175,"SMU12000007000000001","Florida, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1176,"SMS12000006500000001","Florida, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1177,"SMS12000007000000001","Florida, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1178,"SMU12000006000000001","Florida, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1179,"SMS12000005000000001","Florida, Information, Seasonally adjusted - labor force","CESSM",t
+1180,"SMU02000001000000001","Alaska, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1181,"SMS02000005500000001","Alaska, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1182,"SMS02000004000000001","Alaska, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1183,"SMS02000005000000001","Alaska, Information, Seasonally adjusted - labor force","CESSM",t
+1184,"SMS02000002000000001","Alaska, Construction, Seasonally adjusted - labor force","CESSM",t
+1185,"SMU02000009000000001","Alaska, Government, Not seasonally adjusted - labor force","CESSM",t
+1186,"SMU02000000000000001","Alaska, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1187,"SMU02000005500000001","Alaska, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1188,"SMU02000007000000001","Alaska, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1189,"SMU02000003000000001","Alaska, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1190,"SMS02000001000000001","Alaska, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1191,"SMU02000006500000001","Alaska, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1192,"SMU02000008000000001","Alaska, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1193,"SMU02000003100000001","Alaska, Durable Goods, Not seasonally adjusted - labor force","CESSM",t
+1194,"SMS02000000000000001","Alaska, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1195,"SMU02000002000000001","Alaska, Construction, Not seasonally adjusted - labor force","CESSM",t
+1196,"SMU02000004000000001","Alaska, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1197,"SMS02000009000000001","Alaska, Government, Seasonally adjusted - labor force","CESSM",t
+1198,"SMS02000007000000001","Alaska, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1199,"SMU02000006000000001","Alaska, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1200,"SMU02000003200000001","Alaska, Non-Durable Goods, Not seasonally adjusted - labor force","CESSM",t
+1201,"SMS02000006500000001","Alaska, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1202,"SMS02000006000000001","Alaska, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1203,"SMS02000008000000001","Alaska, Other Services, Seasonally adjusted - labor force","CESSM",t
+1204,"SMU02000005000000001","Alaska, Information, Not seasonally adjusted - labor force","CESSM",t
+1205,"SMS02000003000000001","Alaska, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1206,"SMS21000001000000001","Kentucky, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1207,"SMS21000003000000001","Kentucky, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1208,"SMS21000008000000001","Kentucky, Other Services, Seasonally adjusted - labor force","CESSM",t
+1209,"SMU21000003000000001","Kentucky, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1210,"SMU21000008000000001","Kentucky, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1211,"SMU21000001000000001","Kentucky, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1212,"SMS21000005500000001","Kentucky, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1213,"SMS21000004000000001","Kentucky, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1214,"SMS21000003100000001","Kentucky, Durable Goods, Seasonally adjusted - labor force","CESSM",t
+1215,"SMS21000009000000001","Kentucky, Government, Seasonally adjusted - labor force","CESSM",t
+1216,"SMU21000002000000001","Kentucky, Construction, Not seasonally adjusted - labor force","CESSM",t
+1217,"SMS21000002000000001","Kentucky, Construction, Seasonally adjusted - labor force","CESSM",t
+1218,"SMU21000006000000001","Kentucky, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1219,"SMU21000009000000001","Kentucky, Government, Not seasonally adjusted - labor force","CESSM",t
+1220,"SMS21000006500000001","Kentucky, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1221,"SMS21000007000000001","Kentucky, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1222,"SMU21000007000000001","Kentucky, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1223,"SMU21000006500000001","Kentucky, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1224,"SMU21000005000000001","Kentucky, Information, Not seasonally adjusted - labor force","CESSM",t
+1225,"SMS21000006000000001","Kentucky, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1226,"SMS21000000000000001","Kentucky, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1227,"SMU21000000000000001","Kentucky, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1228,"SMU21000005500000001","Kentucky, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1229,"SMS21000005000000001","Kentucky, Information, Seasonally adjusted - labor force","CESSM",t
+1230,"SMU21000004000000001","Kentucky, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1231,"SMU15000004000000001","Hawaii, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1232,"SMU15000005500000001","Hawaii, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1233,"SMS15000003000000001","Hawaii, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1234,"SMS15000008000000001","Hawaii, Other Services, Seasonally adjusted - labor force","CESSM",t
+1235,"SMU15000005000000001","Hawaii, Information, Not seasonally adjusted - labor force","CESSM",t
+1236,"SMS15000001500000001","Hawaii, Mining, Logging, and Construction, Seasonally adjusted - labor force","CESSM",t
+1237,"SMU15000009000000001","Hawaii, Government, Not seasonally adjusted - labor force","CESSM",t
+1238,"SMS15000000000000001","Hawaii, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1239,"SMS15000007000000001","Hawaii, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1240,"SMS15000004000000001","Hawaii, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1241,"SMU15000008000000001","Hawaii, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1242,"SMU15000003000000001","Hawaii, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1243,"SMU15000001500000001","Hawaii, Mining, Logging, and Construction, Not seasonally adjusted - labor force","CESSM",t
+1244,"SMU15000007000000001","Hawaii, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1245,"SMU15000006000000001","Hawaii, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1246,"SMU15000006500000001","Hawaii, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1247,"SMU15000000000000001","Hawaii, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1248,"SMS15000006500000001","Hawaii, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1249,"SMS15000009000000001","Hawaii, Government, Seasonally adjusted - labor force","CESSM",t
+1250,"SMU31000001500000001","Nebraska, Mining, Logging, and Construction, Not seasonally adjusted - labor force","CESSM",t
+1251,"SMS31000004300000001","Nebraska, Transportation, Warehousing, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1252,"SMU31000000000000001","Nebraska, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1253,"SMS31000000000000001","Nebraska, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1254,"SMU31000008000000001","Nebraska, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1255,"SMS31000004000000001","Nebraska, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1256,"SMU31000005000000001","Nebraska, Information, Not seasonally adjusted - labor force","CESSM",t
+1257,"SMS31000003000000001","Nebraska, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1258,"SMS31000007000000001","Nebraska, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1259,"SMU31000009000000001","Nebraska, Government, Not seasonally adjusted - labor force","CESSM",t
+1260,"SMS31000006500000001","Nebraska, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1261,"SMS31000005000000001","Nebraska, Information, Seasonally adjusted - labor force","CESSM",t
+1262,"SMU31000004000000001","Nebraska, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1263,"SMS31000009000000001","Nebraska, Government, Seasonally adjusted - labor force","CESSM",t
+1264,"SMU31000005500000001","Nebraska, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1265,"SMU31000006000000001","Nebraska, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1266,"SMS31000001500000001","Nebraska, Mining, Logging, and Construction, Seasonally adjusted - labor force","CESSM",t
+1267,"SMS31000006000000001","Nebraska, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1268,"SMS31000005500000001","Nebraska, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1269,"SMU31000003000000001","Nebraska, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1270,"SMS31000008000000001","Nebraska, Other Services, Seasonally adjusted - labor force","CESSM",t
+1271,"SMU31000006500000001","Nebraska, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1272,"SMU31000007000000001","Nebraska, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1273,"SMS29000009000000001","Missouri, Government, Seasonally adjusted - labor force","CESSM",t
+1274,"SMS29000005500000001","Missouri, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1275,"SMS29000004000000001","Missouri, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1276,"SMU29000004000000001","Missouri, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1277,"SMS29000000000000001","Missouri, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1278,"SMU29000008000000001","Missouri, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1279,"SMU29000007000000001","Missouri, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1280,"SMU29000006500000001","Missouri, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1281,"SMU29000005500000001","Missouri, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1282,"SMS29000006500000001","Missouri, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1283,"SMS29000001000000001","Missouri, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1284,"SMS29000003000000001","Missouri, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1285,"SMU29000000000000001","Missouri, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1286,"SMU29000009000000001","Missouri, Government, Not seasonally adjusted - labor force","CESSM",t
+1287,"SMS29000006000000001","Missouri, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1288,"SMU29000003000000001","Missouri, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1289,"SMS29000002000000001","Missouri, Construction, Seasonally adjusted - labor force","CESSM",t
+1290,"SMU29000001000000001","Missouri, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1291,"SMU29000005000000001","Missouri, Information, Not seasonally adjusted - labor force","CESSM",t
+1292,"SMS29000007000000001","Missouri, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1293,"SMU29000002000000001","Missouri, Construction, Not seasonally adjusted - labor force","CESSM",t
+1294,"SMU29000006000000001","Missouri, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1295,"SMS55000002000000001","Wisconsin, Construction, Seasonally adjusted - labor force","CESSM",t
+1296,"SMU55000006000000001","Wisconsin, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1297,"SMU55000004000000001","Wisconsin, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1298,"SMS55000008000000001","Wisconsin, Other Services, Seasonally adjusted - labor force","CESSM",t
+1299,"SMS55000005000000001","Wisconsin, Information, Seasonally adjusted - labor force","CESSM",t
+1300,"SMS55000001000000001","Wisconsin, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1301,"SMU55000006500000001","Wisconsin, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1302,"SMU55000007000000001","Wisconsin, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1303,"SMS55000003000000001","Wisconsin, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1304,"SMU55000008000000001","Wisconsin, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1305,"SMU55000003000000001","Wisconsin, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1306,"SMS55000000000000001","Wisconsin, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1307,"SMU55000005500000001","Wisconsin, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1308,"SMU55000002000000001","Wisconsin, Construction, Not seasonally adjusted - labor force","CESSM",t
+1309,"SMU55000009000000001","Wisconsin, Government, Not seasonally adjusted - labor force","CESSM",t
+1310,"SMU55000000000000001","Wisconsin, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1311,"SMS55000007000000001","Wisconsin, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1312,"SMS55000006500000001","Wisconsin, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1313,"SMU55000005000000001","Wisconsin, Information, Not seasonally adjusted - labor force","CESSM",t
+1314,"SMS55000005500000001","Wisconsin, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1315,"SMS55000009000000001","Wisconsin, Government, Seasonally adjusted - labor force","CESSM",t
+1316,"SMS55000004000000001","Wisconsin, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1317,"SMU55000001000000001","Wisconsin, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1318,"SMS55000006000000001","Wisconsin, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1319,"SMU01000007000000001","Alabama, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1320,"SMS01000004000000001","Alabama, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1321,"SMU01000000000000001","Alabama, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1322,"SMS01000005500000001","Alabama, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1323,"SMU01000004000000001","Alabama, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1324,"SMU01000005500000001","Alabama, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1325,"SMU01000006000000001","Alabama, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1326,"SMS01000006500000001","Alabama, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1327,"SMS01000007000000001","Alabama, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1328,"SMU01000005000000001","Alabama, Information, Not seasonally adjusted - labor force","CESSM",t
+1329,"SMS01000005000000001","Alabama, Information, Seasonally adjusted - labor force","CESSM",t
+1330,"SMS01000001000000001","Alabama, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1331,"SMU01000006500000001","Alabama, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1332,"SMU01000009000000001","Alabama, Government, Not seasonally adjusted - labor force","CESSM",t
+1333,"SMU01000002000000001","Alabama, Construction, Not seasonally adjusted - labor force","CESSM",t
+1334,"SMS01000006000000001","Alabama, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1335,"SMS01000009000000001","Alabama, Government, Seasonally adjusted - labor force","CESSM",t
+1336,"SMS01000002000000001","Alabama, Construction, Seasonally adjusted - labor force","CESSM",t
+1337,"SMS01000000000000001","Alabama, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1338,"SMU01000008000000001","Alabama, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1339,"SMU01000001000000001","Alabama, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1340,"SMU01000003000000001","Alabama, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1341,"SMS01000008000000001","Alabama, Other Services, Seasonally adjusted - labor force","CESSM",t
+1342,"SMS44000006000000001","Rhode Island, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1343,"SMS44000004000000001","Rhode Island, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1344,"SMU44000009000000001","Rhode Island, Government, Not seasonally adjusted - labor force","CESSM",t
+1345,"SMU44000000000000001","Rhode Island, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1346,"SMU44000002000000001","Rhode Island, Construction, Not seasonally adjusted - labor force","CESSM",t
+1347,"SMU44000006000000001","Rhode Island, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1348,"SMS44000006500000001","Rhode Island, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1349,"SMS44000007000000001","Rhode Island, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1350,"SMS44000008000000001","Rhode Island, Other Services, Seasonally adjusted - labor force","CESSM",t
+1351,"SMS44000003000000001","Rhode Island, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1352,"SMU44000001000000001","Rhode Island, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1353,"SMU44000005000000001","Rhode Island, Information, Not seasonally adjusted - labor force","CESSM",t
+1354,"SMU44000006500000001","Rhode Island, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1355,"SMS44000005500000001","Rhode Island, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1356,"SMU44000007000000001","Rhode Island, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1357,"SMS44000002000000001","Rhode Island, Construction, Seasonally adjusted - labor force","CESSM",t
+1358,"SMS44000009000000001","Rhode Island, Government, Seasonally adjusted - labor force","CESSM",t
+1359,"SMS44000000000000001","Rhode Island, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1360,"SMU44000004000000001","Rhode Island, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1361,"SMU44000005500000001","Rhode Island, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1362,"SMU44000008000000001","Rhode Island, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1363,"SMU44000003000000001","Rhode Island, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1364,"SMS44000001000000001","Rhode Island, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1365,"SMS08000005500000001","Colorado, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1366,"SMS08000001000000001","Colorado, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1367,"SMU08000009000000001","Colorado, Government, Not seasonally adjusted - labor force","CESSM",t
+1368,"SMU08000000000000001","Colorado, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1369,"SMS08000002000000001","Colorado, Construction, Seasonally adjusted - labor force","CESSM",t
+1370,"SMU08000002000000001","Colorado, Construction, Not seasonally adjusted - labor force","CESSM",t
+1371,"SMS08000009000000001","Colorado, Government, Seasonally adjusted - labor force","CESSM",t
+1372,"SMU08000006000000001","Colorado, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1373,"SMU08000005500000001","Colorado, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1374,"SMS08000006500000001","Colorado, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1375,"SMU08000001000000001","Colorado, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1376,"SMU08000005000000001","Colorado, Information, Not seasonally adjusted - labor force","CESSM",t
+1377,"SMU08000006500000001","Colorado, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1378,"SMU08000007000000001","Colorado, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1379,"SMS08000006000000001","Colorado, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1380,"SMU08000004000000001","Colorado, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1381,"SMS08000004000000001","Colorado, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1382,"SMS08000000000000001","Colorado, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1383,"SMU08000008000000001","Colorado, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1384,"SMU08000003000000001","Colorado, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1385,"SMS08000007000000001","Colorado, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1386,"SMS08000008000000001","Colorado, Other Services, Seasonally adjusted - labor force","CESSM",t
+1387,"SMS08000003000000001","Colorado, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1388,"SMS46000005500000001","South Dakota, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1389,"SMU46000008000000001","South Dakota, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1390,"SMU46000003000000001","South Dakota, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1391,"SMU46000001500000001","South Dakota, Mining, Logging, and Construction, Not seasonally adjusted - labor force","CESSM",t
+1392,"SMS46000003000000001","South Dakota, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1393,"SMS46000006000000001","South Dakota, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1394,"SMU46000006000000001","South Dakota, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1395,"SMU46000000000000001","South Dakota, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1396,"SMS46000008000000001","South Dakota, Other Services, Seasonally adjusted - labor force","CESSM",t
+1397,"SMU46000006500000001","South Dakota, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1398,"SMU46000004000000001","South Dakota, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1399,"SMS46000009000000001","South Dakota, Government, Seasonally adjusted - labor force","CESSM",t
+1400,"SMU46000005500000001","South Dakota, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1401,"SMS46000007000000001","South Dakota, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1402,"SMS46000004000000001","South Dakota, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1403,"SMU46000005000000001","South Dakota, Information, Not seasonally adjusted - labor force","CESSM",t
+1404,"SMS46000006500000001","South Dakota, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1405,"SMS46000000000000001","South Dakota, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1406,"SMU46000009000000001","South Dakota, Government, Not seasonally adjusted - labor force","CESSM",t
+1407,"SMS46000001500000001","South Dakota, Mining, Logging, and Construction, Seasonally adjusted - labor force","CESSM",t
+1408,"SMU46000007000000001","South Dakota, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1409,"SMU13000008000000001","Georgia, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1410,"SMS13000004000000001","Georgia, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1411,"SMU13000005000000001","Georgia, Information, Not seasonally adjusted - labor force","CESSM",t
+1412,"SMU13000001000000001","Georgia, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1413,"SMS13000009000000001","Georgia, Government, Seasonally adjusted - labor force","CESSM",t
+1414,"SMS13000005000000001","Georgia, Information, Seasonally adjusted - labor force","CESSM",t
+1415,"SMS13000003000000001","Georgia, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1416,"SMU13000000000000001","Georgia, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1417,"SMU13000002000000001","Georgia, Construction, Not seasonally adjusted - labor force","CESSM",t
+1418,"SMS13000006000000001","Georgia, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1419,"SMS13000002000000001","Georgia, Construction, Seasonally adjusted - labor force","CESSM",t
+1420,"SMU13000007000000001","Georgia, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1421,"SMS13000000000000001","Georgia, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1422,"SMU13000006500000001","Georgia, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1423,"SMU13000003000000001","Georgia, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1424,"SMS13000006500000001","Georgia, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1425,"SMS13000007000000001","Georgia, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1426,"SMU13000005500000001","Georgia, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1427,"SMU13000009000000001","Georgia, Government, Not seasonally adjusted - labor force","CESSM",t
+1428,"SMU13000004000000001","Georgia, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1429,"SMU13000006000000001","Georgia, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1430,"SMS13000001000000001","Georgia, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1431,"SMS13000008000000001","Georgia, Other Services, Seasonally adjusted - labor force","CESSM",t
+1432,"SMS13000005500000001","Georgia, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1433,"SMS78000004300000001","Virgin Islands, Transportation, Warehousing, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1434,"SMU78000005500000001","Virgin Islands, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1435,"SMS78000007000000001","Virgin Islands, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1436,"SMS78000009000000001","Virgin Islands, Government, Seasonally adjusted - labor force","CESSM",t
+1437,"SMU78000006000000001","Virgin Islands, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1438,"SMU78000004000000001","Virgin Islands, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1439,"SMU78000005000000001","Virgin Islands, Information, Not seasonally adjusted - labor force","CESSM",t
+1440,"SMU78000000000000001","Virgin Islands, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1441,"SMS78000004000000001","Virgin Islands, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1442,"SMU78000007000000001","Virgin Islands, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1443,"SMU78000006500000001","Virgin Islands, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1444,"SMU78000001500000001","Virgin Islands, Mining, Logging, and Construction, Not seasonally adjusted - labor force","CESSM",t
+1445,"SMU78000003000000001","Virgin Islands, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1446,"SMU78000008000000001","Virgin Islands, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1447,"SMU78000009000000001","Virgin Islands, Government, Not seasonally adjusted - labor force","CESSM",t
+1448,"SMS78000000000000001","Virgin Islands, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1449,"SMU34000000000000001","New Jersey, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1450,"SMS34000008000000001","New Jersey, Other Services, Seasonally adjusted - labor force","CESSM",t
+1451,"SMS34000004000000001","New Jersey, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1452,"SMS34000005500000001","New Jersey, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1453,"SMU34000005000000001","New Jersey, Information, Not seasonally adjusted - labor force","CESSM",t
+1454,"SMS34000000000000001","New Jersey, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1455,"SMU34000001000000001","New Jersey, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1456,"SMS34000006500000001","New Jersey, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1457,"SMU34000008000000001","New Jersey, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1458,"SMS34000007000000001","New Jersey, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1459,"SMS34000005000000001","New Jersey, Information, Seasonally adjusted - labor force","CESSM",t
+1460,"SMU34000005500000001","New Jersey, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1461,"SMU34000004000000001","New Jersey, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1462,"SMU34000009000000001","New Jersey, Government, Not seasonally adjusted - labor force","CESSM",t
+1463,"SMS34000006000000001","New Jersey, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1464,"SMU34000002000000001","New Jersey, Construction, Not seasonally adjusted - labor force","CESSM",t
+1465,"SMS34000002000000001","New Jersey, Construction, Seasonally adjusted - labor force","CESSM",t
+1466,"SMU34000006500000001","New Jersey, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1467,"SMS34000009000000001","New Jersey, Government, Seasonally adjusted - labor force","CESSM",t
+1468,"SMU34000007000000001","New Jersey, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1469,"SMU34000003000000001","New Jersey, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1470,"SMS34000003000000001","New Jersey, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1471,"SMS34000001000000001","New Jersey, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1472,"SMU34000006000000001","New Jersey, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1473,"SMU53000006500000001","Washington, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1474,"SMU53000007000000001","Washington, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1475,"SMS53000006000000001","Washington, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1476,"SMS53000004000000001","Washington, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1477,"SMU53000004000000001","Washington, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1478,"SMU53000005500000001","Washington, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1479,"SMS53000001000000001","Washington, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1480,"SMS53000008000000001","Washington, Other Services, Seasonally adjusted - labor force","CESSM",t
+1481,"SMU53000008000000001","Washington, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1482,"SMU53000003000000001","Washington, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1483,"SMS53000005000000001","Washington, Information, Seasonally adjusted - labor force","CESSM",t
+1484,"SMS53000009000000001","Washington, Government, Seasonally adjusted - labor force","CESSM",t
+1485,"SMS53000002000000001","Washington, Construction, Seasonally adjusted - labor force","CESSM",t
+1486,"SMS53000000000000001","Washington, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1487,"SMU53000009000000001","Washington, Government, Not seasonally adjusted - labor force","CESSM",t
+1488,"SMS53000005500000001","Washington, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1489,"SMU53000000000000001","Washington, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1490,"SMU53000002000000001","Washington, Construction, Not seasonally adjusted - labor force","CESSM",t
+1491,"SMU53000006000000001","Washington, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1492,"SMS53000003000000001","Washington, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1493,"SMS53000007000000001","Washington, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1494,"SMS53000006500000001","Washington, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1495,"SMU53000001000000001","Washington, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1496,"SMU53000005000000001","Washington, Information, Not seasonally adjusted - labor force","CESSM",t
+1497,"SMS37000005500000001","North Carolina, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1498,"SMS37000009000000001","North Carolina, Government, Seasonally adjusted - labor force","CESSM",t
+1499,"SMS37000004000000001","North Carolina, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1500,"SMS37000006000000001","North Carolina, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1501,"SMU37000006500000001","North Carolina, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1502,"SMU37000007000000001","North Carolina, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1503,"SMU37000008000000001","North Carolina, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1504,"SMU37000003000000001","North Carolina, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1505,"SMS37000005000000001","North Carolina, Information, Seasonally adjusted - labor force","CESSM",t
+1506,"SMU37000001000000001","North Carolina, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1507,"SMS37000001000000001","North Carolina, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1508,"SMU37000005500000001","North Carolina, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1509,"SMU37000002000000001","North Carolina, Construction, Not seasonally adjusted - labor force","CESSM",t
+1510,"SMS37000000000000001","North Carolina, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1511,"SMU37000009000000001","North Carolina, Government, Not seasonally adjusted - labor force","CESSM",t
+1512,"SMU37000000000000001","North Carolina, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1513,"SMS37000002000000001","North Carolina, Construction, Seasonally adjusted - labor force","CESSM",t
+1514,"SMU37000005000000001","North Carolina, Information, Not seasonally adjusted - labor force","CESSM",t
+1515,"SMS37000007000000001","North Carolina, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1516,"SMS37000006500000001","North Carolina, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1517,"SMU37000006000000001","North Carolina, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1518,"SMS37000003000000001","North Carolina, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1519,"SMU37000004000000001","North Carolina, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1520,"SMU47000001500000001","Tennessee, Mining, Logging, and Construction, Not seasonally adjusted - labor force","CESSM",t
+1521,"SMU47000007000000001","Tennessee, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1522,"SMS47000005500000001","Tennessee, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1523,"SMU47000006500000001","Tennessee, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1524,"SMU47000006000000001","Tennessee, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1525,"SMU47000005000000001","Tennessee, Information, Not seasonally adjusted - labor force","CESSM",t
+1526,"SMS47000006000000001","Tennessee, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1527,"SMU47000009000000001","Tennessee, Government, Not seasonally adjusted - labor force","CESSM",t
+1528,"SMU47000005500000001","Tennessee, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1529,"SMS47000005000000001","Tennessee, Information, Seasonally adjusted - labor force","CESSM",t
+1530,"SMS47000004000000001","Tennessee, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1531,"SMS47000000000000001","Tennessee, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1532,"SMU47000008000000001","Tennessee, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1533,"SMS47000007000000001","Tennessee, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1534,"SMS47000006500000001","Tennessee, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1535,"SMS47000001500000001","Tennessee, Mining, Logging, and Construction, Seasonally adjusted - labor force","CESSM",t
+1536,"SMS47000003000000001","Tennessee, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1537,"SMS47000009000000001","Tennessee, Government, Seasonally adjusted - labor force","CESSM",t
+1538,"SMU47000004000000001","Tennessee, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1539,"SMU47000000000000001","Tennessee, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1540,"SMU47000003000000001","Tennessee, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1541,"SMU48000006000000001","Texas, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1542,"SMS48000006000000001","Texas, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1543,"SMS48000004000000001","Texas, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1544,"SMU48000007000000001","Texas, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1545,"SMU48000001000000001","Texas, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1546,"SMS48000001000000001","Texas, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1547,"SMU48000005500000001","Texas, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1548,"SMU48000004000000001","Texas, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1549,"SMS48000005000000001","Texas, Information, Seasonally adjusted - labor force","CESSM",t
+1550,"SMU48000000000000001","Texas, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1551,"SMU48000002000000001","Texas, Construction, Not seasonally adjusted - labor force","CESSM",t
+1552,"SMU48000009000000001","Texas, Government, Not seasonally adjusted - labor force","CESSM",t
+1553,"SMS48000002000000001","Texas, Construction, Seasonally adjusted - labor force","CESSM",t
+1554,"SMS48000009000000001","Texas, Government, Seasonally adjusted - labor force","CESSM",t
+1555,"SMS48000000000000001","Texas, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1556,"SMS48000005500000001","Texas, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1557,"SMU48000005000000001","Texas, Information, Not seasonally adjusted - labor force","CESSM",t
+1558,"SMU48000006500000001","Texas, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1559,"SMU48000008000000001","Texas, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1560,"SMS48000003000000001","Texas, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1561,"SMU48000003000000001","Texas, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1562,"SMS48000007000000001","Texas, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1563,"SMS48000006500000001","Texas, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1564,"SMS48000008000000001","Texas, Other Services, Seasonally adjusted - labor force","CESSM",t
+1565,"SMS32000005000000001","Nevada, Information, Seasonally adjusted - labor force","CESSM",t
+1566,"SMS32000008000000001","Nevada, Other Services, Seasonally adjusted - labor force","CESSM",t
+1567,"SMS32000007000000001","Nevada, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1568,"SMU32000007000000001","Nevada, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1569,"SMU32000006500000001","Nevada, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1570,"SMU32000005000000001","Nevada, Information, Not seasonally adjusted - labor force","CESSM",t
+1571,"SMS32000000000000001","Nevada, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1572,"SMU32000000000000001","Nevada, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1573,"SMS32000006000000001","Nevada, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1574,"SMU32000005500000001","Nevada, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1575,"SMU32000004000000001","Nevada, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1576,"SMS32000003000000001","Nevada, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1577,"SMS32000006500000001","Nevada, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1578,"SMU32000003000000001","Nevada, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1579,"SMU32000008000000001","Nevada, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1580,"SMU32000001000000001","Nevada, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1581,"SMS32000002000000001","Nevada, Construction, Seasonally adjusted - labor force","CESSM",t
+1582,"SMS32000004000000001","Nevada, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1583,"SMS32000009000000001","Nevada, Government, Seasonally adjusted - labor force","CESSM",t
+1584,"SMS32000005500000001","Nevada, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1585,"SMU32000002000000001","Nevada, Construction, Not seasonally adjusted - labor force","CESSM",t
+1586,"SMU32000006000000001","Nevada, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1587,"SMU32000009000000001","Nevada, Government, Not seasonally adjusted - labor force","CESSM",t
+1588,"SMS32000001000000001","Nevada, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1589,"SMU23000004000000001","Maine, Trade, Transportation, and Utilities, Not seasonally adjusted - labor force","CESSM",t
+1590,"SMU23000009000000001","Maine, Government, Not seasonally adjusted - labor force","CESSM",t
+1591,"SMU23000005500000001","Maine, Financial Activities, Not seasonally adjusted - labor force","CESSM",t
+1592,"SMS23000006000000001","Maine, Professional and Business Services, Seasonally adjusted - labor force","CESSM",t
+1593,"SMS23000002000000001","Maine, Construction, Seasonally adjusted - labor force","CESSM",t
+1594,"SMU23000001000000001","Maine, Mining and Logging, Not seasonally adjusted - labor force","CESSM",t
+1595,"SMS23000009000000001","Maine, Government, Seasonally adjusted - labor force","CESSM",t
+1596,"SMU23000005000000001","Maine, Information, Not seasonally adjusted - labor force","CESSM",t
+1597,"SMU23000008000000001","Maine, Other Services, Not seasonally adjusted - labor force","CESSM",t
+1598,"SMU23000007000000001","Maine, Leisure and Hospitality, Not seasonally adjusted - labor force","CESSM",t
+1599,"SMS23000003000000001","Maine, Manufacturing, Seasonally adjusted - labor force","CESSM",t
+1600,"SMS23000001000000001","Maine, Mining and Logging, Seasonally adjusted - labor force","CESSM",t
+1601,"SMU23000000000000001","Maine, Total Nonfarm, Not seasonally adjusted - labor force","CESSM",t
+1602,"SMS23000004000000001","Maine, Trade, Transportation, and Utilities, Seasonally adjusted - labor force","CESSM",t
+1603,"SMU23000006000000001","Maine, Professional and Business Services, Not seasonally adjusted - labor force","CESSM",t
+1604,"SMS23000005500000001","Maine, Financial Activities, Seasonally adjusted - labor force","CESSM",t
+1605,"SMS23000000000000001","Maine, Total Nonfarm, Seasonally adjusted - labor force","CESSM",t
+1606,"SMU23000003000000001","Maine, Manufacturing, Not seasonally adjusted - labor force","CESSM",t
+1607,"SMS23000006500000001","Maine, Education and Health Services, Seasonally adjusted - labor force","CESSM",t
+1608,"SMU23000006500000001","Maine, Education and Health Services, Not seasonally adjusted - labor force","CESSM",t
+1609,"SMS23000007000000001","Maine, Leisure and Hospitality, Seasonally adjusted - labor force","CESSM",t
+1610,"SMS23000005000000001","Maine, Information, Seasonally adjusted - labor force","CESSM",t
+1611,"SMU23000002000000001","Maine, Construction, Not seasonally adjusted - labor force","CESSM",t
+1612,"LNS14000012","Unemployment Rate - 16-19 Years","CPS",t
+1613,"LNS12300000","Employment-Population Ratio","CPS",t
+1614,"LNS11300000","Civilian Labor Force Participation Rate","CPS",t
+1615,"LNS12600000","Employed, Usually Work Part Time","CPS",t
+1616,"LNU02036012","Employment Level, Nonag. Industries, With a Job not at Work, Bad Weather","CPS",t
+1617,"LNS14027689","Unemployment Rate - 25 Years & Over, Some College or Associate Degree","CPS",t
+1618,"LNS13327709","Alternative measure of labor underutilization U-6","CPS",t
+1619,"LNS13023653","Unemployment Level Job Losers On Layoff","CPS",t
+1620,"LNS14000009","Unemployment Rate - Hispanic or Latino","CPS",t
+1621,"LNS12026619","Multiple Jobholders Level","CPS",t
+1622,"LNS14027662","Unemployment Rate - 25 Years & Over, Bachelor's Degree and Higher","CPS",t
+1623,"LNS14027660","Unemployment Rate - 25 Years & Over, High School Graduates No College","CPS",t
+1624,"LNS13025699","Unemployment Level Job Losers Not on Layoff","CPS",t
+1625,"LNU02033224","Employment Level, Nonag. Industries, At Work 1-34 Hrs, Usually Work Full time, Bad Weather","CPS",t
+1626,"LNU05026645","Discouraged Workers","CPS",t
+1627,"LNS12000000","Employment Level","CPS",t
+1628,"LNU05026642","Marginally Attached to Labor Force","CPS",t
+1629,"LNS13023569","Unemployment Level New Entrants","CPS",t
+1630,"LNS13000000","Unemployment Level","CPS",t
+1631,"LNS12032194","Persons At Work Part Time for Economic Reasons","CPS",t
+1632,"LNS13008396","Number Unemployed For Less Than 5 weeks","CPS",t
+1633,"LNS14000006","Unemployment Rate - Black or African American","CPS",t
+1634,"LNS14000026","Unemployment Rate - 20 Years & Over Women","CPS",t
+1635,"LNS14000025","Unemployment Rate - 20 Years & Over Men","CPS",t
+1636,"LNS14000000","Unemployment Rate","CPS",t
+1637,"LNS15000000","Not in Labor Force","CPS",t
+1638,"LNS14000003","Unemployment Rate - White","CPS",t
+1639,"LNS13023705","Unemployment Level Job Leavers","CPS",t
+1640,"LNS13008516","Number Unemployed For 15 Weeks & Over","CPS",t
+1641,"LNS13023621","Unemployment Level Job Losers","CPS",t
+1642,"LNS13008756","Number Unemployed For 5-14 Weeks","CPS",t
+1643,"LNS12500000","Employed, Usually Work Full Time","CPS",t
+1644,"LNS14032183","Unemployment Rate - Asian","CPS",t
+1645,"LNS13008636","Number Unemployed For 27 Weeks & Over","CPS",t
+1646,"LNS12026620","Multiple Jobholders as a Percent of Total Employed","CPS",t
+1647,"LNS11000000","Civilian Labor Force Level","CPS",t
+1648,"LNS14027659","Unemployment Rate - 25 Years & Over, Less than a High School Diploma","CPS",t
+1649,"LNS13023557","Unemployment Level Reentrants To Labor Force","CPS",t
+1650,"LNS13008275","Average Weeks Unemployed","CPS",t
+1651,"LNS13008276","Median Weeks Unemployed","CPS",t
+1652,"CES6500000001","Education and Health Services Employment","CESN",t
+1653,"CES0500000012","Total Private Average Weekly Earnings of All Employees, 1982-1984 Dollars","CESN",t
+1654,"CES0500000013","Total Private Average Hourly Earnings of All Employees, 1982-1984 Dollars","CESN",t
+1655,"CES0500000016","Total Private Index of Aggregate Weekly Hours of All Employees","CESN",t
+1656,"CES0500000017","Total Private Index of Aggregate Weekly Payrolls of All Employees","CESN",t
+1657,"CES7000000001","Leisure and Hospitality Employment","CESN",t
+1658,"CES4300000001","Transportation and Warehousing Employment","CESN",t
+1659,"CES0600000001","Goods-producing Employment","CESN",t
+1660,"CES4142000001","Wholesale Trade Employment","CESN",t
+1661,"CES5500000001","Financial Activities Employment","CESN",t
+1662,"CES4200000001","Retail Trade Employment","CESN",t
+1663,"CES4000000001","Trade, Transportation, and Utilities Employment","CESN",t
+1664,"CES3100000001","Durable Goods Employment","CESN",t
+1665,"CES3200000001","Nondurable Goods Employment","CESN",t
+1666,"CES3000000016","Manufacturing Indexes of Aggregate Weekly Hours of All Employees","CESN",t
+1667,"CES1000000001","Mining and Logging Employment","CESN",t
+1668,"CES4422000001","Utilities Employment","CESN",t
+1669,"CES0500000003","Total Private Average Hourly Earnings of All Employees","CESN",t
+1670,"CES0500000002","Total Private Average Weekly Hours of All Employees","CESN",t
+1671,"CES0500000001","Total Private Employment","CESN",t
+1672,"CES0500000021","Total Private Diffusion Indexes, 1-Month Span","CESN",t
+1673,"CES8000000001","Other Services Employment","CESN",t
+1674,"CES5000000001","Information Employment","CESN",t
+1675,"CES2000000001","Construction Employment","CESN",t
+1676,"CES6000000001","Professional and Business Services Employment","CESN",t
+1677,"CES0000000001","Total Nonfarm Employment","CESN",t
+1678,"CES0800000001","Private Service-providing Employment","CESN",t
+1679,"CES9000000001","Government Employment","CESN",t
+1680,"CES6056132001","Temporary Help Services Employment","CESN",t
+1681,"CES3000000004","Manufacturing Average Weekly Overtime of All Employees","CESN",t
+1682,"CES3000000003","Manufacturing Average Hourly Earnings of All Employees","CESN",t
+1683,"CES3000000002","Manufacturing Average Weekly Hours of All Employees","CESN",t
+1684,"CES3000000001","Manufacturing Employment","CESN",t
