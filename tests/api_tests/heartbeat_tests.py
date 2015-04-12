@@ -1,5 +1,5 @@
-# tests.api_tests
-# Integration testing the API endpoints of the ELMR app.
+# tests.api_tests.heartbeat_tests
+# Integration testing the hearbeat endpoints of the ELMR app.
 #
 # Author:   Benjamin Bengfort <benjamin@bengfort.com>
 # Created:  Fri Apr 10 13:59:48 2015 -0400
@@ -7,10 +7,10 @@
 # Copyright (C) 2015 University of Maryland
 # For license information, see LICENSE.txt
 #
-# ID: api_tests.py [] benjamin@bengfort.com $
+# ID: heartbeat_tests.py [] benjamin@bengfort.com $
 
 """
-Integration testing the API endpoints of the ELMR app.
+Integration testing the endpoints endpoints of the ELMR app.
 """
 
 ##########################################################################
@@ -19,6 +19,7 @@ Integration testing the API endpoints of the ELMR app.
 
 import elmr
 
+from tests.initdb import syncdb, dropdb
 from elmr.models import IngestionRecord
 from flask.ext.testing import TestCase
 from datetime import datetime, timedelta
@@ -36,11 +37,10 @@ class HeartbeatTests(TestCase):
         return elmr.app
 
     def setUp(self):
-        elmr.db.create_all()
+        syncdb()
 
     def tearDown(self):
-        elmr.db.session.remove()
-        elmr.db.drop_all()
+        dropdb()
 
     def create_ingestion_record(self, days=1, duration=120):
         """

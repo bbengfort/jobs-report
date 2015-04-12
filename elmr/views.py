@@ -172,7 +172,8 @@ class SeriesSourceView(Resource):
     TODO: Move allowed sources to the database.
     """
 
-    ALLOWED_SOURCES = set(["CESN", "CPS"])
+    ALLOWED_SOURCES   = set(["CESN", "CPS"])
+    FORBIDDEN_SOURCES = set(["LAUS", "CESSM"])
 
     @property
     def parser(self):
@@ -192,12 +193,19 @@ class SeriesSourceView(Resource):
 
         # Ensure that source is allowed
         source = source.upper()
-        if source not in self.ALLOWED_SOURCES:
+        if source in self.FORBIDDEN_SOURCES:
             context = {
                 'success': False,
                 'message': "Source '%s' is not allowed." % source,
             }
             return context, 400
+
+        if source not in self.ALLOWED_SOURCES:
+            context = {
+                'success': False,
+                'message': "Source '%s' is not found." % source,
+            }
+            return context, 404
 
         args    = self.parser.parse_args()
         series  = Series.query.filter_by(source=source)

@@ -149,3 +149,6 @@ class TestingConfig(DevelopmentConfig):
     TESTING      = True
     SECRET_KEY   = "supersecret"  # secret not needed in testing
     DATABASE_URI = "postgresql+psycopg2://tester:secret@localhost/elmrtest"
+
+    STARTYEAR    = settings("startyear", "2006")
+    ENDYEAR      = settings("endyear", "2007")
