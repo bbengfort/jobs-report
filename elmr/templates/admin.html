@@ -23,17 +23,29 @@
         <h1 class="pull-left">
           ELMR Admin Utility <small>Application Status</small>
         </h1>
+
         <p class="status text-muted pull-right">
           Current Status &mdash;
           <i class="fa fa-circle status-icon"></i>
           <span class='status-text'>unknown</span>
         </p>
+
         <div class="clearfix"></div>
       </div>
     </div><!-- end page title -->
 
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+          <li class="active"><i class="fa fa-cogs"></i> Admin</a></li>
+        </ol>
+      </div>
+    </div>
+
     <!-- Application Metrics -->
     <div class="row">
+
       <!-- Left Panel -->
       <div class="col-md-6">
         <div class="panel panel-default">
@@ -189,7 +201,7 @@
             $("#version-repo").removeClass("hidden");
 
             // Update the status every minute
-            setTimeout(updateStatus, 60000);
+            setTimeout(updateStatus, 0000);
           });
 
       }
