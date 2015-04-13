@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <style type="text/css">
+    #status {
+      margin-top: 38px;
+    }
+
+    td a small {
+      margin: 14px;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+  <!-- Application Container -->
+  <div id="application" class="container">
+
+    <!-- Page Title -->
+    <div class="row">
+      <div class="col-md-12 page-header">
+        <h1 class="pull-left">
+          ELMR Admin Utility <small>Application Status</small>
+        </h1>
+        <p id="status" class="text-muted pull-right">
+          Current Status &mdash;
+          <i class="fa fa-circle status-icon"></i>
+          <span class='status-text'>unknown</span>
+        </p>
+        <div class="clearfix"></div>
+      </div>
+    </div><!-- end page title -->
+
+    <!-- Application Metrics -->
+    <div class="row">
+      <!-- Left Panel -->
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Database Tables</h3>
+          </div>
+          <div class="panel-body">
+            <p>The database contains the following number of rows per table.</p>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="badge">{{ dbcounts["series"]|intcomma }}</span>
+              <strong>Series</strong>: time series records ingested from BLS
+            </li>
+            <li class="list-group-item">
+              <span class="badge">{{ dbcounts["records"]|intcomma }}</span>
+              <strong>Series Records</strong>: individual data points for the series
+            </li>
+            <li class="list-group-item">
+              <span class="badge">{{ dbcounts["ingests"]|intcomma }}</span>
+              <strong>Ingestions</strong>: records the use of the BLS API
+            </li>
+          </ul>
+        </div>
+      </div><!-- end left panel -->
+
+      <!-- Right Panel -->
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Current Status</h3>
+          </div>
+          <div class="panel-body">
+            <p>Application status is updated every minute.</p>
+          </div>
+          <table class="table table-striped table-hover">
+            <tbody>
+              <tr>
+                <td>ELMR Version</td>
+                <td><span class="status-version">unknown</span></td>
+              </tr>
+              <tr>
+                <td>ELMR Status</td>
+                <td>
+                  <span class="status-text">unknown</span>
+                  <span class="status-monthdelta">unknown</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Last Ingestion</td>
+                <td>
+                  <span class="status-ingestion">unknown</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Updated at</td>
+                <td><span class="status-current">unknown</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><!-- end right panel -->
+    </div><!-- end application metrics" -->
+
+    <!-- Ingestion Log -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Ingestion Log</h2>
+
+        <table id="ingestion-log" class="table table-striped table-hover">
+          <thead>
+            <th>#</th>
+            <th>title</th>
+            <th>version</th>
+            <th>period</th>
+            <th>num series</th>
+            <th>rows added</th>
+            <th>rows fetched</th>
+            <th>started</th>
+            <th>duration</th>
+          </tead>
+          <tbody>
+            {% for ilr in ingestlog %}
+            <tr>
+              <td>{{ ilr.id }}</td>
+              <td>{{ ilr.title }}</td>
+              <td>{{ ilr.version }}</td>
+              <td>
+                {{ ilr.start_year.strftime('%b %Y') }}
+                &mdash;
+                {{ ilr.end_year.strftime('%b %Y') }}</td>
+              <td>{{ ilr.num_series|intcomma }}</td>
+              <td>{{ ilr.num_added|intcomma }}</td>
+              <td>{{ ilr.num_fetched|intcomma }}</td>
+              <td>{{ ilr.started.strftime('%b %d, %Y at %H:%S') }}</td>
+              <td>{{ ilr.duration|naturaldelta }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div><!-- end ingestion log -->
+
+  </div><!-- application container ends -->
+{% endblock %}
+
+{% block javascripts %}
+  {{ super() }}
+  <script type="text/javascript">
+    $(function() {
+
+      var endpoint = "/api/status/";
+      var statusClasses = {
+        "white": "text-default",
+        "green": "text-success",
+        "yellow": "text-warning",
+        "red": "text-danger"
+      };
+
+      function updateStatus() {
+
+        $.get(endpoint)
+          .success(function(data) {
+
+            // Remove all text-* classes from the status
+            $.each($("#status").attr("class").split(" "), function(idx, cls) {
+              if (cls.indexOf("text-") == 0) {
+                $("#status").removeClass(cls);
+              }
+            });
+
+            // Handle timestamps
+            var dtfmt = "MMMM Do YYYY, h:mm:ss a";
+            var ingestts = moment(data.timestamps.ingestion);
+            var currentts = moment(data.timestamps.current);
+            var github = "https://github.com/bbengfort/jobs-report/releases/tag/v";
+
+            // Set the status from the data
+            $("#status").addClass(statusClasses[data.status]);
+            $(".status-text").text(data.status.toUpperCase());
+            $(".status-version").text(data.version);
+            $(".status-ingestion").text(ingestts.format(dtfmt));
+            $(".status-current").text(currentts.format(dtfmt));
+            $(".status-monthdelta").text("(" + data.timestamps.monthdelta + " months since last ingestion)");
+
+            $(".status-version").parent().append(
+              $("<a></a>")
+                .attr("href", github + data.version)
+                .append($('<small><i class="fa fa-github"></i> view on Github</small>'))
+            );
+
+            // Update the status every minute
+            setTimeout(updateStatus, 60000);
+          });
+
+      }
+
+      updateStatus();
+
+    });
+  </script>
+{% endblock %}

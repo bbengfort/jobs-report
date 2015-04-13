@@ -63,3 +63,6 @@ import elmr.views
 
 # Import models: must be after db config
 import elmr.models
+
+# Import template filters: must be after app config
+import elmr.filters
