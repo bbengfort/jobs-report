@@ -3,7 +3,7 @@
 {% block stylesheets %}
   {{ super() }}
   <style type="text/css">
-    #status {
+    p.status {
       margin-top: 38px;
     }
 
@@ -23,7 +23,7 @@
         <h1 class="pull-left">
           ELMR Admin Utility <small>Application Status</small>
         </h1>
-        <p id="status" class="text-muted pull-right">
+        <p class="status text-muted pull-right">
           Current Status &mdash;
           <i class="fa fa-circle status-icon"></i>
           <span class='status-text'>unknown</span>
@@ -50,7 +50,7 @@
             </li>
             <li class="list-group-item">
               <span class="badge">{{ dbcounts["records"]|intcomma }}</span>
-              <strong>Series Records</strong>: individual data points for the series
+              <strong>Series Records</strong>: individual data points for all series
             </li>
             <li class="list-group-item">
               <span class="badge">{{ dbcounts["ingests"]|intcomma }}</span>
@@ -73,11 +73,17 @@
             <tbody>
               <tr>
                 <td>ELMR Version</td>
-                <td><span class="status-version">unknown</span></td>
+                <td>
+                  <span class="status-version">unknown</span>
+                  <a id="version-repo" class="hidden" href="#">
+                    <small><i class="fa fa-github"></i> view on Github</small>
+                  </a>
+                </td>
               </tr>
               <tr>
                 <td>ELMR Status</td>
-                <td>
+                <td class="status text-muted">
+                  <i class="fa fa-circle status-icon"></i>
                   <span class="status-text">unknown</span>
                   <span class="status-monthdelta">unknown</span>
                 </td>
@@ -159,9 +165,9 @@
           .success(function(data) {
 
             // Remove all text-* classes from the status
-            $.each($("#status").attr("class").split(" "), function(idx, cls) {
+            $.each($(".status").attr("class").split(" "), function(idx, cls) {
               if (cls.indexOf("text-") == 0) {
-                $("#status").removeClass(cls);
+                $(".status").removeClass(cls);
               }
             });
 
@@ -172,18 +178,15 @@
             var github = "https://github.com/bbengfort/jobs-report/releases/tag/v";
 
             // Set the status from the data
-            $("#status").addClass(statusClasses[data.status]);
+            $(".status").addClass(statusClasses[data.status]);
             $(".status-text").text(data.status.toUpperCase());
             $(".status-version").text(data.version);
             $(".status-ingestion").text(ingestts.format(dtfmt));
             $(".status-current").text(currentts.format(dtfmt));
             $(".status-monthdelta").text("(" + data.timestamps.monthdelta + " months since last ingestion)");
 
-            $(".status-version").parent().append(
-              $("<a></a>")
-                .attr("href", github + data.version)
-                .append($('<small><i class="fa fa-github"></i> view on Github</small>'))
-            );
+            $("#version-repo").attr("href", github + data.version);
+            $("#version-repo").removeClass("hidden");
 
             // Update the status every minute
             setTimeout(updateStatus, 60000);
