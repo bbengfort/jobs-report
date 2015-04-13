@@ -40,8 +40,20 @@ from sqlalchemy import desc, extract
 
 
 @app.route("/")
-def page():
+def index():
     return render_template('home.html')
+
+
+@app.route("/admin/")
+def admin():
+    ingestions = IngestionRecord.query.order_by(desc("id")).limit(20)
+    dbcounts   = {
+        "series": Series.query.count(),
+        "records": SeriesRecord.query.count(),
+        "ingests": IngestionRecord.query.count(),
+    }
+    return render_template('admin.html', ingestlog=ingestions,
+                           dbcounts=dbcounts)
 
 
 @app.route('/favicon.ico')
