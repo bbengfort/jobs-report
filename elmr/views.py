@@ -47,7 +47,13 @@ def index():
 @app.route("/admin/")
 def admin():
     ingestions = IngestionRecord.query.order_by(desc("id")).limit(20)
-    return render_template('admin.html', ingestlog=ingestions)
+    dbcounts   = {
+        "series": Series.query.count(),
+        "records": SeriesRecord.query.count(),
+        "ingests": IngestionRecord.query.count(),
+    }
+    return render_template('admin.html', ingestlog=ingestions,
+                           dbcounts=dbcounts)
 
 
 @app.route('/favicon.ico')
