@@ -171,17 +171,19 @@
           });
 
           var topo = "{{ url_for('static', filename='data/topojson/countries/USA.json') }}";
-          var geodata = "{{ url_for('static', filename='data/venture.csv') }}";
+          var geodata = "http://127.0.0.1:5000/api/geo/unemployment-rate/";
 
           // Initialize the Map
           map = d3.geomap.choropleth()
             .geofile(topo)
-            .colors(colorbrewer.YlGnBu[9])
+            .colors(colorbrewer.RdYlGn[9])
             .projection(d3.geo.albersUsa)
-            .column(endDate.format("YYYY"))
+            .column(endDate.format(dateFmt))
             .unitId('fips')
             .scale(1000)
             .legend(true);
+
+            console.log(endDate.format(dateFmt));
 
           // Load the CSV data for the map
           d3.csv(geodata, function(error, data) {
@@ -254,7 +256,7 @@
 
         // Update the map to the current year
         if (map) {
-          map.column(endDate.format("YYYY"));
+          map.column(endDate.format(dateFmt));
           drawMap();
         }
       }
