@@ -176,7 +176,7 @@
           // Initialize the Map
           map = d3.geomap.choropleth()
             .geofile(topo)
-            .colors(colorbrewer.RdYlGn[9])
+            .colors(colorbrewer.Spectral[9])
             .projection(d3.geo.albersUsa)
             .column(endDate.format(dateFmt))
             .unitId('fips')

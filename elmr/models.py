@@ -70,6 +70,8 @@ class Series(db.Model):
     is_primary  = db.Column(db.Boolean, default=False)
     records     = db.relationship('SeriesRecord', backref='series',
                                   lazy='dynamic')
+    states      = db.relationship('StateSeries', backref='series',
+                                  lazy='dynamic')
 
     def __repr__(self):
         return "<Series %s>" % self.blsid
@@ -92,3 +94,61 @@ class SeriesRecord(db.Model):
         my = self.period.strftime("%B %Y")
         return ("<Record for %s - %0.2f on %s>" %
                 (self.series.blsid, self.value, my))
+
+##########################################################################
+## Per-State Information
+##########################################################################
+
+
+class USAState(db.Model):
+    """
+    Stores information related to States of the United States for quickly
+    extracting information from the LAUS and CESSM data sets.
+
+    This model is based on the Federal Information Processing Standard (FIPS):
+    http://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code
+
+    And the FIPS codes are used in the front-end to identify states.
+
+    Note that series returns the state series mapping table, not series objects
+    itself without another lookup.
+    """
+
+    __tablename__ = "usa_states"
+
+    id          = db.Column(db.Integer, primary_key=True)
+    fips        = db.Column(db.Unicode(5), unique=True, index=True)
+    name        = db.Column(db.Unicode(255), nullable=False)
+    abbr        = db.Column(db.Unicode(2), nullable=True)
+    series      = db.relationship('StateSeries', backref='state',
+                                  lazy='joined')
+
+    def __repr__(self):
+        return "<%s (%s)>" % (self.name, self.fips)
+
+
+class StateSeries(db.Model):
+    """
+    Many-to-Many mapping of states to series (even though in reality it is a
+    one to many relationship, this table allows us to store extra data). Use
+    this table to quickly fetch all of the series related to a particular
+    state or to fetch state data for a series.
+
+    Adjusted: Refers to seasonally adjsuted
+    Dataset:  "unemployment rate", "unemployment", "employment", "labor force"
+    Source:   LAUS, CESSM
+    Category: For CESSM only, refers to the labor category
+    """
+
+    __tablename__ = "states_series"
+
+    id          = db.Column(db.Integer, primary_key=True)
+    state_id    = db.Column(db.Integer, db.ForeignKey('usa_states.id'))
+    series_id   = db.Column(db.Integer, db.ForeignKey('series.id'))
+    adjusted    = db.Column(db.Boolean, default=False)
+    dataset     = db.Column(db.Unicode(255), nullable=False)
+    source      = db.Column(db.Unicode(255), nullable=True)
+    category    = db.Column(db.Unicode(255), nullable=True)
+
+    def __repr__(self):
+        return "<%s >"
