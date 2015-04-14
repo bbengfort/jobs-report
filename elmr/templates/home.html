@@ -2,6 +2,7 @@
 
 {% block stylesheets %}
   {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/d3.geomap.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -99,6 +100,8 @@
       <!-- Main Visual Content -->
       <div class="col-md-9">
 
+        <div id="map"></div>
+
       </div><!-- end main visual content -->
 
     </div><!-- end 2 column visual content -->
@@ -109,6 +112,12 @@
 
 {% block javascripts %}
   {{ super() }}
+  <!-- D3 Dependencies -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+  <script src="{{ url_for('static', filename='js/d3.geomap.dependencies.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/d3.geomap.min.js') }}"></script>
+
+  <!-- Application -->
   <script type="text/javascript">
     $(function() {
 
@@ -119,8 +128,9 @@
       // Important Variables
       var dateFmt = "MMM YYYY"
       var dataUrl = "/api/source/cps/";
-      var data    = null;    // holder for the data
+      var data    = null;    // holder for the CPS data
 
+      var map       = null;  // The D3 Chloropeth map object
       var minDate   = null;  // lower boundary of the period (moment obj)
       var maxDate   = null;  // upper boundary of the period (moment obj)
       var period    = null;  // the period of data (moment-range obj)
@@ -160,8 +170,33 @@
             }
           });
 
+          var topo = "{{ url_for('static', filename='data/topojson/countries/USA.json') }}";
+          var geodata = "{{ url_for('static', filename='data/venture.csv') }}";
+
+          // Initialize the Map
+          map = d3.geomap.choropleth()
+            .geofile(topo)
+            .colors(colorbrewer.YlGnBu[9])
+            .projection(d3.geo.albersUsa)
+            .column(endDate.format("YYYY"))
+            .unitId('fips')
+            .scale(1000)
+            .legend(true);
+
+          // Load the CSV data for the map
+          d3.csv(geodata, function(error, data) {
+              d3.select('#map')
+                  .datum(data);
+          });
+
+          // Bind window resize to the draw map function
+          $(window).resize(function(e) {
+            drawMap();
+          });
+
           // Turn off the loader and indicate application started
           toggleLoading(false, function() {
+            drawMap(); // Draw the map
             console.log("ELMR Application Started");
           });
 
@@ -170,6 +205,19 @@
       /*************************************************************************
       ** Helper Functions
       *************************************************************************/
+
+      function drawMap() {
+        // Set the width of the map equal to the width of the container
+        var width = $("#map").width();
+        map.width(width);
+
+        // Empty the map div of the old map
+        $("#map").empty();
+
+        // Draw the map inside the map div
+        d3.select('#map')
+          .call(map.draw, map);
+      }
 
       /*
       * Gets the month number in the period of the app.
@@ -203,6 +251,12 @@
 
         // Update the headlines based on the date fields
         updateHeadlines();
+
+        // Update the map to the current year
+        if (map) {
+          map.column(endDate.format("YYYY"));
+          drawMap();
+        }
       }
 
       /*

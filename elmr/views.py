@@ -63,7 +63,7 @@ def favicon():
                                mimetype='image/vnd.microsoft.icon')
 
 ##########################################################################
-## Configure API Resources
+## Configure Series-Related API Resources
 ##########################################################################
 
 
@@ -290,6 +290,39 @@ class SourceListView(Resource):
         base = request.url_root
         return urljoin(base, "/api/source/%s/" % name)
 
+
+##########################################################################
+## Configure Geography-Related API Resources
+##########################################################################
+
+class GeographyView(Resource):
+    """
+    This endpoint makes geography related data sets available - e.g. all series
+    data for individual states or full data sets for all states to power the
+    geographic visualizations on the main page.
+    """
+
+    def get(self, source):
+        """
+        Temporary geography endpoint for testing
+        """
+
+        start  = "Jan 2000"
+        finish = "Mar 2015"
+
+        context = {
+            "title": "ELMR %s Geographic Data" % source,
+            "version": get_version(),
+            "period": {
+                "start": start,
+                "end": finish,
+            },
+            "descriptions": {},
+            "data": [],
+        }
+
+        return context
+
 ##########################################################################
 ## Heartbeat resource
 ##########################################################################
@@ -345,6 +378,7 @@ class APIListView(Resource):
         "heartbeat": "status",
         "sources": "source",
         "series": "series",
+        "geography": "geo",
     }
 
     def get(self):
@@ -376,5 +410,6 @@ endpoint(SourceView, '/api/source/<source>/', endpoint='source-detail')
 endpoint(HeartbeatView, '/api/status/', endpoint="status-detail")
 endpoint(SeriesListView, '/api/series/', endpoint='series-list')
 endpoint(SeriesView, '/api/series/<blsid>/', endpoint='series-detail')
+endpoint(GeographyView, '/api/geo/<source>/', endpoint='geography-detail')
 
 # Did you forget to modify the API list view?
