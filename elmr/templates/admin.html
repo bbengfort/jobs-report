@@ -165,6 +165,7 @@
   <script type="text/javascript">
     $(function() {
 
+      var pollRate = 60000; // seconds
       var endpoint = "/api/status/";
       var statusClasses = {
         "white": "text-default",
@@ -203,7 +204,7 @@
             $("#version-repo").removeClass("hidden");
 
             // Update the status every minute
-            setTimeout(updateStatus, 60000);
+            setTimeout(updateStatus, pollRate);
           });
 
       }
