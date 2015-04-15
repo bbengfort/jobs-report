@@ -2,6 +2,7 @@
 
 {% block stylesheets %}
   {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/d3.geomap.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -94,10 +95,50 @@
       <!-- Right Sidebar -->
       <div class="col-md-3">
 
+        <h4>Current Dataset</h4>
+        <dl>
+          <dt>Source</dt>
+            <dd id="datasetSource">LAUS</dd>
+          <dt>Dataset</dt>
+            <dd id="datasetName">Unemployment Rate</dd>
+        </dl>
+        <!-- Dataset Selection Dropdown -->
+        <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Select Dataset for Map <span class="caret"></span>
+        </button>
+        <ul id="menuDataset" class="dropdown-menu" role="menu">
+          <li role="presentation" class="dropdown-header">LAUS</li>
+          <li><a href="/api/geo/laus/employment/" data-source="LAUS">Employment</a></li>
+          <li><a href="/api/geo/laus/labor-force/" data-source="LAUS">Labor Force</a></li>
+          <li><a href="/api/geo/laus/unemployment/" data-source="LAUS">Unemployment</a></li>
+          <li><a href="/api/geo/laus/unemployment-rate/" data-source="LAUS">Unemployment Rate</a></li>
+          <li class="divider"></li>
+          <li role="presentation" class="dropdown-header">CES - States</li>
+          <li><a href="/api/geo/CESSM/total-nonfarm/" data-source="CES - States">Total Nonfarm</a></li>
+          <li><a href="/api/geo/CESSM/information/" data-source="CES - States">Information</a></li>
+          <li><a href="/api/geo/CESSM/leisure-and-hospitality/" data-source="CES - States">Leisure and Hospitality</a></li>
+          <li><a href="/api/geo/CESSM/mining-logging-and-construction/" data-source="CES - States">Mining, Logging, and Construction</a></li>
+          <li><a href="/api/geo/CESSM/durable-goods/" data-source="CES - States">Durable Goods</a></li>
+          <li><a href="/api/geo/CESSM/transportation-warehousing-and-utilities/" data-source="CES - States">Transportation, Warehousing, and Utilities</a></li>
+          <li><a href="/api/geo/CESSM/financial-activities/" data-source="CES - States">Financial Activities</a></li>
+          <li><a href="/api/geo/CESSM/trade-transportation-and-utilities/" data-source="CES - States">Trade, Transportation, and Utilities</a></li>
+          <li><a href="/api/geo/CESSM/manufacturing/" data-source="CES - States">Manufacturing</a></li>
+          <li><a href="/api/geo/CESSM/construction/" data-source="CES - States">Construction</a></li>
+          <li><a href="/api/geo/CESSM/mining-and-logging/" data-source="CES - States">Mining and Logging</a></li>
+          <li><a href="/api/geo/CESSM/education-and-health-services/" data-source="CES - States">Education and Health Services</a></li>
+          <li><a href="/api/geo/CESSM/non-durable-goods/" data-source="CES - States">Non-Durable Goods</a></li>
+          <li><a href="/api/geo/CESSM/professional-and-business-services/" data-source="CES - States">Professional and Business Services</a></li>
+          <li><a href="/api/geo/CESSM/government/" data-source="CES - States">Government</a></li>
+          <li><a href="/api/geo/CESSM/other-services/" data-source="CES - States">Other Services</a></li>
+        </ul>
+      </div>
       </div><!-- end right sidebar -->
 
       <!-- Main Visual Content -->
       <div class="col-md-9">
+
+        <div id="map"></div>
 
       </div><!-- end main visual content -->
 
@@ -109,6 +150,12 @@
 
 {% block javascripts %}
   {{ super() }}
+  <!-- D3 Dependencies -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+  <script src="{{ url_for('static', filename='js/d3.geomap.dependencies.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/d3.geomap.min.js') }}"></script>
+
+  <!-- Application -->
   <script type="text/javascript">
     $(function() {
 
@@ -119,8 +166,9 @@
       // Important Variables
       var dateFmt = "MMM YYYY"
       var dataUrl = "/api/source/cps/";
-      var data    = null;    // holder for the data
+      var data    = null;    // holder for the CPS data
 
+      var map       = null;  // The D3 Chloropeth map object
       var minDate   = null;  // lower boundary of the period (moment obj)
       var maxDate   = null;  // upper boundary of the period (moment obj)
       var period    = null;  // the period of data (moment-range obj)
@@ -160,9 +208,36 @@
             }
           });
 
-          // Turn off the loader and indicate application started
-          toggleLoading(false, function() {
-            console.log("ELMR Application Started");
+          var topo = "{{ url_for('static', filename='data/topojson/countries/USA.json') }}";
+          var geodata = "/api/geo/laus/unemployment-rate/";
+
+
+          // Initialize the Map
+          map = d3.geomap.choropleth()
+            .geofile(topo)
+            .colors(colorbrewer.Spectral[9]) // See http://bl.ocks.org/mbostock/5577023 for colors
+            .projection(d3.geo.albersUsa)
+            .column(endDate.format(dateFmt))
+            .unitId('fips')
+            .scale(1000)
+            .legend(true);
+
+          // Bind window resize to the draw map function
+          $(window).resize(function(e) {
+            drawMap();
+          });
+
+          console.log("Fetching data for chloropeth map ...");
+          // Load the CSV data for the map
+          d3.csv(geodata, function(error, data) {
+              d3.select('#map')
+                  .datum(data);
+
+              // Turn off the loader and indicate application started
+              toggleLoading(false, function() {
+                drawMap(); // Draw the map
+                console.log("ELMR Application Started");
+              });
           });
 
         });
@@ -170,6 +245,48 @@
       /*************************************************************************
       ** Helper Functions
       *************************************************************************/
+
+      /*
+       * Redraw the chlorpeth map on demand.
+       */
+      function drawMap() {
+        // Set the width of the map equal to the width of the container
+        var width = $("#map").width();
+        map.width(width);
+
+        // Empty the map div of the old map
+        $("#map").empty();
+
+        // Draw the map inside the map div
+        d3.select('#map')
+          .call(map.draw, map);
+      }
+
+      /*
+       * Select handler for getting new data for the map.
+       */
+      $("#menuDataset li a").click(function(e) {
+        e.preventDefault();
+        var a = $(e.target);
+        var href = a.attr('href');
+        var name = a.text();
+        var source = a.data().source;
+
+        $("#menuDataset").dropdown("toggle");
+
+        $("#datasetSource").html("Loading &hellip;");
+        $("#datasetName").html("Loading &hellip;");
+
+        d3.csv(href, function(error, data) {
+            d3.select('#map').datum(data);
+            drawMap();
+
+            $("#datasetSource").text(source);
+            $("#datasetName").text(name);
+        });
+
+        return false;
+      });
 
       /*
       * Gets the month number in the period of the app.
@@ -203,6 +320,12 @@
 
         // Update the headlines based on the date fields
         updateHeadlines();
+
+        // Update the map to the current year
+        if (map) {
+          map.column(endDate.format(dateFmt));
+          drawMap();
+        }
       }
 
       /*
