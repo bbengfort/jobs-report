@@ -23,7 +23,7 @@ import StringIO
 from elmr import get_version
 from elmr import app, api, db
 from elmr.models import IngestionRecord
-from elmr.models import Series, SeriesRecord
+from elmr.models import Series, SeriesRecord, StateSeries
 from elmr.utils import JSON_FMT, utcnow, months_since, slugify
 from elmr.fips import write_states_dataset
 
@@ -53,9 +53,11 @@ def admin():
         "series": Series.query.count(),
         "records": SeriesRecord.query.count(),
         "ingests": IngestionRecord.query.count(),
+        "states_series": StateSeries.query.count(),
     }
+    dbversion  = list(db.session.execute("SELECT * FROM migrate_version"))[0]
     return render_template('admin.html', ingestlog=ingestions,
-                           dbcounts=dbcounts)
+                           dbcounts=dbcounts, dbversion=dbversion)
 
 
 @app.route('/favicon.ico')
