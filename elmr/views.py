@@ -24,7 +24,7 @@ from elmr import get_version
 from elmr import app, api, db
 from elmr.models import IngestionRecord
 from elmr.models import Series, SeriesRecord
-from elmr.utils import JSON_FMT, utcnow, months_since
+from elmr.utils import JSON_FMT, utcnow, months_since, slugify
 from elmr.fips import write_states_dataset
 
 from flask import request, make_response
@@ -297,20 +297,111 @@ class SourceListView(Resource):
 ## Configure Geography-Related API Resources
 ##########################################################################
 
+ALLOWED_GEO_SOURCES   = set(["LAUS", "CESSM"])
+FORBIDDEN_GEO_SOURCES = set(["CESN", "CPS"])
+
+
+class GeoSourcesView(Resource):
+    """
+    Returns the availabe sources for geography based API lookups.
+    """
+
+    def get(self):
+        """
+        Returns all the distinct sources and their urls
+        """
+
+        context = {
+            "title": "Geographic BLS Sources",
+            "sources": [],
+        }
+
+        query = "SELECT DISTINCT source FROM states_series"
+        for row in db.session.execute(query):
+            context["sources"].append({
+                "name": row[0],
+                "url": self.get_detail_url(row[0]),
+            })
+
+        return context
+
+    def get_detail_url(self, source):
+        """
+        Returns the blsid from the request object.
+        """
+        base = request.url_root
+        return urljoin(base, "/api/geo/%s/" % source)
+
+
+class GeoDatasetsView(Resource):
+    """
+    Returns the available datasets for a geo resource.
+    """
+
+    def get(self, source):
+        """
+        For a given source, returns the available datasets and their counts.
+        """
+        # Ensure that source is allowed
+        source = source.upper()
+        if source in FORBIDDEN_GEO_SOURCES:
+            context = {
+                'success': False,
+                'message': "Source '%s' is not allowed." % source,
+            }
+            return context, 400
+
+        if source not in ALLOWED_GEO_SOURCES:
+            context = {
+                'success': False,
+                'message': "Source '%s' is not found." % source,
+            }
+            return context, 404
+
+        query = "SELECT distinct %s FROM states_series WHERE source='%s'"
+        field = {
+            "LAUS": "dataset",
+            "CESSM": "category",
+        }[source]
+
+        query   = query % (field, source)
+        context = {
+            "title": "ELMR %s Datasets" % source,
+            "field": field,
+            "datasets": []
+        }
+
+        for row in db.session.execute(query):
+            context["datasets"].append({
+                "name": row[0],
+                "url": self.get_detail_url(source, row[0]),
+            })
+
+        return context
+
+    def get_detail_url(self, source, dataset):
+        """
+        Returns the blsid from the request object.
+        """
+        base = request.url_root
+        return urljoin(base, "/api/geo/%s/%s/" % (source, slugify(dataset)))
+
 
 @app.route('/api/geo/<source>/<dataset>/')
 def geography_csv(source, dataset):
+    """
+    Returns a CSV data set for the specified source and dataset. Note that this
+    must be a Flask route function and not a RESTful class because the returned
+    datatype is CSV and not JSON.
+    """
 
     source  = source.upper()
     dataset = dataset.replace("-", " ")
 
-    ALLOWED_SOURCES   = set(["LAUS", "CESSM"])
-    FORBIDDEN_SOURCES = set(["CESN", "CPS"])
-
-    if source in FORBIDDEN_SOURCES:
+    if source in FORBIDDEN_GEO_SOURCES:
         return make_response("Source '%s' is not geographic." % source), 400
 
-    if source not in ALLOWED_SOURCES:
+    if source not in ALLOWED_GEO_SOURCES:
         return make_response("Unknown data source -- '%s'" % source), 404
 
     # Determine the series from the source and the dataset
@@ -411,6 +502,7 @@ endpoint(SourceView, '/api/source/<source>/', endpoint='source-detail')
 endpoint(HeartbeatView, '/api/status/', endpoint="status-detail")
 endpoint(SeriesListView, '/api/series/', endpoint='series-list')
 endpoint(SeriesView, '/api/series/<blsid>/', endpoint='series-detail')
-# endpoint(GeographyView, '/api/geo/<source>/', endpoint='geography-detail')
+endpoint(GeoSourcesView, '/api/geo/', endpoint='geography-list')
+endpoint(GeoDatasetsView, '/api/geo/<source>/', endpoint='geography-datasets')
 
 # Did you forget to modify the API list view?

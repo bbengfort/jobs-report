@@ -17,10 +17,13 @@ Utility functions and classes for ELMR
 ## Imports
 ##########################################################################
 
+import re
+
 from datetime import datetime
 from datetime import timedelta
 from dateutil.tz import tzutc
 from calendar import monthrange
+from unicodedata import normalize
 
 ##########################################################################
 ## Sane Constants
@@ -96,3 +99,21 @@ def classproperty(func):
         func = classmethod(func)
 
     return ClassPropertyDescriptor(func)
+
+##########################################################################
+## URL Helpers
+##########################################################################
+
+_punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
+
+
+def slugify(text, delim=u'-'):
+    """
+    Returns a URL safe slug of the given text.
+    """
+    result = []
+    for word in _punct_re.split(text.lower()):
+        word = normalize('NFKD', word).encode('ascii', 'ignore')
+        if word:
+            result.append(word)
+    return unicode(delim.join(result))
