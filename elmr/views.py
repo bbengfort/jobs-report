@@ -18,14 +18,16 @@ Routes for the ELMR web application
 ##########################################################################
 
 import os
+import StringIO
 
-from elmr import app, api,db
 from elmr import get_version
+from elmr import app, api, db
 from elmr.models import IngestionRecord
 from elmr.models import Series, SeriesRecord
 from elmr.utils import JSON_FMT, utcnow, months_since
+from elmr.fips import write_states_dataset
 
-from flask import request
+from flask import request, make_response
 from flask.ext.restful import Resource, reqparse
 from flask import render_template, send_from_directory
 
@@ -295,125 +297,32 @@ class SourceListView(Resource):
 ## Configure Geography-Related API Resources
 ##########################################################################
 
-import csv
-import StringIO
-from flask import make_response
-from datetime import date
 
+@app.route('/api/geo/<source>/<dataset>/')
+def geography_csv(source, dataset):
 
-@app.route('/api/geo/<source>/')
-def geography_csv(source):
-    series = [
-        ("LASST010000000000006", "Alabama", "US01"),
-        ("LASST020000000000006", "Alaska", "US02"),
-        ("LASST040000000000006", "Arizona", "US04"),
-        ("LASST050000000000006", "Arkansas", "US05"),
-        ("LASST060000000000006", "California", "US06"),
-        ("LASST080000000000006", "Colorado", "US08"),
-        ("LASST090000000000006", "Connecticut", "US09"),
-        ("LASST100000000000006", "Delaware", "US10"),
-        ("LASST120000000000006", "Florida", "US12"),
-        ("LASST130000000000006", "Georgia", "US13"),
-        ("LASST150000000000006", "Hawaii", "US15"),
-        ("LASST160000000000006", "Idaho", "US16"),
-        ("LASST170000000000006", "Illinois", "US17"),
-        ("LASST180000000000006", "Indiana", "US18"),
-        ("LASST190000000000006", "Iowa", "US19"),
-        ("LASST200000000000006", "Kansas", "US20"),
-        ("LASST210000000000006", "Kentucky", "US21"),
-        ("LASST220000000000006", "Louisiana", "US22"),
-        ("LASST230000000000006", "Maine", "US23"),
-        ("LASST240000000000006", "Maryland", "US24"),
-        ("LASST250000000000006", "Massachusetts", "US25"),
-        ("LASST260000000000006", "Michigan", "US26"),
-        ("LASST270000000000006", "Minnesota", "US27"),
-        ("LASST280000000000006", "Mississippi", "US28"),
-        ("LASST290000000000006", "Missouri", "US29"),
-        ("LASST300000000000006", "Montana", "US30"),
-        ("LASST310000000000006", "Nebraska", "US31"),
-        ("LASST320000000000006", "Nevada", "US32"),
-        ("LASST330000000000006", "New Hampshire", "US33"),
-        ("LASST340000000000006", "New Jersey", "US34"),
-        ("LASST350000000000006", "New Mexico", "US35"),
-        ("LASST360000000000006", "New York", "US36"),
-        ("LASST370000000000006", "North Carolina", "US37"),
-        ("LASST380000000000006", "North Dakota", "US38"),
-        ("LASST390000000000006", "Ohio", "US39"),
-        ("LASST400000000000006", "Oklahoma", "US40"),
-        ("LASST410000000000006", "Oregon", "US41"),
-        ("LASST420000000000006", "Pennsylvania", "US42"),
-        ("LASST440000000000006", "Rhode Island", "US44"),
-        ("LASST450000000000006", "South Carolina", "US45"),
-        ("LASST460000000000006", "South Dakota", "US46"),
-        ("LASST470000000000006", "Tennessee", "US47"),
-        ("LASST480000000000006", "Texas", "US48"),
-        ("LASST490000000000006", "Utah", "US49"),
-        ("LASST500000000000006", "Vermont", "US50"),
-        ("LASST510000000000006", "Virginia", "US51"),
-        ("LASST530000000000006", "Washington", "US53"),
-        ("LASST540000000000006", "West Virginia", "US54"),
-        ("LASST550000000000006", "Wisconsin", "US55"),
-        ("LASST560000000000006", "Wyoming", "US56"),
-    ]
+    source  = source.upper()
+    dataset = dataset.replace("-", " ")
 
-    f = StringIO.StringIO()
-    fields = ["fips", "State"]
+    ALLOWED_SOURCES   = set(["LAUS", "CESSM"])
+    FORBIDDEN_SOURCES = set(["CESN", "CPS"])
 
-    for year in xrange(2000, 2016):
-        for month in xrange(1, 13):
-            if year == 2015 and month > 2:
-                continue
-            fields.append(date(year, month, 1).strftime("%b %Y"))
+    if source in FORBIDDEN_SOURCES:
+        return make_response("Source '%s' is not geographic." % source), 400
 
-    writer = csv.DictWriter(f, fieldnames=fields)
-    writer.writeheader()
+    if source not in ALLOWED_SOURCES:
+        return make_response("Unknown data source -- '%s'" % source), 404
 
-    for sid, state, fips in series:
-        series = Series.query.filter_by(blsid=sid).first()
-        row = {
-            "fips": fips,
-            "State": state,
-        }
+    # Determine the series from the source and the dataset
 
-        for record in series.records:
-            row[record.period.strftime("%b %Y")] = record.value
+    # Create a file-like object for the CSV to return, then write the series
+    csv = StringIO.StringIO()
+    write_states_dataset(csv, source, dataset)
 
-        writer.writerow(row)
-
-    output = make_response(f.getvalue())
+    output = make_response(csv.getvalue())
     output.headers["Content-Disposition"] = "attachment; filename=unemployment.csv"
     output.headers["Content-Type"] = "text/csv"
     return output
-
-# class GeographyView(Resource):
-#     """
-#     This endpoint makes geography related data sets available - e.g. all series
-#     data for individual states or full data sets for all states to power the
-#     geographic visualizations on the main page.
-#     """
-#
-#     def get(self, source):
-#         """
-#         Temporary geography endpoint for testing.
-#
-#         Right now this only returns a CSV for the employment data.
-#         """
-#
-#         start  = "Jan 2000"
-#         finish = "Mar 2015"
-#
-#         context = {
-#             "title": "ELMR %s Geographic Data" % source,
-#             "version": get_version(),
-#             "period": {
-#                 "start": start,
-#                 "end": finish,
-#             },
-#             "descriptions": {},
-#             "data": [],
-#         }
-#
-#         return context
 
 ##########################################################################
 ## Heartbeat resource

@@ -121,7 +121,7 @@ class USAState(db.Model):
     name        = db.Column(db.Unicode(255), nullable=False)
     abbr        = db.Column(db.Unicode(2), nullable=True)
     series      = db.relationship('StateSeries', backref='state',
-                                  lazy='joined')
+                                  lazy='dynamic')
 
     def __repr__(self):
         return "<%s (%s)>" % (self.name, self.fips)
@@ -151,4 +151,4 @@ class StateSeries(db.Model):
     category    = db.Column(db.Unicode(255), nullable=True)
 
     def __repr__(self):
-        return "<%s >"
+        return "<%s %s>" % (self.state.name, self.series.blsid)

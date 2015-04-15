@@ -22,15 +22,95 @@ import re
 import csv
 import elmr
 
+from datetime import date
+from elmr.models import USAState, Series, StateSeries
+
 ##########################################################################
 ## Compiled Regex
 ##########################################################################
 
+## Used for parsing the Series titles of LAUS and CESSM datasets
 LAUSTRE = re.compile(r'^([\w\s]+),\s+([\w\s]+)\s+\-\s+([\w\s]+$)', re.I)
 CESSMRE = re.compile(r'^([\w\s]+),\s+([\w\s,\-]+),\s+([\w\s]+)\s+\-\s+([\w\s]+$)', re.I)
 
 ##########################################################################
-## Helper functions
+## Per-State CSV Data Set Generators
+##########################################################################
+
+
+def write_states_dataset(fobj, source, dataset, adjusted=True):
+    """
+    Writes a geographic csv of the series to the open file-like object passed
+    in as `fobj`. Each row is an individual state, and each column is the
+    period for the series. You may also specify seasonally adjusted with the
+    `adjusted` boolean.
+
+    The source can be either "LAUS" or "CESSM". If the source is "LAUS" then
+    the dataset is expected to be one of:
+
+        - employment
+        - unemployment
+        - labor force
+        - unemployment rate
+
+    If the source is "CESSM" then the data set is expected to be one of:
+
+        - Total Nonfarm
+        - Other Services
+        - Information
+        - Leisure and Hospitality
+        - Mining, Logging, and Construction
+        - Durable Goods
+        - Transportation, Warehousing, and Utilities
+        - Financial Activities
+        - Trade, Transportation, and Utilities
+        - Manufacturing
+        - Construction
+        - Mining and Logging
+        - Education and Health Services
+        - Non-Durable Goods
+        - Professional and Business Services
+        - Government
+
+    This will write in place to the fobj that is passed to it.
+    """
+
+    fields = ["fips", "State"]
+
+    ## TODO: Somehow get this from the database, not hardcoded logic.
+    for year in xrange(2000, 2016):
+        for month in xrange(1, 13):
+            if year == 2015 and month > 3:
+                break
+            fields.append(date(year, month, 1).strftime("%b %Y"))
+
+    # Create the CSV writer
+    writer = csv.DictWriter(fobj, fieldnames=fields)
+    writer.writeheader()
+
+    # Create the database query - note, there is no checking
+    for state in USAState.query.order_by('name'):
+        ss = state.series.filter_by(adjusted=adjusted, source=source)
+        if source == "CESSM":
+            ss = ss.filter_by(category=dataset)
+        elif source == "LAUS":
+            ss = ss.filter_by(dataset=dataset)
+
+        ss = ss.first()  # TODO: Check to make sure this returns a single result
+
+        row = {
+            "fips": state.fips,
+            "State": state.name,
+        }
+
+        for record in ss.series.records:
+            row[record.period.strftime("%b %Y")] = record.value
+
+        writer.writerow(row)
+
+
+##########################################################################
+## Helper functions for data management
 ##########################################################################
 
 

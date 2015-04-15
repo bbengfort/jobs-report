@@ -95,6 +95,28 @@
       <!-- Right Sidebar -->
       <div class="col-md-3">
 
+        <h4>Current Dataset</h4>
+        <dl>
+          <dt>Source</dt>
+            <dd id="datasetSource">LAUS</dd>
+          <dt>Dataset</dt>
+            <dd id="datasetName">Unemployment Rate</dd>
+        </dl>
+        <!-- Dataset Selection Dropdown -->
+        <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Select Dataset for Map <span class="caret"></span>
+        </button>
+        <ul id="menuDataset" class="dropdown-menu" role="menu">
+          <li role="presentation" class="dropdown-header">LAUS</li>
+          <li><a href="/api/geo/laus/employment/" data-source="LAUS">Employment</a></li>
+          <li><a href="/api/geo/laus/labor-force/" data-source="LAUS">Labor Force</a></li>
+          <li><a href="/api/geo/laus/unemployment/" data-source="LAUS">Unemployment</a></li>
+          <li><a href="/api/geo/laus/unemployment-rate/" data-source="LAUS">Unemployment Rate</a></li>
+          <li class="divider"></li>
+          <li role="presentation" class="dropdown-header">CES - States</li>
+        </ul>
+      </div>
       </div><!-- end right sidebar -->
 
       <!-- Main Visual Content -->
@@ -171,35 +193,35 @@
           });
 
           var topo = "{{ url_for('static', filename='data/topojson/countries/USA.json') }}";
-          var geodata = "http://127.0.0.1:5000/api/geo/unemployment-rate/";
+          var geodata = "/api/geo/laus/unemployment-rate/";
+
 
           // Initialize the Map
           map = d3.geomap.choropleth()
             .geofile(topo)
-            .colors(colorbrewer.Spectral[9])
+            .colors(colorbrewer.Spectral[9]) // See http://bl.ocks.org/mbostock/5577023 for colors
             .projection(d3.geo.albersUsa)
             .column(endDate.format(dateFmt))
             .unitId('fips')
             .scale(1000)
             .legend(true);
 
-            console.log(endDate.format(dateFmt));
-
-          // Load the CSV data for the map
-          d3.csv(geodata, function(error, data) {
-              d3.select('#map')
-                  .datum(data);
-          });
-
           // Bind window resize to the draw map function
           $(window).resize(function(e) {
             drawMap();
           });
 
-          // Turn off the loader and indicate application started
-          toggleLoading(false, function() {
-            drawMap(); // Draw the map
-            console.log("ELMR Application Started");
+          console.log("Fetching data for chloropeth map ...");
+          // Load the CSV data for the map
+          d3.csv(geodata, function(error, data) {
+              d3.select('#map')
+                  .datum(data);
+
+              // Turn off the loader and indicate application started
+              toggleLoading(false, function() {
+                drawMap(); // Draw the map
+                console.log("ELMR Application Started");
+              });
           });
 
         });
@@ -208,6 +230,9 @@
       ** Helper Functions
       *************************************************************************/
 
+      /*
+       * Redraw the chlorpeth map on demand.
+       */
       function drawMap() {
         // Set the width of the map equal to the width of the container
         var width = $("#map").width();
@@ -220,6 +245,32 @@
         d3.select('#map')
           .call(map.draw, map);
       }
+
+      /*
+       * Select handler for getting new data for the map.
+       */
+      $("#menuDataset li a").click(function(e) {
+        e.preventDefault();
+        var a = $(e.target);
+        var href = a.attr('href');
+        var name = a.text();
+        var source = a.data().source;
+
+        $("#menuDataset").dropdown("toggle");
+
+        $("#datasetSource").html("Loading &hellip;");
+        $("#datasetName").html("Loading &hellip;");
+
+        d3.csv(href, function(error, data) {
+            d3.select('#map').datum(data);
+            drawMap();
+
+            $("#datasetSource").text(source);
+            $("#datasetName").text(name);
+        });
+
+        return false;
+      });
 
       /*
       * Gets the month number in the period of the app.
