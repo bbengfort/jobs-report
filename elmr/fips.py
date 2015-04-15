@@ -38,39 +38,15 @@ CESSMRE = re.compile(r'^([\w\s]+),\s+([\w\s,\-]+),\s+([\w\s]+)\s+\-\s+([\w\s]+$)
 ##########################################################################
 
 
-def write_states_dataset(fobj, source, dataset, adjusted=True):
+def write_states_dataset(fobj, source, slug, adjusted=True):
     """
     Writes a geographic csv of the series to the open file-like object passed
     in as `fobj`. Each row is an individual state, and each column is the
     period for the series. You may also specify seasonally adjusted with the
     `adjusted` boolean.
 
-    The source can be either "LAUS" or "CESSM". If the source is "LAUS" then
-    the dataset is expected to be one of:
-
-        - employment
-        - unemployment
-        - labor force
-        - unemployment rate
-
-    If the source is "CESSM" then the data set is expected to be one of:
-
-        - Total Nonfarm
-        - Other Services
-        - Information
-        - Leisure and Hospitality
-        - Mining, Logging, and Construction
-        - Durable Goods
-        - Transportation, Warehousing, and Utilities
-        - Financial Activities
-        - Trade, Transportation, and Utilities
-        - Manufacturing
-        - Construction
-        - Mining and Logging
-        - Education and Health Services
-        - Non-Durable Goods
-        - Professional and Business Services
-        - Government
+    The source can be either "LAUS" or "CESSM". The slug should be the URL-safe
+    slug that groups similar datasets by state/category.
 
     This will write in place to the fobj that is passed to it.
     """
@@ -90,13 +66,16 @@ def write_states_dataset(fobj, source, dataset, adjusted=True):
 
     # Create the database query - note, there is no checking
     for state in USAState.query.order_by('name'):
-        ss = state.series.filter_by(adjusted=adjusted, source=source)
-        if source == "CESSM":
-            ss = ss.filter_by(category=dataset)
-        elif source == "LAUS":
-            ss = ss.filter_by(dataset=dataset)
+        ss = state.series.filter_by(adjusted=adjusted, source=source, slug=slug)
 
         ss = ss.first()  # TODO: Check to make sure this returns a single result
+        if ss is None:
+            ss = state.series.filter_by(source=source, slug=slug).first()
+
+        if ss is None:
+            continue
+        # TODO: above was just a temporary fix
+
 
         row = {
             "fips": state.fips,

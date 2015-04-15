@@ -138,6 +138,7 @@ class StateSeries(db.Model):
     Dataset:  "unemployment rate", "unemployment", "employment", "labor force"
     Source:   LAUS, CESSM
     Category: For CESSM only, refers to the labor category
+    Slug:     Group identifier from a URL (slugified dataset for LAUS, Category for CESSM)
     """
 
     __tablename__ = "states_series"
@@ -149,6 +150,7 @@ class StateSeries(db.Model):
     dataset     = db.Column(db.Unicode(255), nullable=False)
     source      = db.Column(db.Unicode(255), nullable=True)
     category    = db.Column(db.Unicode(255), nullable=True)
+    slug        = db.Column(db.Unicode(255))
 
     def __repr__(self):
         return "<%s %s>" % (self.state.name, self.series.blsid)

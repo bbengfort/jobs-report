@@ -396,7 +396,6 @@ def geography_csv(source, dataset):
     """
 
     source  = source.upper()
-    dataset = dataset.replace("-", " ")
 
     if source in FORBIDDEN_GEO_SOURCES:
         return make_response("Source '%s' is not geographic." % source), 400
@@ -411,7 +410,7 @@ def geography_csv(source, dataset):
     write_states_dataset(csv, source, dataset)
 
     output = make_response(csv.getvalue())
-    output.headers["Content-Disposition"] = "attachment; filename=unemployment.csv"
+    output.headers["Content-Disposition"] = "attachment; filename=%s.csv" % dataset
     output.headers["Content-Type"] = "text/csv"
     return output
 
