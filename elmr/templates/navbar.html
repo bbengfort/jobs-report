@@ -1,0 +1,72 @@
+    <nav class="navbar navbar-default .navbar-static-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <img alt="Brand" class="navbar-brand-img" src="{{ url_for('static', filename='img/cslogo.png') }}">
+            ELMR
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Resources <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="presentation" class="dropdown-header">Application</li>
+                <li>
+                  <a href="/admin/">
+                    <i class="fa fa-cogs"></i>
+                    Admin
+                  </a>
+                </li>
+                <li>
+                  <a href="/api/">
+                    <i class="fa fa-cubes"></i>
+                    API
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li role="presentation" class="dropdown-header">Development</li>
+                <li>
+                  <a href="http://jobs-report.readthedocs.org/en/latest/">
+                    <i class="fa fa-book"></i>
+                    Documentation
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/bbengfort/jobs-report/">
+                    <i class="fa fa-github-square"></i>
+                    Repository
+                  </a>
+                </li>
+                <li>
+                  <a href="https://waffle.io/bbengfort/jobs-report/">
+                    <i class="fa fa-trello"></i>
+                    Agile Board
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li role="presentation" class="dropdown-header">Computer Science</li>
+                <li>
+                  <a href="https://wiki.cs.umd.edu/cmsc734_s15/index.php/Visual_Analysis_of_the_Employment_Situation_in_the_United_States">
+                    <i class="fa fa-graduation-cap"></i>
+                    Project Wiki
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>

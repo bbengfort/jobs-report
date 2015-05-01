@@ -55,7 +55,7 @@
             <h3 class="panel-title">Database Tables</h3>
           </div>
           <div class="panel-body">
-            <p>The database contains the following number of rows per table.</p>
+            <p>The database is currently at version <strong>{{ "%03i" % dbversion[2] }}</strong> migrated by the <small>{{ dbversion[0] }}</small> repository.</p>
           </div>
           <ul class="list-group">
             <li class="list-group-item">
@@ -69,6 +69,10 @@
             <li class="list-group-item">
               <span class="badge">{{ dbcounts["ingests"]|intcomma }}</span>
               <strong>Ingestions</strong>: records the use of the BLS API
+            </li>
+            <li class="list-group-item">
+              <span class="badge">{{ dbcounts["states_series"]|intcomma }}</span>
+              <strong>State Series</strong>: time series associated with states
             </li>
           </ul>
         </div>
@@ -165,6 +169,7 @@
   <script type="text/javascript">
     $(function() {
 
+      var pollRate = 60000; // seconds
       var endpoint = "/api/status/";
       var statusClasses = {
         "white": "text-default",
@@ -203,7 +208,7 @@
             $("#version-repo").removeClass("hidden");
 
             // Update the status every minute
-            setTimeout(updateStatus, 0000);
+            setTimeout(updateStatus, pollRate);
           });
 
       }

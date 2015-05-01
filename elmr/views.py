@@ -23,7 +23,7 @@ import StringIO
 from elmr import get_version
 from elmr import app, api, db
 from elmr.models import IngestionRecord
-from elmr.models import Series, SeriesRecord
+from elmr.models import Series, SeriesRecord, StateSeries
 from elmr.utils import JSON_FMT, utcnow, months_since, slugify
 from elmr.fips import write_states_dataset
 
@@ -53,9 +53,11 @@ def admin():
         "series": Series.query.count(),
         "records": SeriesRecord.query.count(),
         "ingests": IngestionRecord.query.count(),
+        "states_series": StateSeries.query.count(),
     }
+    dbversion  = list(db.session.execute("SELECT * FROM migrate_version"))[0]
     return render_template('admin.html', ingestlog=ingestions,
-                           dbcounts=dbcounts)
+                           dbcounts=dbcounts, dbversion=dbversion)
 
 
 @app.route('/favicon.ico')
@@ -63,6 +65,24 @@ def favicon():
     dirname = os.path.join(app.root_path, 'static')
     return send_from_directory(dirname, 'favicon.ico',
                                mimetype='image/vnd.microsoft.icon')
+
+
+## Development Pages
+
+@app.route('/assaf/')
+def assaf_dev():
+    """
+    Assaf - add any context you need for your page here.
+    """
+    return render_template('assaf.html')
+
+
+@app.route('/benjamin/')
+def benjamin_dev():
+    """
+    Used for Ben's independent development
+    """
+    return render_template('benjamin.html')
 
 ##########################################################################
 ## Configure Series-Related API Resources
