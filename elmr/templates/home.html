@@ -20,129 +20,180 @@
   <!-- Application Container -->
   <div id="application" class="container hidden">
 
-    <!-- Page Title -->
+    <!-- Tab controls -->
     <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>U.S. Employment Explorer</h1>
-      </div>
-    </div><!-- end page title -->
-
-    <!-- Headlines -->
-    <div id="headlines" class="row">
       <div class="col-md-12">
-        <div class="headline-wrapper">
-          <!-- Left Headline -->
-          <div id="left-headline" class="headline">
-              <div class="headline-number">5.5%</div>
-              <div class="headline-detail">
-                <p class="headline-label">
-                  unemployment rate
-                </p>
-                <p class="headline-delta text-success">
-                  <i class="fa fa-long-arrow-down"></i>
-                  1.7%
-                </p>
-              </div>
-          </div><!-- end left headline -->
-
-          <!-- Right Headline -->
-          <div id="right-headline" class="headline">
-            <div class="headline-number">1.7M</div>
-            <div class="headline-detail">
-              <p class="headline-label">
-                employment level
-              </p>
-              <p class="headline-delta text-success">
-                <i class="fa fa-long-arrow-up"></i>
-                295,000
-              </p>
-            </div>
-          </div><!-- end right headline -->
-        </div><!-- end headline wrapper -->
-      </div>
-    </div><!-- end headlines -->
-
-    <!-- Controls -->
-    <div id="main-controls" class="row">
-      <div class="col-md-12">
-        <div class="controls">
-          <form class="form-inline">
-            <div class="form-group">
-              <label for="startDate">Start Date</label>
-              <div class="input-group">
-                <input type="text" class="form-control input-sm" id="startDate" />
-                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-              </div>
-            </div>
-            <div class="form-slider">
-              <div id="year-range-slider"></div>
-            </div>
-            <div class="form-group">
-              <label for="endDate">End Date</label>
-              <div class="input-group">
-                <input type="text" class="form-control input-sm" id="endDate" />
-                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div><!-- end controls -->
-
-    <!-- 2 Column Visual Content -->
-    <div class="row">
-
-      <!-- Right Sidebar -->
-      <div class="col-md-3">
-
-        <h4>Current Dataset</h4>
-        <dl>
-          <dt>Source</dt>
-            <dd id="datasetSource">LAUS</dd>
-          <dt>Dataset</dt>
-            <dd id="datasetName">Unemployment Rate</dd>
-        </dl>
-        <!-- Dataset Selection Dropdown -->
-        <div class="btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-          Select Dataset for Map <span class="caret"></span>
-        </button>
-        <ul id="menuDataset" class="dropdown-menu" role="menu">
-          <li role="presentation" class="dropdown-header">LAUS</li>
-          <li><a href="/api/geo/laus/employment/" data-source="LAUS">Employment</a></li>
-          <li><a href="/api/geo/laus/labor-force/" data-source="LAUS">Labor Force</a></li>
-          <li><a href="/api/geo/laus/unemployment/" data-source="LAUS">Unemployment</a></li>
-          <li><a href="/api/geo/laus/unemployment-rate/" data-source="LAUS">Unemployment Rate</a></li>
-          <li class="divider"></li>
-          <li role="presentation" class="dropdown-header">CES - States</li>
-          <li><a href="/api/geo/CESSM/total-nonfarm/" data-source="CES - States">Total Nonfarm</a></li>
-          <li><a href="/api/geo/CESSM/information/" data-source="CES - States">Information</a></li>
-          <li><a href="/api/geo/CESSM/leisure-and-hospitality/" data-source="CES - States">Leisure and Hospitality</a></li>
-          <li><a href="/api/geo/CESSM/mining-logging-and-construction/" data-source="CES - States">Mining, Logging, and Construction</a></li>
-          <li><a href="/api/geo/CESSM/durable-goods/" data-source="CES - States">Durable Goods</a></li>
-          <li><a href="/api/geo/CESSM/transportation-warehousing-and-utilities/" data-source="CES - States">Transportation, Warehousing, and Utilities</a></li>
-          <li><a href="/api/geo/CESSM/financial-activities/" data-source="CES - States">Financial Activities</a></li>
-          <li><a href="/api/geo/CESSM/trade-transportation-and-utilities/" data-source="CES - States">Trade, Transportation, and Utilities</a></li>
-          <li><a href="/api/geo/CESSM/manufacturing/" data-source="CES - States">Manufacturing</a></li>
-          <li><a href="/api/geo/CESSM/construction/" data-source="CES - States">Construction</a></li>
-          <li><a href="/api/geo/CESSM/mining-and-logging/" data-source="CES - States">Mining and Logging</a></li>
-          <li><a href="/api/geo/CESSM/education-and-health-services/" data-source="CES - States">Education and Health Services</a></li>
-          <li><a href="/api/geo/CESSM/non-durable-goods/" data-source="CES - States">Non-Durable Goods</a></li>
-          <li><a href="/api/geo/CESSM/professional-and-business-services/" data-source="CES - States">Professional and Business Services</a></li>
-          <li><a href="/api/geo/CESSM/government/" data-source="CES - States">Government</a></li>
-          <li><a href="/api/geo/CESSM/other-services/" data-source="CES - States">Other Services</a></li>
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active">
+            <a href="#geography" data-toggle="tab" role="tab">
+              <i class="fa fa-map-marker"></i> Geography
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#timeseries" data-toggle="tab" role="tab">
+              <i class="fa fa-area-chart"></i> Time Series
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#wealthofnations" data-toggle="tab" role="tab">
+              <i class="fa fa-diamond"></i> Wealth of Nations
+            </a>
+          </li>
         </ul>
       </div>
-      </div><!-- end right sidebar -->
+    </div>
 
-      <!-- Main Visual Content -->
-      <div class="col-md-9">
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Geography Tab -->
+      <div role="tabpanel" class="tab-pane active" id="geography">
+        <!-- Headlines -->
+        <div id="headlines" class="row">
+          <div class="col-md-12">
+            <div class="headline-wrapper">
+              <!-- Left Headline -->
+              <div id="left-headline" class="headline">
+                  <div class="headline-number">5.5%</div>
+                  <div class="headline-detail">
+                    <p class="headline-label">
+                      unemployment rate
+                    </p>
+                    <p class="headline-delta text-success">
+                      <i class="fa fa-long-arrow-down"></i>
+                      1.7%
+                    </p>
+                  </div>
+              </div><!-- end left headline -->
 
-        <div id="map"></div>
+              <!-- Right Headline -->
+              <div id="right-headline" class="headline">
+                <div class="headline-number">1.7M</div>
+                <div class="headline-detail">
+                  <p class="headline-label">
+                    employment level
+                  </p>
+                  <p class="headline-delta text-success">
+                    <i class="fa fa-long-arrow-up"></i>
+                    295,000
+                  </p>
+                </div>
+              </div><!-- end right headline -->
+            </div><!-- end headline wrapper -->
+          </div>
+        </div><!-- end headlines -->
 
-      </div><!-- end main visual content -->
+        <!-- Controls -->
+        <div id="main-controls" class="row">
+          <div class="col-md-12">
+            <div class="controls">
+              <form class="form-inline">
+                <div class="form-group">
+                  <label for="startDate">Start Date</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control input-sm" id="startDate" />
+                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                  </div>
+                </div>
+                <div class="form-slider">
+                  <div id="year-range-slider"></div>
+                </div>
+                <div class="form-group">
+                  <label for="endDate">End Date</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control input-sm" id="endDate" />
+                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div><!-- end controls -->
 
-    </div><!-- end 2 column visual content -->
+        <!-- 2 Column Visual Content -->
+        <div class="row">
+
+          <!-- Right Sidebar -->
+          <div class="col-md-3">
+
+            <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <h3 class="panel-title">Current Dataset</h3>
+              </div>
+              <div class="panel-body">
+                <!-- Dataset Selection Dropdown -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Select Dataset for Map <span class="caret"></span>
+                  </button>
+                  <ul id="menuDataset" class="dropdown-menu" role="menu">
+                    <li role="presentation" class="dropdown-header">LAUS</li>
+                    <li><a href="/api/geo/laus/employment/" data-source="LAUS">Employment</a></li>
+                    <li><a href="/api/geo/laus/labor-force/" data-source="LAUS">Labor Force</a></li>
+                    <li><a href="/api/geo/laus/unemployment/" data-source="LAUS">Unemployment</a></li>
+                    <li><a href="/api/geo/laus/unemployment-rate/" data-source="LAUS">Unemployment Rate</a></li>
+                    <li class="divider"></li>
+                    <li role="presentation" class="dropdown-header">CES - States</li>
+                    <li><a href="/api/geo/CESSM/total-nonfarm/" data-source="CES - States">Total Nonfarm</a></li>
+                    <li><a href="/api/geo/CESSM/information/" data-source="CES - States">Information</a></li>
+                    <li><a href="/api/geo/CESSM/leisure-and-hospitality/" data-source="CES - States">Leisure and Hospitality</a></li>
+                    <li><a href="/api/geo/CESSM/mining-logging-and-construction/" data-source="CES - States">Mining, Logging, and Construction</a></li>
+                    <li><a href="/api/geo/CESSM/durable-goods/" data-source="CES - States">Durable Goods</a></li>
+                    <li><a href="/api/geo/CESSM/transportation-warehousing-and-utilities/" data-source="CES - States">Transportation, Warehousing, and Utilities</a></li>
+                    <li><a href="/api/geo/CESSM/financial-activities/" data-source="CES - States">Financial Activities</a></li>
+                    <li><a href="/api/geo/CESSM/trade-transportation-and-utilities/" data-source="CES - States">Trade, Transportation, and Utilities</a></li>
+                    <li><a href="/api/geo/CESSM/manufacturing/" data-source="CES - States">Manufacturing</a></li>
+                    <li><a href="/api/geo/CESSM/construction/" data-source="CES - States">Construction</a></li>
+                    <li><a href="/api/geo/CESSM/mining-and-logging/" data-source="CES - States">Mining and Logging</a></li>
+                    <li><a href="/api/geo/CESSM/education-and-health-services/" data-source="CES - States">Education and Health Services</a></li>
+                    <li><a href="/api/geo/CESSM/non-durable-goods/" data-source="CES - States">Non-Durable Goods</a></li>
+                    <li><a href="/api/geo/CESSM/professional-and-business-services/" data-source="CES - States">Professional and Business Services</a></li>
+                    <li><a href="/api/geo/CESSM/government/" data-source="CES - States">Government</a></li>
+                    <li><a href="/api/geo/CESSM/other-services/" data-source="CES - States">Other Services</a></li>
+                  </ul>
+                </div>
+              </div>
+              <table class="table">
+                <tr>
+                  <td><strong>Source</strong></td>
+                  <td id="datasetSource">LAUS</dd>
+                </tr>
+                <tr>
+                  <td><strong>Dataset</strong></td>
+                  <td id="datasetName">Unemployment Rate</td>
+                </tr>
+              </table>
+            </div>
+
+          </div><!-- end right sidebar -->
+
+          <!-- Main Visual Content -->
+          <div class="col-md-9">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div id="map"></div>
+              </div>
+            </div>
+
+          </div><!-- end main visual content -->
+
+        </div><!-- end 2 column visual content -->
+      </div><!-- end geography tab -->
+
+      <!-- TimeSeries Tab -->
+      <div role="tabpanel" class="tab-pane" id="timeseries">
+        <div class="well" style="margin-top: 20px;">
+          <p class="lead text-center">Coming Soon!</p>
+        </div>
+      </div><!-- end timeseries tab -->
+
+      <!-- Wealth of Nations Tab -->
+      <div role="tabpanel" class="tab-pane" id="wealthofnations">
+        <div class="well" style="margin-top: 20px;">
+          <p class="lead text-center">Coming Soon!</p>
+        </div>
+      </div><!-- end wealth of nations tab -->
+    </div>
 
   </div><!-- end application container -->
 {% endblock %}
@@ -215,12 +266,13 @@
           // Initialize the Map
           map = d3.geomap.choropleth()
             .geofile(topo)
-            .colors(colorbrewer.Spectral[9]) // See http://bl.ocks.org/mbostock/5577023 for colors
+            .colors(colorbrewer.YlOrRd[7]) // See http://bl.ocks.org/mbostock/5577023 for colors
             .projection(d3.geo.albersUsa)
             .column(endDate.format(dateFmt))
             .unitId('fips')
             .scale(1000)
-            .legend(true);
+            .legend(true)
+            .translate([455, 250]);
 
           // Bind window resize to the draw map function
           $(window).resize(function(e) {
