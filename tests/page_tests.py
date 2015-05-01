@@ -66,11 +66,11 @@ class TemplateTests(TestCase):
         Assert that the benjamin development page uses the benjamin template.
         """
         reponse = self.client.get("/benjamin/")
-        self.assert_template_used('benjamin.html')
+        self.assert_template_used('development/benjamin.html')
 
     def test_assaf_development_template(self):
         """
         Assert that the assaf development page uses the assaf template.
         """
         reponse = self.client.get("/assaf/")
-        self.assert_template_used('assaf.html')
+        self.assert_template_used('development/assaf.html')
