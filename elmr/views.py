@@ -74,7 +74,7 @@ def assaf_dev():
     """
     Assaf - add any context you need for your page here.
     """
-    return render_template('assaf.html')
+    return render_template('development/assaf.html')
 
 
 @app.route('/benjamin/')
@@ -82,7 +82,7 @@ def benjamin_dev():
     """
     Used for Ben's independent development
     """
-    return render_template('benjamin.html')
+    return render_template('development/benjamin.html')
 
 ##########################################################################
 ## Configure Series-Related API Resources

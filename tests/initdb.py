@@ -47,12 +47,37 @@ DBURI_REGEX = re.compile(
 ##########################################################################
 
 
-def syncdb():
+def syncdb(metatables=False):
     """
     Creates all the tables in the database. Wrapper for `elmr.db.create_all`.
+
+    If metatables is True, then it deals with the `migrate_version` table.
     """
     elmr.db.create_all()
 
+    if metatables:
+        CREATE_META_TABLE_SQL = """
+        CREATE TABLE IF NOT EXISTS migrate_version
+        (
+          repository_id character varying(250) NOT NULL,
+          repository_path text,
+          version integer,
+          CONSTRAINT migrate_version_pkey PRIMARY KEY (repository_id)
+        )
+        """
+
+        INSERT_TEST_VERSION_SQL = """
+        INSERT INTO migrate_version
+        VALUES ('elmr_test_repo', '/tmp/migrations', 1)
+        """
+
+        # Connect directly to PostgreSQL
+        connection = psycopg2.connect(parse_dburi())
+        cursor = connection.cursor()
+        cursor.execute(CREATE_META_TABLE_SQL)
+        cursor.execute(INSERT_TEST_VERSION_SQL)
+        connection.commit()
+        connection.close()
 
 def loaddb(**kwargs):
     """
@@ -84,13 +109,25 @@ def loaddb(**kwargs):
     connection.close()
 
 
-def dropdb():
+def dropdb(metatables=False):
     """
     Drops all of the tables and data in the database, readying it for refresh
     between tests - to ensure each test happens in isolation.
+
+    If metatables is True, then it deals with the `migrate_version` table.
     """
     elmr.db.session.remove()
     elmr.db.drop_all()
+
+    if metatables:
+        DROP_META_TABLE_SQL = "DROP TABLE migrate_version"
+
+        # Connect directly to PostgreSQL
+        connection = psycopg2.connect(parse_dburi())
+        cursor = connection.cursor()
+        cursor.execute(DROP_META_TABLE_SQL)
+        connection.commit()
+        connection.close()
 
 
 def parse_dburi(dburi=None):
