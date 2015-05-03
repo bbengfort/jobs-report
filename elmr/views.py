@@ -106,6 +106,16 @@ class SeriesView(Resource):
             self._parser.add_argument('end_year', type=int)
         return self._parser
 
+    @property
+    def detail_parser(self):
+        """
+        Returns the detail parser for the SeriesView (for PUT)
+        """
+        if not hasattr(self, '_detail_parser'):
+            self._detail_parser = reqparse.RequestParser()
+            self._detail_parser.add_argument('title', type=str, required=True)
+        return self._detail_parser
+
     def get(self, blsid):
         """
         Returns the Series detail for a given blsid.
@@ -141,6 +151,25 @@ class SeriesView(Resource):
             })
 
         return context
+
+    def put(self, blsid):
+        """
+        Allows you to update the title of a BLS series
+        """
+        series = Series.query.filter_by(blsid=blsid).first_or_404()
+        args   = self.detail_parser.parse_args()
+
+        if not args.get('title', None):
+            return {"message": "[title]: cannot be an empty string or None"}, 400
+
+        series.title = args['title']
+        db.session.commit()
+
+        return {
+            'blsid': series.blsid,
+            'source': series.source,
+            'title': series.title,
+        }
 
 
 class SeriesListView(Resource):

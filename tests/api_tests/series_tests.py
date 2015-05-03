@@ -199,3 +199,76 @@ class SeriesGETTests(TestCase):
 
         response = self.client.get("/api/series/UMD100023301100/")
         self.assertEquals(response.status_code, 404)
+
+    def test_series_detail_update(self):
+        """
+        Test that a PUT request can update the title
+        """
+
+        endpoint = self.get_random_detail_endpoint()
+        response = self.client.get(endpoint)
+        self.assertEquals(response.status_code, 200)
+
+        oldtitle = response.json['title']
+
+        response = self.client.put(endpoint, data={'title': 'foo'})
+        self.assertEquals(response.status_code, 200)
+
+        for key in ('blsid', 'source', 'title'):
+            self.assertIn(key, response.json)
+
+        response = self.client.get(endpoint)
+        self.assertEquals(response.status_code, 200)
+        self.assertNotEqual(oldtitle, response.json['title'])
+
+    def test_series_detail_no_id_update(self):
+        """
+        Assert that a PUT request cannot update the blsid
+        """
+
+        endpoint = self.get_random_detail_endpoint()
+        response = self.client.get(endpoint)
+        self.assertEquals(response.status_code, 200)
+
+        blsid    = response.json['blsid']
+
+        response = self.client.put(endpoint, data={'title': 'foo', 'blsid': 'UMD122002202'})
+        self.assertEquals(response.status_code, 200)
+
+        response = self.client.get(endpoint)
+        self.assertEquals(response.status_code, 200)
+        self.assertEqual(blsid, response.json['blsid'])
+
+    def test_series_detail_no_source_update(self):
+        """
+        Assert that a PUT request cannot update the source
+        """
+
+        endpoint = self.get_random_detail_endpoint()
+        response = self.client.get(endpoint)
+        self.assertEquals(response.status_code, 200)
+
+        source    = response.json['source']
+
+        response = self.client.put(endpoint, data={'title': 'foo', 'source': 'UMD'})
+        self.assertEquals(response.status_code, 200)
+
+        response = self.client.get(endpoint)
+        self.assertEquals(response.status_code, 200)
+        self.assertEqual(source, response.json['source'])
+
+    def test_series_detail_update_title_required(self):
+        """
+        Assert that a title is required for a PUT
+        """
+
+        endpoint = self.get_random_detail_endpoint()
+        response = self.client.put(endpoint, data={})
+        self.assertEquals(response.status_code, 400)
+
+        response = self.client.put(endpoint, data={"title": None})
+        self.assertEquals(response.status_code, 400)
+
+        response = self.client.put(endpoint, data={"title": ""})
+        self.assertEquals(response.status_code, 400)
+        
