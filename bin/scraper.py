@@ -85,6 +85,8 @@ def scrape_states(url, name):
         """
         series   = {}
         response = requests.get(url)
+
+        ### THIS LIST IS INCORRECT!!!!
         fields   = (
             "labor force",
             "employment",
