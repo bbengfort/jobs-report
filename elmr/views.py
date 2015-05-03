@@ -156,8 +156,11 @@ class SeriesView(Resource):
         """
         Allows you to update the title of a BLS series
         """
-        args   = self.detail_parser.parse_args()
         series = Series.query.filter_by(blsid=blsid).first_or_404()
+        args   = self.detail_parser.parse_args()
+
+        if not args.get('title', None):
+            return {"message": "[title]: cannot be an empty string or None"}, 400
 
         series.title = args['title']
         db.session.commit()

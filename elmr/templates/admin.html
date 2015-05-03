@@ -161,7 +161,28 @@
       </div>
     </div><!-- end ingestion log -->
 
+
+    <!-- Administrative Utiltiies -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Administrative Utilities</h2>
+
+        <div class="admin-controls" style="margin-top:20px;">
+          <!-- Update Series Modal Button -->
+          <button type="button" class="btn btn-default btn-sm"
+                  data-toggle="modal" data-target="#seriesUpdateModal">
+            <i class="fa fa-pencil"></i> Update Series Title
+          </button>
+        </div>
+      </div>
+    </div>
+
+
   </div><!-- application container ends -->
+{% endblock %}
+
+{% block modals %}
+  {% include 'components/modals/series_update_form.html' %}
 {% endblock %}
 
 {% block javascripts %}
@@ -213,6 +234,94 @@
 
       }
 
+      function resetSeriesUpdateForm() {
+        // Reset the form on demand
+        $("#sufMessage").text("");
+        $("#seriesUpdateForm .form-group").removeClass("has-error");
+        $("#blsidHelp").text("");
+        $("#titleHelp").text("");
+        $("#seriesUpdateModal button").removeAttr("disabled");
+      }
+
+      // Bind the update series modal close to reset the form
+      $('#seriesUpdateModal').on('hidden.bs.modal', function (e) {
+        resetSeriesUpdateForm();
+        $("#seriesUpdateForm")[0].reset();
+      });
+
+      // Bind the Update Series Title Form
+      $("#seriesUpdateForm").submit(function(e) {
+        e.preventDefault();
+
+        // Reset the form
+        resetSeriesUpdateForm();
+
+        var blsid = $("#sufblsid").val();
+        var title = $("#sufTitle").val();
+        var origt = "";
+
+        // Disable Buttons and debug statement
+        $("#seriesUpdateModal button").attr("disabled", "disabled");
+        console.log("Update series " + blsid + " title to: " + title);
+
+        var endpoint = "/api/series/" + blsid + "/";
+
+        // Fetch the original data
+        $.get(endpoint)
+          .done(function(data) {
+
+            origt = data.title;
+
+            // Execute PUT
+            $.ajax({
+              url: endpoint,
+              method: "PUT",
+              data: {
+                title: title
+              }
+            }).done(function(data) {
+
+              // Reset the form
+              resetSeriesUpdateForm();
+              $("#seriesUpdateForm")[0].reset();
+
+              // Add success message with original title and new title
+              $("#sufMessage").text("Title for Series \"" + blsid + "\" updated from \"" + origt + "\" to \"" + data.title + "\"");
+
+
+            }).fail(function(jqXHR, textStatus, errorThrown ) {
+
+              status = jqXHR.status;
+              if (status == 404) {
+                  $("#blsidHelp").parents(".form-group").addClass("has-error");
+                  $("#blsidHelp").text("Series with BLS ID \"" + blsid + "\" not found.");
+              } else if (status == 400) {
+                  $("#titleHelp").parents(".form-group").addClass("has-error");
+                  $("#titleHelp").text("Not a valid title, title is required.");
+              }
+
+              $("#seriesUpdateModal button").removeAttr("disabled");
+
+            });
+
+          })
+          .fail(function(jqXHR, textStatus, errorThrown) {
+
+            status = jqXHR.status;
+            if (status == 404) {
+              $("#blsidHelp").parents(".form-group").addClass("has-error");
+              $("#blsidHelp").text("Series with BLS ID \"" + blsid + "\" not found.");
+            }
+
+            $("#seriesUpdateModal button").removeAttr("disabled");
+
+          });
+
+
+        return false;
+      });
+
+      // Execute heartbeat update
       updateStatus();
 
     });

@@ -22,7 +22,7 @@
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"> -->
 
     <!-- Simplex Bootstrap theme -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.4/simplex/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/simplex/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -48,6 +48,8 @@
     {% block footer %}
       {% include 'components/footer.html' %}
     {% endblock %}
+
+    {% block modals %}{% endblock %}
 
     {% block javascripts %}
 

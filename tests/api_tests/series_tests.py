@@ -261,7 +261,14 @@ class SeriesGETTests(TestCase):
         """
         Assert that a title is required for a PUT
         """
-        
+
         endpoint = self.get_random_detail_endpoint()
         response = self.client.put(endpoint, data={})
         self.assertEquals(response.status_code, 400)
+
+        response = self.client.put(endpoint, data={"title": None})
+        self.assertEquals(response.status_code, 400)
+
+        response = self.client.put(endpoint, data={"title": ""})
+        self.assertEquals(response.status_code, 400)
+        
