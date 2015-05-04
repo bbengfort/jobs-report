@@ -1,7 +1,18 @@
 # Jobs Report (ELMR)
 
-[![Stories in Ready](https://badge.waffle.io/bbengfort/jobs-report.png?label=ready&title=Ready)](https://waffle.io/bbengfort/jobs-report) [![Build Status](https://travis-ci.org/bbengfort/jobs-report.svg)](https://travis-ci.org/bbengfort/jobs-report) [![Documentation Status](https://readthedocs.org/projects/jobs-report/badge/?version=latest)](https://readthedocs.org/projects/jobs-report/?badge=latest)
+[![Build Status][travis_badge]][travis_link]
+[![Coverage Status][coveralls_badge]][coveralls_link]
+[![Documentation Status][rtd_badge]][rtd_link]
+[![Stories in Ready][waffle_badge]][waffle_link]
 
+[waffle_badge]: https://badge.waffle.io/bbengfort/jobs-report.png?label=ready&title=Ready
+[waffle_link]: https://waffle.io/bbengfort/jobs-report
+[travis_badge]: https://travis-ci.org/bbengfort/jobs-report.svg
+[travis_link]: https://travis-ci.org/bbengfort/jobs-report
+[rtd_badge]: https://readthedocs.org/projects/jobs-report/badge/?version=latest
+[rtd_link]: https://readthedocs.org/projects/jobs-report/?badge=latest
+[coveralls_badge]: https://coveralls.io/repos/bbengfort/jobs-report/badge.svg
+[coveralls_link]: https://coveralls.io/r/bbengfort/jobs-report
 
 [![Census punch card reader](docs/images/punch_card_reader.jpg)](https://flic.kr/p/6525aR)
 
