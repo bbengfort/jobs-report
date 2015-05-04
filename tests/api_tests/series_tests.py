@@ -139,6 +139,33 @@ class SeriesGETTests(TestCase):
         self.assertEqual(response.json["per_page"], 50)
         self.assertEqual(response.json["total"], 1684)
 
+    def test_filter_by_source_series_list(self):
+        """
+        Assert that we can filter by source in the series list
+        """
+
+        response = self.client.get("/api/series/?source=CPS")
+        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.json["page"], 1)
+        self.assertEqual(response.json["pages"], 2)
+        self.assertEqual(response.json["per_page"], 20)
+        self.assertEqual(response.json["total"], 40)
+
+        for item in response.json["series"]:
+            self.assertEqual(item["source"], "CPS")
+
+    def test_filter_by_source_series_empty_list(self):
+        """
+        Test when a source doesn't exist, an empty list is returned
+        """
+        response = self.client.get("/api/series/?source=UMD")
+        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.json["page"], 1)
+        self.assertEqual(response.json["pages"], 0)
+        self.assertEqual(response.json["per_page"], 20)
+        self.assertEqual(response.json["total"], 0)
+        self.assertEqual(len(response.json["series"]), 0)
+
     def test_get_series_detail(self):
         """
         Assert that a series detail can be fetched.
@@ -271,4 +298,3 @@ class SeriesGETTests(TestCase):
 
         response = self.client.put(endpoint, data={"title": ""})
         self.assertEquals(response.status_code, 400)
-        

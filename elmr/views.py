@@ -186,6 +186,7 @@ class SeriesListView(Resource):
             self._parser = reqparse.RequestParser()
             self._parser.add_argument('page', type=int)
             self._parser.add_argument('per_page', type=int)
+            self._parser.add_argument('source', type=str)
         return self._parser
 
     def get(self):
@@ -196,7 +197,13 @@ class SeriesListView(Resource):
         args     = self.parser.parse_args()
         page     = args.page or 1
         per_page = args.per_page or 20
-        series   = Series.query.paginate(page, per_page)
+        source   = args.source
+
+        if source is not None:
+            series = Series.query.filter_by(source=source)
+            series = series.paginate(page, per_page)
+        else:
+            series = Series.query.paginate(page, per_page)
 
         context = {
             "page": series.page,
