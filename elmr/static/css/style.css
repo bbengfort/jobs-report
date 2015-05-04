@@ -36,6 +36,10 @@ body {
     padding: 30px 15px;
 }
 
+.app-tabs .tab-pane {
+    margin-top: 20px;
+}
+
 #loading img {
     margin: 200px auto;
 }

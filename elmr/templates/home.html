@@ -14,15 +14,17 @@
       <div class="col-md-12">
         <ul class="nav nav-tabs">
           <li role="presentation" class="active">
-            <a href="#geography" data-toggle="tab" role="tab">
-              <i class="fa fa-map-marker"></i> Geography
-            </a>
-          </li>
-          <li role="presentation">
             <a href="#timeseries" data-toggle="tab" role="tab">
               <i class="fa fa-area-chart"></i> Time Series
             </a>
           </li>
+
+          <li role="presentation">
+            <a href="#geography" data-toggle="tab" role="tab">
+              <i class="fa fa-map-marker"></i> Geography
+            </a>
+          </li>
+
           <li role="presentation">
             <a href="#wealthofnations" data-toggle="tab" role="tab">
               <i class="fa fa-diamond"></i> Wealth of Nations
@@ -33,16 +35,17 @@
     </div>
 
     <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Geography Tab -->
-      <div role="tabpanel" class="tab-pane active" id="geography">
-        {% include 'application/geography.html' %}
-      </div><!-- end geography tab -->
+    <div class="app-tabs tab-content">
 
       <!-- TimeSeries Tab -->
-      <div role="tabpanel" class="tab-pane" id="timeseries">
+      <div role="tabpanel" class="tab-pane active" id="timeseries">
         {% include 'application/timeseries.html' %}
       </div><!-- end timeseries tab -->
+
+      <!-- Geography Tab -->
+      <div role="tabpanel" class="tab-pane" id="geography">
+        {% include 'application/geography.html' %}
+      </div><!-- end geography tab -->
 
       <!-- Wealth of Nations Tab -->
       <div role="tabpanel" class="tab-pane" id="wealthofnations">
@@ -56,7 +59,7 @@
 
 {% block javascripts %}
   {{ super() }}
-  
+
   <!-- D3 Dependencies -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
   <script src="{{ url_for('static', filename='js/d3.geomap.dependencies.min.js') }}"></script>
