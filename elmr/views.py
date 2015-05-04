@@ -44,10 +44,10 @@ from sqlalchemy import desc, extract
 @app.route("/")
 def index():
     sources = (
-        ("CPS", Series.query.filter_by(source="CPS")),
-        ("CESN", Series.query.filter_by(source="CESN")),
-        ("LAUS", Series.query.filter_by(source="LAUS")),
-        ("CESSM", Series.query.filter_by(source="CESSM")),
+        ("CPS", Series.query.filter_by(source="CPS").order_by('title')),
+        ("CESN", Series.query.filter_by(source="CESN").order_by('title')),
+        ("LAUS", Series.query.filter_by(source="LAUS").order_by('title')),
+        ("CESSM", Series.query.filter_by(source="CESSM").order_by('title')),
     )
     return render_template('home.html', sources=sources)
 
