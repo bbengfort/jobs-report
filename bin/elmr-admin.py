@@ -110,7 +110,7 @@ def createdb(args):
     # Execute CREATE TABLE statements
     elmr.db.create_all()
 
-    # Store version controll and migrations
+    # Store version control and migrations
     if not os.path.exists(config.MIGRATIONS):
         api.create(config.MIGRATIONS, 'elmr_db_repo')
         api.version_control(config.DATABASE_URI, config.MIGRATIONS)

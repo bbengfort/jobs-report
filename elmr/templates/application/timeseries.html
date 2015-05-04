@@ -1,0 +1,127 @@
+
+  <style type="text/css">
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+    .x.axis path {
+      display: none;
+    }
+
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+    }
+
+    .series-view {
+      min-height: 300px;
+    }
+
+  </style>
+
+  <!-- Time Series Application Container -->
+  <div id="timeSeriesApplication" class="subapp">
+
+    <!-- Upper Time Series View -->
+    <div class="row">
+      <!-- Left Sidebar -->
+      <div class="col-md-3">
+
+        <!-- Time Series Explorer controls -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Upper Timeseries Controls</h3>
+          </div>
+          <div class="panel-body">
+            <!-- Upper Timeseries Selection Dropdown -->
+            <select id="upperTSSelectControl" class="form-control">
+              {% for label, series in sources %}
+                <optgroup label="{{ label }}">
+                  {% for s in series %}
+                  <option value="{{ s.blsid }}">{{ s.title }}</option>
+                  {% endfor %}
+                </optgroup>
+              {% endfor %}
+            </select>
+          </div>
+          <table class="table">
+            <tr>
+              <td><strong>Source</strong></td>
+              <td id="upperTSSource"></dd>
+            </tr>
+            <tr>
+              <td><strong>Dataset</strong></td>
+              <td id="upperTSName"></td>
+            </tr>
+          </table>
+        </div>
+
+      </div><!-- left sidebar ends -->
+
+      <!-- Right Column Main Content -->
+      <div class="col-md-9">
+
+        <!-- Top Time Series -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div id="upperSeriesView" class="series-view"></div>
+          </div>
+        </div>
+
+      </div><!-- right column ends -->
+    </div>
+
+    <!-- Lower Time Series View -->
+    <div class="row">
+      <!-- Left Sidebar -->
+      <div class="col-md-3">
+
+        <!-- Time Series Explorer controls -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Lower Timeseries Controls</h3>
+          </div>
+          <div class="panel-body">
+            <!-- Upper Timeseries Selection Dropdown -->
+            <select id="lowerTSSelectControl" class="form-control">
+              {% for label, series in sources %}
+                <optgroup label="{{ label }}">
+                  {% for s in series %}
+                  <option value="{{ s.blsid }}">{{ s.title }}</option>
+                  {% endfor %}
+                </optgroup>
+              {% endfor %}
+            </select>
+          </div>
+          <table class="table">
+            <tr>
+              <td><strong>Source</strong></td>
+              <td id="lowerTSSource"></dd>
+            </tr>
+            <tr>
+              <td><strong>Dataset</strong></td>
+              <td id="lowerTSName"></td>
+            </tr>
+          </table>
+        </div>
+
+      </div><!-- left sidebar ends -->
+
+      <!-- Right Column Main Content -->
+      <div class="col-md-9">
+
+        <!-- Bottom Time Series -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div id="lowerSeriesView" class="series-view"></div>
+          </div>
+        </div>
+
+      </div><!-- right column ends -->
+    </div>
+
+  </div><!-- Time Series Application Ends -->

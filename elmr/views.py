@@ -43,7 +43,13 @@ from sqlalchemy import desc, extract
 
 @app.route("/")
 def index():
-    return render_template('home.html')
+    sources = (
+        ("CPS", Series.query.filter_by(source="CPS")),
+        ("CESN", Series.query.filter_by(source="CESN")),
+        ("LAUS", Series.query.filter_by(source="LAUS")),
+        ("CESSM", Series.query.filter_by(source="CESSM")),
+    )
+    return render_template('home.html', sources=sources)
 
 
 @app.route("/admin/")
@@ -74,7 +80,7 @@ def assaf_dev():
     """
     Assaf - add any context you need for your page here.
     """
-    return render_template('assaf.html')
+    return render_template('development/assaf.html')
 
 
 @app.route('/benjamin/')
@@ -82,7 +88,7 @@ def benjamin_dev():
     """
     Used for Ben's independent development
     """
-    return render_template('benjamin.html')
+    return render_template('development/benjamin.html')
 
 ##########################################################################
 ## Configure Series-Related API Resources
@@ -105,6 +111,16 @@ class SeriesView(Resource):
             self._parser.add_argument('start_year', type=int)
             self._parser.add_argument('end_year', type=int)
         return self._parser
+
+    @property
+    def detail_parser(self):
+        """
+        Returns the detail parser for the SeriesView (for PUT)
+        """
+        if not hasattr(self, '_detail_parser'):
+            self._detail_parser = reqparse.RequestParser()
+            self._detail_parser.add_argument('title', type=str, required=True)
+        return self._detail_parser
 
     def get(self, blsid):
         """
@@ -142,6 +158,25 @@ class SeriesView(Resource):
 
         return context
 
+    def put(self, blsid):
+        """
+        Allows you to update the title of a BLS series
+        """
+        series = Series.query.filter_by(blsid=blsid).first_or_404()
+        args   = self.detail_parser.parse_args()
+
+        if not args.get('title', None):
+            return {"message": "[title]: cannot be an empty string or None"}, 400
+
+        series.title = args['title']
+        db.session.commit()
+
+        return {
+            'blsid': series.blsid,
+            'source': series.source,
+            'title': series.title,
+        }
+
 
 class SeriesListView(Resource):
     """
@@ -157,6 +192,7 @@ class SeriesListView(Resource):
             self._parser = reqparse.RequestParser()
             self._parser.add_argument('page', type=int)
             self._parser.add_argument('per_page', type=int)
+            self._parser.add_argument('source', type=str)
         return self._parser
 
     def get(self):
@@ -167,7 +203,13 @@ class SeriesListView(Resource):
         args     = self.parser.parse_args()
         page     = args.page or 1
         per_page = args.per_page or 20
-        series   = Series.query.paginate(page, per_page)
+        source   = args.source
+
+        if source is not None:
+            series = Series.query.filter_by(source=source)
+            series = series.paginate(page, per_page)
+        else:
+            series = Series.query.paginate(page, per_page)
 
         context = {
             "page": series.page,
