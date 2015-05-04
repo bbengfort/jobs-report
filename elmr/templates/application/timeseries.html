@@ -1,3 +1,58 @@
-<div class="well" style="margin-top: 20px;">
-  <p class="lead text-center">Time Series Coming Soon!</p>
-</div>
+
+  <style type="text/css">
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+    .x.axis path {
+      display: none;
+    }
+
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+    }
+
+  </style>
+
+  <!-- Time Series Application Container -->
+  <div id="timeSeriesApplication" class="row subapp">
+
+    <!-- Left Sidebar -->
+    <div class="col-md-3">
+
+      <!-- Time Series Explorer controls -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Select Timeseries</h3>
+        </div>
+        <div class="panel-body">
+        </div>
+      </div>
+
+    </div><!-- left sidebar ends -->
+
+    <!-- Right Column Main Content -->
+    <div class="col-md-9">
+
+      <!-- Top Time Series -->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div id="upper-series-view"></div>
+        </div>
+      </div>
+
+      <!-- Bottom Time Series -->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div id="bottom-series-view"></div>
+        </div>
+      </div>
+
+    </div><!-- right column ends -->
+
+  </div><!-- Time Series Application Ends -->

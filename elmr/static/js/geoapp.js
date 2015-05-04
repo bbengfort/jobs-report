@@ -5,7 +5,7 @@ $(function() {
   *************************************************************************/
 
   // Important Variables
-  var dateFmt = "MMM YYYY"
+  var dateFmt = "MMM YYYY";
   var dataUrl = "/api/source/cps/";
   var data    = null;    // holder for the CPS data
 
