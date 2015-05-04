@@ -27,10 +27,13 @@ function SeriesView() {
   // Graph properties
   this.x = null;
   this.y = null;
-  this.xAxis = null;
-  this.yAxis = null;
-  this.line  = null;
-  this.color = d3.scale.category10();
+  this.xAxis  = null;
+  this.gXaxis = null;
+  this.yAxis  = null;
+  this.gYaxis = null;
+  this.line   = null;
+  this.path   = null;
+  this.color  = d3.scale.category10();
 
   // Pass in a selector to initialize the view
   this.init = function(selector) {
@@ -96,12 +99,20 @@ function SeriesView() {
     this.x.domain(d3.extent(this.series, function(d) { return d.period; }));
     this.y.domain(d3.extent(this.series, function(d) { return d.value; }));
 
-    this.svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + this.height(true) + ")")
-        .call(this.xAxis);
+    if (this.gXaxis === null) {
+      this.gXaxis = this.svg.append("g");
+    }
 
-    this.svg.append("g")
+    this.gXaxis
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + this.height(true) + ")")
+      .call(this.xAxis);
+
+    if (this.gYaxis === null) {
+      this.gYaxis = this.svg.append("g");
+    }
+
+    this.gYaxis
         .attr("class", "y axis")
         .call(this.yAxis)
       .append("text")
@@ -111,7 +122,10 @@ function SeriesView() {
         .style("text-anchor", "end")
         .text("Value");
 
-    this.svg.append("path")
+    if (this.path === null) {
+      this.path = this.svg.append("path");
+    }
+    this.path
         .datum(this.series)
         .attr("class", "line")
         .attr("d", this.line);
