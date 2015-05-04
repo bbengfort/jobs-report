@@ -148,22 +148,59 @@ function SeriesView() {
 
 }
 
-
-var upper = new SeriesView().init("#upper-series-view");
-var lower = new SeriesView().init("#lower-series-view");
-
 $(function() {
 
   /*************************************************************************
   ** Initialization
   *************************************************************************/
 
+  // Default Upper Series
+  var DEFAULT_UPPER_SERIES = "LAUST280000000000005";
+  var DEFAULT_LOWER_SERIES = "SMS28000005500000001";
 
+  // Append "upper" and "lower" to get specific controls
+  var ctrlIDs = {
+    "view": "SeriesView",
+    "select": "TSSelectControl",
+    "label": "TSName",
+    "source": "TSSource"
+  }
 
+  function initControls(prefix) {
+    // Create the controls via the prefix and the selector
+    var controls = _.mapObject(ctrlIDs, function(selector, key) {
+      selector = "#" + prefix + selector;
+      if (key=="view") {
+        return new SeriesView().init(selector);
+      } else {
+        return $(selector);
+      }
+    });
 
+    controls.fetch_series = function(blsid) {
+      return this.view.fetch_series(blsid);
+    }
 
-  upper.fetch_series("LAUST280000000000005");
-  lower.fetch_series("SMS28000005500000001");
+    // Bind the selection change event
+    controls.select.change(function(e) {
+      var pick   = $(this).find(":selected"),
+          blsid  = pick.val(),
+          title  = pick.text(),
+          source = pick.parent().attr("label");
+
+      controls.label.text(title);
+      controls.source.text(source);
+      controls.fetch_series(blsid);
+    });
+
+    return controls;
+  }
+
+  var upperControls = initControls("upper");
+  var lowerControls = initControls("lower");
+
+  upperControls.select.val(DEFAULT_UPPER_SERIES).trigger("change");
+  lowerControls.select.val(DEFAULT_LOWER_SERIES).trigger("change");
 
   console.log("Time Series Application Started");
 

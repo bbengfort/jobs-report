@@ -37,7 +37,27 @@
             <h3 class="panel-title">Upper Timeseries Controls</h3>
           </div>
           <div class="panel-body">
+            <!-- Upper Timeseries Selection Dropdown -->
+            <select id="upperTSSelectControl" class="form-control">
+              {% for label, series in sources %}
+                <optgroup label="{{ label }}">
+                  {% for s in series %}
+                  <option value="{{ s.blsid }}">{{ s.title }}</option>
+                  {% endfor %}
+                </optgroup>
+              {% endfor %}
+            </select>
           </div>
+          <table class="table">
+            <tr>
+              <td><strong>Source</strong></td>
+              <td id="upperTSSource"></dd>
+            </tr>
+            <tr>
+              <td><strong>Dataset</strong></td>
+              <td id="upperTSName"></td>
+            </tr>
+          </table>
         </div>
 
       </div><!-- left sidebar ends -->
@@ -48,7 +68,7 @@
         <!-- Top Time Series -->
         <div class="panel panel-default">
           <div class="panel-body">
-            <div id="upper-series-view" class="series-view"></div>
+            <div id="upperSeriesView" class="series-view"></div>
           </div>
         </div>
 
@@ -66,7 +86,27 @@
             <h3 class="panel-title">Lower Timeseries Controls</h3>
           </div>
           <div class="panel-body">
+            <!-- Upper Timeseries Selection Dropdown -->
+            <select id="lowerTSSelectControl" class="form-control">
+              {% for label, series in sources %}
+                <optgroup label="{{ label }}">
+                  {% for s in series %}
+                  <option value="{{ s.blsid }}">{{ s.title }}</option>
+                  {% endfor %}
+                </optgroup>
+              {% endfor %}
+            </select>
           </div>
+          <table class="table">
+            <tr>
+              <td><strong>Source</strong></td>
+              <td id="lowerTSSource"></dd>
+            </tr>
+            <tr>
+              <td><strong>Dataset</strong></td>
+              <td id="lowerTSName"></td>
+            </tr>
+          </table>
         </div>
 
       </div><!-- left sidebar ends -->
@@ -77,7 +117,7 @@
         <!-- Bottom Time Series -->
         <div class="panel panel-default">
           <div class="panel-body">
-            <div id="lower-series-view" class="series-view"></div>
+            <div id="lowerSeriesView" class="series-view"></div>
           </div>
         </div>
 

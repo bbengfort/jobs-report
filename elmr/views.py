@@ -43,7 +43,13 @@ from sqlalchemy import desc, extract
 
 @app.route("/")
 def index():
-    return render_template('home.html')
+    sources = (
+        ("CPS", Series.query.filter_by(source="CPS")),
+        ("CESN", Series.query.filter_by(source="CESN")),
+        ("LAUS", Series.query.filter_by(source="LAUS")),
+        ("CESSM", Series.query.filter_by(source="CESSM")),
+    )
+    return render_template('home.html', sources=sources)
 
 
 @app.route("/admin/")
