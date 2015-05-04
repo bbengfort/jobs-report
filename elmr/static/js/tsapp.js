@@ -169,8 +169,8 @@ $(function() {
   *************************************************************************/
 
   // Default Upper Series
-  var DEFAULT_UPPER_SERIES = "LAUST280000000000005";
-  var DEFAULT_LOWER_SERIES = "SMS28000005500000001";
+  var DEFAULT_UPPER_SERIES = "LNS12300000";
+  var DEFAULT_LOWER_SERIES = "LNS13000000";
 
   // Append "upper" and "lower" to get specific controls
   var ctrlIDs = {
@@ -202,9 +202,12 @@ $(function() {
           title  = pick.text(),
           source = pick.parent().attr("label");
 
+      console.log(source, blsid, "selected:", title);
+
       controls.label.text(title);
       controls.source.text(source);
       controls.fetch_series(blsid);
+
     });
 
     return controls;
