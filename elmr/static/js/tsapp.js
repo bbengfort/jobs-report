@@ -19,7 +19,7 @@ function SeriesView() {
   this.date_format = "MMM YYYY";
 
   // Base endpoint for the timeseries API
-  this.base_url   = '/api/series/';
+  this.base_url    = '/api/series/';
 
   // Other properties
   this.margin = {top: 20, right: 80, bottom: 30, left: 60};
