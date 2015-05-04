@@ -75,7 +75,7 @@ function SeriesView() {
     var endpoint = this.base_url + blsid;
     endpoint += "?start_year=" + this.start_year + "&end_year=" + this.end_year;
 
-    d3.json(endpoint, function(error, response) {
+    $.getJSON(endpoint, function(response) {
       // The JSON response contains some external info like source, title, etc.
       // The series information is in a property called `data`, which contains
       // objects that have period and value properties to add to the main series.
