@@ -459,6 +459,16 @@ def geography_csv(source, dataset):
 
     source  = source.upper()
 
+    # Get arguments
+    start_year = request.args.get('start_year', app.config['STARTYEAR'])
+    end_year = request.args.get('end_year', app.config['ENDYEAR'])
+
+    try:
+        start_year = int(start_year)
+        end_year = int(end_year)
+    except ValueError:
+        return make_response("Bad value for start or end year parameter"), 400
+
     if source in FORBIDDEN_GEO_SOURCES:
         return make_response("Source '%s' is not geographic." % source), 400
 
@@ -469,7 +479,7 @@ def geography_csv(source, dataset):
 
     # Create a file-like object for the CSV to return, then write the series
     csv = StringIO.StringIO()
-    write_states_dataset(csv, source, dataset)
+    write_states_dataset(csv, source, dataset, start_year, end_year)
 
     output = make_response(csv.getvalue())
     output.headers["Content-Disposition"] = "attachment; filename=%s.csv" % dataset
