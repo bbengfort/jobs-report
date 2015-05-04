@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="nav nav-tabs">
-          <li role="presentation" class="active">
+          <li role="presentation" >
             <a href="#timeseries" data-toggle="tab" role="tab">
               <i class="fa fa-area-chart"></i> Time Series
             </a>
@@ -21,13 +21,19 @@
 
           <li role="presentation">
             <a href="#geography" data-toggle="tab" role="tab">
-              <i class="fa fa-map-marker"></i> Geography
+              <i class="fa fa-globe"></i> Geography
             </a>
           </li>
 
           <li role="presentation">
             <a href="#wealthofnations" data-toggle="tab" role="tab">
               <i class="fa fa-diamond"></i> Wealth of Nations
+            </a>
+          </li>
+
+          <li role="presentation" class="active">
+            <a href="#dataexport" data-toggle="tab" role="tab">
+              <i class="fa fa-download"></i> Export Data
             </a>
           </li>
         </ul>
@@ -38,7 +44,7 @@
     <div class="app-tabs tab-content">
 
       <!-- TimeSeries Tab -->
-      <div role="tabpanel" class="tab-pane active" id="timeseries">
+      <div role="tabpanel" class="tab-pane " id="timeseries">
         {% include 'application/timeseries.html' %}
       </div><!-- end timeseries tab -->
 
@@ -51,6 +57,13 @@
       <div role="tabpanel" class="tab-pane" id="wealthofnations">
         {% include 'application/wealthofnations.html' %}
       </div><!-- end wealth of nations tab -->
+
+      <!-- Data Export Tab -->
+      <div role="tabpanel" class="tab-pane active" id="dataexport">
+        {% include 'application/dataexport.html' %}
+      </div><!-- end wealth of nations tab -->
+
+
     </div>
 
   </div><!-- end application container -->
@@ -66,6 +79,7 @@
   <!-- D3 only applications -->
   <script src="{{ url_for('static', filename='js/tsapp.js') }}"></script>
   <script src="{{ url_for('static', filename='js/wonapp.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/exportapp.js') }}"></script>
 
   <!-- Geomap Applications -->
   <script src="{{ url_for('static', filename='js/d3.geomap.dependencies.min.js') }}"></script>

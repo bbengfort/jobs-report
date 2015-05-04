@@ -1,0 +1,80 @@
+<!-- Data Export Application Container -->
+<div id="dataexportApplication" class="subapp">
+
+  <!-- Upper Time Series View -->
+  <div class="row">
+    <div class="col-md-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title"><i class="fa fa-globe"></i> Download Choropleth Data</h4>
+        </div>
+        <div class="panel-body">
+          <div class="download-form">
+            <form id="choroplethDownloadForm" class="form-horizontal">
+              <div class="form-group">
+                <label for="cdfDataset" class="col-sm-2 control-label">Dataset</label>
+                <div class="col-sm-10">
+                  <select id="cdfDataset" name="cdfDataset" class="form-control" disabled>
+                    <option id="cfdDatasetPlaceholder" value="">Loading available datasets &hellip;</option>
+                  </select>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="cfdNormalize" name="cfdNormalize"> Download rate of change normalized dataset
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cdfStartYear" class="col-sm-2 control-label">Period</label>
+                <div class="col-sm-5">
+                  <div class="input-group">
+                    <input type="text" id="cdfStartYear" name="cdfStartYear" class="form-control" placeholder="2000" />
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                  </div>
+                  <span class="help-block">Start of Period</span>
+                </div>
+                <div class="col-sm-5">
+                  <div class="input-group">
+                    <input type="text" id="cdfEndYear" name="cdfEndYear" class="form-control" placeholder="2015" />
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                  </div>
+                  <span class="help-block">End of Period</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-download"></i>
+                    Download
+                  </button>
+                  <button type="reset" class="btn btn-default">
+                    <i class="fa fa-eraser"></i>
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title"><i class="fa fa-area-chart"></i> Download Time Series Data</h4>
+        </div>
+        <div class="panel-body">
+          <p>Coming Soon!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
