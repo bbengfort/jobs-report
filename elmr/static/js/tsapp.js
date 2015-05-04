@@ -19,7 +19,7 @@ function SeriesView() {
   this.date_format = "MMM YYYY";
 
   // Base endpoint for the timeseries API
-  this.base_url   = '/api/series/';
+  this.base_url    = '/api/series/';
 
   // Other properties
   this.margin = {top: 20, right: 80, bottom: 30, left: 60};
@@ -75,7 +75,7 @@ function SeriesView() {
     var endpoint = this.base_url + blsid;
     endpoint += "?start_year=" + this.start_year + "&end_year=" + this.end_year;
 
-    $.getJSON(endpoint, function(response) {
+    d3.json(endpoint, function(error, response) {
       // The JSON response contains some external info like source, title, etc.
       // The series information is in a property called `data`, which contains
       // objects that have period and value properties to add to the main series.
