@@ -52,8 +52,9 @@ function WealthOfNations() {
     // Init the SVG element inside of the chart
     this.svg = d3.select(selector).append("svg")
         .attr("width", this.width())
-        .attr("height", this.height())
-      .append("g")
+        .attr("height", this.height());
+
+    this.svg.append("g")
         .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
 
     // Add the X-Axis
@@ -73,7 +74,7 @@ function WealthOfNations() {
         .attr("text-anchor", "end")
         .attr("x", this.width(true))
         .attr("y", this.height(true) - 6)
-        .text("income per capita, inflation-adjusted (dollars)");
+        .text("size of labor force");
 
     // Add a y-axis label.
     this.svg.append("text")
@@ -82,7 +83,7 @@ function WealthOfNations() {
         .attr("y", 6)
         .attr("dy", ".75em")
         .attr("transform", "rotate(-90)")
-        .text("life expectancy (years)");
+        .text("unemployment rate");
 
     // Add the year label; the value is set on transition.
     this.label = this.svg.append("text")
@@ -278,10 +279,11 @@ $(function() {
   ** Initialization
   *************************************************************************/
 
-  var chart = new WealthOfNations().init("#wealthofnationsChart");
-  chart.fetch_data(function() {
-    console.log("Wealth of Nations Application Started");
+  $('a[href=#wealthofnations]').on('shown.bs.tab', function(e) {
+    var chart = new WealthOfNations().init("#wealthofnationsChart");
+    chart.fetch_data(function() {
+      console.log("Wealth of Nations Application Started");
+    });
   });
-
 
 });
