@@ -43,6 +43,9 @@ function WealthOfNations() {
     this.selector = selector;
     this.elem = $(selector);
 
+    // Empty out the element
+    this.elem.empty();
+
     // Init the X and Y Scales and the axes
     this.xScale.range([0, this.width(true)]);
     this.yScale.range([this.height(true), 0]);
@@ -52,9 +55,8 @@ function WealthOfNations() {
     // Init the SVG element inside of the chart
     this.svg = d3.select(selector).append("svg")
         .attr("width", this.width())
-        .attr("height", this.height());
-
-    this.svg.append("g")
+        .attr("height", this.height())
+      .append("g")
         .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
 
     // Add the X-Axis
