@@ -112,6 +112,9 @@ class USAState(db.Model):
 
     Note that series returns the state series mapping table, not series objects
     itself without another lookup.
+
+    The region is the Bureau of Economic Analysis regions:
+    http://en.wikipedia.org/wiki/List_of_regions_of_the_United_States#Bureau_of_Economic_Analysis_regions
     """
 
     __tablename__ = "usa_states"
@@ -120,6 +123,7 @@ class USAState(db.Model):
     fips        = db.Column(db.Unicode(5), unique=True, index=True)
     name        = db.Column(db.Unicode(255), nullable=False)
     abbr        = db.Column(db.Unicode(2), nullable=True)
+    region      = db.Column(db.Unicode(15), nullable=True)
     series      = db.relationship('StateSeries', backref='state',
                                   lazy='dynamic')
 
