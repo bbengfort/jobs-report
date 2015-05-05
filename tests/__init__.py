@@ -24,7 +24,7 @@ import unittest
 ## Initialization Tests
 ##########################################################################
 
-EXPECTED_VERSION = "0.4.2"
+EXPECTED_VERSION = "0.4.3"
 
 
 class InitializationTests(unittest.TestCase):

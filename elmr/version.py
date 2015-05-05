@@ -20,7 +20,7 @@ Helper module for ELMR version information
 __version_info__ = {
     'major': 0,
     'minor': 4,
-    'micro': 2,
+    'micro': 3,
     'releaselevel': 'final',
     'serial': 0,
 }
