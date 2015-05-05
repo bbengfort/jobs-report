@@ -11,15 +11,22 @@ function WealthOfNations() {
   // Other properties
   this.margin = {top: 9.5, right: 23.5, bottom: 24.5, left: 39.5};
   this.nations = null;
+  this.dateFmt = "MMM YYYY";
+  this.minDate = moment("Jan 2000", this.dateFmt);
+  this.maxDate = moment("Feb 2015", this.dateFmt);
+  this.period  = moment.range(this.minDate, this.maxDate);
+  this.months  = this.period.diff("months")
 
-  // A bisector since many nations' data is sparse (needed for states?)
-  this.bisect = d3.bisector(function(d) { return d[0]; });
+  // A bisector since many nations' data is sparse
+  this.bisect = d3.bisector(function(d) {
+    return moment(d[0], "MMM YYYY");
+  });
 
   // Graph properties
   // Various scales that are make assumptions of the data domain.
-  this.xScale = d3.scale.log().domain([300, 1e5]);
-  this.yScale = d3.scale.linear().domain([10, 85]);
-  this.radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0,40]);
+  this.xScale = d3.scale.log().domain([261991, 18944974]);
+  this.yScale = d3.scale.linear().domain([1.7, 15.4]);
+  this.radiusScale = d3.scale.sqrt().domain([248642, 17668292]).range([0,40]);
   this.colorScale  = d3.scale.category10();
 
   // X and Y Axes
@@ -83,7 +90,7 @@ function WealthOfNations() {
         .attr("text-anchor", "end")
         .attr("y", this.height(true) - 24)
         .attr("x", this.width(true))
-        .text(1800);
+        .text("Jan 2000");
 
     return self;
   }
@@ -99,7 +106,8 @@ function WealthOfNations() {
   // Load the data
   this.fetch_data = function(callback) {
     var self = this;
-    var url  = "/static/data/nations.json"
+    // var url  = "/api/regions/"
+    var url = "/static/data/regions.json";
     d3.json(url, function(nations) {
       self.nations = nations;
 
@@ -107,7 +115,7 @@ function WealthOfNations() {
       self.gDot = self.svg.append("g")
           .attr("class", "dots")
         .selectAll(".dot")
-          .data(self.interpolateData(1800))
+          .data(self.interpolateData(0))
         .enter().append("circle")
           .attr("class", "dot")
           .style("fill", function(d) { return self.colorScale(self.color(d)); })
@@ -159,7 +167,7 @@ function WealthOfNations() {
   this.enableInteraction = function(box, overlay) {
     var self = this;
     var yearScale = d3.scale.linear()
-      .domain([1800, 2009])
+      .domain([0, self.months])
       .range([box.x + 10, box.x + box.width - 10])
       .clamp(true);
 
@@ -190,7 +198,7 @@ function WealthOfNations() {
   // For the interpolated data, the dots and label are redrawn.
   this.tweenYear = function() {
     var self = this;
-    var year = d3.interpolateNumber(1800, 2009);
+    var year = d3.interpolateNumber(0,self.months);
     return function(t) { self.displayYear(year(t)); };
   }
 
@@ -201,7 +209,12 @@ function WealthOfNations() {
       .call(function(d) { self.position(d) })
       .sort(function(a,b) { self.order(a,b) });
 
-    self.label.text(Math.round(year));
+
+
+    var date = moment(self.minDate)
+    date.add(year, "months");
+
+    self.label.text(date.format(self.dateFmt));
   }
 
   // Interpolates the dataset for the given (fractional) year.
@@ -219,22 +232,19 @@ function WealthOfNations() {
   }
 
   // Finds (and possibly interpolates) the value for the specified year.
-  this.interpolateValues = function(values, year) {
-    var i = this.bisect.left(values, year, 0, values.length - 1),
-        a = values[i];
+  this.interpolateValues = function(values, months) {
+    var date = moment(this.minDate)
+    date.add(months, "months");
 
-    if (i > 0) {
-      var b = values[i-1],
-          t = (year - a[0]) / (b[0] - a[0]);
-      return a[1] * (1-t) + b[1] * t;
-    }
+    var i = this.bisect.left(values, date, 0, values.length - 1),
+        a = values[i];
 
     return a[1];
   }
 
   // Helper function to parse a date string (uses moment not d3)
   this.parse_date = function(dtstr) {
-    return moment(dtstr, this.date_format);
+    return moment(dtstr, this.dateFmt);
   }
 
   // Helper functions to get the width from the element
