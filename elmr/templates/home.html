@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="nav nav-tabs">
-          <li role="presentation">
+          <li role="presentation" class="active">
             <a href="#timeseries" data-toggle="tab" role="tab">
               <i class="fa fa-area-chart"></i> Time Series
             </a>
@@ -25,7 +25,7 @@
             </a>
           </li>
 
-          <li role="presentation" class="active">
+          <li role="presentation">
             <a href="#wealthofnations" data-toggle="tab" role="tab">
               <i class="fa fa-diamond"></i> Wealth of Nations
             </a>
@@ -44,7 +44,7 @@
     <div class="app-tabs tab-content">
 
       <!-- TimeSeries Tab -->
-      <div role="tabpanel" class="tab-pane " id="timeseries">
+      <div role="tabpanel" class="tab-pane active" id="timeseries">
         {% include 'application/timeseries.html' %}
       </div><!-- end timeseries tab -->
 
@@ -54,7 +54,7 @@
       </div><!-- end geography tab -->
 
       <!-- Wealth of Nations Tab -->
-      <div role="tabpanel" class="tab-pane active" id="wealthofnations">
+      <div role="tabpanel" class="tab-pane" id="wealthofnations">
         {% include 'application/wealthofnations.html' %}
       </div><!-- end wealth of nations tab -->
 
