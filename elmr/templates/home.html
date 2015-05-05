@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="nav nav-tabs">
-          <li role="presentation" >
+          <li role="presentation">
             <a href="#timeseries" data-toggle="tab" role="tab">
               <i class="fa fa-area-chart"></i> Time Series
             </a>
@@ -25,13 +25,13 @@
             </a>
           </li>
 
-          <li role="presentation">
+          <li role="presentation" class="active">
             <a href="#wealthofnations" data-toggle="tab" role="tab">
               <i class="fa fa-diamond"></i> Wealth of Nations
             </a>
           </li>
 
-          <li role="presentation" class="active">
+          <li role="presentation">
             <a href="#dataexport" data-toggle="tab" role="tab">
               <i class="fa fa-download"></i> Export Data
             </a>
@@ -54,12 +54,12 @@
       </div><!-- end geography tab -->
 
       <!-- Wealth of Nations Tab -->
-      <div role="tabpanel" class="tab-pane" id="wealthofnations">
+      <div role="tabpanel" class="tab-pane active" id="wealthofnations">
         {% include 'application/wealthofnations.html' %}
       </div><!-- end wealth of nations tab -->
 
       <!-- Data Export Tab -->
-      <div role="tabpanel" class="tab-pane active" id="dataexport">
+      <div role="tabpanel" class="tab-pane" id="dataexport">
         {% include 'application/dataexport.html' %}
       </div><!-- end wealth of nations tab -->
 

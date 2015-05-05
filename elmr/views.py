@@ -23,7 +23,7 @@ import StringIO
 from elmr import get_version
 from elmr import app, api, db
 from elmr.models import IngestionRecord
-from elmr.models import Series, SeriesRecord, StateSeries
+from elmr.models import Series, SeriesRecord, StateSeries, USAState
 from elmr.utils import JSON_FMT, utcnow, months_since, slugify
 from elmr.fips import write_states_dataset
 
@@ -44,10 +44,10 @@ from sqlalchemy import desc, extract
 @app.route("/")
 def index():
     sources = (
-        ("CPS", Series.query.filter_by(source="CPS")),
-        ("CESN", Series.query.filter_by(source="CESN")),
-        ("LAUS", Series.query.filter_by(source="LAUS")),
-        ("CESSM", Series.query.filter_by(source="CESSM")),
+        ("CPS", Series.query.filter_by(source="CPS").order_by('title')),
+        ("CESN", Series.query.filter_by(source="CESN").order_by('title')),
+        ("LAUS", Series.query.filter_by(source="LAUS").order_by('title')),
+        ("CESSM", Series.query.filter_by(source="CESSM").order_by('title')),
     )
     return render_template('home.html', sources=sources)
 
@@ -487,6 +487,64 @@ def geography_csv(source, dataset):
     return output
 
 ##########################################################################
+## Configure Wealth of Nations API Resources
+##########################################################################
+
+
+class WealthOfNationsView(Resource):
+    """
+    Provides state information according to the Wealth of Nations format.
+    """
+
+    @property
+    def parser(self):
+        """
+        Returns the default parser for the WealthOfNationsView
+        """
+        if not hasattr(self, '_parser'):
+            self._parser = reqparse.RequestParser()
+            self._parser.add_argument('start_year', type=int, default=2000)
+            self._parser.add_argument('end_year', type=int, default=2015)
+            self._parser.add_argument('adjusted', type=bool, default=False)
+        return self._parser
+
+    def get(self):
+        context = []
+
+        args     = self.parser.parse_args()
+        adjusted = args.adjusted
+
+        for state in USAState.query.order_by('name').all():
+            context.append({
+                "name": state.name,
+                "region": state.region,
+
+                # Temporary names
+                "income": [],
+                "population": [],
+                "lifeExpectancy": [],
+            })
+
+            # Handle Datasets (temporary names for now)
+            datamap = {
+                "income": u"labor-force",
+                "population": u"employment",
+                "lifeExpectancy": u"unemployment-rate",
+            }
+
+            for key, slug in datamap.items():
+                ss = state.series.filter_by(slug=slug)
+                ss = ss.filter_by(adjusted=adjusted, source="LAUS")
+                ss = ss.first()
+                for record in ss.series.records.order_by('period'):
+                    context[-1][key].append([
+                        record.period.strftime("%b %Y"),
+                        record.value
+                    ])
+
+        return context
+
+##########################################################################
 ## Heartbeat resource
 ##########################################################################
 
@@ -542,6 +600,7 @@ class APIListView(Resource):
         "sources": "source",
         "series": "series",
         "geography": "geo",
+        "wealth of nations": "regions"
     }
 
     def get(self):
@@ -575,5 +634,6 @@ endpoint(SeriesListView, '/api/series/', endpoint='series-list')
 endpoint(SeriesView, '/api/series/<blsid>/', endpoint='series-detail')
 endpoint(GeoSourcesView, '/api/geo/', endpoint='geography-list')
 endpoint(GeoDatasetsView, '/api/geo/<source>/', endpoint='geography-datasets')
+endpoint(WealthOfNationsView, '/api/regions/', endpoint='wealth-of-nations')
 
 # Did you forget to modify the API list view?

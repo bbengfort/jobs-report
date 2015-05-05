@@ -1,0 +1,69 @@
+{
+    "New England": [
+        "Connecticut",
+        "Maine",
+        "Massachusetts",
+        "New Hampshire",
+        "Rhode Island",
+        "Vermont"
+    ],
+    "Mideast": [
+        "Delaware",
+        "District of Columbia",
+        "Maryland",
+        "New Jersey",
+        "New York",
+        "Pennsylvania"
+    ],
+    "Great Lakes": [
+        "Illinois",
+        "Indiana",
+        "Michigan",
+        "Ohio",
+        "Wisconsin"
+    ],
+    "Plains": [
+        "Iowa",
+        "Kansas",
+        "Minnesota",
+        "Missouri",
+        "Nebraska",
+        "North Dakota",
+        "South Dakota"
+    ],
+    "Southeast": [
+        "Alabama",
+        "Arkansas",
+        "Florida",
+        "Georgia",
+        "Kentucky",
+        "Louisiana",
+        "Mississippi",
+        "North Carolina",
+        "South Carolina",
+        "Tennessee",
+        "Virginia",
+        "West Virginia"
+    ],
+    "Southwest": [
+        "Arizona",
+        "New Mexico",
+        "Oklahoma",
+        "Texas"
+    ],
+    "Rocky Mountain": [
+        "Colorado",
+        "Idaho",
+        "Montana",
+        "Utah",
+        "Wyoming"
+    ],
+    "Far West": [
+        "Alaska",
+        "California",
+        "Hawaii",
+        "Nevada",
+        "Oregon",
+        "Washington"
+    ]
+}
