@@ -23,7 +23,8 @@ import csv
 import elmr
 
 from datetime import date
-from elmr.models import USAState, Series, StateSeries
+from sqlalchemy import extract
+from elmr.models import USAState, SeriesRecord
 
 ##########################################################################
 ## Compiled Regex
@@ -38,7 +39,8 @@ CESSMRE = re.compile(r'^([\w\s]+),\s+([\w\s,\-]+),\s+([\w\s]+)\s+\-\s+([\w\s]+$)
 ##########################################################################
 
 
-def write_states_dataset(fobj, source, slug, adjusted=True):
+def write_states_dataset(fobj, source, slug,
+                         start_year=None, end_year=None, adjusted=True):
     """
     Writes a geographic csv of the series to the open file-like object passed
     in as `fobj`. Each row is an individual state, and each column is the
@@ -53,8 +55,11 @@ def write_states_dataset(fobj, source, slug, adjusted=True):
 
     fields = ["fips", "State"]
 
+    start_year = start_year or int(elmr.app.config['STARTYEAR'])
+    end_year   = end_year or int(elmr.app.config['ENDYEAR'])
+
     ## TODO: Somehow get this from the database, not hardcoded logic.
-    for year in xrange(2000, 2016):
+    for year in xrange(start_year, end_year + 1):
         for month in xrange(1, 13):
             if year == 2015 and month > 3:
                 break
@@ -76,13 +81,17 @@ def write_states_dataset(fobj, source, slug, adjusted=True):
             continue
         # TODO: above was just a temporary fix
 
-
         row = {
             "fips": state.fips,
             "State": state.name,
         }
 
-        for record in ss.series.records:
+        field   = SeriesRecord.period
+        records = ss.series.records
+
+        records = records.filter(extract('year', field) >= start_year)
+        records = records.filter(extract('year', field) <= end_year)
+        for record in records:
             row[record.period.strftime("%b %Y")] = record.value
 
         writer.writerow(row)

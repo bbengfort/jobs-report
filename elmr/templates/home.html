@@ -21,13 +21,19 @@
 
           <li role="presentation">
             <a href="#geography" data-toggle="tab" role="tab">
-              <i class="fa fa-map-marker"></i> Geography
+              <i class="fa fa-globe"></i> Geography
             </a>
           </li>
 
           <li role="presentation">
             <a href="#wealthofnations" data-toggle="tab" role="tab">
               <i class="fa fa-diamond"></i> Wealth of Nations
+            </a>
+          </li>
+
+          <li role="presentation">
+            <a href="#dataexport" data-toggle="tab" role="tab">
+              <i class="fa fa-download"></i> Export Data
             </a>
           </li>
         </ul>
@@ -51,6 +57,13 @@
       <div role="tabpanel" class="tab-pane" id="wealthofnations">
         {% include 'application/wealthofnations.html' %}
       </div><!-- end wealth of nations tab -->
+
+      <!-- Data Export Tab -->
+      <div role="tabpanel" class="tab-pane" id="dataexport">
+        {% include 'application/dataexport.html' %}
+      </div><!-- end wealth of nations tab -->
+
+
     </div>
 
   </div><!-- end application container -->
@@ -62,11 +75,16 @@
 
   <!-- D3 Dependencies -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+
+  <!-- D3 only applications -->
+  <script src="{{ url_for('static', filename='js/tsapp.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/wonapp.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/exportapp.js') }}"></script>
+
+  <!-- Geomap Applications -->
   <script src="{{ url_for('static', filename='js/d3.geomap.dependencies.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/d3.geomap.min.js') }}"></script>
 
-  <!-- Applications -->
   <script src="{{ url_for('static', filename='js/geoapp.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/tsapp.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/wonapp.js') }}"></script>
+
 {% endblock %}

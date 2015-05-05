@@ -91,3 +91,59 @@ body {
     width: 48%;
     padding: 0 10px;
 }
+
+/* Charts */
+
+.series-view {
+min-height: 300px;
+}
+
+#wealthofnationsChart {
+  min-height: 506px;
+}
+
+/* D3 Styles */
+
+.axis path,
+.axis line {
+fill: none;
+stroke: #000;
+shape-rendering: crispEdges;
+}
+
+.x.axis path {
+display: none;
+}
+
+.line {
+fill: none;
+stroke: steelblue;
+stroke-width: 1.5px;
+}
+
+text {
+  font: 10px sans-serif;
+}
+
+.dot {
+  stroke: #000;
+}
+
+.label {
+  fill: #777;
+}
+
+.year.label {
+  font: 500 128px "Helvetica Neue";
+  fill: #ddd;
+}
+
+.year.label.active {
+  fill: #aaa;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+  cursor: ew-resize;
+}

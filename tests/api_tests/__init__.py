@@ -29,6 +29,8 @@ EXPECTED_ENDPOINTS = {
     "heartbeat": "status",
     "series": "series",
     "sources": "source",
+    "geography": "geo",
+    "wealth of nations": "regions"
 }
 
 
@@ -65,3 +67,13 @@ class APIListTests(TestCase):
             self.assertIn(key, response.json)
             url = self.get_endpoint(val)
             self.assertEqual(response.json[key], url)
+
+    def test_extra_api_endpoint_list(self):
+        """
+        Quick check for testing sanity, if anything isn't in expcted
+        """
+        response = self.client.get("/api/")
+        self.assertEquals(response.status_code, 200)
+
+        for key, val in response.json.items():
+            self.assertIn(key, EXPECTED_ENDPOINTS)
