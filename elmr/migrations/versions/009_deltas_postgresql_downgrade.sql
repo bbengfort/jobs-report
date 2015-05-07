@@ -1,6 +1,6 @@
 --
 -- Downgrade from database version 009: remove meta data on series table
--- Created:
+-- Created: Thu May 07 12:58:05 2015 -0400
 --
 
 BEGIN;
