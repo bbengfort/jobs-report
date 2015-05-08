@@ -41,6 +41,7 @@ import elmr
 
 from elmr.ingest import ingest
 from elmr.config import get_settings_object
+from elmr.delta import deltas
 
 ##########################################################################
 ## Script Definition
@@ -97,6 +98,27 @@ def ingest_data(args):
     return (
         "Ingested %i rows in %i time series in %0.3f seconds"
     ) % (record.num_added, record.num_series, record.duration)
+
+
+def compute_deltas(args):
+    """
+    After ingestion, compute the delta series
+    """
+
+    if args.all:
+        series = deltas(None, all=True, delete=args.delete)
+    elif len(args.blsid) > 0:
+        series = deltas(args.blsid, delete=args.delete)
+    else:
+        return "No BLSIDs specified, use --all or specify them"
+
+    output = ["Computed deltas for %d series:" % len(series)]
+    for s in series:
+        output.append("%s syncs %s with %d records"
+                      % (s.blsid, s.original.first().blsid,
+                         s.records.count()))
+    output.append("")
+    return "\n".join(output)
 
 
 def createdb(args):
@@ -209,6 +231,14 @@ if __name__ == '__main__':
     ingest_parser.add_argument('--title', metavar='TEXT', default="ELMR Command Line Ingestion", help="specify a title for the ingestion record")
     ingest_parser.set_defaults(func=ingest_data)
 
+    # Compute Deltas Command
+    deltas_parser = subparsers.add_parser('deltas', help='Compute deltas for all or a single series.')
+    deltas_parser.add_argument('--all', action="store_true", help="compute deltas for all series, not just one")
+    deltas_parser.add_argument('--delete', action="store_true", help="force a recomputation of the entire delta series")
+    deltas_parser.add_argument('blsid', type=unicode, nargs="*", help='bls series ids to compute the deltas for')
+    deltas_parser.set_defaults(func=compute_deltas)
+
+
     # CreateDB Command
     createdb_parser = subparsers.add_parser('createdb', help='Create database and migrations')
     createdb_parser.set_defaults(func=createdb)
@@ -227,8 +257,8 @@ if __name__ == '__main__':
 
     # Handle input from the command line
     args = parser.parse_args()            # Parse the arguments
-    # try:
-    msg = args.func(args)             # Call the default function
-    parser.exit(0, msg + "\n")        # Exit cleanly with message
-    # except Exception as e:
-    #     parser.error(str(e))              # Exit with error
+    try:
+        msg = args.func(args)             # Call the default function
+        parser.exit(0, msg + "\n")        # Exit cleanly with message
+    except Exception as e:
+        parser.error(str(e))              # Exit with error
