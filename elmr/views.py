@@ -24,7 +24,7 @@ from elmr import get_version
 from elmr import app, api, db
 from elmr.models import IngestionRecord
 from elmr.models import Series, SeriesRecord, StateSeries, USAState
-from elmr.utils import JSON_FMT, utcnow, months_since, slugify
+from elmr.utils import JSON_FMT, utcnow, months_since, slugify, parse_bool
 from elmr.fips import write_states_dataset
 
 from flask import request, make_response
@@ -461,7 +461,9 @@ def geography_csv(source, dataset):
 
     # Get arguments
     start_year = request.args.get('start_year', app.config['STARTYEAR'])
-    end_year = request.args.get('end_year', app.config['ENDYEAR'])
+    end_year   = request.args.get('end_year', app.config['ENDYEAR'])
+    is_adjust  = parse_bool(request.args.get('is_adjusted', True))
+    is_delta   = parse_bool(request.args.get('is_delta', False))
 
     try:
         start_year = int(start_year)
@@ -479,7 +481,9 @@ def geography_csv(source, dataset):
 
     # Create a file-like object for the CSV to return, then write the series
     csv = StringIO.StringIO()
-    write_states_dataset(csv, source, dataset, start_year, end_year)
+    write_states_dataset(csv, source, dataset,
+                         start_year, end_year,
+                         is_adjust, is_delta)
 
     output = make_response(csv.getvalue())
     output.headers["Content-Disposition"] = "attachment; filename=%s.csv" % dataset

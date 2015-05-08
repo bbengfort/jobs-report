@@ -147,3 +147,17 @@ text {
   pointer-events: all;
   cursor: ew-resize;
 }
+
+/* ColorBrewer Stuff */
+
+.swatch div {
+    float: left;
+    width: 16px;
+    height: 16px;
+}
+
+.swatch {
+    clear: left;
+    min-height: 16px;
+    margin-top: 2px;
+}

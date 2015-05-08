@@ -56,7 +56,7 @@ $(function() {
       // Initialize the Map
       map = d3.geomap.choropleth()
         .geofile(topo)
-        .colors(colorbrewer.YlOrRd[9]) // See http://bl.ocks.org/mbostock/5577023 for colors
+        .colors(get_color_scale())
         .projection(d3.geo.albersUsa)
         .column(endDate.format(dateFmt))
         .unitId('fips')
@@ -95,6 +95,7 @@ $(function() {
     // Set the width of the map equal to the width of the container
     var width = $("#map").width();
     map.width(width);
+    map.colors(get_color_scale());
 
     // Empty the map div of the old map
     $("#map").empty();
@@ -105,16 +106,43 @@ $(function() {
   }
 
   /*
+   * Determines what color scale to use based on the dataset.
+   * See http://bl.ocks.org/mbostock/5577023 for colors
+   *
+   */
+  function get_color_scale() {
+
+    var s = 9;
+
+    colors = {
+      PuBu: colorbrewer.PuBu[s],
+      RdPu: colorbrewer.RdPu[s],
+      RdYlGn: colorbrewer.RdYlGn[s],
+      YlOrRd: colorbrewer.YlOrRd[s],
+      PiYG: colorbrewer.PiYG[s],
+      YlGnBu: colorbrewer.YlGnBu[s]
+    }
+
+    var c = $('input[name=colorRadios]:checked', '#formGeographyDataset').val();
+    return colors[c];
+  }
+
+  /*
    * Select handler for getting new data for the map.
    */
-  $("#menuDataset li a").click(function(e) {
+  $("#formGeographyDataset").submit(function(e) {
     e.preventDefault();
-    var a = $(e.target);
-    var href = a.attr('href');
-    var name = a.text();
-    var source = a.data().source;
 
-    $("#menuDataset").dropdown("toggle");
+    var pick   = $("#menuGeographyDataset").find(":selected"),
+        href   = pick.val(),
+        name   = pick.text(),
+        source = pick.data().source;
+
+    var chk_adjust = $("#chkGeoIsAdjust").is(":checked");
+    var chk_delta  = $("#chkGeoIsDelta").is(":checked");
+
+    href += "?is_adjusted=" + chk_adjust + "&is_delta=" + chk_delta;
+    console.log("Fetching geographic data from", href);
 
     $("#datasetSource").html("Loading &hellip;");
     $("#datasetName").html("Loading &hellip;");
