@@ -128,6 +128,15 @@ $(function() {
   }
 
   /*
+   * Handler for color scale change (to prevent entire dataset reload)
+   */
+   $('input:radio[name=colorRadios]', '#formGeographyDataset').change(function(e) {
+     if ($(this).is(':checked')) {
+       drawMap();
+     }
+   });
+
+  /*
    * Select handler for getting new data for the map.
    */
   $("#formGeographyDataset").submit(function(e) {

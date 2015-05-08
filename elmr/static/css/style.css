@@ -152,12 +152,12 @@ text {
 
 .swatch div {
     float: left;
-    width: 16px;
+    width: 22px;
     height: 16px;
 }
 
 .swatch {
     clear: left;
-    min-height: 16px;
+    min-height: 22px;
     margin-top: 2px;
 }
