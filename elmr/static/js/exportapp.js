@@ -50,26 +50,37 @@ $(function() {
       return
     }
 
-    var delta = $("#cfdNormalize").is(":checked");
-    var start = $("#cdfStartYear").val();
-    var end   = $("#cdfEndYear").val();
+    var adjust = $("#cfdAdjusted").is(":checked");
+    var delta  = $("#cfdNormalize").is(":checked");
+    var start  = $("#cdfStartYear").val();
+    var end    = $("#cdfEndYear").val();
 
-    if (delta) {
-      console.log("Normalized data set not implemented yet!");
+    var data   = {
+      "is_adjusted": adjust,
+      "is_delta": delta
     }
 
-    if (start && end) {
-      endpoint += "?start_year=" + start + "&end_year=" + end;
-    } else if (start) {
-      endpoint += "?start_year=" + start
-    } else if (end) {
-      endpoint += "?end_year=" + end;
+    if (start) {
+      data['start_year'] = start;
     }
+    
+    if (end) {
+      data['end_year'] = end;
+    }
+
+    endpoint += "?" + encodeQueryData(data);
 
     console.log("Downloading dataset from", endpoint);
     window.location.href = endpoint;
 
     return false;
   });
+
+  function encodeQueryData(data) {
+     var ret = [];
+     for (var d in data)
+        ret.push(encodeURIComponent(d) + "=" + encodeURIComponent(data[d]));
+     return ret.join("&");
+  }
 
 });
