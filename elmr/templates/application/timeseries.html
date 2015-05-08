@@ -1,6 +1,68 @@
   <!-- Time Series Application Container -->
   <div id="timeSeriesApplication" class="subapp">
 
+    <!-- Headlines -->
+    <div id="headlines" class="row">
+      <div class="col-md-12">
+        <div class="headline-wrapper">
+          <!-- Left Headline -->
+          <div id="left-headline" class="headline">
+              <div class="headline-number">5.5%</div>
+              <div class="headline-detail">
+                <p class="headline-label">
+                  unemployment rate
+                </p>
+                <p class="headline-delta text-success">
+                  <i class="fa fa-long-arrow-down"></i>
+                  1.7%
+                </p>
+              </div>
+          </div><!-- end left headline -->
+
+          <!-- Right Headline -->
+          <div id="right-headline" class="headline">
+            <div class="headline-number">1.7M</div>
+            <div class="headline-detail">
+              <p class="headline-label">
+                employment level
+              </p>
+              <p class="headline-delta text-success">
+                <i class="fa fa-long-arrow-up"></i>
+                295,000
+              </p>
+            </div>
+          </div><!-- end right headline -->
+        </div><!-- end headline wrapper -->
+      </div>
+    </div><!-- end headlines -->
+
+    <!-- Controls -->
+    <div id="main-controls" class="row">
+      <div class="col-md-12">
+        <div class="controls">
+          <form class="form-inline">
+            <div class="form-group">
+              <label for="startDate">Start Date</label>
+              <div class="input-group">
+                <input type="text" class="form-control input-sm" id="startDate" />
+                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+              </div>
+            </div>
+            <div class="form-slider">
+              <div id="year-range-slider"></div>
+            </div>
+            <div class="form-group">
+              <label for="endDate">End Date</label>
+              <div class="input-group">
+                <input type="text" class="form-control input-sm" id="endDate" />
+                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!-- end controls -->
+
     <!-- Upper Time Series View -->
     <div class="row">
       <!-- Left Sidebar -->

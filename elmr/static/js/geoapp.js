@@ -49,8 +49,18 @@ $(function() {
         }
       });
 
+      // Initialze Geography Period Slider
+      $("#sliderGeographyPeriodRange").slider({
+        max: period.diff("months"),
+        value: period.diff("months") - 1,
+        slide: function(event, ui) {
+          console.log("geography month", ui.value);
+        }
+      });
+
       var topo = "/static/data/topojson/countries/USA.json";
-      var geodata = "/api/geo/laus/unemployment-rate/";
+      // var geodata = "/api/geo/laus/unemployment-rate/";
+      var geodata = "/static/data/unemployment-rate.csv";
 
 
       // Initialize the Map

@@ -86,12 +86,6 @@ body {
     width: 25%;
 }
 
-.form-slider {
-    display: inline-block;
-    width: 48%;
-    padding: 0 10px;
-}
-
 /* Charts */
 
 .series-view {
@@ -160,4 +154,29 @@ text {
     clear: left;
     min-height: 22px;
     margin-top: 2px;
+}
+
+.year-selector {
+    margin-bottom: 12px;
+}
+
+/*.year-selector .col-md-9 {
+    padding-left: 0;
+    padding-right: 6px;
+}
+
+.year-selector .col-md-3 {
+    padding-left: 6px;
+    padding-right: 0px;
+}*/
+
+.year-selector .year-slider {
+    margin-top: 12px;
+    border: 1px solid #dddddd;
+}
+
+.year-selector .ui-slider-horizontal .ui-slider-handle {
+    border: 1px solid #2e2f2f;
+    background-image: linear-gradient(#4f5151, #474949 6%, #3f4141);
+    background-color: #4f5151;
 }

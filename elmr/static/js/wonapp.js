@@ -95,6 +95,15 @@ function WealthOfNations() {
         .attr("x", this.width(true))
         .text("Jan 2000");
 
+    // Initialze Geography Period Slider
+    $("#sliderWealthOfNationsPeriodRange").slider({
+      max: this.months,
+      value: this.months - 1,
+      slide: function(event, ui) {
+        console.log("wealth of nations period", ui.value);
+      }
+    });
+
     return self;
   }
 
