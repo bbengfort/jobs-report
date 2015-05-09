@@ -28,7 +28,10 @@ function YearSlider() {
   this.dateFmt  = null;   // the format of the date strings
   this.current  = null;   // the current value of the slider
   this.range    = null;   // the current range of the slider
-  this.callback = null;   // the callback for the on slide event
+
+  // Callback hnadlers
+  this.slide    = null;   // the callback for the on slide event
+  this.change   = null;   // the callback for the on change event
 
 
   // DOM Objects for the slider
@@ -49,7 +52,8 @@ function YearSlider() {
       maxDate: new Date(),
       is_range: false,
       dateFmt: "MMM YYYY",
-      callback: null
+      slide: null,
+      change: null,
     }
 
     var options   = _.defaults(opts || {}, defaults);
@@ -68,7 +72,7 @@ function YearSlider() {
 
     // Initialize the values
     var maxValue = self.period.diff("months");
-    this.current = maxValue;
+    if (this.current === null) this.current = maxValue;
     this.range = [this.current - 18, this.current];
 
     // Initialize the slider
@@ -78,13 +82,15 @@ function YearSlider() {
         min: 0,
         max: maxValue,
         values: this.range,
-        slide: self.onSlide()
+        slide: self.onSlide(),
+        change: self.onChange()
       });
     } else {
       this.slider.slider({
         max: maxValue,
         value: this.current,
-        slide: self.onSlide()
+        slide: self.onSlide(),
+        change: self.onChange()
       });
     }
 
@@ -135,8 +141,20 @@ function YearSlider() {
 
       self.updateDisplayFields();
 
-      if (self.callback) {
-        self.callback(event, self, ui);
+      if (self.slide) {
+        self.slide(event, self, ui);
+      }
+    }
+  }
+
+  /*
+   * On change handler
+   */
+  this.onChange = function() {
+    var self = this;
+    return function(event, ui) {
+      if (self.change) {
+        self.change(event, self, ui);
       }
     }
   }
@@ -171,6 +189,27 @@ function YearSlider() {
     return _.map(this.range, function(num) {
       return this.getMonthFromPeriod(num).format(this.dateFmt);
     });
+  }
+
+  /*
+   * Programatically set the value or get it.
+   */
+  this.value = function(val) {
+
+    if (this.is_range) {
+      // Set range to the range of values
+      this.slider.slider('values', val);
+      var values = this.slider.slider('values');
+
+      // Set current to the rightmost value
+      this.current = values[1];
+    } else {
+      this.slider.slider('value', val);
+      this.current = this.slider.slider('value');
+      
+    }
+
+    this.updateDisplayFields();
   }
 
 }

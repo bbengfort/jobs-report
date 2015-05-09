@@ -242,12 +242,13 @@ $(function() {
         dateFmt: dateFmt,
         callback: function(event, ui) {
           console.log("in headlines callback");
+          updateHeadlines();
         }
       });
 
     console.log("Time Series Application Started");
   });
-  
+
   /*
    * Computes headline information and updates fields.
    */

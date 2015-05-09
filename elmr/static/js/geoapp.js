@@ -9,7 +9,7 @@ $(function() {
   var geoSlider = new YearSlider().init("#formGeographyPeriodRange", {
     minDate: "Jan 2000",
     maxDate: "Feb 2015",
-    callback: function(event, slider, ui) {
+    change: function(event, slider, ui) {
       // Update the map to the current year
       if (map) {
         map.column(slider.current_date());
