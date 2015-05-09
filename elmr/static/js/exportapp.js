@@ -63,7 +63,7 @@ $(function() {
     if (start) {
       data['start_year'] = start;
     }
-    
+
     if (end) {
       data['end_year'] = end;
     }
@@ -75,12 +75,5 @@ $(function() {
 
     return false;
   });
-
-  function encodeQueryData(data) {
-     var ret = [];
-     for (var d in data)
-        ret.push(encodeURIComponent(d) + "=" + encodeURIComponent(data[d]));
-     return ret.join("&");
-  }
 
 });
