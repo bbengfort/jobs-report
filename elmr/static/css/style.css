@@ -46,12 +46,6 @@ body {
 
 /* Headlines */
 
-.headline-wrapper {
-    display: block;
-    margin: 0 auto;
-    width: 650px;
-}
-
 .headline, .headline > div {
     display: inline-block;
 }
@@ -74,16 +68,6 @@ body {
 
 .headline-delta {
     font-weight: bold;
-}
-
-/* Controls */
-
-#main-controls {
-    margin: 20px;
-}
-
-#main-controls .form-group {
-    width: 25%;
 }
 
 /* Charts */

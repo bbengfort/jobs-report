@@ -72,8 +72,13 @@ function YearSlider() {
 
     // Initialize the values
     var maxValue = self.period.diff("months");
-    if (this.current === null) this.current = maxValue;
-    this.range = [this.current - 18, this.current];
+    if (this.current === null) {
+      this.current = maxValue;
+    }
+
+    if (this.range === null) {
+      this.range = [0, this.current];
+    }
 
     // Initialize the slider
     if (this.is_range) {
@@ -167,6 +172,17 @@ function YearSlider() {
       if (this.displays.length != 2) {
         throw new Error("Not enough displays!")
       }
+
+      var self = this;
+      var date_range = this.date_range()
+      _.map(this.displays, function(disp, idx) {;
+        disp = $(disp);
+        var date = self.getMonthFromPeriod(self.range[idx]).format(self.dateFmt);
+        disp.val(date);
+        disp.data("period", date_range[idx]);
+        disp.data("slider", self.range[idx]);
+      });
+
     } else {
       var date = this.getMonthFromPeriod(this.current).format(this.dateFmt);
       this.displays.val(date);
@@ -186,8 +202,9 @@ function YearSlider() {
    * Helper function for getting curent range date strings
    */
   this.date_range = function() {
+    var self = this;
     return _.map(this.range, function(num) {
-      return this.getMonthFromPeriod(num).format(this.dateFmt);
+      return self.getMonthFromPeriod(num).format(self.dateFmt);
     });
   }
 
@@ -206,7 +223,7 @@ function YearSlider() {
     } else {
       this.slider.slider('value', val);
       this.current = this.slider.slider('value');
-      
+
     }
 
     this.updateDisplayFields();

@@ -7,6 +7,7 @@ function SeriesView() {
   this.elem = null;
   this.svg  = null;
   this.selector = null;
+  this.slider   = null;
 
   // The series needs to be a list of objects
   // Where each item has a period key defining the Month Year
@@ -236,13 +237,18 @@ $(function() {
       console.log("Fetched data from " + dataUrl);
       console.log("Analysis period: " + data.period.start + " to " + data.period.end);
 
-      slider = new YearSlider().init("#year-range-slider", {
+      slider = new YearSlider().init("#formTSExplorerPeriodRange", {
+        is_range: true,
         minDate: moment(d.period.start, dateFmt),
         maxDate: moment(d.period.end, dateFmt),
         dateFmt: dateFmt,
-        callback: function(event, ui) {
-          console.log("in headlines callback");
+        slide: function(event, slider, ui) {
+          // Update the headlines with the deltas
           updateHeadlines();
+        },
+        change: function(event, slider, ui) {
+          // Update the time series with the new range
+          console.log("not implemented yet");
         }
       });
 
@@ -253,8 +259,11 @@ $(function() {
    * Computes headline information and updates fields.
    */
   function updateHeadlines() {
-    var sd = data.data[getMonthInPeriod(startDate)];
-    var ed = data.data[getMonthInPeriod(endDate)];
+    var dp = $(".year-display");
+    var sd = data.data[$(dp[0]).data("slider")];
+    var ed = data.data[$(dp[1]).data("slider")];
+
+    console.log(data);
 
     // Handle unemployment (left headline)
     var lh = $("#left-headline");
