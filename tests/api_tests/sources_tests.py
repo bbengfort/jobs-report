@@ -80,13 +80,19 @@ class SourcesGETTests(TestCase):
         for key in ('sources',):
             self.assertIn(key, response.json)
 
-        self.assertEqual(len(response.json['sources']), 4)
+        self.assertEqual(len(response.json['sources']), 8)
 
         for s in response.json['sources']:
             for key in ('name', 'records', 'url'):
                 self.assertIn(key, s)
 
-        expected = {'CESN', 'LAUS', 'CESSM', 'CPS'}
+        expected = {
+            'CESN', 'CESN-ANALYSIS',
+            'LAUS', 'LAUS-ANALYSIS',
+            'CESSM', 'CESSM-ANALYSIS',
+            'CPS', 'CPS-ANALYSIS',
+        }
+
         returned = set([s["name"] for s in response.json['sources']])
         self.assertEqual(expected, returned)
 

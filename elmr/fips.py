@@ -40,7 +40,8 @@ CESSMRE = re.compile(r'^([\w\s]+),\s+([\w\s,\-]+),\s+([\w\s]+)\s+\-\s+([\w\s]+$)
 
 
 def write_states_dataset(fobj, source, slug,
-                         start_year=None, end_year=None, adjusted=True):
+                         start_year=None, end_year=None,
+                         adjusted=True, delta=False):
     """
     Writes a geographic csv of the series to the open file-like object passed
     in as `fobj`. Each row is an individual state, and each column is the
@@ -77,6 +78,8 @@ def write_states_dataset(fobj, source, slug,
         if ss is None:
             ss = state.series.filter_by(source=source, slug=slug).first()
 
+        series = ss.series.delta if delta else ss.series
+
         if ss is None:
             continue
         # TODO: above was just a temporary fix
@@ -87,7 +90,7 @@ def write_states_dataset(fobj, source, slug,
         }
 
         field   = SeriesRecord.period
-        records = ss.series.records
+        records = series.records
 
         records = records.filter(extract('year', field) >= start_year)
         records = records.filter(extract('year', field) <= end_year)

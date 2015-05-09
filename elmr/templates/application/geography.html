@@ -11,67 +11,26 @@
 <!-- Geography Application Container -->
 <div id="geographyApplication" class="hidden subapp">
 
-  <!-- Headlines -->
-  <div id="headlines" class="row">
-    <div class="col-md-12">
-      <div class="headline-wrapper">
-        <!-- Left Headline -->
-        <div id="left-headline" class="headline">
-            <div class="headline-number">5.5%</div>
-            <div class="headline-detail">
-              <p class="headline-label">
-                unemployment rate
-              </p>
-              <p class="headline-delta text-success">
-                <i class="fa fa-long-arrow-down"></i>
-                1.7%
-              </p>
-            </div>
-        </div><!-- end left headline -->
-
-        <!-- Right Headline -->
-        <div id="right-headline" class="headline">
-          <div class="headline-number">1.7M</div>
-          <div class="headline-detail">
-            <p class="headline-label">
-              employment level
-            </p>
-            <p class="headline-delta text-success">
-              <i class="fa fa-long-arrow-up"></i>
-              295,000
-            </p>
-          </div>
-        </div><!-- end right headline -->
-      </div><!-- end headline wrapper -->
-    </div>
-  </div><!-- end headlines -->
-
-  <!-- Controls -->
-  <div id="main-controls" class="row">
-    <div class="col-md-12">
-      <div class="controls">
-        <form class="form-inline">
-          <div class="form-group">
-            <label for="startDate">Start Date</label>
-            <div class="input-group">
-              <input type="text" class="form-control input-sm" id="startDate" />
-              <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-            </div>
-          </div>
-          <div class="form-slider">
-            <div id="year-range-slider"></div>
+  <!-- Year slider control -->
+  <div class="row">
+    <div class="col-md-offset-3 col-md-9">
+      <form class="year-selector" id="formGeographyPeriodRange">
+        <div class="row">
+          <div class="col-md-9">
+            <div id="sliderGeographyPeriodRange" class="year-slider"></div>
           </div>
           <div class="form-group">
-            <label for="endDate">End Date</label>
-            <div class="input-group">
-              <input type="text" class="form-control input-sm" id="endDate" />
-              <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+            <div class="col-md-3">
+              <div class="input-group">
+                <input type="text" class="form-control year-display" />
+                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+              </div>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
-  </div><!-- end controls -->
+  </div>
 
   <!-- 2 Column Visual Content -->
   <div class="row">
@@ -87,34 +46,160 @@
         <div class="panel-body">
           <!-- Dataset Selection Dropdown -->
           <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-              Select Dataset for Map <span class="caret"></span>
-            </button>
-            <ul id="menuDataset" class="dropdown-menu" role="menu">
-              <li role="presentation" class="dropdown-header">LAUS</li>
-              <li><a href="/api/geo/laus/employment/" data-source="LAUS">Employment</a></li>
-              <li><a href="/api/geo/laus/labor-force/" data-source="LAUS">Labor Force</a></li>
-              <li><a href="/api/geo/laus/unemployment/" data-source="LAUS">Unemployment</a></li>
-              <li><a href="/api/geo/laus/unemployment-rate/" data-source="LAUS">Unemployment Rate</a></li>
-              <li class="divider"></li>
-              <li role="presentation" class="dropdown-header">CES - States</li>
-              <li><a href="/api/geo/CESSM/total-nonfarm/" data-source="CES - States">Total Nonfarm</a></li>
-              <li><a href="/api/geo/CESSM/information/" data-source="CES - States">Information</a></li>
-              <li><a href="/api/geo/CESSM/leisure-and-hospitality/" data-source="CES - States">Leisure and Hospitality</a></li>
-              <li><a href="/api/geo/CESSM/mining-logging-and-construction/" data-source="CES - States">Mining, Logging, and Construction</a></li>
-              <li><a href="/api/geo/CESSM/durable-goods/" data-source="CES - States">Durable Goods</a></li>
-              <li><a href="/api/geo/CESSM/transportation-warehousing-and-utilities/" data-source="CES - States">Transportation, Warehousing, and Utilities</a></li>
-              <li><a href="/api/geo/CESSM/financial-activities/" data-source="CES - States">Financial Activities</a></li>
-              <li><a href="/api/geo/CESSM/trade-transportation-and-utilities/" data-source="CES - States">Trade, Transportation, and Utilities</a></li>
-              <li><a href="/api/geo/CESSM/manufacturing/" data-source="CES - States">Manufacturing</a></li>
-              <li><a href="/api/geo/CESSM/construction/" data-source="CES - States">Construction</a></li>
-              <li><a href="/api/geo/CESSM/mining-and-logging/" data-source="CES - States">Mining and Logging</a></li>
-              <li><a href="/api/geo/CESSM/education-and-health-services/" data-source="CES - States">Education and Health Services</a></li>
-              <li><a href="/api/geo/CESSM/non-durable-goods/" data-source="CES - States">Non-Durable Goods</a></li>
-              <li><a href="/api/geo/CESSM/professional-and-business-services/" data-source="CES - States">Professional and Business Services</a></li>
-              <li><a href="/api/geo/CESSM/government/" data-source="CES - States">Government</a></li>
-              <li><a href="/api/geo/CESSM/other-services/" data-source="CES - States">Other Services</a></li>
-            </ul>
+
+            <!-- Geography Dataset Selection Dropdown -->
+            <form id="formGeographyDataset" action="GET">
+              <div class="form-group">
+                <select id="menuGeographyDataset" class="form-control">
+                    <optgroup label="LAUS">
+                      <option value="/api/geo/laus/employment/" data-source="LAUS">Employment</option>
+                      <option value="/api/geo/laus/labor-force/" data-source="LAUS">Labor Force</option>
+                      <option value="/api/geo/laus/unemployment/" data-source="LAUS">Unemployment</option>
+                      <option value="/api/geo/laus/unemployment-rate/" data-source="LAUS" selected="selected">Unemployment Rate</option>
+                    </optgroup>
+                    <optgroup label="CES - States">
+                      <option value="/api/geo/CESSM/total-nonfarm/" data-source="CES - States">Total Nonfarm</option>
+                      <option value="/api/geo/CESSM/information/" data-source="CES - States">Information</option>
+                      <option value="/api/geo/CESSM/leisure-and-hospitality/" data-source="CES - States">Leisure and Hospitality</option>
+                      <option value="/api/geo/CESSM/mining-logging-and-construction/" data-source="CES - States">Mining, Logging, and Construction</option>
+                      <option value="/api/geo/CESSM/durable-goods/" data-source="CES - States">Durable Goods</option>
+                      <option value="/api/geo/CESSM/transportation-warehousing-and-utilities/" data-source="CES - States">Transportation, Warehousing, and Utilities</option>
+                      <option value="/api/geo/CESSM/financial-activities/" data-source="CES - States">Financial Activities</option>
+                      <option value="/api/geo/CESSM/trade-transportation-and-utilities/" data-source="CES - States">Trade, Transportation, and Utilities</option>
+                      <option value="/api/geo/CESSM/manufacturing/" data-source="CES - States">Manufacturing</option>
+                      <option value="/api/geo/CESSM/construction/" data-source="CES - States">Construction</option>
+                      <option value="/api/geo/CESSM/mining-and-logging/" data-source="CES - States">Mining and Logging</option>
+                      <option value="/api/geo/CESSM/education-and-health-services/" data-source="CES - States">Education and Health Services</option>
+                      <option value="/api/geo/CESSM/non-durable-goods/" data-source="CES - States">Non-Durable Goods</option>
+                      <option value="/api/geo/CESSM/professional-and-business-services/" data-source="CES - States">Professional and Business Services </option>
+                      <option value="/api/geo/CESSM/government/" data-source="CES - States">Government</option>
+                      <option value="/api/geo/CESSM/other-services/" data-source="CES - States">Other Services</option>
+                    </optgroup>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <div class="checkbox">
+                  <label>
+                    <input id="chkGeoIsAdjust" type="checkbox" value="is_adjusted" checked="checked">
+                    Seasonally Adjusted
+                  </label>
+                </div>
+
+                <div class="checkbox">
+                  <label>
+                    <input id="chkGeoIsDelta" type="checkbox" value="is_delta">
+                    Percent Change
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-sm btn-primary">Change Dataset</button>
+              </div>
+
+              <div class="form-group">
+                <label for="colorRadios">Select Color Scale</label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="colorRadios" id="colorRadios1" value="YlGnBu">
+                    <div class="swatch YlGnBu">
+                      <div class="q0-9"></div>
+                      <div class="q1-9"></div>
+                      <div class="q2-9"></div>
+                      <div class="q3-9"></div>
+                      <div class="q4-9"></div>
+                      <div class="q5-9"></div>
+                      <div class="q6-9"></div>
+                      <div class="q7-9"></div>
+                      <div class="q8-9"></div>
+                    </div>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="colorRadios" id="colorRadios2" value="PuBu">
+                    <div class="swatch PuBu">
+                      <div class="q0-9"></div>
+                      <div class="q1-9"></div>
+                      <div class="q2-9"></div>
+                      <div class="q3-9"></div>
+                      <div class="q4-9"></div>
+                      <div class="q5-9"></div>
+                      <div class="q6-9"></div>
+                      <div class="q7-9"></div>
+                      <div class="q8-9"></div>
+                    </div>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="colorRadios" id="colorRadios3" value="RdPu">
+                    <div class="swatch RdPu">
+                      <div class="q0-9"></div>
+                      <div class="q1-9"></div>
+                      <div class="q2-9"></div>
+                      <div class="q3-9"></div>
+                      <div class="q4-9"></div>
+                      <div class="q5-9"></div>
+                      <div class="q6-9"></div>
+                      <div class="q7-9"></div>
+                      <div class="q8-9"></div>
+                    </div>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="colorRadios" id="colorRadios5" value="YlOrRd" checked>
+                    <div class="swatch YlOrRd">
+                      <div class="q0-9"></div>
+                      <div class="q1-9"></div>
+                      <div class="q2-9"></div>
+                      <div class="q3-9"></div>
+                      <div class="q4-9"></div>
+                      <div class="q5-9"></div>
+                      <div class="q6-9"></div>
+                      <div class="q7-9"></div>
+                      <div class="q8-9"></div>
+                    </div>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="colorRadios" id="colorRadios4" value="RdYlGn">
+                    <div class="swatch RdYlGn">
+                      <div class="q0-9"></div>
+                      <div class="q1-9"></div>
+                      <div class="q2-9"></div>
+                      <div class="q3-9"></div>
+                      <div class="q4-9"></div>
+                      <div class="q5-9"></div>
+                      <div class="q6-9"></div>
+                      <div class="q7-9"></div>
+                      <div class="q8-9"></div>
+                    </div>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="colorRadios" id="colorRadios6" value="PiYG">
+                    <div class="swatch PiYG">
+                      <div class="q0-9"></div>
+                      <div class="q1-9"></div>
+                      <div class="q2-9"></div>
+                      <div class="q3-9"></div>
+                      <div class="q4-9"></div>
+                      <div class="q5-9"></div>
+                      <div class="q6-9"></div>
+                      <div class="q7-9"></div>
+                      <div class="q8-9"></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+            </form>
+
           </div>
         </div>
         <table class="table">

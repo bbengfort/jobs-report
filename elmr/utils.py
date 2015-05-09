@@ -117,3 +117,27 @@ def slugify(text, delim=u'-'):
         if word:
             result.append(word)
     return unicode(delim.join(result))
+
+
+def parse_bool(arg):
+    """
+    Returns a boolean based on the strings:
+        'yes', 'no',
+        'true', 'false',
+        't', 'f', 'y', 'n',
+        '1', '0'
+
+    Otherwise returns the default of the `bool` function.
+    """
+
+    if isinstance(arg, basestring):
+        arg = arg.lower()
+        if arg in {'yes', 'true', 't', 'y', '1'}:
+            return True
+        elif arg in {'no', 'false', 'f', 'n', '0'}:
+            return False
+        else:
+            raise ValueError("cannot parse \"%s\" to bool") % arg
+
+    else:
+        return bool(arg)

@@ -42,7 +42,9 @@ class SeriesGETTests(TestCase):
     def setUpClass(cls):
         syncdb()
         loaddb()
-        cls.SERIES_IDS = [s.blsid for s in Series.query.all()]
+        cls.SERIES_IDS = [
+            s.blsid for s in Series.query.filter_by(is_delta=False)
+        ]
 
     @classmethod
     def tearDownClass(cls):
@@ -108,9 +110,9 @@ class SeriesGETTests(TestCase):
                 self.assertTrue(s["url"].endswith("/"))
 
         self.assertEqual(response.json["page"], 1)
-        self.assertEqual(response.json["pages"], 85)
+        self.assertEqual(response.json["pages"], 169)
         self.assertEqual(response.json["per_page"], 20)
-        self.assertEqual(response.json["total"], 1684)
+        self.assertEqual(response.json["total"], 3368)
 
     def test_next_page_series_list(self):
         """
@@ -135,9 +137,9 @@ class SeriesGETTests(TestCase):
         self.assertEquals(response.status_code, 200)
 
         self.assertEqual(response.json["page"], 1)
-        self.assertEqual(response.json["pages"], 34)
+        self.assertEqual(response.json["pages"], 68)
         self.assertEqual(response.json["per_page"], 50)
-        self.assertEqual(response.json["total"], 1684)
+        self.assertEqual(response.json["total"], 3368)
 
     def test_filter_by_source_series_list(self):
         """
@@ -185,7 +187,12 @@ class SeriesGETTests(TestCase):
         for key in ("blsid", "source", "title", "data"):
             self.assertIn(key, response.json)
 
-        sources = {"CPS", "CESN", "LAUS", "CESSM"}
+        sources = {
+            'CESN', 'CESN-ANALYSIS',
+            'LAUS', 'LAUS-ANALYSIS',
+            'CESSM', 'CESSM-ANALYSIS',
+            'CPS', 'CPS-ANALYSIS',
+        }
         self.assertIn(response.json["source"], sources)
         self.assertEqual(len(response.json["data"]), 24)
 

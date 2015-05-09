@@ -7,6 +7,7 @@ function WealthOfNations() {
   this.elem = null;
   this.svg  = null;
   this.selector = null;
+  this.slider   = null;
 
   // Other properties
   this.margin = {top: 9.5, right: 23.5, bottom: 24.5, left: 39.5};
@@ -94,6 +95,16 @@ function WealthOfNations() {
         .attr("y", this.height(true) - 24)
         .attr("x", this.width(true))
         .text("Jan 2000");
+
+    // Initialze Wealth of Nations Period Slider
+    this.slider = new YearSlider().init("#formWealthOfNationsPeriodRange", {
+      minDate: this.minDate,
+      maxDate: this.maxDate,
+      current: 0,
+      slide: function(event, slider, ui) {
+        self.displayYear(slider.current);
+      }
+    });
 
     return self;
   }
@@ -192,7 +203,9 @@ function WealthOfNations() {
     }
 
     function mousemove() {
-      self.displayYear(yearScale.invert(d3.mouse(this)[0]));
+      var year = yearScale.invert(d3.mouse(this)[0]);
+      self.displayYear(year);
+      self.slider.value(year);
     }
 
   }

@@ -7,6 +7,7 @@ function SeriesView() {
   this.elem = null;
   this.svg  = null;
   this.selector = null;
+  this.slider   = null;
 
   // The series needs to be a list of objects
   // Where each item has a period key defining the Month Year
@@ -219,6 +220,80 @@ $(function() {
   upperControls.select.val(DEFAULT_UPPER_SERIES).trigger("change");
   lowerControls.select.val(DEFAULT_LOWER_SERIES).trigger("change");
 
-  console.log("Time Series Application Started");
+
+  /*
+   * Initialize Headlines Application
+   */
+  var dataUrl = "/api/source/cps/";
+  var data    = null;    // holder for the CPS data
+  var slider  = null;
+  var dateFmt = "MMM YYYY";
+
+  // Fetch CPS Analysis data for headlines
+  $.get(dataUrl)
+    .success(function(d) {
+      data = d;
+
+      console.log("Fetched data from " + dataUrl);
+      console.log("Analysis period: " + data.period.start + " to " + data.period.end);
+
+      slider = new YearSlider().init("#formTSExplorerPeriodRange", {
+        is_range: true,
+        minDate: moment(d.period.start, dateFmt),
+        maxDate: moment(d.period.end, dateFmt),
+        dateFmt: dateFmt,
+        slide: function(event, slider, ui) {
+          // Update the headlines with the deltas
+          updateHeadlines();
+        },
+        change: function(event, slider, ui) {
+          // Update the time series with the new range
+          console.log("not implemented yet");
+        }
+      });
+
+    console.log("Time Series Application Started");
+  });
+
+  /*
+   * Computes headline information and updates fields.
+   */
+  function updateHeadlines() {
+    var dp = $(".year-display");
+    var sd = data.data[$(dp[0]).data("slider")];
+    var ed = data.data[$(dp[1]).data("slider")];
+
+    console.log(data);
+
+    // Handle unemployment (left headline)
+    var lh = $("#left-headline");
+    lh.find(".headline-number").text(ed.LNS14000000 + "%");
+
+    var unempDiff = (ed.LNS14000000 - sd.LNS14000000).toFixed(3);
+    var p = lh.find(".headline-delta");
+    if (unempDiff > 0) {
+      p.html($('<i class="fa fa-long-arrow-up"></i>'))
+      p.removeClass("text-success").addClass("text-danger");
+    } else {
+      p.html($('<i class="fa fa-long-arrow-down"></i>'))
+      p.removeClass("text-danger").addClass("text-success");
+    }
+    p.append("&nbsp;" + Math.abs(unempDiff) + "%");
+
+    // Handle # nonfarm jobs (right headline)
+    var rh = $("#right-headline");
+    rh.find(".headline-number").text(Math.round(ed.LNS12000000 / 1000) + "K");
+
+    var jobsDiff = ed.LNS12000000 - sd.LNS12000000;
+    p = rh.find(".headline-delta");
+    if (jobsDiff > 0) {
+      p.html($('<i class="fa fa-long-arrow-up"></i>'))
+      p.removeClass("text-danger").addClass("text-success");
+    } else {
+      p.html($('<i class="fa fa-long-arrow-down"></i>'))
+      p.removeClass("text-success").addClass("text-danger");
+    }
+    p.append("&nbsp;" + Math.abs(jobsDiff));
+  }
 
 });

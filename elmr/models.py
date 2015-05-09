@@ -68,10 +68,16 @@ class Series(db.Model):
     title       = db.Column(db.Unicode(255), nullable=True)
     source      = db.Column(db.Unicode(255), nullable=True)
     is_primary  = db.Column(db.Boolean, default=False)
+    is_delta    = db.Column(db.Boolean, default=False)
+    is_adjusted = db.Column(db.Boolean, default=False)
+    delta_id    = db.Column(db.Integer, db.ForeignKey('series.id'),
+                            nullable=True)
+    delta       = db.relationship('Series', remote_side=id,
+                                  uselist=False, backref='original')
     records     = db.relationship('SeriesRecord', backref='series',
-                                  lazy='dynamic')
+                                  lazy='dynamic', cascade='all')
     states      = db.relationship('StateSeries', backref='series',
-                                  lazy='dynamic')
+                                  lazy='dynamic', cascade='all')
 
     def __repr__(self):
         return "<Series %s>" % self.blsid
