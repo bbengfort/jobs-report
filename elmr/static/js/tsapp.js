@@ -263,8 +263,6 @@ $(function() {
     var sd = data.data[$(dp[0]).data("slider")];
     var ed = data.data[$(dp[1]).data("slider")];
 
-    console.log(data);
-
     // Handle unemployment (left headline)
     var lh = $("#left-headline");
     lh.find(".headline-number").text(ed.LNS14000000 + "%");
