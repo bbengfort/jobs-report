@@ -195,7 +195,7 @@ $(function() {
 
   // Default Upper Series
   var DEFAULT_UPPER_SERIES = "LNS14000000";
-  var DEFAULT_LOWER_SERIES = "CES0000000001";
+  var DEFAULT_LOWER_SERIES = "LNS12000000";
 
   // Append "upper" and "lower" to get specific controls
   var ctrlIDs = {
@@ -316,7 +316,8 @@ $(function() {
         }
       });
 
-    console.log("Time Series Application Started");
+      updateHeadlines();
+      console.log("Time Series Application Started");
   });
 
   /*
@@ -344,7 +345,7 @@ $(function() {
 
     // Handle # nonfarm jobs (right headline)
     var rh = $("#right-headline");
-    rh.find(".headline-number").text(Math.round(ed.LNS12000000 / 1000) + "K");
+    rh.find(".headline-number").text((ed.LNS12000000 / 1000).toFixed(1) + "M");
 
     var jobsDiff = ed.LNS12000000 - sd.LNS12000000;
     p = rh.find(".headline-delta");
@@ -355,7 +356,7 @@ $(function() {
       p.html($('<i class="fa fa-long-arrow-down"></i>'))
       p.removeClass("text-success").addClass("text-danger");
     }
-    p.append("&nbsp;" + Math.abs(jobsDiff));
+    p.append("&nbsp;" + (Math.abs(jobsDiff / 1000).toFixed(1)) + "M");
   }
 
 });

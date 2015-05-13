@@ -24,6 +24,14 @@ function parseBool(str) {
 }
 
 /*
+ * Stringifies a number with commas
+ http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+ */
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+/*
  *  Year Slider Management
  *  Allows the ability to manage time via period, year series in a slider
  *  Similar to the slider bar, this implements a range and value method.
