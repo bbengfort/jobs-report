@@ -18,14 +18,14 @@
     {% block stylesheets %}
     <!-- CDN CSS Files -->
     <!-- In Production, use the CDNs -->
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/simplex/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/simplex/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css"> -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">
 
     <!-- For Development Only -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/libs/bootstrap.min.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/libs/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/libs/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/libs/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/libs/jquery-ui.css') }}"> -->
 
     <!-- Static CSS Files -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -60,20 +60,20 @@
 
     <!-- CDN CSS Files -->
     <!-- In Production, use the CDNs -->
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment-range/1.0.7/moment-range.min.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment-range/1.0.7/moment-range.min.js"></script>
 
     <!-- For Development Only -->
-    <script src="{{ url_for('static', filename='js/libs/underscore-min.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/libs/underscore-min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/libs/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/libs/jquery-ui.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/libs/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/libs/moment.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/libs/moment-range.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/libs/moment-range.min.js') }}"></script> -->
 
     {% endblock %}
 
