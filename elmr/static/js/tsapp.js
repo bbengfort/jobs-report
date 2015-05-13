@@ -71,10 +71,17 @@ function SeriesView() {
   }
 
   // Given a BLSID, fetch the data and draw the series
-  this.fetch_series = function(blsid) {
+  this.fetch_series = function(blsid, delta) {
     var self = this;
     var endpoint = this.base_url + blsid;
-    endpoint += "?start_year=" + this.start_year + "&end_year=" + this.end_year;
+    var data = {
+      start_year: this.start_year,
+      end_year: this.end_year,
+      delta: delta || false
+    }
+
+    endpoint += "?" + encodeQueryData(data);
+    console.log(endpoint);
 
     d3.json(endpoint, function(error, response) {
       // The JSON response contains some external info like source, title, etc.
@@ -223,27 +230,28 @@ $(function() {
 
     });
 
+    // Init the adjusted filter to true
     controls.adjustFilter.prop("checked", true).trigger("change");
 
-    controls.fetch_series = function(blsid) {
-      // Add is delta here
-      return this.view.fetch_series(blsid);
-    }
-
-    // Bind the selection change event
-    controls.select.change(function(e) {
-      var pick   = $(this).find(":selected"),
+    // Handler for initiating a change in series
+    controls.fetch_series = function(e) {
+      var pick   = controls.select.find(":selected"),
           blsid  = pick.val(),
           title  = pick.text(),
-          source = pick.parent().attr("label");
+          source = pick.parent().attr("label"),
+          delta  = controls.deltaFilter.is(":checked");
 
       console.log(source, blsid, "selected:", title);
 
       controls.label.text(title);
       controls.source.text(source);
-      controls.fetch_series(blsid);
 
-    });
+      controls.view.fetch_series(blsid, delta);
+    }
+
+    // Bind the selection change event
+    controls.select.change(controls.fetch_series);
+    controls.deltaFilter.change(controls.fetch_series);
 
     return controls;
   }

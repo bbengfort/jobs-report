@@ -110,6 +110,7 @@ class SeriesView(Resource):
             self._parser = reqparse.RequestParser()
             self._parser.add_argument('start_year', type=int)
             self._parser.add_argument('end_year', type=int)
+            self._parser.add_argument('delta', type=str)
         return self._parser
 
     @property
@@ -138,9 +139,16 @@ class SeriesView(Resource):
 
         start   = args.get('start_year', None)
         finish  = args.get('end_year', None)
+        delta   = parse_bool(args.get('delta', False))
+        serid   = series.id
+
+        if delta:
+            # Switch to the delta view of the time series
+            if series.delta:
+                serid = series.delta.id
 
         # Start the records query
-        records = SeriesRecord.query.filter_by(series_id=series.id)
+        records = SeriesRecord.query.filter_by(series_id=serid)
         ryear   = extract('year', SeriesRecord.period)
 
         if start is not None:
