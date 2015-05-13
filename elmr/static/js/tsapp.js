@@ -14,6 +14,10 @@ function SeriesView() {
   // And every subsequent key is the value for a particular time series
   this.series = [];
 
+  // Temporary
+  this.blisd  = null;
+  this.delta  = null;
+
   // Defines the data fetch period and the number of elements in the series
   this.start_year  = 2000;
   this.end_year    = 2015;
@@ -73,10 +77,14 @@ function SeriesView() {
   // Given a BLSID, fetch the data and draw the series
   this.fetch_series = function(blsid, delta) {
     var self = this;
-    var endpoint = this.base_url + blsid;
+
+    self.blsid = blsid;
+    self.delta = delta;
+
+    var endpoint = self.base_url + blsid;
     var data = {
-      start_year: this.start_year,
-      end_year: this.end_year,
+      start_year: self.start_year,
+      end_year: self.end_year,
       delta: delta || false
     }
 
@@ -138,6 +146,15 @@ function SeriesView() {
         .attr("class", "line")
         .attr("d", this.line);
 
+  }
+
+  // Helper function to change the dimensions of the data
+  // Right now this just resubmits the request to the server.
+  // Obviously this could be better - so make it better!
+  this.set_year_range = function(start_year, end_year) {
+    this.start_year = this.parse_date(start_year).year();
+    this.end_year = this.parse_date(end_year).year();
+    this.fetch_series(this.blsid, this.delta);
   }
 
 
@@ -290,7 +307,13 @@ $(function() {
         },
         change: function(event, slider, ui) {
           // Update the time series with the new range
-          console.log("not implemented yet");
+          range = slider.date_range();
+          console.log(range);
+          sd = range[0];
+          ed = range[1];
+
+          upperControls.view.set_year_range(sd, ed);
+          lowerControls.view.set_year_range(sd, ed);
         }
       });
 
