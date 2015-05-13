@@ -89,7 +89,7 @@ function SeriesView() {
     }
 
     endpoint += "?" + encodeQueryData(data);
-    console.log(endpoint);
+    console.log("fetching data from", endpoint);
 
     d3.json(endpoint, function(error, response) {
       // The JSON response contains some external info like source, title, etc.
@@ -194,8 +194,8 @@ $(function() {
   *************************************************************************/
 
   // Default Upper Series
-  var DEFAULT_UPPER_SERIES = "LNS12300000";
-  var DEFAULT_LOWER_SERIES = "LNS13000000";
+  var DEFAULT_UPPER_SERIES = "LNS14000000";
+  var DEFAULT_LOWER_SERIES = "CES0000000001";
 
   // Append "upper" and "lower" to get specific controls
   var ctrlIDs = {
@@ -258,7 +258,7 @@ $(function() {
           source = pick.parent().attr("label"),
           delta  = controls.deltaFilter.is(":checked");
 
-      console.log(source, blsid, "selected:", title);
+      console.log(source, blsid, "selected:", title.trim());
 
       controls.label.text(title);
       controls.source.text(source);
@@ -308,7 +308,6 @@ $(function() {
         change: function(event, slider, ui) {
           // Update the time series with the new range
           range = slider.date_range();
-          console.log(range);
           sd = range[0];
           ed = range[1];
 
