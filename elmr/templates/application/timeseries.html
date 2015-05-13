@@ -65,36 +65,9 @@
     <div class="row">
       <!-- Left Sidebar -->
       <div class="col-md-3">
-
-        <!-- Time Series Explorer controls -->
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Upper Timeseries Controls</h3>
-          </div>
-          <div class="panel-body">
-            <!-- Upper Timeseries Selection Dropdown -->
-            <select id="upperTSSelectControl" class="form-control">
-              {% for label, series in sources %}
-                <optgroup label="{{ label }}">
-                  {% for s in series %}
-                  <option value="{{ s.blsid }}">{{ s.title }}</option>
-                  {% endfor %}
-                </optgroup>
-              {% endfor %}
-            </select>
-          </div>
-          <table class="table">
-            <tr>
-              <td><strong>Source</strong></td>
-              <td id="upperTSSource"></dd>
-            </tr>
-            <tr>
-              <td><strong>Dataset</strong></td>
-              <td id="upperTSName"></td>
-            </tr>
-          </table>
-        </div>
-
+        {% set control_header="Upper Timeseries Controls" %}
+        {% set control_prefix="upper" %}
+        {% include 'components/series-controls.html' %}
       </div><!-- left sidebar ends -->
 
       <!-- Right Column Main Content -->
@@ -114,36 +87,9 @@
     <div class="row">
       <!-- Left Sidebar -->
       <div class="col-md-3">
-
-        <!-- Time Series Explorer controls -->
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Lower Timeseries Controls</h3>
-          </div>
-          <div class="panel-body">
-            <!-- Upper Timeseries Selection Dropdown -->
-            <select id="lowerTSSelectControl" class="form-control">
-              {% for label, series in sources %}
-                <optgroup label="{{ label }}">
-                  {% for s in series %}
-                  <option value="{{ s.blsid }}">{{ s.title }}</option>
-                  {% endfor %}
-                </optgroup>
-              {% endfor %}
-            </select>
-          </div>
-          <table class="table">
-            <tr>
-              <td><strong>Source</strong></td>
-              <td id="lowerTSSource"></dd>
-            </tr>
-            <tr>
-              <td><strong>Dataset</strong></td>
-              <td id="lowerTSName"></td>
-            </tr>
-          </table>
-        </div>
-
+        {% set control_header="Lower Timeseries Controls" %}
+        {% set control_prefix="lower" %}
+        {% include 'components/series-controls.html' %}
       </div><!-- left sidebar ends -->
 
       <!-- Right Column Main Content -->

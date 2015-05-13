@@ -14,6 +14,16 @@ function encodeQueryData(data) {
 }
 
 /*
+ * Parses a string boolean and returns a bool type, especially Python bool str
+ */
+function parseBool(str) {
+  return JSON.parse(
+      str.toLowerCase()
+         .replace('no','false')
+         .replace('yes','true'));
+}
+
+/*
  *  Year Slider Management
  *  Allows the ability to manage time via period, year series in a slider
  *  Similar to the slider bar, this implements a range and value method.

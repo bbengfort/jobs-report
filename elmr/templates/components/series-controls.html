@@ -1,0 +1,47 @@
+<!-- Time Series Explorer controls -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ control_header }}</h3>
+  </div>
+  <div class="panel-body">
+    <!-- Upper Timeseries Selection Dropdown -->
+    <select id="{{ control_prefix }}TSSelectControl" class="form-control">
+      {% for label, series in sources %}
+        <optgroup label="{{ label }}">
+          {% for s in series %}
+          <option value="{{ s.blsid }}" class="series-select-option"
+                  data-adjusted="{{ s.is_adjusted }}" data-source="{{ s.source }}">
+            {{ s.title }}
+          </option>
+          {% endfor %}
+        </optgroup>
+      {% endfor %}
+    </select>
+    <div class="checkbox">
+      <label class="checkbox-inline" style="padding-left: 0;"><strong>Filter:</strong></label>
+      <label class="checkbox-inline">
+        <input name="{{ control_prefix }}TSFilter"
+               id="{{ control_prefix }}TSAdjustedFilter"
+               type="checkbox">
+        adjusted
+      </label>
+      <label class="checkbox-inline">
+        <input name="{{ control_prefix }}TSFilter"
+               id="{{ control_prefix }}TSDeltaFilter"
+               type="checkbox">
+        rate change
+      </label>
+    </div>
+
+  </div>
+  <table class="table">
+    <tr>
+      <td><strong>Source</strong></td>
+      <td id="{{ control_prefix }}TSSource"></dd>
+    </tr>
+    <tr>
+      <td><strong>Dataset</strong></td>
+      <td id="{{ control_prefix }}TSName"></td>
+    </tr>
+  </table>
+</div>

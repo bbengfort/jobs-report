@@ -178,7 +178,9 @@ $(function() {
     "view": "SeriesView",
     "select": "TSSelectControl",
     "label": "TSName",
-    "source": "TSSource"
+    "source": "TSSource",
+    "adjustFilter": "TSAdjustedFilter",
+    "deltaFilter": "TSDeltaFilter"
   }
 
   function initControls(prefix) {
@@ -192,7 +194,39 @@ $(function() {
       }
     });
 
+    // Bind the adjusted filter controlbox
+    controls.adjustFilter.change(function(e) {
+
+      // Go through every option in the select control
+      _.each(controls.select.find('option'), function(opt) {
+          var adjust = controls.adjustFilter.is(":checked");
+          var option = $(opt);
+          var data   = option.data();
+          var hide   = "hidden";
+          var optadj = parseBool(data.adjusted);
+
+          option.removeAttr("style");
+          if (data.source == "CESSM" || data.source == "LAUS") {
+            if (adjust && optadj) {
+              option.removeClass(hide);
+            } else if (adjust && !optadj) {
+              option.addClass(hide);
+            } else if (!adjust && optadj) {
+              option.addClass(hide);
+            } else if (!adjust && !optadj) {
+              option.removeClass(hide);
+            } else {
+              console.log("Unknown combination of adjust box and select!");
+            }
+          }
+      });
+
+    });
+
+    controls.adjustFilter.prop("checked", true).trigger("change");
+
     controls.fetch_series = function(blsid) {
+      // Add is delta here
       return this.view.fetch_series(blsid);
     }
 
