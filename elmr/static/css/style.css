@@ -140,22 +140,16 @@ text {
     margin-top: 2px;
 }
 
-.year-selector {
+.year-selector,
+.year-range-selector {
     margin-bottom: 12px;
 }
 
-/*.year-selector .col-md-9 {
-    padding-left: 0;
-    padding-right: 6px;
-}
 
-.year-selector .col-md-3 {
-    padding-left: 6px;
-    padding-right: 0px;
-}*/
-
-.year-selector .year-slider {
+.year-selector .year-slider,
+.year-range-selector .year-slider {
     margin-top: 12px;
+    margin-bottom: 12px;
     border: 1px solid #dddddd;
 }
 

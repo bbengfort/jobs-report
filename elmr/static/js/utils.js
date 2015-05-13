@@ -14,6 +14,24 @@ function encodeQueryData(data) {
 }
 
 /*
+ * Parses a string boolean and returns a bool type, especially Python bool str
+ */
+function parseBool(str) {
+  return JSON.parse(
+      str.toLowerCase()
+         .replace('no','false')
+         .replace('yes','true'));
+}
+
+/*
+ * Stringifies a number with commas
+ http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+ */
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+/*
  *  Year Slider Management
  *  Allows the ability to manage time via period, year series in a slider
  *  Similar to the slider bar, this implements a range and value method.
