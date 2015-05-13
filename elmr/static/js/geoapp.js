@@ -49,6 +49,12 @@ $(function() {
       // Turn off the loader and indicate application started
       toggleLoading(false, function() {
         drawMap(); // Draw the map
+
+        // Add the event handler to draw the map on tab toggle
+        $('a[href=#geography]').on('shown.bs.tab', function(e) {
+          drawMap();
+        });
+
         console.log("Geography Application Started");
       });
   });

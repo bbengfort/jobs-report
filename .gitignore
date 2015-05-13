@@ -63,3 +63,8 @@ venv
 fixtures/ingest-*
 fixtures/*.txt
 !fixtures/*.tgz
+
+# Static libraries for development
+elmr/static/css/libs/*
+elmr/static/js/libs/*
+elmr/static/css/fonts/*

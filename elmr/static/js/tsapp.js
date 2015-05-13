@@ -14,6 +14,10 @@ function SeriesView() {
   // And every subsequent key is the value for a particular time series
   this.series = [];
 
+  // Temporary
+  this.blisd  = null;
+  this.delta  = null;
+
   // Defines the data fetch period and the number of elements in the series
   this.start_year  = 2000;
   this.end_year    = 2015;
@@ -71,10 +75,21 @@ function SeriesView() {
   }
 
   // Given a BLSID, fetch the data and draw the series
-  this.fetch_series = function(blsid) {
+  this.fetch_series = function(blsid, delta) {
     var self = this;
-    var endpoint = this.base_url + blsid;
-    endpoint += "?start_year=" + this.start_year + "&end_year=" + this.end_year;
+
+    self.blsid = blsid;
+    self.delta = delta;
+
+    var endpoint = self.base_url + blsid;
+    var data = {
+      start_year: self.start_year,
+      end_year: self.end_year,
+      delta: delta || false
+    }
+
+    endpoint += "?" + encodeQueryData(data);
+    console.log("fetching data from", endpoint);
 
     d3.json(endpoint, function(error, response) {
       // The JSON response contains some external info like source, title, etc.
@@ -133,6 +148,15 @@ function SeriesView() {
 
   }
 
+  // Helper function to change the dimensions of the data
+  // Right now this just resubmits the request to the server.
+  // Obviously this could be better - so make it better!
+  this.set_year_range = function(start_year, end_year) {
+    this.start_year = this.parse_date(start_year).year();
+    this.end_year = this.parse_date(end_year).year();
+    this.fetch_series(this.blsid, this.delta);
+  }
+
 
   // Helper function to parse a date string (uses moment not d3)
   this.parse_date = function(dtstr) {
@@ -170,15 +194,17 @@ $(function() {
   *************************************************************************/
 
   // Default Upper Series
-  var DEFAULT_UPPER_SERIES = "LNS12300000";
-  var DEFAULT_LOWER_SERIES = "LNS13000000";
+  var DEFAULT_UPPER_SERIES = "LNS14000000";
+  var DEFAULT_LOWER_SERIES = "LNS12000000";
 
   // Append "upper" and "lower" to get specific controls
   var ctrlIDs = {
     "view": "SeriesView",
     "select": "TSSelectControl",
     "label": "TSName",
-    "source": "TSSource"
+    "source": "TSSource",
+    "adjustFilter": "TSAdjustedFilter",
+    "deltaFilter": "TSDeltaFilter"
   }
 
   function initControls(prefix) {
@@ -192,24 +218,57 @@ $(function() {
       }
     });
 
-    controls.fetch_series = function(blsid) {
-      return this.view.fetch_series(blsid);
-    }
+    // Bind the adjusted filter controlbox
+    controls.adjustFilter.change(function(e) {
 
-    // Bind the selection change event
-    controls.select.change(function(e) {
-      var pick   = $(this).find(":selected"),
+      // Go through every option in the select control
+      _.each(controls.select.find('option'), function(opt) {
+          var adjust = controls.adjustFilter.is(":checked");
+          var option = $(opt);
+          var data   = option.data();
+          var hide   = "hidden";
+          var optadj = parseBool(data.adjusted);
+
+          option.removeAttr("style");
+          if (data.source == "CESSM" || data.source == "LAUS") {
+            if (adjust && optadj) {
+              option.removeClass(hide);
+            } else if (adjust && !optadj) {
+              option.addClass(hide);
+            } else if (!adjust && optadj) {
+              option.addClass(hide);
+            } else if (!adjust && !optadj) {
+              option.removeClass(hide);
+            } else {
+              console.log("Unknown combination of adjust box and select!");
+            }
+          }
+      });
+
+    });
+
+    // Init the adjusted filter to true
+    controls.adjustFilter.prop("checked", true).trigger("change");
+
+    // Handler for initiating a change in series
+    controls.fetch_series = function(e) {
+      var pick   = controls.select.find(":selected"),
           blsid  = pick.val(),
           title  = pick.text(),
-          source = pick.parent().attr("label");
+          source = pick.parent().attr("label"),
+          delta  = controls.deltaFilter.is(":checked");
 
-      console.log(source, blsid, "selected:", title);
+      console.log(source, blsid, "selected:", title.trim());
 
       controls.label.text(title);
       controls.source.text(source);
-      controls.fetch_series(blsid);
 
-    });
+      controls.view.fetch_series(blsid, delta);
+    }
+
+    // Bind the selection change event
+    controls.select.change(controls.fetch_series);
+    controls.deltaFilter.change(controls.fetch_series);
 
     return controls;
   }
@@ -248,11 +307,17 @@ $(function() {
         },
         change: function(event, slider, ui) {
           // Update the time series with the new range
-          console.log("not implemented yet");
+          range = slider.date_range();
+          sd = range[0];
+          ed = range[1];
+
+          upperControls.view.set_year_range(sd, ed);
+          lowerControls.view.set_year_range(sd, ed);
         }
       });
 
-    console.log("Time Series Application Started");
+      updateHeadlines();
+      console.log("Time Series Application Started");
   });
 
   /*
@@ -262,8 +327,6 @@ $(function() {
     var dp = $(".year-display");
     var sd = data.data[$(dp[0]).data("slider")];
     var ed = data.data[$(dp[1]).data("slider")];
-
-    console.log(data);
 
     // Handle unemployment (left headline)
     var lh = $("#left-headline");
@@ -282,7 +345,7 @@ $(function() {
 
     // Handle # nonfarm jobs (right headline)
     var rh = $("#right-headline");
-    rh.find(".headline-number").text(Math.round(ed.LNS12000000 / 1000) + "K");
+    rh.find(".headline-number").text((ed.LNS12000000 / 1000).toFixed(1) + "M");
 
     var jobsDiff = ed.LNS12000000 - sd.LNS12000000;
     p = rh.find(".headline-delta");
@@ -293,7 +356,7 @@ $(function() {
       p.html($('<i class="fa fa-long-arrow-down"></i>'))
       p.removeClass("text-success").addClass("text-danger");
     }
-    p.append("&nbsp;" + Math.abs(jobsDiff));
+    p.append("&nbsp;" + (Math.abs(jobsDiff / 1000).toFixed(1)) + "M");
   }
 
 });
