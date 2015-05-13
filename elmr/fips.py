@@ -78,11 +78,13 @@ def write_states_dataset(fobj, source, slug,
         if ss is None:
             ss = state.series.filter_by(source=source, slug=slug).first()
 
-        series = ss.series.delta if delta else ss.series
-
         if ss is None:
             continue
         # TODO: above was just a temporary fix
+
+        series = ss.series.delta if delta else ss.series
+
+
 
         row = {
             "fips": state.fips,
